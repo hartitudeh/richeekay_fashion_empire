@@ -67,6 +67,10 @@ const TopBanner = styled.div`
     gap: 6px;
     text-align: center;
     padding: 6px 12px;
+
+    .hidden-mobile {
+      display: none;
+    }
   }
 `;
 
@@ -127,12 +131,61 @@ const LogoText = styled(Link)`
   }
 `;
 
+const MobileQuickActions = styled.div`
+  display: none;
+
+  @media (max-width: 1024px) {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    width: 100%;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+
+    .action-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(31, 31, 31, 0.8);
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 10px 4px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.7rem;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+
+      &.gold {
+        border-color: #d4af37;
+        color: #d4af37;
+      }
+
+      .icon {
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+        color: #d4af37;
+      }
+
+      &:hover, &:active {
+        background: #d4af37;
+        color: #0a0a0a;
+
+        .icon {
+          color: #0a0a0a;
+        }
+      }
+    }
+  }
+`;
+
 const NavLinks = styled.nav<{ $mobileOpen: boolean }>`
   display: flex;
   align-items: center;
   gap: 24px;
 
-  a {
+  a.nav-item {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.85rem;
     font-weight: 500;
@@ -173,14 +226,14 @@ const NavLinks = styled.nav<{ $mobileOpen: boolean }>`
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     flex-direction: column;
-    padding: 28px 24px;
-    gap: 16px;
+    padding: 24px 18px;
+    gap: 14px;
     border-bottom: 1px solid #d4af37;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95);
     z-index: 999;
     animation: ${slideDown} 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 
-    a {
+    a.nav-item {
       width: 100%;
       padding: 10px 14px;
       font-size: 0.95rem;
@@ -188,14 +241,14 @@ const NavLinks = styled.nav<{ $mobileOpen: boolean }>`
       opacity: 0;
       animation: ${fadeInRight} 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 
-      &:nth-child(1) { animation-delay: 0.04s; }
-      &:nth-child(2) { animation-delay: 0.08s; }
-      &:nth-child(3) { animation-delay: 0.12s; }
-      &:nth-child(4) { animation-delay: 0.16s; }
-      &:nth-child(5) { animation-delay: 0.20s; }
-      &:nth-child(6) { animation-delay: 0.24s; }
-      &:nth-child(7) { animation-delay: 0.28s; }
-      &:nth-child(8) { animation-delay: 0.32s; }
+      &:nth-of-type(1) { animation-delay: 0.04s; }
+      &:nth-of-type(2) { animation-delay: 0.08s; }
+      &:nth-of-type(3) { animation-delay: 0.12s; }
+      &:nth-of-type(4) { animation-delay: 0.16s; }
+      &:nth-of-type(5) { animation-delay: 0.20s; }
+      &:nth-of-type(6) { animation-delay: 0.24s; }
+      &:nth-of-type(7) { animation-delay: 0.28s; }
+      &:nth-of-type(8) { animation-delay: 0.32s; }
 
       &:hover {
         border-left: 3px solid #d4af37;
@@ -211,6 +264,24 @@ const IconGroup = styled.div`
   display: flex;
   align-items: center;
   gap: 16px;
+
+  .desktop-icons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  .mobile-header-cart {
+    display: none;
+
+    @media (max-width: 1024px) {
+      display: flex;
+    }
+  }
 
   .nav-icon-btn {
     background: rgba(31, 31, 31, 0.8);
@@ -350,42 +421,81 @@ export const Navbar: React.FC = () => {
           </LogoText>
 
           <NavLinks $mobileOpen={mobileMenuOpen}>
-            <Link href="/" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-            <Link href="/shop" onClick={() => setMobileMenuOpen(false)}>Shop</Link>
-            <Link href="/collections" onClick={() => setMobileMenuOpen(false)}>Collections</Link>
-            <Link href="/tailoring" onClick={() => setMobileMenuOpen(false)} style={{ color: '#D4AF37' }}>
+            {/* Mobile Quick Action Toolbar inside expanded drawer */}
+            <MobileQuickActions>
+              <div className="action-item" onClick={() => { setIsSearchOpen(true); setMobileMenuOpen(false); }}>
+                <FiSearch className="icon" />
+                <span>Search</span>
+              </div>
+
+              <Link href="/dashboard" className="action-item" onClick={() => setMobileMenuOpen(false)}>
+                <FiHeart className="icon" />
+                <span>Wishlist {wishlist.length > 0 && `(${wishlist.length})`}</span>
+              </Link>
+
+              <div className="action-item" onClick={() => { setIsCartDrawerOpen(true); setMobileMenuOpen(false); }}>
+                <FiShoppingBag className="icon" />
+                <span>Bag {cartCount > 0 && `(${cartCount})`}</span>
+              </div>
+
+              <Link href="/dashboard" className="action-item" onClick={() => setMobileMenuOpen(false)}>
+                <FiUser className="icon" />
+                <span>Account</span>
+              </Link>
+
+              <Link href="/admin" className="action-item gold" onClick={() => setMobileMenuOpen(false)}>
+                <MdAdminPanelSettings className="icon" />
+                <span>Admin</span>
+              </Link>
+            </MobileQuickActions>
+
+            <Link href="/" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Home</Link>
+            <Link href="/shop" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Shop</Link>
+            <Link href="/collections" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Collections</Link>
+            <Link href="/tailoring" className="nav-item" onClick={() => setMobileMenuOpen(false)} style={{ color: '#D4AF37' }}>
               <FiScissors style={{ marginRight: '4px' }} /> Custom Fitting
             </Link>
-            <Link href="/gallery" onClick={() => setMobileMenuOpen(false)}>Gallery</Link>
-            <Link href="/about" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-            <Link href="/blog" onClick={() => setMobileMenuOpen(false)}>Editorial</Link>
-            <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+            <Link href="/gallery" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Gallery</Link>
+            <Link href="/about" className="nav-item" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+            <Link href="/blog" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Editorial</Link>
+            <Link href="/contact" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
           </NavLinks>
 
           <IconGroup>
-            <button className="nav-icon-btn" onClick={() => setIsSearchOpen(true)} title="Live Search">
-              <FiSearch />
-            </button>
+            {/* Desktop Action Icons (>1024px) */}
+            <div className="desktop-icons">
+              <button className="nav-icon-btn" onClick={() => setIsSearchOpen(true)} title="Live Search">
+                <FiSearch />
+              </button>
 
-            <Link href="/dashboard" className="nav-icon-btn" title="Wishlist & Account">
-              <FiHeart />
-              {wishlist.length > 0 && <span className="badge">{wishlist.length}</span>}
-            </Link>
+              <Link href="/dashboard" className="nav-icon-btn" title="Wishlist & Account">
+                <FiHeart />
+                {wishlist.length > 0 && <span className="badge">{wishlist.length}</span>}
+              </Link>
 
-            <button className="nav-icon-btn" onClick={() => setIsCartDrawerOpen(true)} title="Shopping Bag">
-              <FiShoppingBag />
-              {cartCount > 0 && <span className="badge">{cartCount}</span>}
-            </button>
+              <button className="nav-icon-btn" onClick={() => setIsCartDrawerOpen(true)} title="Shopping Bag">
+                <FiShoppingBag />
+                {cartCount > 0 && <span className="badge">{cartCount}</span>}
+              </button>
 
-            <Link href="/dashboard" className="nav-icon-btn" title="VIP Account">
-              <FiUser />
-            </Link>
+              <Link href="/dashboard" className="nav-icon-btn" title="VIP Account">
+                <FiUser />
+              </Link>
 
-            <Link href="/admin" className="nav-icon-btn" title="Executive Admin Portal" style={{ borderColor: '#D4AF37', color: '#D4AF37' }}>
-              <MdAdminPanelSettings />
-            </Link>
+              <Link href="/admin" className="nav-icon-btn" title="Executive Admin Portal" style={{ borderColor: '#D4AF37', color: '#D4AF37' }}>
+                <MdAdminPanelSettings />
+              </Link>
+            </div>
 
-            {/* Mobile & iPad Hamburger Menu Toggle Button with Animations */}
+            {/* Mobile Bar Quick Cart Icon (<=1024px) */}
+            <div className="mobile-header-cart">
+              <button className="nav-icon-btn" onClick={() => setIsCartDrawerOpen(true)} title="Shopping Bag">
+                <FiShoppingBag />
+                {cartCount > 0 && <span className="badge">{cartCount}</span>}
+              </button>
+            </div>
+
+            {/* Mobile & iPad Hamburger Menu Toggle Button */}
             <MobileMenuToggler
               $isOpen={mobileMenuOpen}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
