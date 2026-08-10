@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
+import { useSafeCloseModal } from '../hooks/useSafeCloseModal';
 import { Dialog, DialogContent } from '@mui/material';
 import { FiSearch, FiX, FiShoppingBag, FiArrowRight } from 'react-icons/fi';
 import styled from 'styled-components';
@@ -114,6 +115,7 @@ const SearchContainer = styled.div`
 
 export const SearchModal: React.FC = () => {
   const { isSearchOpen, setIsSearchOpen, products, formatPrice, openQuickView } = useShop();
+  const safeClose = useSafeCloseModal();
   const [query, setQuery] = useState('');
   const [selectedCat, setSelectedCat] = useState('all');
 
@@ -124,7 +126,7 @@ export const SearchModal: React.FC = () => {
   });
 
   return (
-    <Dialog open={isSearchOpen} onClose={() => setIsSearchOpen(false)} maxWidth="md" fullWidth>
+    <Dialog open={isSearchOpen} onClose={() => safeClose(() => setIsSearchOpen(false))} maxWidth="md" fullWidth>
       <DialogContent style={{ background: '#141414', padding: 0 }}>
         <SearchContainer>
           <div className="search-header">
@@ -136,7 +138,7 @@ export const SearchModal: React.FC = () => {
               onChange={(e) => setQuery(e.target.value)}
               autoFocus
             />
-            <button className="clear-btn" onClick={() => setIsSearchOpen(false)}>
+            <button className="clear-btn" onClick={() => safeClose(() => setIsSearchOpen(false))}>
               <FiX />
             </button>
           </div>

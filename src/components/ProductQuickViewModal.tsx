@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
+import { useSafeCloseModal } from '../hooks/useSafeCloseModal';
 import { Dialog, DialogContent } from '@mui/material';
 import { FiX, FiShoppingBag, FiHeart, FiStar, FiScissors, FiTruck, FiShield } from 'react-icons/fi';
 import styled from 'styled-components';
@@ -175,6 +176,7 @@ export const ProductQuickViewModal: React.FC = () => {
     setIsTailoringStudioOpen
   } = useShop();
 
+  const safeClose = useSafeCloseModal();
   const [activeImgIndex, setActiveImgIndex] = useState(0);
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
@@ -185,7 +187,7 @@ export const ProductQuickViewModal: React.FC = () => {
   const currentSize = selectedSize || quickViewProduct.sizes[0] || 'Standard';
 
   return (
-    <Dialog open={isQuickViewOpen} onClose={() => setIsQuickViewOpen(false)} maxWidth="md" fullWidth>
+    <Dialog open={isQuickViewOpen} onClose={() => safeClose(() => setIsQuickViewOpen(false))} maxWidth="md" fullWidth>
       <DialogContent style={{ background: '#141414', padding: 0 }}>
         <QuickViewContainer>
           <div className="gallery-col">
@@ -210,7 +212,7 @@ export const ProductQuickViewModal: React.FC = () => {
           </div>
 
           <div className="details-col">
-            <button className="close-btn" onClick={() => setIsQuickViewOpen(false)}>
+            <button className="close-btn" onClick={() => safeClose(() => setIsQuickViewOpen(false))}>
               <FiX />
             </button>
 

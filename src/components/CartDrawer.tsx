@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
+import { useSafeCloseModal } from '../hooks/useSafeCloseModal';
 import { FiX, FiTrash2, FiPlus, FiMinus, FiShoppingBag, FiTag, FiTruck, FiArrowRight } from 'react-icons/fi';
 import styled from 'styled-components';
 
@@ -269,6 +270,7 @@ export const CartDrawer: React.FC = () => {
     setIsCheckoutOpen
   } = useShop();
 
+  const safeClose = useSafeCloseModal();
   const [couponInput, setCouponInput] = useState('');
   const [couponMsg, setCouponMsg] = useState<{ text: string; success: boolean } | null>(null);
 
@@ -286,14 +288,14 @@ export const CartDrawer: React.FC = () => {
 
   return (
     <>
-      <DrawerOverlay $open={isCartDrawerOpen} onClick={() => setIsCartDrawerOpen(false)} />
+      <DrawerOverlay $open={isCartDrawerOpen} onClick={() => safeClose(() => setIsCartDrawerOpen(false))} />
 
       <DrawerContent $open={isCartDrawerOpen}>
         <DrawerHeader>
           <h3>
             <FiShoppingBag style={{ color: '#D4AF37' }} /> Your Shopping Bag ({cart.length})
           </h3>
-          <button className="close-btn" onClick={() => setIsCartDrawerOpen(false)}>
+          <button className="close-btn" onClick={() => safeClose(() => setIsCartDrawerOpen(false))}>
             <FiX />
           </button>
         </DrawerHeader>

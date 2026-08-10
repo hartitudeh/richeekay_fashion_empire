@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
+import { useSafeCloseModal } from '../hooks/useSafeCloseModal';
 import { Dialog, DialogContent, Box, Tabs, Tab } from '@mui/material';
 import { FiUser, FiAward, FiShoppingBag, FiHeart, FiScissors, FiShield, FiX } from 'react-icons/fi';
 import styled from 'styled-components';
@@ -98,12 +99,13 @@ export const UserDashboardModal: React.FC = () => {
     addToCart
   } = useShop();
 
+  const safeClose = useSafeCloseModal();
   const [activeTab, setActiveTab] = useState(0);
 
   const wishedProducts = products.filter((p) => wishlist.includes(p.id));
 
   return (
-    <Dialog open={isUserDashboardOpen} onClose={() => setIsUserDashboardOpen(false)} maxWidth="md" fullWidth>
+    <Dialog open={isUserDashboardOpen} onClose={() => safeClose(() => setIsUserDashboardOpen(false))} maxWidth="md" fullWidth>
       <DialogContent style={{ background: '#141414', padding: 0 }}>
         <DashboardContainer>
           <div className="header-row">
@@ -118,7 +120,7 @@ export const UserDashboardModal: React.FC = () => {
             </div>
 
             <button
-              onClick={() => setIsUserDashboardOpen(false)}
+              onClick={() => safeClose(() => setIsUserDashboardOpen(false))}
               style={{ background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.5rem', cursor: 'pointer' }}
             >
               <FiX />

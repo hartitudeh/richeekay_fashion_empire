@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useShop, Order } from '../context/ShopContext';
+import { useSafeCloseModal } from '../hooks/useSafeCloseModal';
 import { Product } from '../data/productsData';
 import { Dialog, DialogContent, Box, Tabs, Tab } from '@mui/material';
 import { MdAdminPanelSettings, MdOutlineAddBox, MdOutlineDelete } from 'react-icons/md';
@@ -250,15 +251,15 @@ export const AdminPortalModal: React.FC = () => {
   const [newProdImg, setNewProdImg] = useState('');
   const [prodAddedSuccess, setProdAddedSuccess] = useState(false);
 
+  const safeClose = useSafeCloseModal();
+
   const handleLogoutAndHome = () => {
     adminLogout();
-    setIsAdminPortalOpen(false);
-    router.push('/');
+    safeClose(() => setIsAdminPortalOpen(false));
   };
 
   const handleCloseAndHome = () => {
-    setIsAdminPortalOpen(false);
-    router.push('/');
+    safeClose(() => setIsAdminPortalOpen(false));
   };
 
   const handleLoginSubmit = (e: React.FormEvent) => {

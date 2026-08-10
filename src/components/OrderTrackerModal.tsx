@@ -2,8 +2,9 @@
 
 import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
+import { useSafeCloseModal } from '../hooks/useSafeCloseModal';
 import { Dialog, DialogContent, Box, Stepper, Step, StepLabel } from '@mui/material';
-import { FiClock, FiSearch, FiTruck, FiPackage, FiScissors, FiCheckCircle } from 'react-icons/fi';
+import { FiClock, FiSearch, FiTruck, FiPackage, FiScissors, FiCheckCircle, FiX } from 'react-icons/fi';
 import styled from 'styled-components';
 
 const ModalContainer = styled.div`
@@ -122,14 +123,22 @@ export const OrderTrackerModal: React.FC = () => {
     }
   };
 
+  const safeClose = useSafeCloseModal();
+
   const getStepIndex = (status: string) => {
     const idx = trackerSteps.indexOf(status);
     return idx >= 0 ? idx : 2;
   };
 
   return (
-    <Dialog open={isOrderTrackerOpen} onClose={() => setIsOrderTrackerOpen(false)} maxWidth="md" fullWidth>
-      <DialogContent style={{ background: '#141414', padding: 0 }}>
+    <Dialog open={isOrderTrackerOpen} onClose={() => safeClose(() => setIsOrderTrackerOpen(false))} maxWidth="md" fullWidth>
+      <DialogContent style={{ background: '#141414', padding: 0, position: 'relative' }}>
+        <button
+          onClick={() => safeClose(() => setIsOrderTrackerOpen(false))}
+          style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.4rem', cursor: 'pointer', zIndex: 10 }}
+        >
+          <FiX />
+        </button>
         <ModalContainer>
           <h2>
             REAL-TIME <span>ORDER TRACKING</span>

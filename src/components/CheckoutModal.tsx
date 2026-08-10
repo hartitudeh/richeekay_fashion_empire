@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
+import { useSafeCloseModal } from '../hooks/useSafeCloseModal';
 import { Dialog, DialogContent, Stepper, Step, StepLabel, Box } from '@mui/material';
 import { FiCheckCircle, FiShield, FiCreditCard, FiLock, FiDownload, FiArrowRight, FiPrinter } from 'react-icons/fi';
 import confetti from 'canvas-confetti';
@@ -177,10 +178,14 @@ export const CheckoutModal: React.FC = () => {
     }
   };
 
+  const safeClose = useSafeCloseModal();
+
   const handleClose = () => {
-    setIsCheckoutOpen(false);
-    setActiveStep(0);
-    setCreatedOrder(null);
+    safeClose(() => {
+      setIsCheckoutOpen(false);
+      setActiveStep(0);
+      setCreatedOrder(null);
+    });
   };
 
   return (
