@@ -20,7 +20,9 @@ import {
   FiX,
   FiCalendar,
   FiClock,
-  FiArrowRight
+  FiArrowRight,
+  FiChevronsLeft,
+  FiChevronsRight
 } from 'react-icons/fi';
 import styled from 'styled-components';
 
@@ -245,11 +247,52 @@ const ReviewsSection = styled.section`
       margin: 14px auto 0;
     }
   }
+`;
+
+const ReviewsCarouselWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+
+  .custom-swiper-prev,
+  .custom-swiper-next {
+    background: rgba(20, 20, 20, 0.95);
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.45rem;
+    cursor: pointer;
+    z-index: 10;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+
+    &:hover {
+      background: #d4af37;
+      color: #0a0a0a;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.85);
+      transform: scale(1.12);
+    }
+  }
+
+  .custom-swiper-prev {
+    margin-right: 10px;
+  }
+
+  .custom-swiper-next {
+    margin-left: 10px;
+  }
 
   .reviews-swiper {
-    padding-bottom: 54px;
-    padding-left: 8px;
-    padding-right: 8px;
+    flex-grow: 1;
+    width: calc(100% - 116px);
+    padding-bottom: 52px;
 
     .swiper-pagination-bullet {
       background: rgba(212, 175, 55, 0.4);
@@ -260,12 +303,22 @@ const ReviewsSection = styled.section`
       width: 28px;
       border-radius: 4px;
     }
-    .swiper-button-next, .swiper-button-prev {
-      color: #d4af37;
-      &::after {
-        font-size: 1.4rem;
-        font-weight: bold;
-      }
+  }
+
+  @media (max-width: 640px) {
+    .custom-swiper-prev,
+    .custom-swiper-next {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+    }
+
+    .custom-swiper-prev {
+      margin-right: 10px;
+    }
+
+    .custom-swiper-next {
+      margin-left: 10px;
     }
   }
 
@@ -525,36 +578,49 @@ export const HomeSections: React.FC = () => {
             <div className="divider" />
           </div>
 
-          <Swiper
-            modules={[Autoplay, Pagination, Navigation]}
-            spaceBetween={24}
-            slidesPerView={1}
-            autoplay={{ delay: 4500, disableOnInteraction: false }}
-            pagination={{ clickable: true }}
-            navigation
-            breakpoints={{
-              640: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 }
-            }}
-            className="reviews-swiper"
-          >
-            {REVIEWS_DATA.map((rev) => (
-              <SwiperSlide key={rev.id}>
-                <div className="review-card">
-                  <div className="stars">★★★★★</div>
-                  <p className="comment">"{rev.comment}"</p>
-                  <div className="author-row">
-                    <img src={rev.avatar} alt={rev.author} />
-                    <div className="info">
-                      <h5>{rev.author}</h5>
-                      <span>{rev.location}</span>
+          <ReviewsCarouselWrapper>
+            <button className="custom-swiper-prev" id="reviews-prev-btn" aria-label="Previous Testimonial">
+              <FiChevronsLeft />
+            </button>
+
+            <Swiper
+              modules={[Autoplay, Pagination, Navigation]}
+              spaceBetween={24}
+              slidesPerView={1}
+              autoplay={{ delay: 4500, disableOnInteraction: false }}
+              pagination={{ clickable: true }}
+              navigation={{
+                prevEl: '#reviews-prev-btn',
+                nextEl: '#reviews-next-btn'
+              }}
+              breakpoints={{
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+              }}
+              className="reviews-swiper"
+            >
+              {REVIEWS_DATA.map((rev) => (
+                <SwiperSlide key={rev.id}>
+                  <div className="review-card">
+                    <div className="stars">★★★★★</div>
+                    <p className="comment">"{rev.comment}"</p>
+                    <div className="author-row">
+                      <img src={rev.avatar} alt={rev.author} />
+                      <div className="info">
+                        <h5>{rev.author}</h5>
+                        <span>{rev.location}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            <button className="custom-swiper-next" id="reviews-next-btn" aria-label="Next Testimonial">
+              <FiChevronsRight />
+            </button>
+          </ReviewsCarouselWrapper>
         </div>
       </ReviewsSection>
 
