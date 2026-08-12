@@ -3,6 +3,11 @@
 import React, { useState } from 'react';
 import { BLOG_POSTS_DATA, REVIEWS_DATA, BlogPost } from '../data/productsData';
 import { Dialog, DialogContent } from '@mui/material';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import {
   FiShield,
   FiAward,
@@ -241,23 +246,44 @@ const ReviewsSection = styled.section`
     }
   }
 
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+  .reviews-swiper {
+    padding-bottom: 54px;
+    padding-left: 8px;
+    padding-right: 8px;
 
-    @media (max-width: 900px) {
-      grid-template-columns: 1fr;
+    .swiper-pagination-bullet {
+      background: rgba(212, 175, 55, 0.4);
+      opacity: 1;
+    }
+    .swiper-pagination-bullet-active {
+      background: #d4af37;
+      width: 28px;
+      border-radius: 4px;
+    }
+    .swiper-button-next, .swiper-button-prev {
+      color: #d4af37;
+      &::after {
+        font-size: 1.4rem;
+        font-weight: bold;
+      }
     }
   }
 
   .review-card {
     background: #141414;
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    padding: 28px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    padding: 32px 28px;
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
-    position: relative;
+    height: 100%;
+    min-height: 250px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: #d4af37;
+      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.25);
+    }
 
     .stars {
       color: #f4e798;
@@ -266,11 +292,11 @@ const ReviewsSection = styled.section`
     }
 
     p.comment {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: #dddddd;
-      line-height: 1.6;
+      line-height: 1.65;
       font-style: italic;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       flex-grow: 1;
     }
 
@@ -282,18 +308,19 @@ const ReviewsSection = styled.section`
       padding-top: 16px;
 
       img {
-        width: 48px;
-        height: 48px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         object-fit: cover;
-        border: 1px solid #d4af37;
+        border: 2px solid #d4af37;
       }
 
       .info {
         h5 {
           font-family: 'Playfair Display', Georgia, serif;
-          font-size: 1rem;
+          font-size: 1.05rem;
           color: #ffffff;
+          margin: 0 0 2px 0;
         }
         span {
           font-size: 0.75rem;
@@ -498,21 +525,36 @@ export const HomeSections: React.FC = () => {
             <div className="divider" />
           </div>
 
-          <div className="reviews-grid">
+          <Swiper
+            modules={[Autoplay, Pagination, Navigation]}
+            spaceBetween={24}
+            slidesPerView={1}
+            autoplay={{ delay: 4500, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            navigation
+            breakpoints={{
+              640: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 }
+            }}
+            className="reviews-swiper"
+          >
             {REVIEWS_DATA.map((rev) => (
-              <div key={rev.id} className="review-card">
-                <div className="stars">★★★★★</div>
-                <p className="comment">"{rev.comment}"</p>
-                <div className="author-row">
-                  <img src={rev.avatar} alt={rev.author} />
-                  <div className="info">
-                    <h5>{rev.author}</h5>
-                    <span>{rev.location}</span>
+              <SwiperSlide key={rev.id}>
+                <div className="review-card">
+                  <div className="stars">★★★★★</div>
+                  <p className="comment">"{rev.comment}"</p>
+                  <div className="author-row">
+                    <img src={rev.avatar} alt={rev.author} />
+                    <div className="info">
+                      <h5>{rev.author}</h5>
+                      <span>{rev.location}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </SwiperSlide>
             ))}
-          </div>
+          </Swiper>
         </div>
       </ReviewsSection>
 

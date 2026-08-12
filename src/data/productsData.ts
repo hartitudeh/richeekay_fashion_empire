@@ -503,12 +503,42 @@ export const REVIEWS_DATA: Review[] = [
   },
   {
     id: 'rev-3',
-    author: 'Elizabeth Kensington',
-    location: 'Kensington, London UK',
+    author: 'Lady Elizabeth Kensington',
+    location: 'Mayfair, London UK',
     avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80',
     rating: 5,
-    comment: 'I ordered the Executive Power Suit and Senator Materials to London via DHL express delivery. It arrived in 3 days packed in a gorgeous gold box! Exceptional customer care.',
+    comment: 'I ordered the Executive Double-Breasted Power Suit to London via DHL express delivery. It arrived in 3 days packed in a signature gold box with velvet dustbags! Exceptional customer service.',
     date: '2 weeks ago',
+    verified: true
+  },
+  {
+    id: 'rev-4',
+    author: 'H.E. Princess Olamide Ajayi',
+    location: 'Ikoyi, Lagos',
+    avatar: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=200&q=80',
+    rating: 5,
+    comment: 'The hand-beaded silk crystal gala gown for our diplomatic charity banquet was absolute perfection. RICHEEKAY’s bespoke tailoring team took my custom measurements online and delivered immaculate craftsmanship!',
+    date: '5 days ago',
+    verified: true
+  },
+  {
+    id: 'rev-5',
+    author: 'Dr. Chinyere Nwosu',
+    location: 'Buckhead, Atlanta USA',
+    avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=200&q=80',
+    rating: 5,
+    comment: 'I’ve ordered three Senator Tunic sets and matching calfskin handbags for my executive speaking tours. The quality of the wool crepe material and gold heraldic buttons is unmatched anywhere in North America!',
+    date: '2 weeks ago',
+    verified: true
+  },
+  {
+    id: 'rev-6',
+    author: 'Countess Valerie Du Pont',
+    location: 'Champs-Élysées, Paris France',
+    avatar: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=200&q=80',
+    rating: 5,
+    comment: 'Purchased the Metallic Gold Stiletto Pumps and Royal Crystal Choker Set. The heels are incredibly comfortable for 8+ hours on red carpet galas in Paris! Truly haute couture excellence.',
+    date: '3 weeks ago',
     verified: true
   }
 ];
