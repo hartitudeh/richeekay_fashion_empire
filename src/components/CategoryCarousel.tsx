@@ -4,7 +4,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import { CATEGORIES_DATA } from '../data/productsData';
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiChevronsLeft, FiChevronsRight } from 'react-icons/fi';
 import styled from 'styled-components';
 
 const CategorySection = styled.section`
@@ -36,6 +36,69 @@ const CategorySection = styled.section`
       height: 3px;
       background: linear-gradient(90deg, #c9a227 0%, #d4af37 100%);
       margin: 14px auto 0;
+    }
+  }
+`;
+
+const CarouselWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+
+  .custom-swiper-prev,
+  .custom-swiper-next {
+    background: rgba(20, 20, 20, 0.95);
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.45rem;
+    cursor: pointer;
+    z-index: 10;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+
+    &:hover {
+      background: #d4af37;
+      color: #0a0a0a;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.85);
+      transform: scale(1.12);
+    }
+  }
+
+  .custom-swiper-prev {
+    margin-right: 10px;
+  }
+
+  .custom-swiper-next {
+    margin-left: 10px;
+  }
+
+  .cat-swiper {
+    flex-grow: 1;
+    width: calc(100% - 116px);
+  }
+
+  @media (max-width: 640px) {
+    .custom-swiper-prev,
+    .custom-swiper-next {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+    }
+
+    .custom-swiper-prev {
+      margin-right: 10px;
+    }
+
+    .custom-swiper-next {
+      margin-left: 10px;
     }
   }
 `;
@@ -136,38 +199,52 @@ export const CategoryCarousel: React.FC = () => {
         <div className="divider" />
       </div>
 
-      <Swiper
-        modules={[Navigation, Autoplay]}
-        navigation
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
-        spaceBetween={20}
-        slidesPerView={1}
-        breakpoints={{
-          640: { slidesPerView: 2 },
-          1024: { slidesPerView: 4 }
-        }}
-      >
-        {CATEGORIES_DATA.map((cat) => (
-          <SwiperSlide key={cat.id}>
-            <CategoryCard
-              $bgImage={cat.image}
-              onClick={() => {
-                const target = document.getElementById('featured');
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              <div className="card-content">
-                <span className="item-count">{cat.itemCount} Items</span>
-                <h3>{cat.name}</h3>
-                <p>{cat.description}</p>
-                <div className="explore-btn">
-                  Shop Category <FiArrowRight className="arrow-icon" />
+      <CarouselWrapper>
+        <button className="custom-swiper-prev" id="cat-prev-btn" aria-label="Previous Category">
+          <FiChevronsLeft />
+        </button>
+
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          navigation={{
+            prevEl: '#cat-prev-btn',
+            nextEl: '#cat-next-btn'
+          }}
+          autoplay={{ delay: 4000, disableOnInteraction: false }}
+          spaceBetween={20}
+          slidesPerView={1}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 4 }
+          }}
+          className="cat-swiper"
+        >
+          {CATEGORIES_DATA.map((cat) => (
+            <SwiperSlide key={cat.id}>
+              <CategoryCard
+                $bgImage={cat.image}
+                onClick={() => {
+                  const target = document.getElementById('featured');
+                  if (target) target.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                <div className="card-content">
+                  <span className="item-count">{cat.itemCount} Items</span>
+                  <h3>{cat.name}</h3>
+                  <p>{cat.description}</p>
+                  <div className="explore-btn">
+                    Shop Category <FiArrowRight className="arrow-icon" />
+                  </div>
                 </div>
-              </div>
-            </CategoryCard>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+              </CategoryCard>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <button className="custom-swiper-next" id="cat-next-btn" aria-label="Next Category">
+          <FiChevronsRight />
+        </button>
+      </CarouselWrapper>
     </CategorySection>
   );
 };

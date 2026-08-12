@@ -4,7 +4,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import { COLLECTIONS_DATA } from '../data/productsData';
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiChevronsLeft, FiChevronsRight } from 'react-icons/fi';
 import styled from 'styled-components';
 
 const SectionWrapper = styled.section`
@@ -42,6 +42,69 @@ const SectionWrapper = styled.section`
       height: 3px;
       background: linear-gradient(90deg, #c9a227 0%, #d4af37 100%);
       margin: 14px auto 0;
+    }
+  }
+`;
+
+const CarouselWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+
+  .custom-swiper-prev,
+  .custom-swiper-next {
+    background: rgba(20, 20, 20, 0.95);
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.45rem;
+    cursor: pointer;
+    z-index: 10;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+
+    &:hover {
+      background: #d4af37;
+      color: #0a0a0a;
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.85);
+      transform: scale(1.12);
+    }
+  }
+
+  .custom-swiper-prev {
+    margin-right: 10px;
+  }
+
+  .custom-swiper-next {
+    margin-left: 10px;
+  }
+
+  .col-swiper {
+    flex-grow: 1;
+    width: calc(100% - 116px);
+  }
+
+  @media (max-width: 640px) {
+    .custom-swiper-prev,
+    .custom-swiper-next {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+    }
+
+    .custom-swiper-prev {
+      margin-right: 10px;
+    }
+
+    .custom-swiper-next {
+      margin-left: 10px;
     }
   }
 `;
@@ -135,37 +198,51 @@ export const CollectionsShowcase: React.FC = () => {
           <div className="divider" />
         </div>
 
-        <Swiper
-          modules={[Navigation, Autoplay]}
-          navigation
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          spaceBetween={24}
-          slidesPerView={1}
-          breakpoints={{
-            768: { slidesPerView: 2 }
-          }}
-        >
-          {COLLECTIONS_DATA.map((col) => (
-            <SwiperSlide key={col.id}>
-              <CollectionCard $bgImage={col.image}>
-                <div className="content">
-                  <span className="tag">{col.tag}</span>
-                  <h3>{col.title}</h3>
-                  <p>{col.subtitle}</p>
-                  <div
-                    className="cta-link"
-                    onClick={() => {
-                      const el = document.getElementById('featured');
-                      if (el) el.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                  >
-                    View Lookbook <FiArrowRight />
+        <CarouselWrapper>
+          <button className="custom-swiper-prev" id="col-prev-btn" aria-label="Previous Collection">
+            <FiChevronsLeft />
+          </button>
+
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            navigation={{
+              prevEl: '#col-prev-btn',
+              nextEl: '#col-next-btn'
+            }}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            spaceBetween={24}
+            slidesPerView={1}
+            breakpoints={{
+              768: { slidesPerView: 2 }
+            }}
+            className="col-swiper"
+          >
+            {COLLECTIONS_DATA.map((col) => (
+              <SwiperSlide key={col.id}>
+                <CollectionCard $bgImage={col.image}>
+                  <div className="content">
+                    <span className="tag">{col.tag}</span>
+                    <h3>{col.title}</h3>
+                    <p>{col.subtitle}</p>
+                    <div
+                      className="cta-link"
+                      onClick={() => {
+                        const el = document.getElementById('featured');
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                    >
+                      View Lookbook <FiArrowRight />
+                    </div>
                   </div>
-                </div>
-              </CollectionCard>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                </CollectionCard>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <button className="custom-swiper-next" id="col-next-btn" aria-label="Next Collection">
+            <FiChevronsRight />
+          </button>
+        </CarouselWrapper>
       </div>
     </SectionWrapper>
   );
