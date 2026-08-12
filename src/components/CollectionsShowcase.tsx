@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import { COLLECTIONS_DATA } from '../data/productsData';
@@ -224,15 +225,9 @@ export const CollectionsShowcase: React.FC = () => {
                     <span className="tag">{col.tag}</span>
                     <h3>{col.title}</h3>
                     <p>{col.subtitle}</p>
-                    <div
-                      className="cta-link"
-                      onClick={() => {
-                        const el = document.getElementById('featured');
-                        if (el) el.scrollIntoView({ behavior: 'smooth' });
-                      }}
-                    >
+                    <Link href={col.link} className="cta-link">
                       View Lookbook <FiArrowRight />
-                    </div>
+                    </Link>
                   </div>
                 </CollectionCard>
               </SwiperSlide>

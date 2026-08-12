@@ -146,7 +146,7 @@ export default function CollectionsPage() {
                 <span className="tag">{col.tag}</span>
                 <h2>{col.title}</h2>
                 <p>{col.subtitle}</p>
-                <Link href="/shop" className="link-btn">
+                <Link href={col.link} className="link-btn">
                   Explore Lookbook <FiArrowRight />
                 </Link>
               </div>

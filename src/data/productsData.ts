@@ -37,6 +37,7 @@ export interface CollectionItem {
   subtitle: string;
   image: string;
   tag: string;
+  link: string;
 }
 
 export interface Review {
@@ -455,28 +456,32 @@ export const COLLECTIONS_DATA: CollectionItem[] = [
     title: 'Summer Collection',
     subtitle: 'Breeze, Silk & Golden Hour Elegance',
     image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80',
-    tag: 'NEW RELEASES'
+    tag: 'NEW RELEASES',
+    link: '/category/evening-dresses'
   },
   {
     id: 'col-wedding',
     title: 'Wedding & Aso-Ebi Collection',
     subtitle: 'Royal Glamour for African Celebrations',
     image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=800&q=80',
-    tag: 'MOST POPULAR'
+    tag: 'MOST POPULAR',
+    link: '/category/native-wear'
   },
   {
     id: 'col-office',
     title: 'Executive Office Collection',
     subtitle: 'Power Suits & Corporate Elegance',
     image: 'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=800&q=80',
-    tag: 'TAILORED'
+    tag: 'TAILORED',
+    link: '/category/english-wear'
   },
   {
     id: 'col-luxury',
     title: 'Red Carpet Luxury Collection',
     subtitle: 'Haute Couture Gala Gowns',
     image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80',
-    tag: 'EXCLUSIVE'
+    tag: 'EXCLUSIVE',
+    link: '/category/evening-dresses'
   }
 ];
 
