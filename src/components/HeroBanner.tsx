@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, EffectFade, Navigation } from 'swiper/modules';
+import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import { useShop } from '../context/ShopContext';
-import { FiScissors, FiShoppingBag, FiStar, FiChevronsLeft, FiChevronsRight } from 'react-icons/fi';
+import { FiScissors, FiShoppingBag, FiStar } from 'react-icons/fi';
 import styled from 'styled-components';
 
 const HeroSection = styled.section`
@@ -19,56 +19,14 @@ const HeroSection = styled.section`
     height: 100%;
   }
 
-  .custom-swiper-prev,
-  .custom-swiper-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(20, 20, 20, 0.85);
-    border: 1px solid #d4af37;
-    color: #d4af37;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.45rem;
-    cursor: pointer;
-    z-index: 20;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(8px);
-
-    &:hover {
-      background: #d4af37;
-      color: #0a0a0a;
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.85);
-      transform: translateY(-50%) scale(1.12);
-    }
+  .swiper-pagination-bullet {
+    background: rgba(212, 175, 55, 0.4);
+    opacity: 1;
   }
-
-  .custom-swiper-prev {
-    left: 10px;
-  }
-
-  .custom-swiper-next {
-    right: 10px;
-  }
-
-  @media (max-width: 640px) {
-    .custom-swiper-prev,
-    .custom-swiper-next {
-      width: 40px;
-      height: 40px;
-      font-size: 1.2rem;
-    }
-    .custom-swiper-prev {
-      left: 6px;
-    }
-    .custom-swiper-next {
-      right: 6px;
-    }
+  .swiper-pagination-bullet-active {
+    background: #d4af37;
+    width: 28px;
+    border-radius: 4px;
   }
 `;
 
@@ -233,17 +191,9 @@ export const HeroBanner: React.FC = () => {
 
   return (
     <HeroSection id="hero">
-      <button className="custom-swiper-prev" id="hero-prev-btn" aria-label="Previous Slide">
-        <FiChevronsLeft />
-      </button>
-
       <Swiper
-        modules={[Autoplay, Pagination, EffectFade, Navigation]}
+        modules={[Autoplay, Pagination, EffectFade]}
         effect="fade"
-        navigation={{
-          prevEl: '#hero-prev-btn',
-          nextEl: '#hero-next-btn'
-        }}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         loop
@@ -271,10 +221,6 @@ export const HeroBanner: React.FC = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-
-      <button className="custom-swiper-next" id="hero-next-btn" aria-label="Next Slide">
-        <FiChevronsRight />
-      </button>
     </HeroSection>
   );
 };
