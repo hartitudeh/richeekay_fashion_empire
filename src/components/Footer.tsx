@@ -220,8 +220,20 @@ export const Footer: React.FC = () => {
     <FooterWrapper id="contact">
       <div className="footer-container">
         <div className="brand-col">
-          <h2>RICHEEKAY</h2>
-          <div className="sub">FASHION EMPIRE</div>
+          <Link href="/" title="RICHEEKAY FASHION EMPIRE">
+            <img
+              src="/logo.png"
+              alt="RICHEEKAY FASHION EMPIRE Official Logo"
+              style={{
+                height: '75px',
+                width: 'auto',
+                marginBottom: '16px',
+                objectFit: 'contain',
+                filter: 'drop-shadow(0 0 10px rgba(212, 175, 55, 0.6))',
+                display: 'block'
+              }}
+            />
+          </Link>
           <p>
             Premium luxury ladies' fashion boutique specializing in bespoke haute couture gowns, native Aso-Ebi wear, Senator materials, 100% virgin wigs, heels & designer handbags.
           </p>
