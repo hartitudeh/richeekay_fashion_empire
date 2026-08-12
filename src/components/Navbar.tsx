@@ -119,58 +119,26 @@ const NavContainer = styled.div<{ $scrolled: boolean }>`
   transition: padding 0.3s ease;
 `;
 
-const LogoText = styled(Link)`
+const LogoLink = styled(Link)`
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 12px;
 
   img.brand-logo-img {
-    height: 48px;
+    height: 58px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.5));
-    transition: transform 0.3s ease;
+    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.75)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.9));
+    transition: all 0.3s ease;
 
     @media (max-width: 600px) {
-      height: 38px;
+      height: 44px;
     }
   }
 
   &:hover img.brand-logo-img {
     transform: scale(1.08);
-  }
-
-  .logo-text-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.45rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      background: linear-gradient(135deg, #f4e798 0%, #d4af37 50%, #c9a227 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-transform: uppercase;
-      margin: 0;
-      line-height: 1;
-
-      @media (max-width: 600px) {
-        font-size: 1.1rem;
-      }
-    }
-
-    span {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.6rem;
-      letter-spacing: 3px;
-      color: #f8f5ef;
-      text-transform: uppercase;
-      margin-top: 2px;
-    }
+    filter: drop-shadow(0 0 18px rgba(244, 231, 152, 0.95)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.95));
   }
 `;
 
@@ -459,13 +427,9 @@ export const Navbar: React.FC = () => {
 
         <NavHeader $scrolled={scrolled}>
           <NavContainer $scrolled={scrolled}>
-            <LogoText href="/">
+            <LogoLink href="/" title="RICHEEKAY FASHION EMPIRE">
               <img src="/logo.png" alt="RICHEEKAY FASHION EMPIRE Official Logo" className="brand-logo-img" />
-              <div className="logo-text-group">
-                <h1>RICHEEKAY</h1>
-                <span>FASHION EMPIRE</span>
-              </div>
-            </LogoText>
+            </LogoLink>
 
             <NavLinks $mobileOpen={mobileMenuOpen}>
               {/* Mobile Quick Action Toolbar inside expanded drawer */}
