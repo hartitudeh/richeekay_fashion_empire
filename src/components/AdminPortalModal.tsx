@@ -316,6 +316,7 @@ export const AdminPortalModal: React.FC = () => {
             </button>
 
             <LoginContainer>
+              <img src="/logo.png" alt="RICHEEKAY Official Logo" style={{ height: '70px', width: 'auto', margin: '0 auto 16px', display: 'block', objectFit: 'contain' }} />
               <div className="lock-badge">
                 <FiLock />
               </div>

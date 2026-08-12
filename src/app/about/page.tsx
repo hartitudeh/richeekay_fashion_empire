@@ -362,6 +362,11 @@ export default function AboutPage() {
   return (
     <>
       <HeroHeader>
+        <img
+          src="/logo.png"
+          alt="RICHEEKAY FASHION EMPIRE Logo"
+          style={{ height: '90px', width: 'auto', margin: '0 auto 20px', display: 'block', objectFit: 'contain', filter: 'drop-shadow(0 4px 15px rgba(212, 175, 55, 0.6))' }}
+        />
         <div className="badge-top">
           <FaCrown /> Established 2016 &bull; A Decade of Elegance
         </div>

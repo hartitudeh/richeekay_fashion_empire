@@ -122,33 +122,55 @@ const NavContainer = styled.div<{ $scrolled: boolean }>`
 const LogoText = styled(Link)`
   text-decoration: none;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 12px;
 
-  h1 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 1.6rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    background: linear-gradient(135deg, #f4e798 0%, #d4af37 50%, #c9a227 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
-    margin: 0;
-    line-height: 1;
+  img.brand-logo-img {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.5));
+    transition: transform 0.3s ease;
 
     @media (max-width: 600px) {
-      font-size: 1.2rem;
+      height: 38px;
     }
   }
 
-  span {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 3.5px;
-    color: #f8f5ef;
-    text-transform: uppercase;
-    margin-top: 2px;
+  &:hover img.brand-logo-img {
+    transform: scale(1.08);
+  }
+
+  .logo-text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #f4e798 0%, #d4af37 50%, #c9a227 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      margin: 0;
+      line-height: 1;
+
+      @media (max-width: 600px) {
+        font-size: 1.1rem;
+      }
+    }
+
+    span {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 3px;
+      color: #f8f5ef;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
   }
 `;
 
@@ -438,8 +460,11 @@ export const Navbar: React.FC = () => {
         <NavHeader $scrolled={scrolled}>
           <NavContainer $scrolled={scrolled}>
             <LogoText href="/">
-              <h1>RICHEEKAY</h1>
-              <span>FASHION EMPIRE</span>
+              <img src="/logo.png" alt="RICHEEKAY FASHION EMPIRE Official Logo" className="brand-logo-img" />
+              <div className="logo-text-group">
+                <h1>RICHEEKAY</h1>
+                <span>FASHION EMPIRE</span>
+              </div>
             </LogoText>
 
             <NavLinks $mobileOpen={mobileMenuOpen}>
