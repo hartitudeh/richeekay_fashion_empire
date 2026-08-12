@@ -16,6 +16,7 @@ import { UserDashboardModal } from '../components/UserDashboardModal';
 import { AdminPortalModal } from '../components/AdminPortalModal';
 import { SearchModal } from '../components/SearchModal';
 import { AiStyleAssistant } from '../components/AiStyleAssistant';
+import { VipDiscountModal } from '../components/VipDiscountModal';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <UserDashboardModal />
               <AdminPortalModal />
               <SearchModal />
+              <VipDiscountModal />
 
               {/* Floating VIP AI Assistant */}
               <AiStyleAssistant />
