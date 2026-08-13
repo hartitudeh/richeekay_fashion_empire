@@ -429,6 +429,31 @@ export const AiStyleAssistant: React.FC = () => {
       };
     }
 
+    // Brand Heritage, Story, Partnership, Investment & Wholesale
+    if (
+      q.includes('brand') ||
+      q.includes('about') ||
+      q.includes('partner') ||
+      q.includes('invest') ||
+      q.includes('wholesale') ||
+      q.includes('b2b') ||
+      q.includes('heritage') ||
+      q.includes('story') ||
+      q.includes('history') ||
+      q.includes('founder') ||
+      q.includes('know more') ||
+      q.includes('company') ||
+      q.includes('who are you')
+    ) {
+      return {
+        id: Date.now().toString(),
+        sender: 'bot',
+        text: `👑 **RICHEEKAY FASHION EMPIRE | Brand Heritage & Global Partnership**\n\nEstablished over a decade ago, RICHEEKAY is a premier luxury fashion house celebrated for redefining African elegance and haute couture across Africa, Europe, and North America.\n\n✨ **Why Partner & Champion RICHEEKAY?**\n• **Master Artisanship**: Hand-crafted Aso-Ebi velvet gowns, Senator suits, and 100% Virgin HD Lace Wigs built by master couturiers.\n• **Global Reach & Rapid Logistics**: Physical boutiques in Victoria Island (Lagos), Maitama (Abuja), and Mayfair (London), paired with 3–5 day DHL Worldwide fulfillment.\n• **B2B & Wholesale Opportunities**: We collaborate with international retail distributors, luxury boutique buyers, event planners, and fashion investors for private label manufacturing and regional franchise expansion.\n\nWe invite you to join our growing global fashion legacy!`,
+        linkRoute: '/about',
+        linkText: 'Read Full Brand Heritage Story'
+      };
+    }
+
     // Bespoke Tailoring & Custom Fitting
     if (q.includes('tailor') || q.includes('sew') || q.includes('custom') || q.includes('fitting') || q.includes('aso-ebi') || q.includes('senator') || q.includes('measurement')) {
       return {
@@ -484,7 +509,7 @@ export const AiStyleAssistant: React.FC = () => {
     return {
       id: Date.now().toString(),
       sender: 'bot',
-      text: `Thank you for asking! RICHEEKAY FASHION EMPIRE is dedicated to providing luxury fashion, custom native tailoring, 100% virgin wigs, and designer footwear.\n\nYou can ask me about sizes, custom tailoring, delivery timelines, store locations, or shop items!`
+      text: `Thank you for chatting with RICHEEKAY FASHION EMPIRE! 👑\n\nI am here to assist with custom tailoring fittings, haute couture gowns, 100% virgin wigs, delivery status, and brand partnership opportunities. What would you like to explore?`
     };
   };
 
@@ -609,27 +634,11 @@ export const AiStyleAssistant: React.FC = () => {
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Quick Suggestion Prompt Chips */}
-        <div className="prompt-chips">
-          <div className="chip" onClick={() => handleSend('How does custom tailoring work?')}>
-            ✂️ Custom Fitting & Tailoring
-          </div>
-          <div className="chip" onClick={() => handleSend('What are your delivery timelines?')}>
-            🚚 Delivery & Shipping Times
-          </div>
-          <div className="chip" onClick={() => handleSend('What items do you sell?')}>
-            👗 Explore Haute Couture
-          </div>
-          <div className="chip" onClick={() => handleSend('Where are your boutique stores?')}>
-            📍 Boutique Store Addresses
-          </div>
-        </div>
-
         {/* Interactive Chat Text Input Bar */}
         <div className="chat-input-row">
           <input
             type="text"
-            placeholder="Ask AI a question about tailoring, wigs, or orders..."
+            placeholder="Ask AI a question about our brand, tailoring, or orders..."
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyDown={handleKeyDown}
