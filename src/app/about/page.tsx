@@ -279,6 +279,95 @@ const TimelineWrapper = styled.div`
   }
 `;
 
+const PillarsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin: 50px 0 90px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pillar-card {
+    background: linear-gradient(135deg, #141414 0%, #0d0d0d 100%);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 8px;
+    padding: 38px 28px;
+    text-align: center;
+    position: relative;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    &:hover {
+      border-color: #d4af37;
+      transform: translateY(-6px);
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
+    }
+
+    .icon-box {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid #d4af37;
+      color: #d4af37;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 22px;
+      transition: all 0.3s ease;
+    }
+
+    &:hover .icon-box {
+      background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+      color: #0a0a0a;
+      transform: scale(1.08);
+    }
+
+    h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+
+      span {
+        color: #d4af37;
+      }
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: #cccccc;
+      line-height: 1.75;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 14px;
+      text-align: left;
+
+      li {
+        font-size: 0.88rem;
+        color: #dddddd;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        svg {
+          color: #d4af37;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+`;
+
 const CraftsmanshipGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -409,6 +498,62 @@ export default function AboutPage() {
             </div>
           </div>
         </StoryGrid>
+
+        {/* STANDALONE VISION, MISSION & VALUES CARDS */}
+        <div className="section-title">
+          <span>FOUNDATIONAL PILLARS</span>
+          <h2>Our Vision, Mission & Values</h2>
+          <div className="divider" />
+        </div>
+
+        <PillarsGrid>
+          {/* OUR VISION CARD */}
+          <div className="pillar-card">
+            <div className="icon-box">
+              <FaCrown />
+            </div>
+            <h3>Our <span>Vision</span></h3>
+            <p>
+              To be the world’s most distinguished African luxury fashion house, globally celebrated for setting the gold standard in bespoke haute couture, African heritage elegance, and uncompromised artisanship across Paris, London, New York, and Lagos.
+            </p>
+          </div>
+
+          {/* OUR MISSION CARD */}
+          <div className="pillar-card">
+            <div className="icon-box">
+              <FiScissors />
+            </div>
+            <h3>Our <span>Mission</span></h3>
+            <p>
+              To empower royalty, executive women, and brides with custom-tailored gala dresses, Cashmere Senator suits, 100% Virgin HD Lace Wigs, and designer leather goods—delivering royal precision fitting with express worldwide logistics.
+            </p>
+          </div>
+
+          {/* OUR CORE VALUES CARD */}
+          <div className="pillar-card">
+            <div className="icon-box">
+              <FaGem />
+            </div>
+            <h3>Our Core <span>Values</span></h3>
+            <ul>
+              <li>
+                <FaCrown /> <strong>Royalty in Every Stitch</strong>
+              </li>
+              <li>
+                <FiCheckCircle /> <strong>Uncompromised Quality & Originality</strong>
+              </li>
+              <li>
+                <FiScissors /> <strong>Bespoke Precision Fitting</strong>
+              </li>
+              <li>
+                <FiShield /> <strong>Client Discretion & VIP Excellence</strong>
+              </li>
+              <li>
+                <FiClock /> <strong>Rapid Express Fulfillment</strong>
+              </li>
+            </ul>
+          </div>
+        </PillarsGrid>
 
         {/* The 10-Year Journey Timeline (2016 - 2026) */}
         <div className="section-title">
