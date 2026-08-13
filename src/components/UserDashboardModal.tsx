@@ -531,7 +531,7 @@ export const UserDashboardModal: React.FC = () => {
             </button>
 
             <div className="auth-header">
-              <img src="/rklogo.png" alt="RICHEEKAY Logo" className="brand-mark" />
+              <img src="/modallogo.png" alt="RICHEEKAY Logo" className="brand-mark" />
               <h2>RICHEEKAY VIP Hub</h2>
               <p>Sign in or create a VIP account to save measurements & earn loyalty rewards.</p>
             </div>
