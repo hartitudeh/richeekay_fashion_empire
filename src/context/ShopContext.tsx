@@ -40,11 +40,25 @@ export interface Order {
   customerPhone: string;
 }
 
-interface ShopContextType {
+export interface UserProfile {
+  name: string;
+  email: string;
+  phone?: string;
+  vipTier: string;
+  points: number;
+}
+
+export interface ShopContextType {
   // Currency
   currency: Currency;
   setCurrency: (c: Currency) => void;
   formatPrice: (priceNGN: number) => string;
+
+  // User Auth State
+  currentUser: UserProfile | null;
+  userLogin: (email: string, pass: string) => boolean;
+  userRegister: (name: string, email: string, pass: string, phone?: string) => boolean;
+  userLogout: () => void;
 
   // Cart
   cart: CartItem[];
@@ -177,6 +191,55 @@ export const ShopProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     notes: 'Prefer structured boning and gold lining.'
   });
 
+  // User Auth State
+  const [currentUser, setCurrentUser] = useState<UserProfile | null>(null);
+
+  const userLogin = (email: string, pass: string): boolean => {
+    try {
+      const savedUser = localStorage.getItem('richeekay_user_profile');
+      if (savedUser) {
+        setCurrentUser(JSON.parse(savedUser));
+        return true;
+      }
+    } catch (e) {}
+
+    const nameFromEmail = email.split('@')[0];
+    const formattedName = nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1);
+    const profile: UserProfile = {
+      name: formattedName,
+      email,
+      vipTier: 'Royal Gold VIP Member',
+      points: 1250
+    };
+    setCurrentUser(profile);
+    try {
+      localStorage.setItem('richeekay_user_profile', JSON.stringify(profile));
+    } catch (e) {}
+    return true;
+  };
+
+  const userRegister = (name: string, email: string, pass: string, phone?: string): boolean => {
+    const profile: UserProfile = {
+      name,
+      email,
+      phone,
+      vipTier: 'Royal Gold VIP Member',
+      points: 1500
+    };
+    setCurrentUser(profile);
+    try {
+      localStorage.setItem('richeekay_user_profile', JSON.stringify(profile));
+    } catch (e) {}
+    return true;
+  };
+
+  const userLogout = () => {
+    setCurrentUser(null);
+    try {
+      localStorage.removeItem('richeekay_user_profile');
+    } catch (e) {}
+  };
+
   // Load initial localstorage persistence
   useEffect(() => {
     try {
@@ -191,6 +254,9 @@ export const ShopProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
       const savedOrders = localStorage.getItem('richeekay_orders');
       if (savedOrders) setOrders(JSON.parse(savedOrders));
+
+      const savedUserProfile = localStorage.getItem('richeekay_user_profile');
+      if (savedUserProfile) setCurrentUser(JSON.parse(savedUserProfile));
 
       const adminSession = localStorage.getItem('richeekay_admin_session');
       if (adminSession === 'true') setIsAdminLoggedIn(true);
@@ -354,6 +420,10 @@ export const ShopProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         currency,
         setCurrency,
         formatPrice,
+        currentUser,
+        userLogin,
+        userRegister,
+        userLogout,
         cart,
         addToCart,
         removeFromCart,
