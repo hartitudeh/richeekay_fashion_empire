@@ -378,7 +378,7 @@ export const AiStyleAssistant: React.FC = () => {
     {
       id: '1',
       sender: 'bot',
-      text: '👑 Welcome to RICHEEKAY FASHION EMPIRE!\nI am your AI Luxury Concierge & Style Assistant. Ask me anything about our collections, bespoke tailoring, shipping, or request to speak directly with a human VIP agent!'
+      text: '👑 Welcome to RICHEEKAY FASHION EMPIRE!\nI am your AI Luxury Style Assistant. Ask me anything about our haute couture gowns, bespoke native tailoring, 100% virgin wigs, or express delivery timelines!'
     }
   ]);
 
@@ -405,19 +405,16 @@ export const AiStyleAssistant: React.FC = () => {
       'real person',
       'agent',
       'talk to someone',
+      'speak to someone',
+      'speak with someone',
       'representative',
       'whatsapp',
       'phone',
       'call',
-      'contact',
-      'speak',
       'manager',
       'owner',
       'customer care',
-      'support',
-      'help',
-      'bridal',
-      'discount',
+      'bridal consultation',
       'complaint'
     ];
 
@@ -455,7 +452,7 @@ export const AiStyleAssistant: React.FC = () => {
     }
 
     // Product Categories & Recommendations
-    if (q.includes('gown') || q.includes('dress') || q.includes('wig') || q.includes('hair') || q.includes('heel') || q.includes('shoe') || q.includes('bag') || q.includes('handbag') || q.includes('collection') || q.includes('item') || q.includes('shop')) {
+    if (q.includes('gown') || q.includes('dress') || q.includes('wig') || q.includes('hair') || q.includes('heel') || q.includes('shoe') || q.includes('bag') || q.includes('handbag') || q.includes('collection') || q.includes('item') || q.includes('shop') || q.includes('sell')) {
       return {
         id: Date.now().toString(),
         sender: 'bot',
@@ -483,12 +480,11 @@ export const AiStyleAssistant: React.FC = () => {
       };
     }
 
-    // Default Fallback Response
+    // Default Smart Fallback Response (No WhatsApp card unless human requested)
     return {
       id: Date.now().toString(),
       sender: 'bot',
-      text: `Thank you for asking! RICHEEKAY FASHION EMPIRE is dedicated to providing luxury fashion, custom native tailoring, and 100% virgin wigs.\n\nIf you need custom advice or specialized help, you can chat directly with a real person on our VIP WhatsApp line!`,
-      showWhatsAppBtn: true
+      text: `Thank you for asking! RICHEEKAY FASHION EMPIRE is dedicated to providing luxury fashion, custom native tailoring, 100% virgin wigs, and designer footwear.\n\nYou can ask me about sizes, custom tailoring, delivery timelines, store locations, or shop items!`
     };
   };
 
@@ -524,7 +520,20 @@ export const AiStyleAssistant: React.FC = () => {
     <>
       <FloatingBtn $open={open} onClick={() => setOpen(!open)} title="RICHEEKAY AI Interactive Concierge">
         <div className="badge-pulse" />
-        {open ? <FiX /> : <HiSparkles />}
+        {open ? (
+          <FiX />
+        ) : (
+          <img
+            src="/logo.png"
+            alt="RICHEEKAY Logo Mark"
+            style={{
+              width: '38px',
+              height: '38px',
+              objectFit: 'contain',
+              filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))'
+            }}
+          />
+        )}
       </FloatingBtn>
 
       <ChatWidgetContainer $open={open}>
@@ -602,14 +611,14 @@ export const AiStyleAssistant: React.FC = () => {
 
         {/* Quick Suggestion Prompt Chips */}
         <div className="prompt-chips">
-          <div className="chip" onClick={() => handleSend('Can I speak to a real person?')}>
-            💬 Speak to a Real Person
-          </div>
           <div className="chip" onClick={() => handleSend('How does custom tailoring work?')}>
             ✂️ Custom Fitting & Tailoring
           </div>
           <div className="chip" onClick={() => handleSend('What are your delivery timelines?')}>
             🚚 Delivery & Shipping Times
+          </div>
+          <div className="chip" onClick={() => handleSend('What items do you sell?')}>
+            👗 Explore Haute Couture
           </div>
           <div className="chip" onClick={() => handleSend('Where are your boutique stores?')}>
             📍 Boutique Store Addresses
@@ -620,7 +629,7 @@ export const AiStyleAssistant: React.FC = () => {
         <div className="chat-input-row">
           <input
             type="text"
-            placeholder="Ask AI a question or request human concierge..."
+            placeholder="Ask AI a question about tailoring, wigs, or orders..."
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
             onKeyDown={handleKeyDown}
