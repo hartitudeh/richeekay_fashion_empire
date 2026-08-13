@@ -29,9 +29,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           content="RICHEEKAY FASHION EMPIRE is a premium international fashion brand specializing in luxury ladies fashion, bespoke native Aso-Ebi wear, Senator materials, heels, handbags, and 100% virgin wigs."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/botlogo.png" type="image/png" sizes="any" />
-        <link rel="shortcut icon" href="/botlogo.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/botlogo.png" />
+        <link rel="icon" href="/botlogo.png?v=3" type="image/png" sizes="any" />
+        <link rel="shortcut icon" href="/botlogo.png?v=3" type="image/png" />
+        <link rel="apple-touch-icon" href="/botlogo.png?v=3" />
       </head>
       <body suppressHydrationWarning>
         <StyledComponentsRegistry>
