@@ -117,11 +117,12 @@ const ModalCard = styled.div`
     }
 
     .brand-logo {
-      height: 60px;
+      height: 95px;
       width: auto;
+      max-width: 260px;
       object-fit: contain;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+      margin-bottom: 16px;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.18));
     }
 
     h3 {
