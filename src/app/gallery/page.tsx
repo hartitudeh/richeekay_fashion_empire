@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Dialog, DialogContent } from '@mui/material';
 import { FiEye, FiHeart, FiX, FiCamera, FiCheckCircle, FiShare2 } from 'react-icons/fi';
 import { FaInstagram } from 'react-icons/fa6';
@@ -340,11 +340,85 @@ export default function GalleryPage() {
   const [activeTab, setActiveTab] = useState<string>('all');
   const [activeItem, setActiveItem] = useState<GalleryItem | null>(null);
   const [uploadSubmitted, setUploadSubmitted] = useState(false);
+  const [galleryItems, setGalleryItems] = useState<GalleryItem[]>(MASONRY_GALLERY_ITEMS);
 
-  const filteredItems = MASONRY_GALLERY_ITEMS.filter((item) => activeTab === 'all' || item.category === activeTab);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  // Load persistent user uploads on mount
+  useEffect(() => {
+    try {
+      const savedUploads = localStorage.getItem('richeekay_uploaded_gallery');
+      if (savedUploads) {
+        const parsed: GalleryItem[] = JSON.parse(savedUploads);
+        if (parsed && parsed.length > 0) {
+          setGalleryItems([...parsed, ...MASONRY_GALLERY_ITEMS]);
+        }
+      }
+    } catch (e) {
+      console.error('Failed to load user gallery uploads', e);
+    }
+  }, []);
+
+  const handleTriggerUpload = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const imageUrl = event.target?.result as string;
+      if (!imageUrl) return;
+
+      const rawFileName = file.name.replace(/\.[^/.]+$/, '');
+      const formattedTitle = rawFileName
+        .split(/[-_]/)
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+
+      const newItem: GalleryItem = {
+        id: `user-upload-${Date.now()}`,
+        title: formattedTitle || 'VIP Client Outfit Feature',
+        category: 'gala-gowns',
+        image: imageUrl,
+        photographer: 'Featured VIP Client Upload',
+        description: 'Submitted outfit photo wearing RICHEEKAY Haute Couture. Featured in VIP Masonry Gallery.'
+      };
+
+      setGalleryItems((prev) => {
+        const updated = [newItem, ...prev];
+        try {
+          const userUploadsOnly = updated.filter((item) => item.id.startsWith('user-upload-'));
+          localStorage.setItem('richeekay_uploaded_gallery', JSON.stringify(userUploadsOnly));
+        } catch (err) {}
+        return updated;
+      });
+
+      setActiveTab('all');
+      setUploadSubmitted(true);
+
+      // Scroll smoothly to top of gallery grid
+      window.scrollTo({ top: 380, behavior: 'smooth' });
+    };
+
+    reader.readAsDataURL(file);
+  };
+
+  const filteredItems = galleryItems.filter((item) => activeTab === 'all' || item.category === activeTab);
 
   return (
     <>
+      {/* Hidden File Explorer Input */}
+      <input
+        type="file"
+        ref={fileInputRef}
+        accept="image/*"
+        onChange={handleFileUpload}
+        style={{ display: 'none' }}
+      />
+
       <Header>
         <div className="badge">
           <FaInstagram /> #RicheekayStyle &bull; Masonry Gallery
@@ -358,7 +432,7 @@ export default function GalleryPage() {
       <Container>
         <div className="filter-tabs">
           <div className={`tab ${activeTab === 'all' ? 'active' : ''}`} onClick={() => setActiveTab('all')}>
-            All Showcase Photos
+            All Showcase Photos ({galleryItems.length})
           </div>
           <div className={`tab ${activeTab === 'gala-gowns' ? 'active' : ''}`} onClick={() => setActiveTab('gala-gowns')}>
             Gala Evening Gowns
@@ -397,14 +471,14 @@ export default function GalleryPage() {
         {/* Submit Your Outfit Section */}
         <SubmitBox>
           <h3>Are You Wearing RICHEEKAY?</h3>
-          <p>Tag <strong>#RicheekayStyle</strong> on Instagram or submit your photos to be featured in our official VIP gallery.</p>
-          <button className="upload-btn" onClick={() => setUploadSubmitted(true)}>
-            <FiCamera /> Submit Your Outfit Photo
+          <p>Click below to open your file manager, select your outfit photo, and automatically feature your look in our VIP Gallery.</p>
+          <button className="upload-btn" onClick={handleTriggerUpload}>
+            <FiCamera /> Submit Your Outfit Photo (File Explorer)
           </button>
 
           {uploadSubmitted && (
-            <p style={{ color: '#D4AF37', marginTop: '14px', fontSize: '0.9rem' }}>
-              <FiCheckCircle style={{ marginRight: '6px' }} /> Photo received! Our fashion editors will review and feature your look in the gallery.
+            <p style={{ color: '#D4AF37', marginTop: '14px', fontSize: '0.95rem', fontWeight: 'bold' }}>
+              <FiCheckCircle style={{ marginRight: '6px' }} /> Photo loaded successfully! Your look is now featured at the top of the VIP Gallery.
             </p>
           )}
         </SubmitBox>
