@@ -530,7 +530,7 @@ export const AiStyleAssistant: React.FC = () => {
               width: '38px',
               height: '38px',
               objectFit: 'contain',
-              filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))'
+              filter: 'brightness(0) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3))'
             }}
           />
         )}
