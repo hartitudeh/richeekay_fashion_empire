@@ -344,66 +344,50 @@ export default function GalleryPage() {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  // Load persistent user uploads on mount
+  // Load persistent user uploads from server API on mount
   useEffect(() => {
-    try {
-      const savedUploads = localStorage.getItem('richeekay_uploaded_gallery');
-      if (savedUploads) {
-        const parsed: GalleryItem[] = JSON.parse(savedUploads);
-        if (parsed && parsed.length > 0) {
-          setGalleryItems([...parsed, ...MASONRY_GALLERY_ITEMS]);
+    fetch('/api/upload')
+      .then((res) => res.json())
+      .then((serverItems) => {
+        if (Array.isArray(serverItems) && serverItems.length > 0) {
+          setGalleryItems([...serverItems, ...MASONRY_GALLERY_ITEMS]);
         }
-      }
-    } catch (e) {
-      console.error('Failed to load user gallery uploads', e);
-    }
+      })
+      .catch((e) => {
+        console.error('Failed to fetch uploaded gallery items from API', e);
+      });
   }, []);
 
   const handleTriggerUpload = () => {
     fileInputRef.current?.click();
   };
 
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const imageUrl = event.target?.result as string;
-      if (!imageUrl) return;
+    try {
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('title', file.name.replace(/\.[^/.]+$/, ''));
 
-      const rawFileName = file.name.replace(/\.[^/.]+$/, '');
-      const formattedTitle = rawFileName
-        .split(/[-_]/)
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
-
-      const newItem: GalleryItem = {
-        id: `user-upload-${Date.now()}`,
-        title: formattedTitle || 'VIP Client Outfit Feature',
-        category: 'gala-gowns',
-        image: imageUrl,
-        photographer: 'Featured VIP Client Upload',
-        description: 'Submitted outfit photo wearing RICHEEKAY Haute Couture. Featured in VIP Masonry Gallery.'
-      };
-
-      setGalleryItems((prev) => {
-        const updated = [newItem, ...prev];
-        try {
-          const userUploadsOnly = updated.filter((item) => item.id.startsWith('user-upload-'));
-          localStorage.setItem('richeekay_uploaded_gallery', JSON.stringify(userUploadsOnly));
-        } catch (err) {}
-        return updated;
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData
       });
 
-      setActiveTab('all');
-      setUploadSubmitted(true);
+      const result = await res.json();
+      if (result.success && result.item) {
+        setGalleryItems((prev) => [result.item, ...prev]);
+        setActiveTab('all');
+        setUploadSubmitted(true);
 
-      // Scroll smoothly to top of gallery grid
-      window.scrollTo({ top: 380, behavior: 'smooth' });
-    };
-
-    reader.readAsDataURL(file);
+        // Scroll smoothly to top of gallery grid
+        window.scrollTo({ top: 380, behavior: 'smooth' });
+      }
+    } catch (err) {
+      console.error('Failed to upload file to server:', err);
+    }
   };
 
   const filteredItems = galleryItems.filter((item) => activeTab === 'all' || item.category === activeTab);
