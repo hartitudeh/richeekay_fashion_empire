@@ -524,7 +524,7 @@ export const AiStyleAssistant: React.FC = () => {
           <FiX />
         ) : (
           <img
-            src="/logo.png"
+            src="/rklogo.png"
             alt="RICHEEKAY Logo Mark"
             style={{
               width: '38px',
@@ -540,7 +540,7 @@ export const AiStyleAssistant: React.FC = () => {
         <div className="chat-header">
           <div className="bot-title">
             <div className="avatar" style={{ padding: '3px', background: '#0a0a0a' }}>
-              <img src="/logo.png" alt="RICHEEKAY AI Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              <img src="/rklogo.png" alt="RICHEEKAY AI Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
             <div>
               <h4>RICHEEKAY AI Concierge</h4>

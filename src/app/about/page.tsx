@@ -363,7 +363,7 @@ export default function AboutPage() {
     <>
       <HeroHeader>
         <img
-          src="/logo.png"
+          src="/rklogo.png"
           alt="RICHEEKAY FASHION EMPIRE Logo"
           style={{ height: '90px', width: 'auto', margin: '0 auto 20px', display: 'block', objectFit: 'contain', filter: 'drop-shadow(0 4px 15px rgba(212, 175, 55, 0.6))' }}
         />

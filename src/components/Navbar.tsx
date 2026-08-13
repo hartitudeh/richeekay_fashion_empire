@@ -428,7 +428,7 @@ export const Navbar: React.FC = () => {
         <NavHeader $scrolled={scrolled}>
           <NavContainer $scrolled={scrolled}>
             <LogoLink href="/" title="RICHEEKAY FASHION EMPIRE">
-              <img src="/logo.png" alt="RICHEEKAY FASHION EMPIRE Official Logo" className="brand-logo-img" />
+              <img src="/rklogo.png" alt="RICHEEKAY FASHION EMPIRE Official Logo" className="brand-logo-img" />
             </LogoLink>
 
             <NavLinks $mobileOpen={mobileMenuOpen}>

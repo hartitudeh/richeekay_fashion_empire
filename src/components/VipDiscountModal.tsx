@@ -329,7 +329,7 @@ export const VipDiscountModal: React.FC = () => {
         <div className="img-col" />
 
         <div className="content-col">
-          <img src="/logo.png" alt="RICHEEKAY FASHION EMPIRE Logo" className="brand-logo" />
+          <img src="/rklogo.png" alt="RICHEEKAY FASHION EMPIRE Logo" className="brand-logo" />
 
           {!isSubmitted ? (
             <>

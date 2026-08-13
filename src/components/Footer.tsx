@@ -222,7 +222,7 @@ export const Footer: React.FC = () => {
         <div className="brand-col">
           <Link href="/" title="RICHEEKAY FASHION EMPIRE">
             <img
-              src="/logo.png"
+              src="/rklogo.png"
               alt="RICHEEKAY FASHION EMPIRE Official Logo"
               style={{
                 height: '75px',
