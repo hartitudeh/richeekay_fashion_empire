@@ -277,6 +277,7 @@ export const Footer: React.FC = () => {
         <div className="link-col">
           <h4>Customer Care</h4>
           <ul>
+            <li><Link href="/#faq">Frequently Asked Questions (FAQ)</Link></li>
             <li><Link href="/order-tracking">Track Order Status</Link></li>
             <li><Link href="/dashboard">VIP Account Hub</Link></li>
             <li><Link href="/cart">Shopping Bag</Link></li>

@@ -7,6 +7,7 @@ import { FeaturedProducts } from '../components/FeaturedProducts';
 import { CollectionsShowcase } from '../components/CollectionsShowcase';
 import { CustomTailoringStudio } from '../components/CustomTailoringStudio';
 import { HomeSections } from '../components/HomeSections';
+import { FaqSection } from '../components/FaqSection';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <CollectionsShowcase />
       <CustomTailoringStudio />
       <HomeSections />
+      <FaqSection />
     </>
   );
 }
