@@ -524,13 +524,13 @@ export const AiStyleAssistant: React.FC = () => {
           <FiX />
         ) : (
           <img
-            src="/rklogo.png"
-            alt="RICHEEKAY Logo Mark"
+            src="/botlogo.png"
+            alt="RICHEEKAY AI Bot Logo"
             style={{
-              width: '38px',
-              height: '38px',
+              width: '42px',
+              height: '42px',
               objectFit: 'contain',
-              filter: 'brightness(0) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3))'
+              filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3))'
             }}
           />
         )}
@@ -540,7 +540,7 @@ export const AiStyleAssistant: React.FC = () => {
         <div className="chat-header">
           <div className="bot-title">
             <div className="avatar" style={{ padding: '3px', background: '#0a0a0a' }}>
-              <img src="/rklogo.png" alt="RICHEEKAY AI Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+              <img src="/botlogo.png" alt="RICHEEKAY AI Logo" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
             </div>
             <div>
               <h4>RICHEEKAY AI Concierge</h4>
