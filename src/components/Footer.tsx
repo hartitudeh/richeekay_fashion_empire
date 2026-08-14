@@ -7,10 +7,11 @@ import { FiMail, FiMapPin, FiPhone, FiCheckCircle } from 'react-icons/fi';
 import styled from 'styled-components';
 
 const FooterWrapper = styled.footer`
-  background: #0a0a0a;
-  color: #ffffff;
-  border-top: 1px solid rgba(212, 175, 55, 0.4);
+  background: var(--bg-secondary, #0a0a0a);
+  color: var(--text-primary, #ffffff);
+  border-top: 1px solid var(--border-color, rgba(212, 175, 55, 0.4));
   padding: 80px 24px 30px;
+  transition: background-color 0.35s ease, color 0.35s ease;
 
   .footer-container {
     max-width: 1350px;
@@ -42,14 +43,14 @@ const FooterWrapper = styled.footer`
     .sub {
       font-size: 0.65rem;
       letter-spacing: 3px;
-      color: #f8f5ef;
+      color: var(--text-secondary, #f8f5ef);
       text-transform: uppercase;
       margin-bottom: 18px;
     }
 
     p {
       font-size: 0.9rem;
-      color: #bbbbbb;
+      color: var(--text-secondary, #bbbbbb);
       line-height: 1.6;
       max-width: 380px;
       margin-bottom: 24px;
@@ -63,8 +64,8 @@ const FooterWrapper = styled.footer`
         width: 38px;
         height: 38px;
         border-radius: 50%;
-        background: #1f1f1f;
-        border: 1px solid rgba(212, 175, 55, 0.3);
+        background: var(--bg-card-hover, #1f1f1f);
+        border: 1px solid var(--border-color, rgba(212, 175, 55, 0.3));
         color: #d4af37;
         display: flex;
         align-items: center;
@@ -85,7 +86,7 @@ const FooterWrapper = styled.footer`
     h4 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.2rem;
-      color: #ffffff;
+      color: var(--text-primary, #ffffff);
       margin-bottom: 20px;
       position: relative;
       padding-bottom: 8px;
@@ -108,7 +109,7 @@ const FooterWrapper = styled.footer`
       gap: 12px;
 
       a {
-        color: #aaaaaa;
+        color: var(--text-secondary, #aaaaaa);
         text-decoration: none;
         font-size: 0.85rem;
         transition: color 0.3s ease;
@@ -125,13 +126,13 @@ const FooterWrapper = styled.footer`
     h4 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.2rem;
-      color: #ffffff;
+      color: var(--text-primary, #ffffff);
       margin-bottom: 12px;
     }
 
     p {
       font-size: 0.85rem;
-      color: #aaaaaa;
+      color: var(--text-secondary, #aaaaaa);
       margin-bottom: 16px;
       line-height: 1.5;
     }

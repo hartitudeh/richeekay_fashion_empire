@@ -291,14 +291,14 @@ const PillarsGrid = styled.div`
   }
 
   .pillar-card {
-    background: linear-gradient(135deg, #141414 0%, #0d0d0d 100%);
-    border: 1px solid rgba(212, 175, 55, 0.4);
+    background: var(--bg-card, #141414);
+    border: 1px solid var(--border-color, rgba(212, 175, 55, 0.4));
     border-radius: 8px;
     padding: 38px 28px;
     text-align: center;
     position: relative;
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px var(--shadow-color, rgba(0, 0, 0, 0.5));
 
     &:hover {
       border-color: #d4af37;
@@ -310,7 +310,7 @@ const PillarsGrid = styled.div`
       width: 70px;
       height: 70px;
       border-radius: 50%;
-      background: rgba(212, 175, 55, 0.12);
+      background: var(--gold-bg, rgba(212, 175, 55, 0.12));
       border: 1px solid #d4af37;
       color: #d4af37;
       display: flex;
@@ -330,7 +330,7 @@ const PillarsGrid = styled.div`
     h3 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.6rem;
-      color: #ffffff;
+      color: var(--text-primary, #ffffff);
       margin-bottom: 14px;
       letter-spacing: 0.5px;
 
@@ -341,7 +341,7 @@ const PillarsGrid = styled.div`
 
     p {
       font-size: 0.95rem;
-      color: #cccccc;
+      color: var(--text-secondary, #cccccc);
       line-height: 1.75;
     }
 
@@ -353,7 +353,7 @@ const PillarsGrid = styled.div`
 
       li {
         font-size: 0.88rem;
-        color: #dddddd;
+        color: var(--text-secondary, #dddddd);
         margin-bottom: 10px;
         display: flex;
         align-items: center;
@@ -381,8 +381,8 @@ const CraftsmanshipGrid = styled.div`
   }
 
   .craft-card {
-    background: #141414;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: var(--bg-card, #141414);
+    border: 1px solid var(--border-color, rgba(212, 175, 55, 0.3));
     padding: 32px 24px;
     text-align: center;
     transition: all 0.3s ease;
@@ -402,13 +402,13 @@ const CraftsmanshipGrid = styled.div`
     h4 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.3rem;
-      color: #ffffff;
+      color: var(--text-primary, #ffffff);
       margin-bottom: 8px;
     }
 
     p {
       font-size: 0.85rem;
-      color: #aaaaaa;
+      color: var(--text-secondary, #aaaaaa);
       line-height: 1.5;
     }
   }

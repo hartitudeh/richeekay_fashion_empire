@@ -48,7 +48,14 @@ export interface UserProfile {
   points: number;
 }
 
+export type ThemeMode = 'dark' | 'light';
+
 export interface ShopContextType {
+  // Theme Mode
+  themeMode: ThemeMode;
+  toggleThemeMode: () => void;
+  setThemeMode: (mode: ThemeMode) => void;
+
   // Currency
   currency: Currency;
   setCurrency: (c: Currency) => void;
@@ -134,10 +141,41 @@ const DELIVERY_RATES: Record<string, number> = {
 };
 
 export const ShopProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [themeMode, setThemeModeState] = useState<ThemeMode>('dark');
   const [currency, setCurrency] = useState<Currency>('NGN');
   const [cart, setCart] = useState<CartItem[]>([]);
   const [wishlist, setWishlist] = useState<string[]>([]);
   const [appliedCoupon, setAppliedCoupon] = useState<string>('');
+
+  // Load persistent theme preference on mount
+  useEffect(() => {
+    try {
+      const savedTheme = localStorage.getItem('richeekay_theme_mode') as ThemeMode;
+      if (savedTheme === 'light' || savedTheme === 'dark') {
+        setThemeModeState(savedTheme);
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    } catch (e) {
+      console.error('Failed to read saved theme', e);
+    }
+  }, []);
+
+  const setThemeMode = (mode: ThemeMode) => {
+    setThemeModeState(mode);
+    try {
+      localStorage.setItem('richeekay_theme_mode', mode);
+      document.documentElement.setAttribute('data-theme', mode);
+    } catch (e) {
+      console.error('Failed to save theme', e);
+    }
+  };
+
+  const toggleThemeMode = () => {
+    const nextMode = themeMode === 'dark' ? 'light' : 'dark';
+    setThemeMode(nextMode);
+  };
   const [deliveryState, setDeliveryState] = useState<string>('Lagos (Express 24h)');
   const [products, setProducts] = useState<Product[]>(PRODUCTS_DATA);
   const [orders, setOrders] = useState<Order[]>([]);
@@ -417,6 +455,9 @@ export const ShopProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   return (
     <ShopContext.Provider
       value={{
+        themeMode,
+        toggleThemeMode,
+        setThemeMode,
         currency,
         setCurrency,
         formatPrice,
