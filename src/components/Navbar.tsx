@@ -7,10 +7,8 @@ import {
   FiSearch,
   FiHeart,
   FiShoppingBag,
-  FiUser,
   FiMenu,
   FiX,
-  FiScissors,
   FiTruck,
   FiClock,
   FiShield
@@ -458,9 +456,6 @@ export const Navbar: React.FC = () => {
               <Link href="/" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Home</Link>
               <Link href="/shop" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Shop</Link>
               <Link href="/collections" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Collections</Link>
-              <Link href="/tailoring" className="nav-item" onClick={() => setMobileMenuOpen(false)} style={{ color: '#D4AF37' }}>
-                <FiScissors style={{ marginRight: '4px' }} /> Custom Fitting
-              </Link>
               <Link href="/gallery" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Gallery</Link>
               <Link href="/about" className="nav-item" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
               <Link href="/blog" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Editorial</Link>
