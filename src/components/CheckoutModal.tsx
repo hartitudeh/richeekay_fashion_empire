@@ -272,8 +272,8 @@ export const CheckoutModal: React.FC = () => {
               <h4 style={{ color: '#D4AF37', marginBottom: '14px' }}>Select Delivery Courier</h4>
               <div className="payment-card selected">
                 <div>
-                  <strong>Express 24h Courier Delivery</strong>
-                  <p style={{ fontSize: '0.8rem', color: '#aaa' }}>Lagos & Abuja Doorstep Delivery in Premium Gold Gift Box</p>
+                  <strong>Express Courier Delivery</strong>
+                  <p style={{ fontSize: '0.8rem', color: '#aaa' }}>Lagos, Oyo & Osogbo (Osun State) Doorstep Delivery in Premium Gold Gift Box</p>
                 </div>
                 <span style={{ color: '#D4AF37', fontWeight: 'bold' }}>Included</span>
               </div>

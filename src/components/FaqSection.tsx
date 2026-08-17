@@ -25,7 +25,7 @@ const FAQ_DATA: FaqItem[] = [
     category: 'shipping',
     categoryLabel: 'Orders & Delivery',
     question: 'How fast is your delivery within Nigeria and internationally?',
-    answer: 'Deliveries within Lagos are completed in 24–48 hours. Nationwide delivery across Nigeria takes 2–3 business days. International orders to the USA, UK, Canada, Europe, and UAE are shipped via DHL Express and arrive in 3–5 business days, fully tracked with signature delivery.'
+    answer: 'Deliveries within Lagos, Oyo, and Osogbo (Osun State) are completed in 24–48 hours. International orders to the USA, UK, Canada, and Europe are shipped via DHL Express and arrive in 3–5 business days, fully tracked with signature delivery.'
   },
   {
     id: 'faq-3',

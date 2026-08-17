@@ -391,11 +391,10 @@ export const CartDrawer: React.FC = () => {
                   marginTop: '4px'
                 }}
               >
-                <option value="Lagos (Express 24h)">Lagos (Express 24h) - ₦3,500</option>
-                <option value="Abuja (Standard 48h)">Abuja (Standard 48h) - ₦5,000</option>
-                <option value="Port Harcourt">Port Harcourt - ₦5,500</option>
-                <option value="Other Nigerian States">Other Nigerian States - ₦6,500</option>
-                <option value="International (UK/US/EU)">International DHL (UK/US/EU) - ₦25,000</option>
+                <option value="Lagos State (Express 24h)">Lagos State (Express 24h) - ₦3,500</option>
+                <option value="Oyo State (Ibadan & Environs 48h)">Oyo State (Ibadan & Environs 48h) - ₦4,500</option>
+                <option value="Osogbo, Osun State (48h)">Osogbo, Osun State (48h) - ₦4,500</option>
+                <option value="International DHL (UK/US/EU)">International DHL (UK/US/EU) - ₦25,000</option>
               </select>
             </div>
 

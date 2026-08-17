@@ -142,14 +142,14 @@ export default function ContactPage() {
         <h1>
           CONTACT & <span>BOUTIQUE LOCATIONS</span>
         </h1>
-        <p>Visit our flagship boutiques in Lagos, Abuja & London, or get in touch with our VIP customer concierge.</p>
+        <p>Visit our luxury boutiques in Lagos, Oyo State, and Osogbo (Osun State), or get in touch with our VIP customer concierge.</p>
       </Header>
 
       <Container>
         <div className="grid-2">
           <div>
             <div className="boutique-card">
-              <h4>Lagos Flagship Boutique & Atelier</h4>
+              <h4>Lagos Flagship Atelier & Boutique</h4>
               <p>
                 <FiMapPin style={{ color: '#D4AF37' }} /> Plot 14 Victoria Island, Lagos, Nigeria<br />
                 <FiPhone style={{ color: '#D4AF37' }} /> +234 800 742 4335 / +234 812 345 6789<br />
@@ -158,18 +158,18 @@ export default function ContactPage() {
             </div>
 
             <div className="boutique-card">
-              <h4>Abuja Executive Suite</h4>
+              <h4>Oyo State Showroom & Fitting Hub</h4>
               <p>
-                <FiMapPin style={{ color: '#D4AF37' }} /> Suite 40, Transcorp Hilton Arcade, Maitama, Abuja<br />
-                <FiPhone style={{ color: '#D4AF37' }} /> +234 901 234 5678
+                <FiMapPin style={{ color: '#D4AF37' }} /> Executive Bodija District, Ibadan, Oyo State<br />
+                <FiPhone style={{ color: '#D4AF37' }} /> +234 802 345 6789
               </p>
             </div>
 
             <div className="boutique-card">
-              <h4>London Showroom</h4>
+              <h4>Osun State Atelier (Osogbo)</h4>
               <p>
-                <FiMapPin style={{ color: '#D4AF37' }} /> 24 Kensington High Street, London W8 4PT, UK<br />
-                <FiPhone style={{ color: '#D4AF37' }} /> +44 20 7946 0912
+                <FiMapPin style={{ color: '#D4AF37' }} /> Luxury Fashion Arcade, Osogbo, Osun State<br />
+                <FiPhone style={{ color: '#D4AF37' }} /> +234 803 456 7890
               </p>
             </div>
 

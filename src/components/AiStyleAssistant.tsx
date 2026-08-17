@@ -459,18 +459,18 @@ export const AiStyleAssistant: React.FC = () => {
       return {
         id: Date.now().toString(),
         sender: 'bot',
-        text: `✂️ **RICHEEKAY Bespoke Native Tailoring**:\nWe create custom-fitted Aso-Ebi velvet gowns, Senator wear, and structured corsets with a 48-72h turnaround!\n\nYou can submit your custom measurements directly online or visit our Ateliers in Victoria Island, Lagos & Maitama, Abuja.`,
+        text: `✂️ **RICHEEKAY Bespoke Native Tailoring**:\nWe create custom-fitted Aso-Ebi velvet gowns, Senator wear, and structured corsets with a 48-72h turnaround!\n\nYou can submit your custom measurements directly online or visit our Ateliers in Lagos, Oyo State, and Osogbo (Osun State).`,
         linkRoute: '/tailoring',
         linkText: 'Open Custom Tailoring Studio'
       };
     }
 
     // Shipping, Order Tracking & Delivery
-    if (q.includes('delivery') || q.includes('ship') || q.includes('track') || q.includes('order') || q.includes('lagos') || q.includes('abuja') || q.includes('dhl') || q.includes('how long')) {
+    if (q.includes('delivery') || q.includes('ship') || q.includes('track') || q.includes('order') || q.includes('lagos') || q.includes('oyo') || q.includes('osogbo') || q.includes('osun') || q.includes('dhl') || q.includes('how long')) {
       return {
         id: Date.now().toString(),
         sender: 'bot',
-        text: `🚚 **Express Shipping & Delivery**:\n• Lagos & Abuja: Express 24-48h Delivery\n• Nationwide Nigeria: 2-3 Days\n• DHL International (USA, UK, Canada): 3-5 Days\n\nYou can track your active orders anytime using your Order ID!`,
+        text: `🚚 **Express Shipping & Delivery**:\n• Lagos, Oyo State & Osogbo (Osun State): Express 24-48h Delivery\n• DHL International (USA, UK, Canada, Europe): 3-5 Days\n\nYou can track your active orders anytime using your Order ID!`,
         linkRoute: '/order-tracking',
         linkText: 'Track Your Active Order'
       };
@@ -501,7 +501,7 @@ export const AiStyleAssistant: React.FC = () => {
       return {
         id: Date.now().toString(),
         sender: 'bot',
-        text: `📍 **Visit Our Physical Boutiques**:\n• 🇳🇬 **Lagos Atelier**: Plot 14 Ahmadu Bello Way, Victoria Island\n• 🇳🇬 **Abuja Boutique**: 82 Maitama Luxury District\n• 🇬🇧 **London Showroom**: 12 Mayfair High Street (By Appointment)`
+        text: `📍 **Visit Our Luxury Boutiques**:\n• 🇳🇬 **Lagos Flagship**: Plot 14 Victoria Island, Lagos\n• 🇳🇬 **Oyo State Hub**: Executive Bodija District, Ibadan, Oyo State\n• 🇳🇬 **Osun State Atelier**: Luxury Fashion Arcade, Osogbo, Osun State`
       };
     }
 

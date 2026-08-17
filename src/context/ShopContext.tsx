@@ -126,11 +126,10 @@ export interface ShopContextType {
 const ShopContext = createContext<ShopContextType | undefined>(undefined);
 
 const DELIVERY_RATES: Record<string, number> = {
-  'Lagos (Express 24h)': 3500,
-  'Abuja (Standard 48h)': 5000,
-  'Port Harcourt': 5500,
-  'Other Nigerian States': 6500,
-  'International (UK/US/EU)': 25000
+  'Lagos State (Express 24h)': 3500,
+  'Oyo State (Ibadan & Environs 48h)': 4500,
+  'Osogbo, Osun State (48h)': 4500,
+  'International DHL (UK/US/EU)': 25000
 };
 
 export const ShopProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
@@ -138,7 +137,7 @@ export const ShopProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [cart, setCart] = useState<CartItem[]>([]);
   const [wishlist, setWishlist] = useState<string[]>([]);
   const [appliedCoupon, setAppliedCoupon] = useState<string>('');
-  const [deliveryState, setDeliveryState] = useState<string>('Lagos (Express 24h)');
+  const [deliveryState, setDeliveryState] = useState<string>('Lagos State (Express 24h)');
   const [products, setProducts] = useState<Product[]>(PRODUCTS_DATA);
   const [orders, setOrders] = useState<Order[]>([]);
 
