@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { BLOG_POSTS_DATA, REVIEWS_DATA, BlogPost } from '../data/productsData';
 import { Dialog, DialogContent } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -421,8 +422,12 @@ const BlogSection = styled.section`
 
   .blog-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
@@ -634,7 +639,7 @@ export const HomeSections: React.FC = () => {
           </div>
 
           <div className="blog-grid">
-            {BLOG_POSTS_DATA.map((post) => (
+            {BLOG_POSTS_DATA.slice(0, 6).map((post) => (
               <div key={post.id} className="blog-card" onClick={() => setActiveArticle(post)}>
                 <img src={post.image} alt={post.title} />
                 <div className="content">
@@ -650,30 +655,81 @@ export const HomeSections: React.FC = () => {
               </div>
             ))}
           </div>
+
+          <div style={{ textAlign: 'center', marginTop: '40px' }}>
+            <Link
+              href="/blog"
+              style={{
+                background: 'linear-gradient(135deg, #D4AF37 0%, #C9A227 100%)',
+                color: '#0A0A0A',
+                fontWeight: 'bold',
+                padding: '14px 28px',
+                textDecoration: 'none',
+                textTransform: 'uppercase',
+                letterSpacing: '1.5px',
+                fontSize: '0.85rem',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px'
+              }}
+            >
+              Explore All Journal Articles <FiArrowRight />
+            </Link>
+          </div>
         </div>
       </BlogSection>
 
       {/* Blog Article Reader Modal */}
       <Dialog open={Boolean(activeArticle)} onClose={() => setActiveArticle(null)} maxWidth="md" fullWidth>
-        <DialogContent style={{ background: '#141414', padding: '32px', color: '#FFF' }}>
+        <DialogContent style={{ background: '#141414', padding: '36px', color: '#FFF' }}>
           {activeArticle && (
             <div>
               <button
                 onClick={() => setActiveArticle(null)}
-                style={{ background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.5rem', cursor: 'pointer', float: 'right' }}
+                style={{ background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.6rem', cursor: 'pointer', float: 'right' }}
               >
                 <FiX />
               </button>
-              <span style={{ color: '#D4AF37', fontSize: '0.8rem', textTransform: 'uppercase' }}>{activeArticle.category}</span>
-              <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2rem', margin: '10px 0 20px', color: '#FFF' }}>
+              <div style={{ color: '#D4AF37', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '8px' }}>
+                {activeArticle.category} &bull; {activeArticle.date} &bull; {activeArticle.readTime}
+              </div>
+              <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.2rem', margin: '8px 0 20px', color: '#FFF', lineHeight: '1.3' }}>
                 {activeArticle.title}
               </h2>
-              <img src={activeArticle.image} alt="blog" style={{ width: '100%', height: '320px', objectFit: 'cover', marginBottom: '20px' }} />
-              {activeArticle.content.map((p, idx) => (
-                <p key={idx} style={{ fontSize: '0.95rem', color: '#DDD', lineHeight: '1.7', marginBottom: '16px' }}>
-                  {p}
-                </p>
-              ))}
+              <img
+                src={activeArticle.image}
+                alt="blog"
+                style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', border: '1px solid rgba(212, 175, 55, 0.4)', marginBottom: '24px' }}
+              />
+
+              <div style={{ background: 'rgba(212, 175, 55, 0.08)', borderLeft: '4px solid #D4AF37', padding: '16px 20px', marginBottom: '24px', fontStyle: 'italic', color: '#F4E798' }}>
+                "{activeArticle.excerpt}"
+              </div>
+
+              {activeArticle.content.map((p, idx) => {
+                if (p.startsWith('## ')) {
+                  return (
+                    <h3 key={idx} style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.4rem', marginTop: '28px', marginBottom: '12px', color: '#D4AF37' }}>
+                      {p.replace('## ', '')}
+                    </h3>
+                  );
+                }
+                return (
+                  <p key={idx} style={{ fontSize: '0.98rem', color: '#DDD', lineHeight: '1.8', marginBottom: '18px' }}>
+                    {p}
+                  </p>
+                );
+              })}
+
+              <div style={{ marginTop: '30px', paddingTop: '20px', borderTop: '1px solid rgba(212, 175, 55, 0.3)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <Link
+                  href={`/blog/${activeArticle.id}`}
+                  onClick={() => setActiveArticle(null)}
+                  style={{ background: '#D4AF37', color: '#0A0A0A', fontWeight: 'bold', padding: '12px 24px', textDecoration: 'none', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px' }}
+                >
+                  Open Full Page Reading View &rarr;
+                </Link>
+              </div>
             </div>
           )}
         </DialogContent>

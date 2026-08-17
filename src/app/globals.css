@@ -4,24 +4,10 @@
 @import 'swiper/css/pagination';
 @import 'swiper/css/effect-fade';
 
-:root, [data-theme="dark"] {
+:root {
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Montserrat', 'Poppins', sans-serif;
   
-  --bg-primary: #0A0A0A;
-  --bg-secondary: #141414;
-  --bg-card: #141414;
-  --bg-card-hover: #1f1f1f;
-  --text-primary: #FFFFFF;
-  --text-secondary: #AAAAAA;
-  --text-muted: #888888;
-  --border-color: rgba(212, 175, 55, 0.35);
-  --gold-accent: #D4AF37;
-  --gold-bg: rgba(212, 175, 55, 0.12);
-  --shadow-color: rgba(0, 0, 0, 0.6);
-  --modal-bg: #141414;
-  --nav-bg: rgba(10, 10, 10, 0.92);
-
   --color-luxury-black: #0A0A0A;
   --color-charcoal: #1F1F1F;
   --color-dark-grey: #2B2B2B;
@@ -34,31 +20,6 @@
   --color-gold-dark: #9A7B1C;
 }
 
-[data-theme="light"] {
-  --bg-primary: #FAF8F5;
-  --bg-secondary: #FFFFFF;
-  --bg-card: #FFFFFF;
-  --bg-card-hover: #F4EFE6;
-  --text-primary: #1A1A1A;
-  --text-secondary: #555555;
-  --text-muted: #777777;
-  --border-color: rgba(195, 149, 21, 0.45);
-  --gold-accent: #B8860B;
-  --gold-bg: rgba(195, 149, 21, 0.1);
-  --shadow-color: rgba(0, 0, 0, 0.08);
-  --modal-bg: #FFFFFF;
-  --nav-bg: rgba(250, 248, 245, 0.95);
-
-  --color-luxury-black: #FAF8F5;
-  --color-charcoal: #F4EFE6;
-  --color-dark-grey: #EAE3D5;
-  --color-luxury-white: #1A1A1A;
-  --color-soft-cream: #1A1A1A;
-  --color-light-grey: #333333;
-  --color-metallic-gold: #B8860B;
-  --color-royal-gold: #B8860B;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -67,9 +28,8 @@
 
 html, body {
   font-family: var(--font-body);
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  transition: background-color 0.35s ease, color 0.35s ease;
+  background-color: var(--color-luxury-black);
+  color: var(--color-luxury-white);
   overflow-x: hidden;
   scroll-behavior: smooth;
 }

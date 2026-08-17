@@ -13,9 +13,7 @@ import {
   FiScissors,
   FiTruck,
   FiClock,
-  FiShield,
-  FiSun,
-  FiMoon
+  FiShield
 } from 'react-icons/fi';
 import { MdAdminPanelSettings } from 'react-icons/md';
 import styled, { keyframes } from 'styled-components';
@@ -101,7 +99,8 @@ const TopBanner = styled.div<{ $scrolled: boolean }>`
 const NavHeader = styled.header<{ $scrolled: boolean }>`
   position: relative;
   width: 100%;
-  background: var(--nav-bg, rgba(10, 10, 10, 0.90));
+  background: ${({ $scrolled }) =>
+    $scrolled ? 'rgba(10, 10, 10, 0.96)' : 'rgba(10, 10, 10, 0.90)'};
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid
@@ -202,7 +201,7 @@ const NavLinks = styled.nav<{ $mobileOpen: boolean }>`
     font-size: 0.85rem;
     font-weight: 500;
     letter-spacing: 1px;
-    color: var(--text-primary, #ffffff);
+    color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
     position: relative;
@@ -234,7 +233,7 @@ const NavLinks = styled.nav<{ $mobileOpen: boolean }>`
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--nav-bg, rgba(10, 10, 10, 0.98));
+    background: rgba(10, 10, 10, 0.98);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     flex-direction: column;
@@ -296,9 +295,9 @@ const IconGroup = styled.div`
   }
 
   .nav-icon-btn {
-    background: var(--bg-card-hover, rgba(31, 31, 31, 0.8));
-    border: 1px solid var(--border-color, rgba(212, 175, 55, 0.3));
-    color: var(--text-primary, #ffffff);
+    background: rgba(31, 31, 31, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #ffffff;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -365,8 +364,6 @@ const MobileMenuToggler = styled.button<{ $isOpen: boolean }>`
 
 export const Navbar: React.FC = () => {
   const {
-    themeMode,
-    toggleThemeMode,
     currency,
     setCurrency,
     cartCount,
@@ -457,11 +454,6 @@ export const Navbar: React.FC = () => {
                   <span>Account</span>
                 </Link>
 
-                <div className="action-item gold" onClick={() => { toggleThemeMode(); setMobileMenuOpen(false); }}>
-                  {themeMode === 'dark' ? <FiSun className="icon" /> : <FiMoon className="icon" />}
-                  <span>{themeMode === 'dark' ? 'Light Mode' : 'Dark Mode'}</span>
-                </div>
-
                 <Link href="/admin" className="action-item gold" onClick={() => setMobileMenuOpen(false)}>
                   <MdAdminPanelSettings className="icon" />
                   <span>Admin</span>
@@ -483,19 +475,6 @@ export const Navbar: React.FC = () => {
             <IconGroup>
               {/* Desktop Action Icons (>1024px) */}
               <div className="desktop-icons">
-                <button
-                  className="nav-icon-btn"
-                  onClick={toggleThemeMode}
-                  title={themeMode === 'dark' ? 'Switch to Royal Light Theme' : 'Switch to Midnight Dark Theme'}
-                  style={{
-                    borderColor: '#D4AF37',
-                    color: '#D4AF37',
-                    background: themeMode === 'light' ? 'rgba(184, 134, 11, 0.12)' : 'rgba(212, 175, 55, 0.12)'
-                  }}
-                >
-                  {themeMode === 'dark' ? <FiSun /> : <FiMoon />}
-                </button>
-
                 <button className="nav-icon-btn" onClick={() => setIsSearchOpen(true)} title="Live Search">
                   <FiSearch />
                 </button>
@@ -519,17 +498,8 @@ export const Navbar: React.FC = () => {
                 </Link>
               </div>
 
-              {/* Mobile Bar Quick Cart & Theme Toggle (<=1024px) */}
-              <div className="mobile-header-cart" style={{ gap: '8px' }}>
-                <button
-                  className="nav-icon-btn"
-                  onClick={toggleThemeMode}
-                  title={themeMode === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme'}
-                  style={{ borderColor: '#D4AF37', color: '#D4AF37' }}
-                >
-                  {themeMode === 'dark' ? <FiSun /> : <FiMoon />}
-                </button>
-
+              {/* Mobile Bar Quick Cart Icon (<=1024px) */}
+              <div className="mobile-header-cart">
                 <button className="nav-icon-btn" onClick={() => setIsCartDrawerOpen(true)} title="Shopping Bag">
                   <FiShoppingBag />
                   {cartCount > 0 && <span className="badge">{cartCount}</span>}

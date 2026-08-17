@@ -71,11 +71,10 @@ const FAQ_DATA: FaqItem[] = [
   }
 ];
 
-const FaqWrapper = styled.section`
-  background: var(--bg-primary, #0a0a0a);
+const Section = styled.section`
   padding: 90px 24px;
-  border-top: 1px solid var(--border-color, rgba(212, 175, 55, 0.3));
-  transition: background-color 0.35s ease, color 0.35s ease;
+  background: #0a0a0a;
+  border-top: 1px solid rgba(212, 175, 55, 0.2);
 
   .inner {
     max-width: 1100px;
@@ -97,7 +96,7 @@ const FaqWrapper = styled.section`
     h2 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 2.8rem;
-      color: var(--text-primary, #ffffff);
+      color: #ffffff;
       margin-top: 8px;
     }
 
@@ -118,14 +117,14 @@ const SearchContainer = styled.div`
   input {
     width: 100%;
     padding: 16px 20px 16px 52px;
-    background: var(--bg-card, #141414);
-    border: 1px solid var(--border-color, rgba(212, 175, 55, 0.35));
+    background: #141414;
+    border: 1px solid rgba(212, 175, 55, 0.35);
     border-radius: 30px;
-    color: var(--text-primary, #ffffff);
+    color: #ffffff;
     font-size: 0.95rem;
     outline: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 
     &:focus {
       border-color: #d4af37;
@@ -133,7 +132,7 @@ const SearchContainer = styled.div`
     }
 
     &::placeholder {
-      color: var(--text-muted, #888888);
+      color: #888888;
     }
   }
 
@@ -156,9 +155,9 @@ const FilterTabs = styled.div`
 
   button {
     padding: 10px 20px;
-    background: var(--bg-card, #141414);
-    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.15));
-    color: var(--text-secondary, #cccccc);
+    background: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #cccccc;
     font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -169,7 +168,7 @@ const FilterTabs = styled.div`
 
     &:hover {
       border-color: #d4af37;
-      color: var(--text-primary, #ffffff);
+      color: #ffffff;
     }
 
     &.active {
@@ -189,8 +188,8 @@ const AccordionList = styled.div`
 `;
 
 const AccordionCard = styled.div<{ $isOpen: boolean }>`
-  background: var(--bg-card, #141414);
-  border: 1px solid ${({ $isOpen }) => ($isOpen ? '#d4af37' : 'var(--border-color, rgba(255, 255, 255, 0.1))')};
+  background: #141414;
+  border: 1px solid ${({ $isOpen }) => ($isOpen ? '#d4af37' : 'rgba(255, 255, 255, 0.1)')};
   border-radius: 6px;
   overflow: hidden;
   transition: all 0.3s ease;
@@ -208,7 +207,7 @@ const AccordionCard = styled.div<{ $isOpen: boolean }>`
     .question-title {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.15rem;
-      color: ${({ $isOpen }) => ($isOpen ? '#d4af37' : 'var(--text-primary, #ffffff)')};
+      color: ${({ $isOpen }) => ($isOpen ? '#f4e798' : '#ffffff')};
       font-weight: 600;
       display: flex;
       align-items: center;
@@ -246,9 +245,9 @@ const AccordionCard = styled.div<{ $isOpen: boolean }>`
 
     p {
       font-size: 0.93rem;
-      color: var(--text-secondary, #dddddd);
+      color: #dddddd;
       line-height: 1.7;
-      border-top: 1px solid var(--border-color, rgba(255, 255, 255, 0.08));
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
       padding-top: 16px;
     }
   }
@@ -326,7 +325,7 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <FaqWrapper id="faq">
+    <Section id="faq">
       <div className="inner">
         <div className="header">
           <span>HELP & VIP CONCIERGE</span>
@@ -425,6 +424,6 @@ export const FaqSection: React.FC = () => {
           </a>
         </ConciergeBanner>
       </div>
-    </FaqWrapper>
+    </Section>
   );
 };
