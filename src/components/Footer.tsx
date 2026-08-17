@@ -248,7 +248,7 @@ export const Footer: React.FC = () => {
             <a href="https://tiktok.com" target="_blank" rel="noreferrer" title="TikTok">
               <FaTiktok />
             </a>
-            <a href="https://wa.me/2348007424335" target="_blank" rel="noreferrer" title="WhatsApp VIP">
+            <a href="https://wa.me/2348084278440" target="_blank" rel="noreferrer" title="WhatsApp VIP">
               <FaWhatsapp />
             </a>
             <a href="https://youtube.com" target="_blank" rel="noreferrer" title="YouTube">

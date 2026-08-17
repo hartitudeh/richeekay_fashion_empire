@@ -497,11 +497,11 @@ export const AiStyleAssistant: React.FC = () => {
     }
 
     // Store Locations & Address
-    if (q.includes('store') || q.includes('location') || q.includes('address') || q.includes('where') || q.includes('visit') || q.includes('atelier') || q.includes('boutique')) {
+    if (q.includes('store') || q.includes('location') || q.includes('address') || q.includes('where') || q.includes('visit') || q.includes('atelier') || q.includes('boutique') || q.includes('phone') || q.includes('number') || q.includes('contact')) {
       return {
         id: Date.now().toString(),
         sender: 'bot',
-        text: `📍 **Visit Our Luxury Boutiques**:\n• 🇳🇬 **Lagos Flagship**: Plot 14 Victoria Island, Lagos\n• 🇳🇬 **Oyo State Hub**: Executive Bodija District, Ibadan, Oyo State\n• 🇳🇬 **Osun State Atelier**: Luxury Fashion Arcade, Osogbo, Osun State`
+        text: `📍 **Visit Our Luxury Boutiques & Contact Direct Lines**:\n• 🇳🇬 **Lagos Flagship**: Plot 14 Victoria Island, Lagos (Call: 07048113372 | WhatsApp: 08084278440)\n• 🇳🇬 **Oyo State Hub**: Executive Bodija District, Ibadan, Oyo State (Call/WhatsApp: 08139212462)\n• 🇳🇬 **Osun State Atelier**: Luxury Fashion Arcade, Osogbo, Osun State (Call/WhatsApp: 07083777337)`
       };
     }
 
@@ -610,7 +610,7 @@ export const AiStyleAssistant: React.FC = () => {
                     Need a <strong>real person</strong> to answer right now? Chat directly with our Human VIP Concierge:
                   </p>
                   <a
-                    href="https://wa.me/2348123456789?text=Hello%20RICHEEKAY%20VIP%20Concierge!%20I%20need%20personal%20assistance%20with%20my%20luxury%20order."
+                    href="https://wa.me/2348084278440?text=Hello%20RICHEEKAY%20VIP%20Concierge!%20I%20need%20personal%20assistance%20with%20my%20luxury%20order."
                     target="_blank"
                     rel="noopener noreferrer"
                   >

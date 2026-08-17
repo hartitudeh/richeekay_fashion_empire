@@ -152,7 +152,7 @@ export default function ContactPage() {
               <h4>Lagos Flagship Atelier & Boutique</h4>
               <p>
                 <FiMapPin style={{ color: '#D4AF37' }} /> Plot 14 Victoria Island, Lagos, Nigeria<br />
-                <FiPhone style={{ color: '#D4AF37' }} /> +234 800 742 4335 / +234 812 345 6789<br />
+                <FiPhone style={{ color: '#D4AF37' }} /> Call: 07048113372 | WhatsApp: 08084278440<br />
                 <FiClock style={{ color: '#D4AF37' }} /> Mon - Sat: 9:00 AM - 8:00 PM
               </p>
             </div>
@@ -161,7 +161,7 @@ export default function ContactPage() {
               <h4>Oyo State Showroom & Fitting Hub</h4>
               <p>
                 <FiMapPin style={{ color: '#D4AF37' }} /> Executive Bodija District, Ibadan, Oyo State<br />
-                <FiPhone style={{ color: '#D4AF37' }} /> +234 802 345 6789
+                <FiPhone style={{ color: '#D4AF37' }} /> Call / WhatsApp: 08139212462
               </p>
             </div>
 
@@ -169,13 +169,13 @@ export default function ContactPage() {
               <h4>Osun State Atelier (Osogbo)</h4>
               <p>
                 <FiMapPin style={{ color: '#D4AF37' }} /> Luxury Fashion Arcade, Osogbo, Osun State<br />
-                <FiPhone style={{ color: '#D4AF37' }} /> +234 803 456 7890
+                <FiPhone style={{ color: '#D4AF37' }} /> Call / WhatsApp: 07083777337
               </p>
             </div>
 
             <div style={{ marginTop: '20px' }}>
               <a
-                href="https://wa.me/2348007424335?text=Hello%20RICHEEKAY%20FASHION%20EMPIRE"
+                href="https://wa.me/2348084278440?text=Hello%20RICHEEKAY%20FASHION%20EMPIRE"
                 target="_blank"
                 rel="noreferrer"
                 style={{
