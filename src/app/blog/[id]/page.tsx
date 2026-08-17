@@ -203,7 +203,7 @@ const ArticleContainer = styled.article`
 
 const RelatedSection = styled.div`
   max-width: 1200px;
-  margin: 60px auto 0;
+  margin: 60px auto 100px;
   padding: 0 24px;
 
   h3 {
