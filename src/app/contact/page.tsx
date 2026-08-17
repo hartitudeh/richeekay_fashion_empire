@@ -169,7 +169,7 @@ export default function ContactPage() {
               <h4>Osun State Atelier (Osogbo)</h4>
               <p>
                 <FiMapPin style={{ color: '#D4AF37' }} /> Luxury Fashion Arcade, Osogbo, Osun State<br />
-                <FiPhone style={{ color: '#D4AF37' }} /> Call / WhatsApp: 07083777337
+                <FiPhone style={{ color: '#D4AF37' }} /> Call / WhatsApp: 07083777336
               </p>
             </div>
 

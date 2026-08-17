@@ -501,7 +501,7 @@ export const AiStyleAssistant: React.FC = () => {
       return {
         id: Date.now().toString(),
         sender: 'bot',
-        text: `📍 **Visit Our Luxury Boutiques & Contact Direct Lines**:\n• 🇳🇬 **Lagos Flagship**: Plot 14 Victoria Island, Lagos (Call: 07048113372 | WhatsApp: 08084278440)\n• 🇳🇬 **Oyo State Hub**: Executive Bodija District, Ibadan, Oyo State (Call/WhatsApp: 08139212462)\n• 🇳🇬 **Osun State Atelier**: Luxury Fashion Arcade, Osogbo, Osun State (Call/WhatsApp: 07083777337)`
+        text: `📍 **Visit Our Luxury Boutiques & Contact Direct Lines**:\n• 🇳🇬 **Lagos Flagship**: Plot 14 Victoria Island, Lagos (Call: 07048113372 | WhatsApp: 08084278440)\n• 🇳🇬 **Oyo State Hub**: Executive Bodija District, Ibadan, Oyo State (Call/WhatsApp: 08139212462)\n• 🇳🇬 **Osun State Atelier**: Luxury Fashion Arcade, Osogbo, Osun State (Call/WhatsApp: 07083777336)`
       };
     }
 
