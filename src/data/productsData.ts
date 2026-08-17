@@ -38,6 +38,11 @@ export interface CollectionItem {
   image: string;
   tag: string;
   link: string;
+  season: string;
+  designerNote: string;
+  editorialStory: string[];
+  lookbookGallery: string[];
+  featuredProductIds: string[];
 }
 
 export interface Review {
@@ -452,36 +457,199 @@ export const PRODUCTS_DATA: Product[] = [
 
 export const COLLECTIONS_DATA: CollectionItem[] = [
   {
-    id: 'col-summer',
-    title: 'Summer Collection',
-    subtitle: 'Breeze, Silk & Golden Hour Elegance',
-    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80',
-    tag: 'NEW RELEASES',
-    link: '/category/evening-dresses'
+    id: 'col-royal-velvet',
+    title: 'Royal Aso-Ebi Velvet Couture',
+    subtitle: 'Hand-Beaded Zardozi & Imperial Corsetry',
+    image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1200&q=80',
+    tag: 'HIGH SOCIETY',
+    season: 'Autumn / Winter 2026',
+    link: '/collections/col-royal-velvet',
+    designerNote: 'Crafted for high-society galas and royal African weddings. Each gown combines 100% silk velvet with internal bone corsetry and hand-stitched gold crystal beads.',
+    editorialStory: [
+      'The Royal Aso-Ebi Velvet Couture lookbook celebrates the regal grandeur of West African high society. Sourced from silk ateliers in Lyon and hand-embroidered by master artisans in our Lagos Flagship Atelier, every piece is sculpted to command immediate awe.',
+      'From dramatic train flares to hand-beaded crystal bodice motifs, this collection redefines traditional ceremonial wear for the modern global monarch.'
+    ],
+    lookbookGallery: [
+      'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=1000&q=80'
+    ],
+    featuredProductIds: ['p-1', 'p-8']
   },
   {
-    id: 'col-wedding',
-    title: 'Wedding & Aso-Ebi Collection',
-    subtitle: 'Royal Glamour for African Celebrations',
-    image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=800&q=80',
-    tag: 'MOST POPULAR',
-    link: '/category/native-wear'
+    id: 'col-cashmere-senator',
+    title: 'Executive Cashmere Senator Suite',
+    subtitle: 'Architectural Lines & Gold Heraldic Buttons',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80',
+    tag: 'BOARDROOM ELEGANCE',
+    season: 'Annual Core Collection',
+    link: '/collections/col-cashmere-senator',
+    designerNote: 'Designed for corporate matriarchs and executive leaders who demand sharp, commanding traditional tailoring.',
+    editorialStory: [
+      'The Executive Cashmere Senator collection merges Italian wool crepe and English cashmere with traditional African tunic silhouette cuts.',
+      'Adorned with custom-engraved 24k gold-plated buttons and clean mandarin collars, these tunic sets are built for boardroom dominance.'
+    ],
+    lookbookGallery: [
+      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&w=1000&q=80'
+    ],
+    featuredProductIds: ['p-3']
   },
   {
-    id: 'col-office',
-    title: 'Executive Office Collection',
-    subtitle: 'Power Suits & Corporate Elegance',
-    image: 'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=800&q=80',
-    tag: 'TAILORED',
-    link: '/category/english-wear'
+    id: 'col-virgin-hair-crown',
+    title: '100% Virgin Hair Crown Wigs',
+    subtitle: 'Invisible Swiss HD Lace & Pre-Plucked Hairlines',
+    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1200&q=80',
+    tag: 'EXCLUSIVE CROWN',
+    season: 'Signature Crown Collection',
+    link: '/collections/col-virgin-hair-crown',
+    designerNote: 'Single-donor unprocessed virgin hair units featuring ultra-thin Swiss HD lace frontals for effortless, natural scalp blending.',
+    editorialStory: [
+      'Our Crown Wig Lookbook showcases 30-inch body wave and bone straight units that flow with natural luster and bounce.',
+      'Hand-tied strand by strand, each frontal features pre-plucked baby hairs and bleached knots for an undetectable melt.'
+    ],
+    lookbookGallery: [
+      'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1519699047748-de8e457a634e?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1560869713-7d0a29430803?auto=format&fit=crop&w=1000&q=80'
+    ],
+    featuredProductIds: ['p-2']
   },
   {
-    id: 'col-luxury',
-    title: 'Red Carpet Luxury Collection',
-    subtitle: 'Haute Couture Gala Gowns',
-    image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&q=80',
-    tag: 'EXCLUSIVE',
-    link: '/category/evening-dresses'
+    id: 'col-red-carpet-gala',
+    title: 'Red Carpet Haute Couture Gala',
+    subtitle: 'Liquid Gold Silk & Crystal Embellished Gowns',
+    image: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1200&q=80',
+    tag: 'RED CARPET',
+    season: 'Gala Season 2026',
+    link: '/collections/col-red-carpet-gala',
+    designerNote: 'Statement gala gowns built with 8-meter silk chiffon trains and thousands of hand-applied crystal droplets.',
+    editorialStory: [
+      'Designed for international film festivals, award galas, and state dinners, the Red Carpet collection embodies opulent drama.',
+      'Sculpted bodices, thigh-high slits, and cascading organza ruffles ensure an unforgettable red carpet presence.'
+    ],
+    lookbookGallery: [
+      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80'
+    ],
+    featuredProductIds: ['p-1']
+  },
+  {
+    id: 'col-ebony-corsetry',
+    title: 'Ebony Diamond Corseted Evening',
+    subtitle: 'Sculpted Silhouette & Midnight Glamour',
+    image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1200&q=80',
+    tag: 'MOST COVETED',
+    season: 'Resort Couture',
+    link: '/collections/col-ebony-corsetry',
+    designerNote: 'An exploration of deep jewel tones, black velvet, and internal waist-cinching boning.',
+    editorialStory: [
+      'The Ebony Diamond lookbook captures the mystery of starlit galas. Featuring built-in steel boning that shapes the waistline effortlessly.',
+      'Draped in heavy Mikado silk and detailed with hand-cut crystal brooches.'
+    ],
+    lookbookGallery: [
+      'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1000&q=80'
+    ],
+    featuredProductIds: ['p-1', 'p-8']
+  },
+  {
+    id: 'col-paris-fusion',
+    title: 'Parisian Silk Chiffon Fusion',
+    subtitle: 'French Haute Couture Meets African Heritage',
+    image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=1200&q=80',
+    tag: 'PARIS TO LAGOS',
+    season: 'Spring / Summer 2026',
+    link: '/collections/col-paris-fusion',
+    designerNote: 'A cross-continental fusion combining French silk chiffon drapes with West African hand-loomed motifs.',
+    editorialStory: [
+      'Debuted at Paris Fashion Week, this lookbook fuses floaty silk chiffons with structured West African shoulders and peplum cuts.',
+      'Designed for cosmopolitan women who move effortlessly between European galas and African cultural celebrations.'
+    ],
+    lookbookGallery: [
+      'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80'
+    ],
+    featuredProductIds: ['p-4', 'p-8']
+  },
+  {
+    id: 'col-sahel-aristocracy',
+    title: 'Sahel Aristocracy Tailored Suits',
+    subtitle: 'Hand-Embroidered Cashmere & Imperial Capes',
+    image: 'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1200&q=80',
+    tag: 'LIMITED EDITION',
+    season: 'Royal Edition',
+    link: '/collections/col-sahel-aristocracy',
+    designerNote: 'Inspired by Sahelian royal courts. Featuring high-collared jackets and embroidered cape shoulders.',
+    editorialStory: [
+      'Crafted from heavy 450gsm wool crepe and lined with gold jacquard silk. This lookbook brings regal outerwear to contemporary luxury fashion.',
+      'Includes detachable cape overlays and filigree cuff buttons.'
+    ],
+    lookbookGallery: [
+      'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80'
+    ],
+    featuredProductIds: ['p-3', 'p-7']
+  },
+  {
+    id: 'col-bridal-heirloom',
+    title: 'Bespoke Bridal Heirloom Collection',
+    subtitle: 'Ivory Lace, Swarovski Pearls & Royal Veil Artistry',
+    image: 'https://images.unsplash.com/photo-1549416878-b9ca95e26903?auto=format&fit=crop&w=1200&q=80',
+    tag: 'BRIDAL ATELIER',
+    season: 'Bridal Season 2026',
+    link: '/collections/col-bridal-heirloom',
+    designerNote: 'Hand-crafted bridal masterpieces designed for royal weddings. Each gown takes over 180 hours of meticulous hand-stitching.',
+    editorialStory: [
+      'The Bridal Heirloom lookbook showcases cathedral-length veils, hand-encrusted pearl bodices, and detachable silk organza trains.',
+      'Every bride receives a personal consultation with our Chief Master Couturier in our Lagos Atelier or virtual fitting suite.'
+    ],
+    lookbookGallery: [
+      'https://images.unsplash.com/photo-1549416878-b9ca95e26903?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80'
+    ],
+    featuredProductIds: ['p-1', 'p-2']
+  },
+  {
+    id: 'col-gold-filigree',
+    title: 'Gold Filigree Resort & Dinner Wear',
+    subtitle: 'Flowing Satin Silk & Gilded Accents',
+    image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80',
+    tag: 'SUMMER CAPSULE',
+    season: 'Golden Hour 2026',
+    link: '/collections/col-gold-filigree',
+    designerNote: 'Lightweight satin silk kaftans and cocktail dresses created for yacht parties and summer soirées.',
+    editorialStory: [
+      'Basking in golden hour sunlight, the Gold Filigree resort collection features breezy silk satin that flows gracefully with every movement.',
+      'Finished with metallic gold cord tie belts and open back detailing.'
+    ],
+    lookbookGallery: [
+      'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1000&q=80'
+    ],
+    featuredProductIds: ['p-8', 'p-5']
+  },
+  {
+    id: 'col-accessories-jewel',
+    title: 'Imperial Jewels & Stiletto Accessories',
+    subtitle: 'Hand-Cut Crystal Heels & Structured Leather Handbags',
+    image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1200&q=80',
+    tag: 'FINISHING TOUCHES',
+    season: 'Accessories Edition',
+    link: '/collections/col-accessories-jewel',
+    designerNote: 'Hand-crafted calfskin handbags and metallic stiletto pumps studded with Swarovski crystals.',
+    editorialStory: [
+      'Complete your royal wardrobe with RICHEEKAY signature accessories. Hand-crafted in Italy with 100% genuine calfskin and gold hardware.',
+      'Designed to perfectly complement our couture gowns and executive Senator suits.'
+    ],
+    lookbookGallery: [
+      'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1000&q=80',
+      'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=1000&q=80'
+    ],
+    featuredProductIds: ['p-5', 'p-6']
   }
 ];
 
