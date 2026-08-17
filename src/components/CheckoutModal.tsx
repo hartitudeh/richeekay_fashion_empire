@@ -4,13 +4,16 @@ import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
 import { useSafeCloseModal } from '../hooks/useSafeCloseModal';
 import { Dialog, DialogContent, Stepper, Step, StepLabel, Box } from '@mui/material';
-import { FiCheckCircle, FiShield, FiCreditCard, FiLock, FiDownload, FiArrowRight, FiPrinter } from 'react-icons/fi';
+import { FiCheckCircle, FiShield, FiCreditCard, FiLock, FiDownload, FiArrowRight, FiPrinter, FiX } from 'react-icons/fi';
 import confetti from 'canvas-confetti';
 import styled from 'styled-components';
 
 const CheckoutContainer = styled.div`
   background: #141414;
   color: #ffffff;
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  position: relative;
   padding: 28px;
 
   h2 {
@@ -189,9 +192,30 @@ export const CheckoutModal: React.FC = () => {
   };
 
   return (
-    <Dialog open={isCheckoutOpen} onClose={handleClose} maxWidth="md" fullWidth>
-      <DialogContent style={{ background: '#141414', padding: 0 }}>
+    <Dialog
+      open={isCheckoutOpen}
+      onClose={handleClose}
+      maxWidth="md"
+      fullWidth
+      slotProps={{
+        paper: {
+          style: {
+            background: 'transparent',
+            boxShadow: 'none',
+            border: 'none',
+            overflow: 'visible'
+          }
+        }
+      }}
+    >
+      <DialogContent style={{ padding: 0 }}>
         <CheckoutContainer>
+          <button
+            onClick={handleClose}
+            style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.5rem', cursor: 'pointer', zIndex: 10 }}
+          >
+            <FiX />
+          </button>
           <h2>
             RICHEEKAY <span>LUXURY CHECKOUT</span>
           </h2>

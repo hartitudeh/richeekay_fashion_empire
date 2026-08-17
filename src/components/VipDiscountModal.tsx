@@ -41,9 +41,8 @@ const ModalCard = styled.div`
   transform: translate(-50%, -50%);
   width: 90%;
   max-width: 860px;
-  background: #faf8f5;
-  color: #1a1a1a;
-  border-radius: 4px;
+  border: 1px solid #d4af37;
+  border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.25);
   z-index: 2501;
@@ -61,24 +60,17 @@ const ModalCard = styled.div`
     position: absolute;
     top: 16px;
     right: 16px;
-    background: rgba(255, 255, 255, 0.85);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: transparent;
+    border: none;
     color: #1a1a1a;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     cursor: pointer;
     z-index: 10;
     transition: all 0.3s ease;
 
     &:hover {
-      background: #1a1a1a;
-      color: #ffffff;
-      transform: rotate(90deg);
+      color: #90293e;
+      transform: scale(1.1);
     }
   }
 

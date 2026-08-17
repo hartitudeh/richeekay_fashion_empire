@@ -303,8 +303,23 @@ export const AdminPortalModal: React.FC = () => {
   };
 
   return (
-    <Dialog open={isAdminPortalOpen} onClose={handleCloseAndHome} maxWidth="lg" fullWidth>
-      <DialogContent style={{ background: '#141414', padding: 0 }}>
+    <Dialog
+      open={isAdminPortalOpen}
+      onClose={handleCloseAndHome}
+      maxWidth="lg"
+      fullWidth
+      slotProps={{
+        paper: {
+          style: {
+            background: 'transparent',
+            boxShadow: 'none',
+            border: 'none',
+            overflow: 'visible'
+          }
+        }
+      }}
+    >
+      <DialogContent style={{ background: '#141414', border: '1px solid #d4af37', borderRadius: '8px', padding: 0, position: 'relative', overflow: 'hidden' }}>
         {!isAdminLoggedIn ? (
           /* Executive Security Auth Form */
           <div style={{ padding: '60px 24px', background: '#0a0a0a', position: 'relative' }}>

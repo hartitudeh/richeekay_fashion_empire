@@ -469,13 +469,28 @@ export default function GalleryPage() {
       </Container>
 
       {/* Lightbox Modal */}
-      <Dialog open={Boolean(activeItem)} onClose={() => setActiveItem(null)} maxWidth="md" fullWidth>
-        <DialogContent style={{ background: '#141414', padding: 0 }}>
+      <Dialog
+        open={Boolean(activeItem)}
+        onClose={() => setActiveItem(null)}
+        maxWidth="md"
+        fullWidth
+        slotProps={{
+          paper: {
+            style: {
+              background: 'transparent',
+              boxShadow: 'none',
+              border: 'none',
+              overflow: 'visible'
+            }
+          }
+        }}
+      >
+        <DialogContent style={{ padding: 0 }}>
           {activeItem && (
-            <div style={{ background: '#0a0a0a', padding: '24px', color: '#FFF' }}>
+            <div style={{ background: '#0a0a0a', border: '1px solid #D4AF37', borderRadius: '8px', padding: '24px', color: '#FFF', position: 'relative' }}>
               <button
                 onClick={() => setActiveItem(null)}
-                style={{ background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.6rem', cursor: 'pointer', float: 'right' }}
+                style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.6rem', cursor: 'pointer', zIndex: 10 }}
               >
                 <FiX />
               </button>

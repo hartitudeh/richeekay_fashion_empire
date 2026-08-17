@@ -680,13 +680,28 @@ export const HomeSections: React.FC = () => {
       </BlogSection>
 
       {/* Blog Article Reader Modal */}
-      <Dialog open={Boolean(activeArticle)} onClose={() => setActiveArticle(null)} maxWidth="md" fullWidth>
-        <DialogContent style={{ background: '#141414', padding: '36px', color: '#FFF' }}>
+      <Dialog
+        open={Boolean(activeArticle)}
+        onClose={() => setActiveArticle(null)}
+        maxWidth="md"
+        fullWidth
+        slotProps={{
+          paper: {
+            style: {
+              background: 'transparent',
+              boxShadow: 'none',
+              border: 'none',
+              overflow: 'visible'
+            }
+          }
+        }}
+      >
+        <DialogContent style={{ background: '#141414', border: '1px solid #D4AF37', borderRadius: '8px', padding: '36px', color: '#FFF', position: 'relative' }}>
           {activeArticle && (
             <div>
               <button
                 onClick={() => setActiveArticle(null)}
-                style={{ background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.6rem', cursor: 'pointer', float: 'right' }}
+                style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.6rem', cursor: 'pointer', zIndex: 10 }}
               >
                 <FiX />
               </button>

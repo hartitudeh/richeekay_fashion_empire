@@ -10,6 +10,9 @@ import styled from 'styled-components';
 const SearchContainer = styled.div`
   background: #141414;
   color: #ffffff;
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  position: relative;
   padding: 32px;
   min-height: 480px;
 
@@ -126,8 +129,23 @@ export const SearchModal: React.FC = () => {
   });
 
   return (
-    <Dialog open={isSearchOpen} onClose={() => safeClose(() => setIsSearchOpen(false))} maxWidth="md" fullWidth>
-      <DialogContent style={{ background: '#141414', padding: 0 }}>
+    <Dialog
+      open={isSearchOpen}
+      onClose={() => safeClose(() => setIsSearchOpen(false))}
+      maxWidth="md"
+      fullWidth
+      slotProps={{
+        paper: {
+          style: {
+            background: 'transparent',
+            boxShadow: 'none',
+            border: 'none',
+            overflow: 'visible'
+          }
+        }
+      }}
+    >
+      <DialogContent style={{ padding: 0 }}>
         <SearchContainer>
           <div className="search-header">
             <FiSearch style={{ color: '#D4AF37', fontSize: '1.6rem' }} />

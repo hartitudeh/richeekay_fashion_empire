@@ -131,8 +131,23 @@ export const OrderTrackerModal: React.FC = () => {
   };
 
   return (
-    <Dialog open={isOrderTrackerOpen} onClose={() => safeClose(() => setIsOrderTrackerOpen(false))} maxWidth="md" fullWidth>
-      <DialogContent style={{ background: '#141414', padding: 0, position: 'relative' }}>
+    <Dialog
+      open={isOrderTrackerOpen}
+      onClose={() => safeClose(() => setIsOrderTrackerOpen(false))}
+      maxWidth="md"
+      fullWidth
+      slotProps={{
+        paper: {
+          style: {
+            background: 'transparent',
+            boxShadow: 'none',
+            border: 'none',
+            overflow: 'visible'
+          }
+        }
+      }}
+    >
+      <DialogContent style={{ background: '#141414', border: '1px solid #d4af37', borderRadius: '8px', padding: 0, position: 'relative', overflow: 'hidden' }}>
         <button
           onClick={() => safeClose(() => setIsOrderTrackerOpen(false))}
           style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.4rem', cursor: 'pointer', zIndex: 10 }}

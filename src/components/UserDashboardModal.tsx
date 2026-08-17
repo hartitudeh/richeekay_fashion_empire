@@ -11,6 +11,9 @@ import styled from 'styled-components';
 const DashboardContainer = styled.div`
   background: #141414;
   color: #ffffff;
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  position: relative;
   padding: 32px;
 
   .header-row {
@@ -146,6 +149,8 @@ const DashboardContainer = styled.div`
 const AuthContainer = styled.div`
   background: #141414;
   color: #ffffff;
+  border: 1px solid #d4af37;
+  border-radius: 8px;
   padding: 36px 32px;
   position: relative;
 
@@ -362,10 +367,10 @@ export const UserDashboardModal: React.FC = () => {
       slotProps={{
         paper: {
           style: {
-            background: '#141414',
-            border: '1px solid #d4af37',
-            borderRadius: 8,
-            overflow: 'hidden'
+            background: 'transparent',
+            boxShadow: 'none',
+            border: 'none',
+            overflow: 'visible'
           }
         }
       }}

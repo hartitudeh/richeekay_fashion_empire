@@ -10,6 +10,9 @@ import styled from 'styled-components';
 const QuickViewContainer = styled.div`
   background: #141414;
   color: #ffffff;
+  border: 1px solid #d4af37;
+  border-radius: 8px;
+  position: relative;
   padding: 32px;
   display: grid;
   grid-template-columns: 1fr 1.1fr;
@@ -187,9 +190,30 @@ export const ProductQuickViewModal: React.FC = () => {
   const currentSize = selectedSize || quickViewProduct.sizes[0] || 'Standard';
 
   return (
-    <Dialog open={isQuickViewOpen} onClose={() => safeClose(() => setIsQuickViewOpen(false))} maxWidth="md" fullWidth>
-      <DialogContent style={{ background: '#141414', padding: 0 }}>
+    <Dialog
+      open={isQuickViewOpen}
+      onClose={() => safeClose(() => setIsQuickViewOpen(false))}
+      maxWidth="md"
+      fullWidth
+      slotProps={{
+        paper: {
+          style: {
+            background: 'transparent',
+            boxShadow: 'none',
+            border: 'none',
+            overflow: 'visible'
+          }
+        }
+      }}
+    >
+      <DialogContent style={{ padding: 0 }}>
         <QuickViewContainer>
+          <button
+            onClick={() => safeClose(() => setIsQuickViewOpen(false))}
+            style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.5rem', cursor: 'pointer', zIndex: 10 }}
+          >
+            <FiX />
+          </button>
           <div className="gallery-col">
             <img
               src={quickViewProduct.images[activeImgIndex] || quickViewProduct.images[0]}
