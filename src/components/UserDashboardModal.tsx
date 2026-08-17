@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useShop } from '../context/ShopContext';
 import { useSafeCloseModal } from '../hooks/useSafeCloseModal';
 import { Dialog, DialogContent } from '@mui/material';
@@ -326,8 +327,14 @@ export const UserDashboardModal: React.FC = () => {
   const [password, setPassword] = useState('');
   const [phone, setPhone] = useState('');
 
+  const router = useRouter();
   const safeCloseModal = useSafeCloseModal();
   const handleClose = () => safeCloseModal(() => setIsUserDashboardOpen(false));
+
+  const handleContinueAsGuest = () => {
+    safeCloseModal(() => setIsUserDashboardOpen(false));
+    router.push('/checkout');
+  };
 
   const handleAuthSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -604,14 +611,28 @@ export const UserDashboardModal: React.FC = () => {
               </button>
             </form>
 
-            <div className="guest-divider">OR</div>
+            <div className="guest-divider">OR GUEST CHECKOUT</div>
 
-            <button className="guest-btn" onClick={handleDemoLogin} style={{ marginBottom: '8px' }}>
-              👑 Quick Demo Login (As Chief Mrs. Elizabeth)
+            <button
+              className="guest-btn"
+              onClick={handleContinueAsGuest}
+              style={{
+                background: 'linear-gradient(135deg, #d4af37 0%, #c9a227 100%)',
+                color: '#0a0a0a',
+                fontWeight: '800',
+                fontSize: '0.85rem',
+                letterSpacing: '1px',
+                textTransform: 'uppercase',
+                border: 'none',
+                padding: '14px 16px',
+                marginBottom: '10px'
+              }}
+            >
+              Skip Registration & Proceed to Payment Section as Guest &rarr;
             </button>
 
-            <button className="guest-btn" onClick={handleClose}>
-              Shopping as a Guest? Continue Browsing Without Account
+            <button className="guest-btn" onClick={handleDemoLogin}>
+              👑 Quick Demo Login (As Chief Mrs. Elizabeth)
             </button>
           </AuthContainer>
         )}

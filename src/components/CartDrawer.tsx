@@ -267,7 +267,9 @@ export const CartDrawer: React.FC = () => {
     setDeliveryState,
     deliveryCostNGN,
     cartTotalNGN,
-    setIsCheckoutOpen
+    setIsCheckoutOpen,
+    currentUser,
+    setIsUserDashboardOpen
   } = useShop();
 
   const safeClose = useSafeCloseModal();
@@ -423,7 +425,11 @@ export const CartDrawer: React.FC = () => {
               className="checkout-btn"
               onClick={() => {
                 setIsCartDrawerOpen(false);
-                setIsCheckoutOpen(true);
+                if (!currentUser) {
+                  setIsUserDashboardOpen(true);
+                } else {
+                  setIsCheckoutOpen(true);
+                }
               }}
             >
               Proceed to Checkout <FiArrowRight />

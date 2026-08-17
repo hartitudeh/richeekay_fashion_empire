@@ -166,8 +166,17 @@ export default function FullCartPage() {
     couponDiscountNGN,
     deliveryCostNGN,
     cartTotalNGN,
-    appliedCoupon
+    appliedCoupon,
+    currentUser,
+    setIsUserDashboardOpen
   } = useShop();
+
+  const handleCheckoutClick = (e: React.MouseEvent) => {
+    if (!currentUser) {
+      e.preventDefault();
+      setIsUserDashboardOpen(true);
+    }
+  };
 
   return (
     <>
@@ -239,7 +248,7 @@ export default function FullCartPage() {
               <span className="price">{formatPrice(cartTotalNGN)}</span>
             </div>
 
-            <Link href="/checkout" className="checkout-btn">
+            <Link href="/checkout" className="checkout-btn" onClick={handleCheckoutClick}>
               Proceed to Checkout <FiArrowRight />
             </Link>
           </div>

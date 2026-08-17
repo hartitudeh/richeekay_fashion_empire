@@ -449,11 +449,6 @@ export const Navbar: React.FC = () => {
                   <span>Bag {cartCount > 0 && `(${cartCount})`}</span>
                 </div>
 
-                <Link href="/dashboard" className="action-item" onClick={() => setMobileMenuOpen(false)}>
-                  <FiUser className="icon" />
-                  <span>Account</span>
-                </Link>
-
                 <Link href="/admin" className="action-item gold" onClick={() => setMobileMenuOpen(false)}>
                   <MdAdminPanelSettings className="icon" />
                   <span>Admin</span>
@@ -488,10 +483,6 @@ export const Navbar: React.FC = () => {
                   <FiShoppingBag />
                   {cartCount > 0 && <span className="badge">{cartCount}</span>}
                 </button>
-
-                <Link href="/dashboard" className="nav-icon-btn" title="VIP Account">
-                  <FiUser />
-                </Link>
 
                 <Link href="/admin" className="nav-icon-btn" title="Executive Admin Portal" style={{ borderColor: '#D4AF37', color: '#D4AF37' }}>
                   <MdAdminPanelSettings />
