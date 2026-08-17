@@ -57,15 +57,6 @@ const QuickViewContainer = styled.div`
     display: flex;
     flex-direction: column;
 
-    .close-btn {
-      align-self: flex-end;
-      background: none;
-      border: none;
-      color: #d4af37;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
     .category {
       font-size: 0.75rem;
       color: #d4af37;
@@ -236,10 +227,6 @@ export const ProductQuickViewModal: React.FC = () => {
           </div>
 
           <div className="details-col">
-            <button className="close-btn" onClick={() => safeClose(() => setIsQuickViewOpen(false))}>
-              <FiX />
-            </button>
-
             <span className="category">{quickViewProduct.category.replace('-', ' ')}</span>
             <h3>{quickViewProduct.name}</h3>
 
