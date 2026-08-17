@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useShop, Currency } from '../context/ShopContext';
 import {
   FiSearch,
@@ -205,8 +206,9 @@ const NavLinks = styled.nav<{ $mobileOpen: boolean }>`
     position: relative;
     transition: all 0.3s ease;
 
-    &:hover {
+    &:hover, &.active {
       color: #d4af37;
+      font-weight: 700;
     }
 
     &::after {
@@ -220,7 +222,7 @@ const NavLinks = styled.nav<{ $mobileOpen: boolean }>`
       transition: width 0.3s ease;
     }
 
-    &:hover::after {
+    &:hover::after, &.active::after {
       width: 100%;
     }
   }
@@ -361,6 +363,7 @@ const MobileMenuToggler = styled.button<{ $isOpen: boolean }>`
 `;
 
 export const Navbar: React.FC = () => {
+  const pathname = usePathname();
   const {
     currency,
     setCurrency,
@@ -453,13 +456,13 @@ export const Navbar: React.FC = () => {
                 </Link>
               </MobileQuickActions>
 
-              <Link href="/" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Home</Link>
-              <Link href="/shop" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Shop</Link>
-              <Link href="/collections" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Collections</Link>
-              <Link href="/gallery" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Gallery</Link>
-              <Link href="/about" className="nav-item" onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-              <Link href="/blog" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Editorial</Link>
-              <Link href="/contact" className="nav-item" onClick={() => setMobileMenuOpen(false)}>Contact</Link>
+              <Link href="/" className={`nav-item ${pathname === '/' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Home</Link>
+              <Link href="/shop" className={`nav-item ${pathname.startsWith('/shop') ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Shop</Link>
+              <Link href="/collections" className={`nav-item ${pathname.startsWith('/collections') ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Collections</Link>
+              <Link href="/gallery" className={`nav-item ${pathname.startsWith('/gallery') ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Gallery</Link>
+              <Link href="/about" className={`nav-item ${pathname.startsWith('/about') ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
+              <Link href="/blog" className={`nav-item ${pathname.startsWith('/blog') ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Editorial</Link>
+              <Link href="/contact" className={`nav-item ${pathname.startsWith('/contact') ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Contact</Link>
             </NavLinks>
 
             <IconGroup>
