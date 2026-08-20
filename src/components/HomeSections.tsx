@@ -192,22 +192,29 @@ const AboutSection = styled.section`
     }
 
     .values-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding-top: 20px;
 
       .val-item {
+        background: rgba(255, 255, 255, 0.02);
+        border-left: 3px solid #d4af37;
+        padding: 12px 16px;
+        border-radius: 0 4px 4px 0;
+
         h5 {
           font-family: 'Playfair Display', Georgia, serif;
-          font-size: 1.05rem;
+          font-size: 1.1rem;
           color: #d4af37;
           margin-bottom: 4px;
         }
         span {
-          font-size: 0.78rem;
-          color: #aaaaaa;
+          font-size: 0.88rem;
+          color: #cccccc;
+          line-height: 1.5;
+          display: block;
         }
       }
     }
