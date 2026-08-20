@@ -535,12 +535,12 @@ export const HomeSections: React.FC = () => {
         <div className="inner">
           <div className="img-frame">
             <img
-              src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80"
-              alt="RICHEEKAY Founder Portrait"
+              src="/ceo-adegoke-rachael.jpg"
+              alt="Adegoke Rachael - CEO, RicheeKay Fashion Empire"
             />
             <div className="badge-overlay">
-              <div className="num">10+</div>
-              <div className="lbl">Years of Elegance</div>
+              <div className="num">CEO</div>
+              <div className="lbl">Adegoke Rachael</div>
             </div>
           </div>
 
