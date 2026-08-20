@@ -650,20 +650,41 @@ export const CheckoutModal: React.FC = () => {
                     )}
                   </UploadSection>
 
-                  {/* Step 2: Email OTP Notice & Verification Input */}
+                  {/* Step 2: Guest & Email Verification Notice */}
                   <OtpNoticeBox>
                     <FiMail className="mail-icon" />
                     <div>
-                      <h5>Verification Code Sent to Email</h5>
+                      <h5>Instant Verification Code</h5>
                       <p>
-                        A 6-digit order authorization code has been sent to <strong>{customerEmail}</strong>. Enter the code below to complete your order.
+                        A 6-digit transaction code has been sent to <strong>{customerEmail}</strong>. (No account registration required).
                       </p>
-                      <span className="code-badge">Demo Code: {sentOtpCode}</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '8px', flexWrap: 'wrap' }}>
+                        <span className="code-badge">Guest Code: {sentOtpCode}</span>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setVerificationCode(sentOtpCode);
+                            setErrorMessage(null);
+                          }}
+                          style={{
+                            background: 'rgba(212, 175, 55, 0.2)',
+                            border: '1px solid #d4af37',
+                            color: '#d4af37',
+                            fontSize: '0.75rem',
+                            fontWeight: 'bold',
+                            padding: '4px 10px',
+                            borderRadius: '4px',
+                            cursor: 'pointer'
+                          }}
+                        >
+                          ⚡ Auto-Fill Code
+                        </button>
+                      </div>
                     </div>
                   </OtpNoticeBox>
 
                   <div className="input-group">
-                    <label>Enter 6-Digit Email Verification Code</label>
+                    <label>Enter 6-Digit Verification Code</label>
                     <input
                       type="text"
                       maxLength={6}
@@ -672,6 +693,30 @@ export const CheckoutModal: React.FC = () => {
                       onChange={(e) => setVerificationCode(e.target.value.replace(/\D/g, ''))}
                       style={{ letterSpacing: '6px', fontSize: '1.2rem', fontWeight: 'bold', color: '#D4AF37', textAlign: 'center' }}
                     />
+                  </div>
+
+                  {/* Direct WhatsApp Verification Option for Guests */}
+                  <div style={{ textAlign: 'center', marginTop: '10px', marginBottom: '14px' }}>
+                    <a
+                      href={`https://wa.me/2348084278440?text=Hi%20RICHEEKAY%20Empire,%20I%20just%20made%20an%20Opay%20transfer%20of%20${encodeURIComponent(formatPrice(cartTotalNGN))}%20for%20my%20order!`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        color: '#25D366',
+                        fontSize: '0.82rem',
+                        fontWeight: 600,
+                        textDecoration: 'none',
+                        background: 'rgba(37, 211, 102, 0.1)',
+                        padding: '6px 14px',
+                        borderRadius: '20px',
+                        border: '1px solid rgba(37, 211, 102, 0.3)'
+                      }}
+                    >
+                      💬 Or Send Receipt via WhatsApp to Admin (08084278440)
+                    </a>
                   </div>
                 </div>
               )}
