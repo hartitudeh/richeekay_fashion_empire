@@ -467,29 +467,29 @@ export default function AboutPage() {
         <StoryGrid>
           <div className="img-frame">
             <img
-              src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80"
-              alt="RICHEEKAY Master Atelier"
+              src="/ceo-adegoke-rachael.jpg"
+              alt="Adegoke Rachael - CEO, RicheeKay Fashion Empire"
             />
             <div className="gold-badge">
-              <div className="num">10+</div>
-              <div className="lbl">Years of Royalty</div>
+              <div className="num">CEO</div>
+              <div className="lbl">Adegoke Rachael</div>
             </div>
           </div>
 
           <div className="text-content">
             <h3>
-              Redefining <span>African Luxury</span> on the World Stage
+              Meet <span>Adegoke Rachael</span>, CEO & Founder
             </h3>
             <p>
-              RICHEEKAY FASHION EMPIRE was founded in 2016 with a bold vision: to redefine luxury ladies' fashion by fusing royal West African heritage with haute couture tailoring standards inspired by Paris, Milan, and London.
+              RICHEEKAY FASHION EMPIRE was founded by <strong>Adegoke Rachael</strong> with a bold vision: to redefine luxury ladies' fashion by fusing royal West African heritage with haute couture tailoring standards inspired by Paris, Milan, and London.
             </p>
             <p>
-              Every garment created in our master atelier tells a story of prestige, confidence, and meticulous attention to detail. Whether designing a floor-sweeping gala gown with internal boning corsetry or tailoring Cashmere Senator materials for executive women, we believe luxury should be an unforgettable experience.
+              Under her visionary leadership, every garment created in our master atelier tells a story of prestige, confidence, and meticulous attention to detail. From floor-sweeping gala gowns with internal boning corsetry to Cashmere Senator sets for executive women, we believe luxury should be an unforgettable experience.
             </p>
 
             <div className="quote-box">
               "True style speaks without saying a word. Quality lasts long after the event is over. At RICHEEKAY, we craft garments for women who rule their world with grace."
-              <div className="author">— Chief Executive Creative Officer, RICHEEKAY</div>
+              <div className="author">— Adegoke Rachael, CEO & Founder of RICHEEKAY FASHION EMPIRE</div>
             </div>
           </div>
         </StoryGrid>
