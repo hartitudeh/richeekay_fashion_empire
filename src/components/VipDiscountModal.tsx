@@ -41,6 +41,7 @@ const ModalCard = styled.div`
   transform: translate(-50%, -50%);
   width: 90%;
   max-width: 860px;
+  background: #f9f6f0;
   border: 1px solid #d4af37;
   border-radius: 6px;
   overflow: hidden;
@@ -96,6 +97,7 @@ const ModalCard = styled.div`
   }
 
   .content-col {
+    background: #f9f6f0;
     padding: 44px 40px 36px;
     display: flex;
     flex-direction: column;
