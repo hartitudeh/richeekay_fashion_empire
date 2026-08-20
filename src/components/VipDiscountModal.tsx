@@ -116,7 +116,6 @@ const ModalCard = styled.div`
       max-width: 260px;
       object-fit: contain;
       margin-bottom: 16px;
-      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.18));
     }
 
     h3 {
