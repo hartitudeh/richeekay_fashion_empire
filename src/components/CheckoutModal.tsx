@@ -144,7 +144,7 @@ export const CheckoutModal: React.FC = () => {
 
   const [activeStep, setActiveStep] = useState(0);
   const [customerName, setCustomerName] = useState('Lady Chief Elizabeth');
-  const [customerPhone, setCustomerPhone] = useState('+234 812 345 6789');
+  const [customerPhone, setCustomerPhone] = useState('+234 000 000 0000');
   const [customerEmail, setCustomerEmail] = useState('elizabeth@luxuryfashion.com');
   const [address, setAddress] = useState('Plot 14, Victoria Island, Lagos, Nigeria');
   const [paymentMethod, setPaymentMethod] = useState('Paystack Gateway (Cards, Transfer, USSD)');
