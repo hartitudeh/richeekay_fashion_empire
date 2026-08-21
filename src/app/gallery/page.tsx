@@ -485,9 +485,9 @@ export default function GalleryPage() {
           }
         }}
       >
-        <DialogContent style={{ padding: 0 }}>
+        <DialogContent style={{ padding: 0, overflow: 'hidden' }}>
           {activeItem && (
-            <div style={{ background: '#0a0a0a', border: '1px solid #D4AF37', borderRadius: '8px', padding: '24px', color: '#FFF', position: 'relative' }}>
+            <div style={{ background: '#0a0a0a', border: '1px solid #D4AF37', borderRadius: '8px', padding: '24px', color: '#FFF', position: 'relative', maxHeight: '85vh', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <button
                 onClick={() => setActiveItem(null)}
                 style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.6rem', cursor: 'pointer', zIndex: 10 }}
@@ -497,7 +497,7 @@ export default function GalleryPage() {
               <img
                 src={activeItem.image}
                 alt={activeItem.title}
-                style={{ width: '100%', maxHeight: '550px', objectFit: 'cover', border: '1px solid #D4AF37', margin: '14px 0' }}
+                style={{ maxWidth: '100%', maxHeight: '55vh', objectFit: 'contain', border: 'none', borderRadius: '4px', margin: '14px auto', display: 'block' }}
               />
               <span style={{ color: '#D4AF37', fontSize: '0.8rem', textTransform: 'uppercase', fontWeight: 'bold' }}>
                 {activeItem.category.replace('-', ' ')}

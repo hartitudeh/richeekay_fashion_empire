@@ -541,9 +541,9 @@ export default function CollectionDetailPage() {
           }
         }}
       >
-        <DialogContent style={{ padding: 0 }}>
+        <DialogContent style={{ padding: 0, overflow: 'hidden' }}>
           {activeLightbox && (
-            <div style={{ background: '#0a0a0a', border: '1px solid #D4AF37', borderRadius: '8px', padding: '24px', position: 'relative' }}>
+            <div style={{ background: '#0a0a0a', border: '1px solid #D4AF37', borderRadius: '8px', padding: '20px', position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', maxHeight: '85vh', overflow: 'hidden' }}>
               <button
                 onClick={() => setActiveLightbox(null)}
                 style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.6rem', cursor: 'pointer', zIndex: 10 }}
@@ -553,7 +553,7 @@ export default function CollectionDetailPage() {
               <img
                 src={activeLightbox}
                 alt="Enlarged Lookbook Shot"
-                style={{ width: '100%', maxHeight: '650px', objectFit: 'contain', border: '1px solid rgba(212, 175, 55, 0.4)' }}
+                style={{ maxWidth: '100%', maxHeight: '75vh', objectFit: 'contain', border: 'none', borderRadius: '4px', display: 'block', margin: '0 auto' }}
               />
             </div>
           )}
