@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { COLLECTIONS_DATA } from '../../data/productsData';
+import { SkeletonCollectionGrid } from '../../components/Skeletons';
 import Link from 'next/link';
 import { FiArrowRight } from 'react-icons/fi';
 import styled from 'styled-components';
@@ -129,6 +130,13 @@ const Card = styled.div<{ $bgImage: string }>`
 `;
 
 export default function CollectionsPage() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <PageHeader>
@@ -139,20 +147,24 @@ export default function CollectionsPage() {
       </PageHeader>
 
       <Container>
-        <div className="grid">
-          {COLLECTIONS_DATA.map((col) => (
-            <Card key={col.id} $bgImage={col.image}>
-              <div className="content">
-                <span className="tag">{col.tag}</span>
-                <h2>{col.title}</h2>
-                <p>{col.subtitle}</p>
-                <Link href={col.link} className="link-btn">
-                  Explore Lookbook <FiArrowRight />
-                </Link>
-              </div>
-            </Card>
-          ))}
-        </div>
+        {isLoading ? (
+          <SkeletonCollectionGrid count={6} cols={2} />
+        ) : (
+          <div className="grid">
+            {COLLECTIONS_DATA.map((col) => (
+              <Card key={col.id} $bgImage={col.image}>
+                <div className="content">
+                  <span className="tag">{col.tag}</span>
+                  <h2>{col.title}</h2>
+                  <p>{col.subtitle}</p>
+                  <Link href={col.link} className="link-btn">
+                    Explore Lookbook <FiArrowRight />
+                  </Link>
+                </div>
+              </Card>
+            ))}
+          </div>
+        )}
       </Container>
     </>
   );

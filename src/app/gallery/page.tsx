@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Dialog, DialogContent } from '@mui/material';
 import { FiEye, FiHeart, FiX, FiCamera, FiCheckCircle, FiShare2 } from 'react-icons/fi';
 import { FaInstagram } from 'react-icons/fa6';
+import { GalleryCardSkeleton } from '../../components/Skeletons';
 import styled from 'styled-components';
 
 const Header = styled.div`
@@ -341,6 +342,7 @@ export default function GalleryPage() {
   const [activeItem, setActiveItem] = useState<GalleryItem | null>(null);
   const [uploadSubmitted, setUploadSubmitted] = useState(false);
   const [galleryItems, setGalleryItems] = useState<GalleryItem[]>(MASONRY_GALLERY_ITEMS);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -355,8 +357,11 @@ export default function GalleryPage() {
       })
       .catch((e) => {
         console.error('Failed to fetch uploaded gallery items from API', e);
+      })
+      .finally(() => {
+        setTimeout(() => setIsLoading(false), 500);
       });
-  }, []);
+  }, [activeTab]);
 
   const handleTriggerUpload = () => {
     fileInputRef.current?.click();
@@ -437,19 +442,23 @@ export default function GalleryPage() {
 
         {/* Masonry Layout Grid */}
         <MasonryGrid>
-          {filteredItems.map((item) => (
-            <MasonryCard key={item.id} onClick={() => setActiveItem(item)}>
-              <div className="view-btn">
-                <FiEye />
-              </div>
-              <img src={item.image} alt={item.title} />
-              <div className="content-overlay">
-                <span className="cat">{item.category.replace('-', ' ')}</span>
-                <h3>{item.title}</h3>
-                <p>{item.photographer}</p>
-              </div>
-            </MasonryCard>
-          ))}
+          {isLoading ? (
+            Array.from({ length: 6 }).map((_, idx) => <GalleryCardSkeleton key={idx} />)
+          ) : (
+            filteredItems.map((item) => (
+              <MasonryCard key={item.id} onClick={() => setActiveItem(item)}>
+                <div className="view-btn">
+                  <FiEye />
+                </div>
+                <img src={item.image} alt={item.title} />
+                <div className="content-overlay">
+                  <span className="cat">{item.category.replace('-', ' ')}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.photographer}</p>
+                </div>
+              </MasonryCard>
+            ))
+          )}
         </MasonryGrid>
 
         {/* Submit Your Outfit Section */}

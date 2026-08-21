@@ -17,6 +17,7 @@ import { AdminPortalModal } from '../components/AdminPortalModal';
 import { SearchModal } from '../components/SearchModal';
 import { AiStyleAssistant } from '../components/AiStyleAssistant';
 import { VipDiscountModal } from '../components/VipDiscountModal';
+import { Preloader } from '../components/Preloader';
 import { ContentProtection } from '../components/ContentProtection';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body suppressHydrationWarning>
         <StyledComponentsRegistry>
           <ShopProvider>
+            <Preloader />
             <ContentProtection />
             <ThemeProvider theme={muiTheme}>
               <Navbar />

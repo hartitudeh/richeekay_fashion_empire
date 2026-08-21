@@ -1,7 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BLOG_POSTS_DATA } from '../../data/productsData';
+import { BlogCardSkeleton } from '../../components/Skeletons';
 import Link from 'next/link';
 import { FiArrowRight, FiClock, FiCalendar } from 'react-icons/fi';
 import styled from 'styled-components';
@@ -108,6 +109,13 @@ const BlogCard = styled(Link)`
 `;
 
 export default function BlogPage() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 500);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <Header>
@@ -118,23 +126,31 @@ export default function BlogPage() {
       </Header>
 
       <Container>
-        <div className="grid">
-          {BLOG_POSTS_DATA.map((post) => (
-            <BlogCard key={post.id} href={`/blog/${post.id}`}>
-              <img src={post.image} alt={post.title} />
-              <div className="content">
-                <div className="meta">
-                  <span>{post.category}</span> | <span>{post.readTime}</span>
+        {isLoading ? (
+          <div className="grid">
+            {Array.from({ length: 6 }).map((_, idx) => (
+              <BlogCardSkeleton key={idx} />
+            ))}
+          </div>
+        ) : (
+          <div className="grid">
+            {BLOG_POSTS_DATA.map((post) => (
+              <BlogCard key={post.id} href={`/blog/${post.id}`}>
+                <img src={post.image} alt={post.title} />
+                <div className="content">
+                  <div className="meta">
+                    <span>{post.category}</span> | <span>{post.readTime}</span>
+                  </div>
+                  <h2>{post.title}</h2>
+                  <p>{post.excerpt}</p>
+                  <div className="read-btn">
+                    Read Full Article <FiArrowRight />
+                  </div>
                 </div>
-                <h2>{post.title}</h2>
-                <p>{post.excerpt}</p>
-                <div className="read-btn">
-                  Read Full Article <FiArrowRight />
-                </div>
-              </div>
-            </BlogCard>
-          ))}
-        </div>
+              </BlogCard>
+            ))}
+          </div>
+        )}
       </Container>
     </>
   );

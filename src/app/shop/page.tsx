@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useShop } from '../../context/ShopContext';
 import { ProductCard } from '../../components/ProductCard';
+import { SkeletonProductGrid } from '../../components/Skeletons';
 import { CATEGORIES_DATA } from '../../data/productsData';
 import { FiFilter, FiSliders, FiGrid, FiList } from 'react-icons/fi';
 import styled from 'styled-components';
@@ -149,6 +150,14 @@ export default function ShopPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedSize, setSelectedSize] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('featured');
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [selectedCategory, selectedSize, sortBy]);
 
   let filtered = products.filter((p) => {
     const matchesCat = selectedCategory === 'all' || p.category === selectedCategory;
@@ -222,9 +231,13 @@ export default function ShopPage() {
           </div>
 
           <div className="product-grid">
-            {filtered.map((prod) => (
-              <ProductCard key={prod.id} product={prod} />
-            ))}
+            {isLoading ? (
+              <SkeletonProductGrid count={8} cols={3} />
+            ) : (
+              filtered.map((prod) => (
+                <ProductCard key={prod.id} product={prod} />
+              ))
+            )}
           </div>
         </MainContent>
       </ShopLayout>
