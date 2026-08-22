@@ -85,20 +85,14 @@ const CarouselWrapper = styled.div`
     width: calc(100% - 116px);
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 768px) {
     .custom-swiper-prev,
     .custom-swiper-next {
-      width: 40px;
-      height: 40px;
-      font-size: 1.2rem;
+      display: none !important;
     }
 
-    .custom-swiper-prev {
-      margin-right: 10px;
-    }
-
-    .custom-swiper-next {
-      margin-left: 10px;
+    .cat-swiper {
+      width: 100% !important;
     }
   }
 `;
