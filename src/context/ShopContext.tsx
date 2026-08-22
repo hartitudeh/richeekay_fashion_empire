@@ -44,6 +44,9 @@ export interface UserProfile {
   name: string;
   email: string;
   phone?: string;
+  avatar?: string;
+  bio?: string;
+  address?: string;
   vipTier: string;
   points: number;
 }
@@ -59,6 +62,7 @@ export interface ShopContextType {
   userLogin: (email: string, pass: string) => boolean;
   userRegister: (name: string, email: string, pass: string, phone?: string) => boolean;
   userLogout: () => void;
+  updateUserProfile: (updatedFields: Partial<UserProfile>) => void;
 
   // Cart
   cart: CartItem[];
@@ -237,6 +241,22 @@ export const ShopProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     try {
       localStorage.removeItem('richeekay_user_profile');
     } catch (e) {}
+  };
+
+  const updateUserProfile = (updatedFields: Partial<UserProfile>) => {
+    setCurrentUser((prev) => {
+      const baseUser: UserProfile = prev || {
+        name: 'VIP Client',
+        email: 'client@richeekay.com',
+        vipTier: 'Royal Sovereign VIP',
+        points: 1250
+      };
+      const updated = { ...baseUser, ...updatedFields };
+      try {
+        localStorage.setItem('richeekay_user_profile', JSON.stringify(updated));
+      } catch (e) {}
+      return updated;
+    });
   };
 
   // Load initial localstorage persistence
@@ -423,6 +443,7 @@ export const ShopProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         userLogin,
         userRegister,
         userLogout,
+        updateUserProfile,
         cart,
         addToCart,
         removeFromCart,

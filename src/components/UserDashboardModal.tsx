@@ -504,11 +504,15 @@ export const UserDashboardModal: React.FC = () => {
           <DashboardContainer>
             <div className="header-row">
               <div className="user-info">
-                <div className="avatar">
-                  {currentUser.email.charAt(0).toUpperCase()}
+                <div className="avatar" style={{ overflow: 'hidden', padding: 0 }}>
+                  {currentUser.avatar ? (
+                    <img src={currentUser.avatar} alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  ) : (
+                    currentUser.email.charAt(0).toUpperCase()
+                  )}
                 </div>
                 <div className="user-details">
-                  <h3>RICHEEKAY VIP Account</h3>
+                  <h3>{currentUser.name || 'RICHEEKAY VIP Account'}</h3>
                   <div className="user-email">✉️ {currentUser.email}</div>
                   <div className="device-tag">
                     <FiSmartphone /> Purchase history & likes saved on this phone
@@ -517,6 +521,24 @@ export const UserDashboardModal: React.FC = () => {
               </div>
 
               <div className="action-group">
+                <button
+                  onClick={() => {
+                    handleClose();
+                    router.push('/dashboard');
+                  }}
+                  style={{
+                    background: 'linear-gradient(135deg, #d4af37 0%, #c9a227 100%)',
+                    color: '#0a0a0a',
+                    border: 'none',
+                    padding: '8px 16px',
+                    borderRadius: '20px',
+                    fontSize: '0.8rem',
+                    fontWeight: '700',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Full Dashboard &rarr;
+                </button>
                 <button className="logout-btn" onClick={userLogout} title="Sign Out">
                   <FiLogOut /> Sign Out
                 </button>
