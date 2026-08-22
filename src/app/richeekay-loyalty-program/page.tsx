@@ -447,6 +447,57 @@ const TiersGrid = styled.div`
         }
       }
     }
+
+    .tier-btn {
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.3s ease;
+      outline: none;
+
+      &.gold {
+        background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+        color: #0a0a0a;
+        border: none;
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+
+        &:hover {
+          background: linear-gradient(135deg, #f4e798 0%, #d4af37 100%);
+          transform: translateY(-3px);
+          box-shadow: 0 10px 28px rgba(212, 175, 55, 0.6);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+
+      &.outline {
+        background: transparent;
+        border: 2px solid #d4af37;
+        color: #d4af37;
+
+        &:hover {
+          background: #d4af37;
+          color: #0a0a0a;
+          transform: translateY(-3px);
+          box-shadow: 0 8px 22px rgba(212, 175, 55, 0.4);
+        }
+
+        &:active {
+          transform: translateY(0);
+        }
+      }
+    }
   }
 `;
 
@@ -731,8 +782,8 @@ export default function RicheekayLoyaltyPage() {
                 <FiCheckCircle /> Standard customer support
               </li>
             </ul>
-            <button className="btn-secondary" style={{ width: '100%', justifyContent: 'center' }} onClick={() => setIsUserDashboardOpen(true)}>
-              Join Tier 1
+            <button className="tier-btn outline" onClick={() => setIsUserDashboardOpen(true)}>
+              <FaCrown /> Join Tier 1 Now
             </button>
           </div>
 
@@ -758,8 +809,8 @@ export default function RicheekayLoyaltyPage() {
                 <FiCheckCircle /> Early access to new drops (24h before)
               </li>
             </ul>
-            <button className="btn-primary" style={{ width: '100%', justifyContent: 'center' }} onClick={() => setIsUserDashboardOpen(true)}>
-              Join Tier 2
+            <button className="tier-btn gold" onClick={() => setIsUserDashboardOpen(true)}>
+              <FaCrown /> Join Tier 2 Now
             </button>
           </div>
 
@@ -785,8 +836,8 @@ export default function RicheekayLoyaltyPage() {
                 <FiCheckCircle /> Exclusive Invite to Annual Gala Runway
               </li>
             </ul>
-            <button className="btn-secondary" style={{ width: '100%', justifyContent: 'center' }} onClick={() => setIsUserDashboardOpen(true)}>
-              Join Tier 3
+            <button className="tier-btn outline" onClick={() => setIsUserDashboardOpen(true)}>
+              <FaCrown /> Join Tier 3 Now
             </button>
           </div>
         </TiersGrid>
