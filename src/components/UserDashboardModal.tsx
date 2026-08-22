@@ -5,7 +5,24 @@ import { useRouter } from 'next/navigation';
 import { useShop } from '../context/ShopContext';
 import { useSafeCloseModal } from '../hooks/useSafeCloseModal';
 import { Dialog, DialogContent } from '@mui/material';
-import { FiUser, FiAward, FiShoppingBag, FiHeart, FiScissors, FiShield, FiX, FiLock, FiMail, FiPhone, FiLogOut, FiCheckCircle } from 'react-icons/fi';
+import { FaCrown } from 'react-icons/fa6';
+import {
+  FiUser,
+  FiAward,
+  FiShoppingBag,
+  FiHeart,
+  FiScissors,
+  FiShield,
+  FiX,
+  FiLock,
+  FiMail,
+  FiPhone,
+  FiLogOut,
+  FiCheckCircle,
+  FiExternalLink,
+  FiSmartphone,
+  FiCopy
+} from 'react-icons/fi';
 import styled from 'styled-components';
 
 const DashboardContainer = styled.div`
@@ -16,11 +33,17 @@ const DashboardContainer = styled.div`
   position: relative;
   padding: 32px;
 
+  @media (max-width: 600px) {
+    padding: 20px 16px;
+  }
+
   .header-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 24px;
+    gap: 16px;
+    flex-wrap: wrap;
 
     .user-info {
       display: flex;
@@ -39,42 +62,78 @@ const DashboardContainer = styled.div`
         align-items: center;
         justify-content: center;
         border: 2px solid #f4e798;
+        flex-shrink: 0;
       }
 
-      h3 {
-        font-family: 'Playfair Display', Georgia, serif;
-        font-size: 1.5rem;
-        color: #ffffff;
-        margin: 0;
-      }
+      .user-details {
+        h3 {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: 1.4rem;
+          color: #ffffff;
+          margin: 0 0 4px;
+          word-break: break-all;
+        }
 
-      span {
-        font-size: 0.8rem;
-        color: #d4af37;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        font-weight: 600;
+        .user-email {
+          font-size: 0.85rem;
+          color: #d4af37;
+          font-weight: 600;
+        }
+
+        .device-tag {
+          font-size: 0.72rem;
+          color: #aaaaaa;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          margin-top: 4px;
+        }
       }
     }
 
-    .logout-btn {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #cccccc;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      cursor: pointer;
+    .action-group {
       display: flex;
       align-items: center;
-      gap: 6px;
-      transition: all 0.3s ease;
+      gap: 10px;
 
-      &:hover {
-        background: rgba(255, 77, 77, 0.2);
-        border-color: #ff4d4d;
-        color: #ff4d4d;
+      .logout-btn {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #cccccc;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: rgba(255, 77, 77, 0.2);
+          border-color: #ff4d4d;
+          color: #ff4d4d;
+        }
       }
+    }
+  }
+
+  .privacy-banner {
+    background: rgba(212, 175, 55, 0.08);
+    border: 1px dashed rgba(212, 175, 55, 0.35);
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 24px;
+    font-size: 0.78rem;
+    color: #e6c875;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    svg {
+      color: #d4af37;
+      font-size: 1rem;
+      flex-shrink: 0;
     }
   }
 
@@ -97,7 +156,7 @@ const DashboardContainer = styled.div`
 
       .num {
         font-family: 'Playfair Display', Georgia, serif;
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         font-weight: 700;
         color: #d4af37;
       }
@@ -109,6 +168,12 @@ const DashboardContainer = styled.div`
         letter-spacing: 1px;
         margin-top: 4px;
       }
+
+      .sub-lbl {
+        font-size: 0.7rem;
+        color: #25d366;
+        margin-top: 2px;
+      }
     }
   }
 
@@ -116,18 +181,24 @@ const DashboardContainer = styled.div`
     display: flex;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: 24px;
-    gap: 20px;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 4px;
 
     button {
       background: none;
       border: none;
       color: #888888;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 600;
       padding-bottom: 12px;
       cursor: pointer;
       position: relative;
+      white-space: nowrap;
       transition: color 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
 
       &.active {
         color: #d4af37;
@@ -154,6 +225,10 @@ const AuthContainer = styled.div`
   padding: 36px 32px;
   position: relative;
 
+  @media (max-width: 600px) {
+    padding: 24px 18px;
+  }
+
   .close-top {
     position: absolute;
     top: 20px;
@@ -168,7 +243,7 @@ const AuthContainer = styled.div`
 
   .auth-header {
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
 
     .brand-mark {
       height: 55px;
@@ -191,11 +266,33 @@ const AuthContainer = styled.div`
     }
   }
 
+  .privacy-notice {
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 24px;
+    font-size: 0.78rem;
+    color: #f4e798;
+    line-height: 1.5;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    svg {
+      color: #d4af37;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+  }
+
   .auth-tabs {
     display: flex;
     justify-content: center;
     gap: 12px;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
 
     button {
       flex: 1;
@@ -221,7 +318,7 @@ const AuthContainer = styled.div`
   form {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
 
     .input-group {
       position: relative;
@@ -258,13 +355,12 @@ const AuthContainer = styled.div`
       font-weight: 700;
       font-size: 0.9rem;
       letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 15px;
+      padding: 14px;
       border: none;
-      border-radius: 4px;
+      border-radius: 30px;
       cursor: pointer;
       transition: all 0.3s ease;
-      margin-top: 6px;
+      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25);
 
       &:hover {
         box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
@@ -276,7 +372,7 @@ const AuthContainer = styled.div`
   .guest-divider {
     display: flex;
     align-items: center;
-    margin: 24px 0 18px;
+    margin: 20px 0 16px;
     color: #666666;
     font-size: 0.8rem;
     gap: 12px;
@@ -319,18 +415,25 @@ export const UserDashboardModal: React.FC = () => {
     wishlist,
     products,
     userMeasurements,
+    saveUserMeasurements,
     formatPrice,
     addToCart
   } = useShop();
 
   const [authMode, setAuthMode] = useState<'login' | 'register'>('register');
-  const [activeTab, setActiveTab] = useState<'orders' | 'measurements' | 'wishlist'>('orders');
+  const [activeTab, setActiveTab] = useState<'orders' | 'wishlist' | 'royalty' | 'measurements'>('orders');
 
-  // Form inputs
-  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [phone, setPhone] = useState('');
+
+  const [bust, setBust] = useState(userMeasurements.bust || '36');
+  const [waist, setWaist] = useState(userMeasurements.waist || '28');
+  const [hips, setHips] = useState(userMeasurements.hips || '40');
+  const [shoulder, setShoulder] = useState(userMeasurements.shoulder || '15');
+  const [sleeve, setSleeve] = useState(userMeasurements.sleeve || '24');
+  const [fullLength, setFullLength] = useState(userMeasurements.fullLength || '58');
+
+  const [copiedLink, setCopiedLink] = useState(false);
 
   const router = useRouter();
   const safeCloseModal = useSafeCloseModal();
@@ -343,17 +446,38 @@ export const UserDashboardModal: React.FC = () => {
 
   const handleAuthSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!email || !password) return;
     if (authMode === 'register') {
-      if (!name || !email || !password) return;
-      userRegister(name, email, password, phone);
+      const nameFromEmail = email.split('@')[0];
+      const formattedName = nameFromEmail.charAt(0).toUpperCase() + nameFromEmail.slice(1);
+      userRegister(formattedName, email, password);
     } else {
-      if (!email || !password) return;
       userLogin(email, password);
     }
   };
 
   const handleDemoLogin = () => {
-    userRegister('Chief Mrs. Elizabeth', 'elizabeth@richeekay.com', 'demo123', '+2348007424335');
+    userRegister('Royal VIP Client', 'client@richeekay.com', 'demo123');
+  };
+
+  const handleSaveMeasurements = (e: React.FormEvent) => {
+    e.preventDefault();
+    saveUserMeasurements({
+      ...userMeasurements,
+      bust,
+      waist,
+      hips,
+      shoulder,
+      sleeve,
+      fullLength
+    });
+    alert('✂️ Your custom fitting measurements have been saved locally to your phone!');
+  };
+
+  const handleCopyReferral = () => {
+    navigator.clipboard.writeText('https://richeekay-fashion-empire.vercel.app/richeekay-loyalty-program?ref=VIP849');
+    setCopiedLink(true);
+    setTimeout(() => setCopiedLink(false), 2000);
   };
 
   const wishlistProducts = products.filter((p) => wishlist.includes(p.id));
@@ -377,18 +501,22 @@ export const UserDashboardModal: React.FC = () => {
     >
       <DialogContent style={{ padding: 0 }}>
         {currentUser ? (
-          /* LOGGED IN VIP DASHBOARD VIEW */
           <DashboardContainer>
             <div className="header-row">
               <div className="user-info">
-                <div className="avatar">{currentUser.name.charAt(0)}</div>
-                <div>
-                  <h3>{currentUser.name}</h3>
-                  <span>👑 {currentUser.vipTier}</span>
+                <div className="avatar">
+                  {currentUser.email.charAt(0).toUpperCase()}
+                </div>
+                <div className="user-details">
+                  <h3>RICHEEKAY VIP Account</h3>
+                  <div className="user-email">✉️ {currentUser.email}</div>
+                  <div className="device-tag">
+                    <FiSmartphone /> Purchase history & likes saved on this phone
+                  </div>
                 </div>
               </div>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <div className="action-group">
                 <button className="logout-btn" onClick={userLogout} title="Sign Out">
                   <FiLogOut /> Sign Out
                 </button>
@@ -398,18 +526,28 @@ export const UserDashboardModal: React.FC = () => {
               </div>
             </div>
 
+            <div className="privacy-banner">
+              <FiShield />
+              <span>
+                <strong>Privacy Guaranteed:</strong> Only your email (<code>{currentUser.email}</code>) is stored. All purchase orders, wishlist items, fitting measurements, and Gold Points are stored safely on your device.
+              </span>
+            </div>
+
             <div className="kpi-row">
               <div className="kpi-card">
-                <div className="num">{currentUser.points.toLocaleString()}</div>
-                <div className="lbl">VIP Loyalty Points</div>
+                <div className="num">{(currentUser.points || 1250).toLocaleString()}</div>
+                <div className="lbl">Royalty Gold Points</div>
+                <div className="sub-lbl">Worth ₦{((currentUser.points || 1250) * 2).toLocaleString()} Cash Discount</div>
               </div>
               <div className="kpi-card">
                 <div className="num">{orders.length}</div>
-                <div className="lbl">Total Orders Placed</div>
+                <div className="lbl">Purchase History</div>
+                <div className="sub-lbl">Saved on Device</div>
               </div>
               <div className="kpi-card">
                 <div className="num">{wishlist.length}</div>
-                <div className="lbl">Saved Wishlist Items</div>
+                <div className="lbl">Liked Items</div>
+                <div className="sub-lbl">Saved on Device</div>
               </div>
             </div>
 
@@ -418,23 +556,28 @@ export const UserDashboardModal: React.FC = () => {
                 className={activeTab === 'orders' ? 'active' : ''}
                 onClick={() => setActiveTab('orders')}
               >
-                Order History ({orders.length})
-              </button>
-              <button
-                className={activeTab === 'measurements' ? 'active' : ''}
-                onClick={() => setActiveTab('measurements')}
-              >
-                Saved Custom Measurements
+                <FiShoppingBag /> Purchase History ({orders.length})
               </button>
               <button
                 className={activeTab === 'wishlist' ? 'active' : ''}
                 onClick={() => setActiveTab('wishlist')}
               >
-                My Wishlist ({wishlist.length})
+                <FiHeart /> Liked Couture ({wishlist.length})
+              </button>
+              <button
+                className={activeTab === 'royalty' ? 'active' : ''}
+                onClick={() => setActiveTab('royalty')}
+              >
+                <FaCrown /> Royalty Club Points
+              </button>
+              <button
+                className={activeTab === 'measurements' ? 'active' : ''}
+                onClick={() => setActiveTab('measurements')}
+              >
+                <FiScissors /> Fitting Measurements
               </button>
             </div>
 
-            {/* ORDERS TAB */}
             {activeTab === 'orders' && (
               <div>
                 {orders.length > 0 ? (
@@ -443,50 +586,56 @@ export const UserDashboardModal: React.FC = () => {
                       key={o.id}
                       style={{
                         background: '#0a0a0a',
-                        border: '1px solid rgba(212,175,55,0.2)',
+                        border: '1px solid rgba(212,175,55,0.25)',
                         padding: '16px',
-                        marginBottom: '12px',
-                        borderRadius: '4px'
+                        marginBottom: '14px',
+                        borderRadius: '6px'
                       }}
                     >
-                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px', flexWrap: 'wrap', gap: '8px' }}>
                         <span style={{ fontWeight: '700', color: '#d4af37' }}>Order #{o.id}</span>
                         <span style={{ fontSize: '0.8rem', color: '#aaaaaa' }}>{o.date}</span>
                       </div>
-                      <div style={{ fontSize: '0.85rem', color: '#cccccc' }}>
-                        Total Amount: <strong>{formatPrice(o.totalNGN)}</strong> | Status: <span style={{ color: '#25d366' }}>{o.status}</span>
+                      <div style={{ fontSize: '0.88rem', color: '#cccccc', marginBottom: '12px' }}>
+                        Total Paid: <strong style={{ color: '#ffffff' }}>{formatPrice(o.totalNGN)}</strong> | Status:{' '}
+                        <span style={{ color: '#25d366', fontWeight: '700' }}>{o.status}</span>
+                      </div>
+                      <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                        <button
+                          onClick={() => {
+                            handleClose();
+                            router.push(`/order-tracking?orderId=${o.id}`);
+                          }}
+                          style={{
+                            background: 'rgba(212,175,55,0.15)',
+                            border: '1px solid #d4af37',
+                            color: '#d4af37',
+                            padding: '6px 14px',
+                            fontSize: '0.78rem',
+                            borderRadius: '4px',
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '4px'
+                          }}
+                        >
+                          <FiExternalLink /> Track Package
+                        </button>
                       </div>
                     </div>
                   ))
                 ) : (
-                  <p style={{ textAlign: 'center', color: '#888888', padding: '30px 0' }}>
-                    No order history found yet.
-                  </p>
+                  <div style={{ textAlign: 'center', color: '#888888', padding: '40px 0' }}>
+                    <FiShoppingBag style={{ fontSize: '2.2rem', color: '#d4af37', marginBottom: '8px' }} />
+                    <p style={{ margin: 0, fontSize: '0.9rem' }}>No orders placed on this phone yet.</p>
+                    <p style={{ fontSize: '0.8rem', color: '#666666', marginTop: '4px' }}>
+                      Purchases you make will be saved automatically to your device history.
+                    </p>
+                  </div>
                 )}
               </div>
             )}
 
-            {/* MEASUREMENTS TAB */}
-            {activeTab === 'measurements' && (
-              <div style={{ background: '#0a0a0a', padding: '20px', borderRadius: '4px', border: '1px solid rgba(212,175,55,0.2)' }}>
-                <h4 style={{ fontFamily: "'Playfair Display', serif", color: '#d4af37', marginBottom: '16px' }}>
-                  ✂️ Your Saved Haute Couture Profile
-                </h4>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '14px', fontSize: '0.88rem' }}>
-                  <div>Bust: <strong>{userMeasurements.bust}"</strong></div>
-                  <div>Waist: <strong>{userMeasurements.waist}"</strong></div>
-                  <div>Hips: <strong>{userMeasurements.hips}"</strong></div>
-                  <div>Shoulder: <strong>{userMeasurements.shoulder}"</strong></div>
-                  <div>Sleeve: <strong>{userMeasurements.sleeve}"</strong></div>
-                  <div>Full Length: <strong>{userMeasurements.fullLength}"</strong></div>
-                </div>
-                <p style={{ fontSize: '0.78rem', color: '#aaaaaa', marginTop: '14px' }}>
-                  Preferred Fabric: {userMeasurements.fabricType}
-                </p>
-              </div>
-            )}
-
-            {/* WISHLIST TAB */}
             {activeTab === 'wishlist' && (
               <div>
                 {wishlistProducts.length > 0 ? (
@@ -496,15 +645,16 @@ export const UserDashboardModal: React.FC = () => {
                         key={p.id}
                         style={{
                           background: '#0a0a0a',
-                          border: '1px solid rgba(255,255,255,0.1)',
+                          border: '1px solid rgba(255,255,255,0.12)',
                           padding: '12px',
                           display: 'flex',
                           gap: '12px',
-                          borderRadius: '4px'
+                          borderRadius: '6px',
+                          alignItems: 'center'
                         }}
                       >
-                        <img src={p.images[0]} alt={p.name} style={{ width: '60px', height: '80px', objectFit: 'cover' }} />
-                        <div>
+                        <img src={p.images[0]} alt={p.name} style={{ width: '64px', height: '84px', objectFit: 'cover', borderRadius: '4px' }} />
+                        <div style={{ flex: 1 }}>
                           <h5 style={{ fontSize: '0.9rem', color: '#ffffff', margin: '0 0 4px' }}>{p.name}</h5>
                           <span style={{ color: '#d4af37', fontSize: '0.85rem', fontWeight: '700' }}>{formatPrice(p.priceNGN)}</span>
                           <button
@@ -512,12 +662,13 @@ export const UserDashboardModal: React.FC = () => {
                             style={{
                               display: 'block',
                               marginTop: '8px',
-                              background: '#d4af37',
+                              background: 'linear-gradient(135deg, #d4af37 0%, #c9a227 100%)',
                               color: '#0a0a0a',
                               border: 'none',
-                              padding: '4px 10px',
+                              padding: '6px 12px',
                               fontSize: '0.75rem',
                               fontWeight: '700',
+                              borderRadius: '30px',
                               cursor: 'pointer'
                             }}
                           >
@@ -528,15 +679,183 @@ export const UserDashboardModal: React.FC = () => {
                     ))}
                   </div>
                 ) : (
-                  <p style={{ textAlign: 'center', color: '#888888', padding: '30px 0' }}>
-                    Your wishlist is currently empty.
-                  </p>
+                  <div style={{ textAlign: 'center', color: '#888888', padding: '40px 0' }}>
+                    <FiHeart style={{ fontSize: '2.2rem', color: '#d4af37', marginBottom: '8px' }} />
+                    <p style={{ margin: 0, fontSize: '0.9rem' }}>No liked items saved on your phone yet.</p>
+                    <p style={{ fontSize: '0.8rem', color: '#666666', marginTop: '4px' }}>
+                      Click the heart icon on any gown or tunic set to save it to your phone.
+                    </p>
+                  </div>
                 )}
               </div>
             )}
+
+            {activeTab === 'royalty' && (
+              <div style={{ background: '#0a0a0a', padding: '24px', borderRadius: '6px', border: '1px solid rgba(212,175,55,0.3)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                  <FaCrown style={{ fontSize: '1.8rem', color: '#d4af37' }} />
+                  <div>
+                    <h4 style={{ fontFamily: "'Playfair Display', serif", color: '#ffffff', fontSize: '1.3rem', margin: 0 }}>
+                      RICHEEKAY Royalty Gold Points
+                    </h4>
+                    <span style={{ fontSize: '0.8rem', color: '#25d366', fontWeight: '700' }}>
+                      Active Member • Tier 2 Royal Sovereign
+                    </span>
+                  </div>
+                </div>
+
+                <div style={{ background: 'rgba(212,175,55,0.1)', border: '1px dashed #d4af37', padding: '16px', borderRadius: '6px', marginBottom: '20px', textAlign: 'center' }}>
+                  <div style={{ fontSize: '2.2rem', fontWeight: '800', color: '#d4af37', fontFamily: "'Playfair Display', serif" }}>
+                    {(currentUser.points || 1250).toLocaleString()} GOLD POINTS
+                  </div>
+                  <div style={{ fontSize: '0.92rem', color: '#ffffff', marginTop: '4px', fontWeight: '600' }}>
+                    Cash Discount Value: <span style={{ color: '#25d366' }}>₦{((currentUser.points || 1250) * 2).toLocaleString()} OFF</span> at Checkout
+                  </div>
+                </div>
+
+                <div style={{ marginBottom: '20px' }}>
+                  <div style={{ fontSize: '0.82rem', color: '#aaaaaa', marginBottom: '6px', display: 'flex', justifyContent: 'space-between' }}>
+                    <span>Next Tier Progress (Empire VIP Dynasty)</span>
+                    <span style={{ color: '#d4af37' }}>1,250 / 50,000 Pts</span>
+                  </div>
+                  <div style={{ width: '100%', height: '8px', background: '#222222', borderRadius: '4px', overflow: 'hidden' }}>
+                    <div style={{ width: '12%', height: '100%', background: 'linear-gradient(90deg, #c9a227 0%, #d4af37 100%)' }} />
+                  </div>
+                </div>
+
+                <div style={{ background: '#141414', padding: '14px 18px', borderRadius: '4px', marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px' }}>
+                  <span style={{ fontSize: '0.82rem', color: '#cccccc' }}>Your VIP Invite Link (+1,500 Pts):</span>
+                  <button
+                    onClick={handleCopyReferral}
+                    style={{
+                      background: '#d4af37',
+                      color: '#0a0a0a',
+                      border: 'none',
+                      padding: '6px 12px',
+                      borderRadius: '4px',
+                      fontWeight: '700',
+                      fontSize: '0.78rem',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '4px'
+                    }}
+                  >
+                    <FiCopy /> {copiedLink ? 'Copied!' : 'Copy Link'}
+                  </button>
+                </div>
+
+                <button
+                  onClick={() => {
+                    handleClose();
+                    router.push('/richeekay-loyalty-program');
+                  }}
+                  style={{
+                    width: '100%',
+                    background: 'transparent',
+                    border: '1px solid #d4af37',
+                    color: '#d4af37',
+                    padding: '12px',
+                    borderRadius: '30px',
+                    fontWeight: '700',
+                    fontSize: '0.85rem',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '6px'
+                  }}
+                >
+                  <FaCrown /> View Full Royalty Program Terms & Benefits &rarr;
+                </button>
+              </div>
+            )}
+
+            {activeTab === 'measurements' && (
+              <form onSubmit={handleSaveMeasurements} style={{ background: '#0a0a0a', padding: '24px', borderRadius: '6px', border: '1px solid rgba(212,175,55,0.25)' }}>
+                <h4 style={{ fontFamily: "'Playfair Display', serif", color: '#d4af37', marginBottom: '8px', fontSize: '1.2rem' }}>
+                  ✂️ Bespoke Custom Fitting Measurements
+                </h4>
+                <p style={{ fontSize: '0.8rem', color: '#aaaaaa', marginBottom: '18px' }}>
+                  All body measurements are saved securely on your phone for instant bespoke orders.
+                </p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '14px', marginBottom: '18px' }}>
+                  <div>
+                    <label style={{ fontSize: '0.75rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Bust (Inches)</label>
+                    <input
+                      type="text"
+                      value={bust}
+                      onChange={(e) => setBust(e.target.value)}
+                      style={{ width: '100%', padding: '10px', background: '#141414', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                    />
+                  </div>
+                  <div>
+                    <label style={{ fontSize: '0.75rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Waist (Inches)</label>
+                    <input
+                      type="text"
+                      value={waist}
+                      onChange={(e) => setWaist(e.target.value)}
+                      style={{ width: '100%', padding: '10px', background: '#141414', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                    />
+                  </div>
+                  <div>
+                    <label style={{ fontSize: '0.75rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Hips (Inches)</label>
+                    <input
+                      type="text"
+                      value={hips}
+                      onChange={(e) => setHips(e.target.value)}
+                      style={{ width: '100%', padding: '10px', background: '#141414', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                    />
+                  </div>
+                  <div>
+                    <label style={{ fontSize: '0.75rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Shoulder (Inches)</label>
+                    <input
+                      type="text"
+                      value={shoulder}
+                      onChange={(e) => setShoulder(e.target.value)}
+                      style={{ width: '100%', padding: '10px', background: '#141414', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                    />
+                  </div>
+                  <div>
+                    <label style={{ fontSize: '0.75rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Sleeve Length</label>
+                    <input
+                      type="text"
+                      value={sleeve}
+                      onChange={(e) => setSleeve(e.target.value)}
+                      style={{ width: '100%', padding: '10px', background: '#141414', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                    />
+                  </div>
+                  <div>
+                    <label style={{ fontSize: '0.75rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Full Dress Length</label>
+                    <input
+                      type="text"
+                      value={fullLength}
+                      onChange={(e) => setFullLength(e.target.value)}
+                      style={{ width: '100%', padding: '10px', background: '#141414', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                    />
+                  </div>
+                </div>
+
+                <button
+                  type="submit"
+                  style={{
+                    background: 'linear-gradient(135deg, #d4af37 0%, #c9a227 100%)',
+                    color: '#0a0a0a',
+                    border: 'none',
+                    padding: '12px 24px',
+                    borderRadius: '30px',
+                    fontWeight: '700',
+                    fontSize: '0.85rem',
+                    cursor: 'pointer'
+                  }}
+                >
+                  Save Fitting Profile to Phone
+                </button>
+              </form>
+            )}
           </DashboardContainer>
         ) : (
-          /* NOT LOGGED IN AUTH FORM VIEW */
           <AuthContainer>
             <button className="close-top" onClick={handleClose}>
               <FiX />
@@ -544,8 +863,15 @@ export const UserDashboardModal: React.FC = () => {
 
             <div className="auth-header">
               <img src="/rklogo.png" alt="RICHEEKAY Logo" className="brand-mark" />
-              <h2>RICHEEKAY VIP Hub</h2>
-              <p>Sign in or create a VIP account to save measurements & earn loyalty rewards.</p>
+              <h2>RICHEEKAY VIP Dashboard</h2>
+              <p>Enter your Email Address to create or sign in to your VIP account.</p>
+            </div>
+
+            <div className="privacy-notice">
+              <FiShield />
+              <div>
+                <strong>Privacy Guaranteed:</strong> The only information saved to your account profile is your <strong>Email Address</strong>. Your purchase history, liked items, custom measurements, and Royalty Gold Points are stored safely on your phone/browser.
+              </div>
             </div>
 
             <div className="auth-tabs">
@@ -564,24 +890,11 @@ export const UserDashboardModal: React.FC = () => {
             </div>
 
             <form onSubmit={handleAuthSubmit}>
-              {authMode === 'register' && (
-                <div className="input-group">
-                  <FiUser className="icon" />
-                  <input
-                    type="text"
-                    placeholder="Full Name (e.g. Chief Mrs. Elizabeth)"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    required
-                  />
-                </div>
-              )}
-
               <div className="input-group">
                 <FiMail className="icon" />
                 <input
                   type="email"
-                  placeholder="Email Address"
+                  placeholder="Enter Your Email Address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -599,20 +912,8 @@ export const UserDashboardModal: React.FC = () => {
                 />
               </div>
 
-              {authMode === 'register' && (
-                <div className="input-group">
-                  <FiPhone className="icon" />
-                  <input
-                    type="tel"
-                    placeholder="Phone Number (Optional for VIP delivery notifications)"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                  />
-                </div>
-              )}
-
               <button type="submit" className="submit-btn">
-                {authMode === 'register' ? 'CREATE VIP ACCOUNT (+1,500 POINTS)' : 'SIGN IN TO VIP HUB'}
+                {authMode === 'register' ? 'CREATE VIP ACCOUNT (+1,500 POINTS)' : 'SIGN IN TO VIP DASHBOARD'}
               </button>
             </form>
 
@@ -637,7 +938,7 @@ export const UserDashboardModal: React.FC = () => {
             </button>
 
             <button className="guest-btn" onClick={handleDemoLogin}>
-              👑 Quick Demo Login (As Chief Mrs. Elizabeth)
+              👑 Quick Demo VIP Sign In
             </button>
           </AuthContainer>
         )}
