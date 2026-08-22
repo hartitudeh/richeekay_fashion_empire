@@ -16,7 +16,8 @@ import {
   FiTruck,
   FiScissors,
   FiUserCheck,
-  FiHelpCircle
+  FiHelpCircle,
+  FiChevronDown
 } from 'react-icons/fi';
 import styled from 'styled-components';
 
@@ -633,33 +634,115 @@ const FaqSection = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 900px;
+  max-width: 920px;
   margin: 0 auto;
 
-  .faq-card {
+  .faq-accordion-item {
     background: #141414;
     border: 1px solid rgba(212, 175, 55, 0.25);
-    border-radius: 6px;
-    padding: 24px 28px;
+    border-radius: 8px;
+    padding: 22px 28px;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
 
-    h4 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.2rem;
-      color: #d4af37;
-      margin-bottom: 8px;
+    &:hover {
+      border-color: #d4af37;
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
     }
 
-    p {
-      font-size: 0.92rem;
-      color: #cccccc;
-      line-height: 1.6;
+    &.open {
+      background: linear-gradient(180deg, #1c180e 0%, #141414 100%);
+      border-color: #d4af37;
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+
+      .chevron {
+        transform: rotate(180deg);
+        color: #d4af37;
+      }
+
+      .faq-question h4 {
+        color: #d4af37;
+      }
+
+      .faq-answer {
+        max-height: 250px;
+        opacity: 1;
+        margin-top: 14px;
+        padding-top: 16px;
+        border-top: 1px dashed rgba(212, 175, 55, 0.3);
+      }
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+
+      h4 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.25rem;
+        color: #ffffff;
+        margin: 0;
+        transition: color 0.3s ease;
+      }
+
+      .chevron {
+        font-size: 1.3rem;
+        color: #aaaaaa;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+        flex-shrink: 0;
+      }
+    }
+
+    .faq-answer {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+      p {
+        font-size: 0.94rem;
+        color: #cccccc;
+        line-height: 1.65;
+        margin: 0;
+      }
     }
   }
 `;
 
+const FAQ_ITEMS = [
+  {
+    question: 'How do I join the RICHEEKAY Royalty Program?',
+    answer: 'Joining is 100% free! Simply create an account on our website or visit any of our ateliers in Lagos, Oyo State, or Osogbo. You will automatically receive 500 bonus Gold Points upon registration.'
+  },
+  {
+    question: 'How does the Gold Points Cash Discount work?',
+    answer: 'Every 1 Gold Point provides ₦2 OFF cash discount value at checkout! For example, 150 Gold Points = ₦300 OFF, 1,500 Gold Points = ₦3,000 OFF, and 10,000 Gold Points = ₦20,000 OFF.'
+  },
+  {
+    question: 'Do my Royalty Gold Points expire?',
+    answer: 'Gold Points remain active as long as you make at least one purchase within 12 months. Unused points gently refresh after 365 days of account inactivity.'
+  },
+  {
+    question: 'Can I use my points for bespoke custom tailoring?',
+    answer: 'Yes! You can redeem points for cash discounts on both ready-to-wear haute couture items and bespoke custom fitting sessions with our master atelier tailors.'
+  },
+  {
+    question: 'Can I earn points when shopping in physical boutiques?',
+    answer: 'Yes! Present your registered email address or phone number to our boutique stylists at checkout in Lagos, Oyo State, or Osogbo to earn and redeem your points seamlessly.'
+  },
+  {
+    question: 'How do I upgrade to Royal Sovereign & Empire VIP Dynasty Tiers?',
+    answer: 'Tier status upgrades automatically as your cumulative lifetime Gold Points grow! You advance from Crown Member (0–50k pts) to Royal Sovereign (50k–150k pts) and Empire VIP Dynasty (150k+ pts).'
+  }
+];
+
 export default function RicheekayLoyaltyPage() {
   const { setIsUserDashboardOpen, formatPrice } = useShop();
   const [spendAmount, setSpendAmount] = useState<number>(150000);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   const pointsEarned = Math.floor(spendAmount / 100); // 10 pts per 1,000 spend = 1 pt per 100
   const cashValueNGN = pointsEarned * 2; // 1 Gold Point = ₦2 Cash Discount Value
@@ -953,33 +1036,24 @@ export default function RicheekayLoyaltyPage() {
         </div>
 
         <FaqSection>
-          <div className="faq-card">
-            <h4>How do I join the RICHEEKAY Royalty Program?</h4>
-            <p>
-              Joining is 100% free! Simply create an account on our website or visit any of our ateliers in Lagos, Oyo State, or Osogbo. You will automatically receive 500 bonus Gold Points upon registration.
-            </p>
-          </div>
-
-          <div className="faq-card">
-            <h4>Do my Royalty Gold Points expire?</h4>
-            <p>
-              Gold Points remain active as long as you make at least one purchase within 12 months. Unused points gently refresh after 365 days of account inactivity.
-            </p>
-          </div>
-
-          <div className="faq-card">
-            <h4>Can I use my points for bespoke custom tailoring?</h4>
-            <p>
-              Yes! You can redeem points for cash discounts on both ready-to-wear couture items and bespoke custom fitting sessions with our master atelier tailors.
-            </p>
-          </div>
-
-          <div className="faq-card">
-            <h4>Can I earn points when shopping in physical boutiques?</h4>
-            <p>
-              Yes! Present your registered email address or phone number to our boutique stylists at checkout in Lagos, Oyo State, or Osogbo to earn and redeem your points seamlessly.
-            </p>
-          </div>
+          {FAQ_ITEMS.map((item, idx) => {
+            const isOpen = openFaqIndex === idx;
+            return (
+              <div
+                key={idx}
+                className={`faq-accordion-item ${isOpen ? 'open' : ''}`}
+                onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
+              >
+                <div className="faq-question">
+                  <h4>{item.question}</h4>
+                  <FiChevronDown className="chevron" />
+                </div>
+                <div className="faq-answer">
+                  <p>{item.answer}</p>
+                </div>
+              </div>
+            );
+          })}
         </FaqSection>
       </SectionWrapper>
     </>
