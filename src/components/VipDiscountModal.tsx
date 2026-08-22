@@ -40,20 +40,23 @@ const ModalCard = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%;
-  max-width: 860px;
+  max-width: 880px;
+  height: 80vh;
+  max-height: 80vh;
   background: #f9f6f0;
   border: 1px solid #d4af37;
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 30px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(212, 175, 55, 0.3);
   z-index: 2501;
-  animation: ${slideUpScale} 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: ${slideUpScale} 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
-    max-height: 90vh;
+    height: 85vh;
+    max-height: 85vh;
     overflow-y: auto;
   }
 
@@ -78,7 +81,7 @@ const ModalCard = styled.div`
   .img-col {
     position: relative;
     height: 100%;
-    min-height: 520px;
+    min-height: 100%;
     background-image: url('https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1200&q=80');
     background-size: cover;
     background-position: center;
@@ -281,10 +284,10 @@ export const VipDiscountModal: React.FC = () => {
     const isDismissed = sessionStorage.getItem('richeekay_vip_promo_dismissed');
     if (isDismissed) return;
 
-    // Set 3-minute timer (180,000 ms)
+    // Set 3-second timer (3,000 ms) after page loads
     const timer = setTimeout(() => {
       setIsOpen(true);
-    }, 180000); // 3 minutes
+    }, 3000); // 3 seconds after page loads
 
     return () => clearTimeout(timer);
   }, []);
