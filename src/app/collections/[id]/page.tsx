@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { COLLECTIONS_DATA, PRODUCTS_DATA, Product } from '../../../data/productsData';
 import { useShop } from '../../../context/ShopContext';
 import { Dialog, DialogContent } from '@mui/material';
-import { FiArrowRight, FiArrowLeft, FiShoppingBag, FiEye, FiCheckCircle, FiX, FiAward, FiMaximize2 } from 'react-icons/fi';
+import { FiArrowRight, FiArrowLeft, FiShoppingBag, FiEye, FiCheckCircle, FiX, FiAward, FiMaximize2, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import styled from 'styled-components';
 
 const CollectionHero = styled.div<{ $bgImage: string }>`
@@ -550,6 +550,34 @@ export default function CollectionDetailPage() {
               >
                 <FiX />
               </button>
+
+              {collection.lookbookGallery.length > 1 && (
+                <>
+                  <button
+                    onClick={() => {
+                      const activeIndex = collection.lookbookGallery.indexOf(activeLightbox);
+                      const prevIndex = (activeIndex - 1 + collection.lookbookGallery.length) % collection.lookbookGallery.length;
+                      setActiveLightbox(collection.lookbookGallery[prevIndex]);
+                    }}
+                    style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(10, 10, 10, 0.75)', border: '1px solid #D4AF37', color: '#D4AF37', width: '42px', height: '42px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem', cursor: 'pointer', zIndex: 10 }}
+                    title="Previous Image"
+                  >
+                    <FiChevronLeft />
+                  </button>
+                  <button
+                    onClick={() => {
+                      const activeIndex = collection.lookbookGallery.indexOf(activeLightbox);
+                      const nextIndex = (activeIndex + 1) % collection.lookbookGallery.length;
+                      setActiveLightbox(collection.lookbookGallery[nextIndex]);
+                    }}
+                    style={{ position: 'absolute', right: '16px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(10, 10, 10, 0.75)', border: '1px solid #D4AF37', color: '#D4AF37', width: '42px', height: '42px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem', cursor: 'pointer', zIndex: 10 }}
+                    title="Next Image"
+                  >
+                    <FiChevronRight />
+                  </button>
+                </>
+              )}
+
               <img
                 src={activeLightbox}
                 alt="Enlarged Lookbook Shot"

@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation';
 import { useShop } from '../../../context/ShopContext';
 import { PRODUCTS_DATA, Product } from '../../../data/productsData';
 import { ProductCard } from '../../../components/ProductCard';
-import { FiShoppingBag, FiHeart, FiStar, FiScissors, FiTruck, FiShield, FiShare2, FiCheckCircle } from 'react-icons/fi';
+import { FiShoppingBag, FiHeart, FiStar, FiScissors, FiTruck, FiShield, FiShare2, FiCheckCircle, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import Link from 'next/link';
 import styled from 'styled-components';
 
@@ -57,6 +57,40 @@ const DetailContainer = styled.div`
         width: 100%;
         height: 100%;
         object-fit: cover;
+      }
+
+      .nav-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(10, 10, 10, 0.75);
+        border: 1px solid #d4af37;
+        color: #d4af37;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        cursor: pointer;
+        z-index: 5;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: #d4af37;
+          color: #0a0a0a;
+          transform: translateY(-50%) scale(1.1);
+          box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        }
+
+        &.prev {
+          left: 14px;
+        }
+
+        &.next {
+          right: 14px;
+        }
       }
     }
 
@@ -209,6 +243,16 @@ export default function ProductDetailPage() {
   const [selectedColor, setSelectedColor] = useState(product.colors[0]?.name || 'Standard');
   const [selectedSize, setSelectedSize] = useState(product.sizes[0] || 'Standard');
 
+  const handlePrevImg = () => {
+    if (!product.images.length) return;
+    setActiveImgIndex((prev) => (prev - 1 + product.images.length) % product.images.length);
+  };
+
+  const handleNextImg = () => {
+    if (!product.images.length) return;
+    setActiveImgIndex((prev) => (prev + 1) % product.images.length);
+  };
+
   const completeLookItems = products.filter((p) => product.completeLookIds?.includes(p.id));
 
   return (
@@ -221,6 +265,16 @@ export default function ProductDetailPage() {
         <div className="gallery-box">
           <div className="main-img-wrap">
             <img src={product.images[activeImgIndex] || product.images[0]} alt={product.name} />
+            {product.images.length > 1 && (
+              <>
+                <button className="nav-arrow prev" onClick={handlePrevImg} title="Previous Image">
+                  <FiChevronLeft />
+                </button>
+                <button className="nav-arrow next" onClick={handleNextImg} title="Next Image">
+                  <FiChevronRight />
+                </button>
+              </>
+            )}
           </div>
           {product.images.length > 1 && (
             <div className="thumbs">

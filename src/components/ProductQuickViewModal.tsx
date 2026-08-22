@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
 import { useSafeCloseModal } from '../hooks/useSafeCloseModal';
 import { Dialog, DialogContent } from '@mui/material';
-import { FiX, FiShoppingBag, FiHeart, FiStar, FiScissors, FiTruck, FiShield } from 'react-icons/fi';
+import { FiX, FiShoppingBag, FiHeart, FiStar, FiScissors, FiTruck, FiShield, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import styled from 'styled-components';
 
 const QuickViewContainer = styled.div`
@@ -28,11 +28,51 @@ const QuickViewContainer = styled.div`
     flex-direction: column;
     gap: 12px;
 
-    .main-img {
+    .main-img-wrap {
+      position: relative;
       width: 100%;
       height: 420px;
-      object-fit: cover;
-      border: 1px solid rgba(212, 175, 55, 0.4);
+
+      .main-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 1px solid rgba(212, 175, 55, 0.4);
+      }
+
+      .nav-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(10, 10, 10, 0.75);
+        border: 1px solid #d4af37;
+        color: #d4af37;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.3rem;
+        cursor: pointer;
+        z-index: 5;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: #d4af37;
+          color: #0a0a0a;
+          transform: translateY(-50%) scale(1.1);
+          box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        }
+
+        &.prev {
+          left: 12px;
+        }
+
+        &.next {
+          right: 12px;
+        }
+      }
     }
 
     .thumbs-row {
@@ -180,6 +220,16 @@ export const ProductQuickViewModal: React.FC = () => {
   const currentColor = selectedColor || quickViewProduct.colors[0]?.name || 'Standard';
   const currentSize = selectedSize || quickViewProduct.sizes[0] || 'Standard';
 
+  const handlePrevImg = () => {
+    if (!quickViewProduct.images.length) return;
+    setActiveImgIndex((prev) => (prev - 1 + quickViewProduct.images.length) % quickViewProduct.images.length);
+  };
+
+  const handleNextImg = () => {
+    if (!quickViewProduct.images.length) return;
+    setActiveImgIndex((prev) => (prev + 1) % quickViewProduct.images.length);
+  };
+
   return (
     <Dialog
       open={isQuickViewOpen}
@@ -206,11 +256,31 @@ export const ProductQuickViewModal: React.FC = () => {
             <FiX />
           </button>
           <div className="gallery-col">
-            <img
-              src={quickViewProduct.images[activeImgIndex] || quickViewProduct.images[0]}
-              alt={quickViewProduct.name}
-              className="main-img"
-            />
+            <div className="main-img-wrap">
+              <img
+                src={quickViewProduct.images[activeImgIndex] || quickViewProduct.images[0]}
+                alt={quickViewProduct.name}
+                className="main-img"
+              />
+              {quickViewProduct.images.length > 1 && (
+                <>
+                  <button
+                    className="nav-arrow prev"
+                    onClick={handlePrevImg}
+                    title="Previous Image"
+                  >
+                    <FiChevronLeft />
+                  </button>
+                  <button
+                    className="nav-arrow next"
+                    onClick={handleNextImg}
+                    title="Next Image"
+                  >
+                    <FiChevronRight />
+                  </button>
+                </>
+              )}
+            </div>
             {quickViewProduct.images.length > 1 && (
               <div className="thumbs-row">
                 {quickViewProduct.images.map((img, idx) => (

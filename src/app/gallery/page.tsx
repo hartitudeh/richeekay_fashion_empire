@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Dialog, DialogContent } from '@mui/material';
-import { FiEye, FiHeart, FiX, FiCamera, FiCheckCircle, FiShare2 } from 'react-icons/fi';
+import { FiEye, FiHeart, FiX, FiCamera, FiCheckCircle, FiShare2, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { FaInstagram } from 'react-icons/fa6';
 import { GalleryCardSkeleton } from '../../components/Skeletons';
 import styled from 'styled-components';
@@ -503,6 +503,34 @@ export default function GalleryPage() {
               >
                 <FiX />
               </button>
+
+              {filteredItems.length > 1 && (
+                <>
+                  <button
+                    onClick={() => {
+                      const activeIndex = filteredItems.findIndex((i) => i.id === activeItem.id);
+                      const prevIndex = (activeIndex - 1 + filteredItems.length) % filteredItems.length;
+                      setActiveItem(filteredItems[prevIndex]);
+                    }}
+                    style={{ position: 'absolute', left: '16px', top: '40%', transform: 'translateY(-50%)', background: 'rgba(10, 10, 10, 0.75)', border: '1px solid #D4AF37', color: '#D4AF37', width: '42px', height: '42px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem', cursor: 'pointer', zIndex: 10 }}
+                    title="Previous Image"
+                  >
+                    <FiChevronLeft />
+                  </button>
+                  <button
+                    onClick={() => {
+                      const activeIndex = filteredItems.findIndex((i) => i.id === activeItem.id);
+                      const nextIndex = (activeIndex + 1) % filteredItems.length;
+                      setActiveItem(filteredItems[nextIndex]);
+                    }}
+                    style={{ position: 'absolute', right: '16px', top: '40%', transform: 'translateY(-50%)', background: 'rgba(10, 10, 10, 0.75)', border: '1px solid #D4AF37', color: '#D4AF37', width: '42px', height: '42px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem', cursor: 'pointer', zIndex: 10 }}
+                    title="Next Image"
+                  >
+                    <FiChevronRight />
+                  </button>
+                </>
+              )}
+
               <img
                 src={activeItem.image}
                 alt={activeItem.title}
