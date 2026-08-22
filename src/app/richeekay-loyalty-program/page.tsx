@@ -662,7 +662,7 @@ export default function RicheekayLoyaltyPage() {
   const [spendAmount, setSpendAmount] = useState<number>(150000);
 
   const pointsEarned = Math.floor(spendAmount / 100); // 10 pts per 1,000 spend = 1 pt per 100
-  const cashValueNGN = Math.floor(pointsEarned / 10) * 1000;
+  const cashValueNGN = pointsEarned * 2; // 1 Gold Point = ₦2 Cash Discount Value
 
   return (
     <>
