@@ -17,6 +17,7 @@ import { AdminPortalModal } from '../components/AdminPortalModal';
 import { SearchModal } from '../components/SearchModal';
 import { AiStyleAssistant } from '../components/AiStyleAssistant';
 import { VipDiscountModal } from '../components/VipDiscountModal';
+import { RoyaltyLoyaltyModal } from '../components/RoyaltyLoyaltyModal';
 import { Preloader } from '../components/Preloader';
 import { ContentProtection } from '../components/ContentProtection';
 
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <AdminPortalModal />
               <SearchModal />
               <VipDiscountModal />
+              <RoyaltyLoyaltyModal />
 
               {/* Floating VIP AI Assistant */}
               <AiStyleAssistant />

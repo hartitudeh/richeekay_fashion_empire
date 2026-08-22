@@ -277,6 +277,7 @@ export const Footer: React.FC = () => {
         <div className="link-col">
           <h4>Customer Care</h4>
           <ul>
+            <li><Link href="/richeekay-loyalty-program" style={{ color: '#d4af37', fontWeight: 600 }}>👑 RICHEEKAY Royalty Program</Link></li>
             <li><Link href="/#faq">Frequently Asked Questions (FAQ)</Link></li>
             <li><Link href="/order-tracking">Track Order Status</Link></li>
             <li><Link href="/dashboard">VIP Account Hub</Link></li>
