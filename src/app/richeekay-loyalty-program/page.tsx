@@ -23,8 +23,7 @@ import styled from 'styled-components';
 const HeroSection = styled.div`
   background: radial-gradient(circle at center, rgba(40, 30, 15, 0.95) 0%, rgba(10, 10, 10, 1) 85%);
   border-bottom: 1px solid rgba(212, 175, 55, 0.35);
-  padding: 90px 24px;
-  text-align: center;
+  padding: 80px 24px;
   position: relative;
   overflow: hidden;
 
@@ -39,92 +38,175 @@ const HeroSection = styled.div`
     pointer-events: none;
   }
 
-  .crown-badge {
-    display: inline-flex;
+  .hero-container {
+    max-width: 1350px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
     align-items: center;
-    gap: 8px;
-    background: rgba(212, 175, 55, 0.15);
-    border: 1px solid #d4af37;
-    color: #d4af37;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    padding: 8px 20px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
 
-  h1 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 3.6rem;
-    color: #ffffff;
-    margin-bottom: 16px;
-    line-height: 1.2;
-
-    span {
-      color: #d4af37;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 2.4rem;
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr;
+      text-align: center;
     }
   }
 
-  p.subtitle {
-    font-size: 1.15rem;
-    color: #cccccc;
-    max-width: 720px;
-    margin: 0 auto 36px;
-    line-height: 1.6;
-  }
-
-  .cta-row {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-
-    .btn-primary {
-      background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-      color: #0a0a0a;
-      font-weight: 700;
-      font-size: 0.88rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 16px 36px;
-      border: none;
-      cursor: pointer;
+  .hero-content {
+    .crown-badge {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      transition: all 0.3s ease;
-      text-decoration: none;
+      gap: 8px;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid #d4af37;
+      color: #d4af37;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      padding: 8px 20px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
 
-      &:hover {
-        background: linear-gradient(135deg, #f4e798 0%, #d4af37 100%);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 3.4rem;
+      color: #ffffff;
+      margin-bottom: 16px;
+      line-height: 1.2;
+
+      span {
+        color: #d4af37;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 2.4rem;
       }
     }
 
-    .btn-secondary {
-      background: transparent;
-      border: 1px solid #d4af37;
-      color: #d4af37;
-      font-weight: 700;
-      font-size: 0.88rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 16px 32px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: all 0.3s ease;
+    p.subtitle {
+      font-size: 1.1rem;
+      color: #cccccc;
+      max-width: 620px;
+      margin: 0 0 36px;
+      line-height: 1.6;
+
+      @media (max-width: 968px) {
+        margin: 0 auto 36px;
+      }
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+
+      @media (max-width: 968px) {
+        justify-content: center;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+        color: #0a0a0a;
+        font-weight: 700;
+        font-size: 0.88rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 16px 36px;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+
+        &:hover {
+          background: linear-gradient(135deg, #f4e798 0%, #d4af37 100%);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+      }
+
+      .btn-secondary {
+        background: transparent;
+        border: 1px solid #d4af37;
+        color: #d4af37;
+        font-weight: 700;
+        font-size: 0.88rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 16px 32px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: rgba(212, 175, 55, 0.15);
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  .hero-image-wrap {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #d4af37;
+    box-shadow: 0 20px 45px rgba(212, 175, 55, 0.3);
+
+    img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+
+      @media (max-width: 968px) {
+        height: 360px;
+      }
 
       &:hover {
-        background: rgba(212, 175, 55, 0.15);
-        color: #ffffff;
+        transform: scale(1.04);
+      }
+    }
+
+    .hero-glass-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid #d4af37;
+      padding: 14px 20px;
+      border-radius: 6px;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      .badge-icon {
+        color: #d4af37;
+        font-size: 1.6rem;
+        flex-shrink: 0;
+      }
+
+      .badge-text {
+        h4 {
+          font-family: 'Playfair Display', Georgia, serif;
+          font-size: 1.05rem;
+          color: #d4af37;
+          margin-bottom: 2px;
+        }
+
+        p {
+          font-size: 0.82rem;
+          color: #cccccc;
+        }
       }
     }
   }
@@ -167,64 +249,116 @@ const SectionWrapper = styled.section`
   }
 `;
 
-const StepsGrid = styled.div`
+const TwoColGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
+`;
+
+const SideFrame = styled.div`
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #d4af37;
+  box-shadow: 0 15px 35px rgba(212, 175, 55, 0.25);
+
+  img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+
+    @media (max-width: 600px) {
+      height: 320px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .caption-bar {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(6px);
+    border: 1px solid #d4af37;
+    padding: 12px 18px;
+    border-radius: 6px;
+    color: #ffffff;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    svg {
+      color: #d4af37;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    span {
+      color: #dddddd;
+      font-weight: 600;
+    }
+  }
+`;
+
+const StepsGrid = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
   .step-card {
     background: #141414;
     border: 1px solid rgba(212, 175, 55, 0.25);
     border-radius: 8px;
-    padding: 36px 28px;
-    text-align: center;
+    padding: 24px 24px 24px 70px;
     position: relative;
     transition: all 0.3s ease;
 
     &:hover {
       border-color: #d4af37;
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(212, 175, 55, 0.25);
+      transform: translateX(6px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
     }
 
     .step-num {
       position: absolute;
-      top: -16px;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 20px;
+      top: 24px;
       background: #d4af37;
       color: #0a0a0a;
       font-weight: 800;
       font-size: 0.9rem;
-      width: 36px;
-      height: 36px;
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .icon-box {
-      font-size: 2.4rem;
-      color: #d4af37;
-      margin: 12px 0 20px;
-    }
-
     h3 {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       color: #ffffff;
-      margin-bottom: 12px;
+      margin-bottom: 6px;
     }
 
     p {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: #cccccc;
-      line-height: 1.6;
+      line-height: 1.5;
     }
   }
 `;
@@ -320,16 +454,10 @@ const CalculatorBox = styled.div`
   background: #141414;
   border: 1px solid #d4af37;
   border-radius: 8px;
-  padding: 48px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
-
-  @media (max-width: 900px) {
-    grid-template-columns: 1fr;
-    padding: 28px;
-  }
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .calc-inputs {
     h3 {
@@ -364,7 +492,7 @@ const CalculatorBox = styled.div`
       font-size: 1.1rem;
       border-radius: 4px;
       outline: none;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
 
       &:focus {
         border-color: #d4af37;
@@ -376,12 +504,12 @@ const CalculatorBox = styled.div`
     background: #0a0a0a;
     border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: 6px;
-    padding: 32px;
+    padding: 28px;
     text-align: center;
 
     .points-val {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 3.2rem;
+      font-size: 3rem;
       font-weight: 800;
       color: #d4af37;
       margin-bottom: 4px;
@@ -392,16 +520,16 @@ const CalculatorBox = styled.div`
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #ffffff;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .reward-equivalent {
       background: rgba(212, 175, 55, 0.12);
       border: 1px dashed #d4af37;
-      padding: 14px 20px;
+      padding: 12px 18px;
       color: #f4e798;
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 1rem;
       border-radius: 4px;
     }
   }
@@ -409,12 +537,8 @@ const CalculatorBox = styled.div`
 
 const WaysToEarnGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
@@ -424,24 +548,30 @@ const WaysToEarnGrid = styled.div`
     background: #141414;
     border: 1px solid rgba(212, 175, 55, 0.25);
     border-radius: 6px;
-    padding: 28px 20px;
+    padding: 24px 20px;
     text-align: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: #d4af37;
+      transform: translateY(-4px);
+    }
 
     .icon {
       font-size: 2rem;
       color: #d4af37;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     h4 {
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       color: #ffffff;
       margin-bottom: 6px;
     }
 
     .pts {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       color: #d4af37;
       font-weight: 700;
     }
@@ -485,29 +615,47 @@ export default function RicheekayLoyaltyPage() {
 
   return (
     <>
-      {/* HERO BANNER */}
+      {/* HERO BANNER WITH IMAGE */}
       <HeroSection>
-        <div className="crown-badge">
-          <FaCrown /> Official RICHEEKAY VIP Club
-        </div>
-        <h1>
-          RICHEEKAY <span>ROYALTY PROGRAM</span>
-        </h1>
-        <p className="subtitle">
-          Every purchase brings you closer to royal couture privileges. Earn Gold Royalty Points on luxury ladies' gowns, bespoke Aso-Ebi, Senator tunic sets, heels, and virgin wigs.
-        </p>
+        <div className="hero-container">
+          <div className="hero-content">
+            <div className="crown-badge">
+              <FaCrown /> Official RICHEEKAY VIP Club
+            </div>
+            <h1>
+              RICHEEKAY <span>ROYALTY PROGRAM</span>
+            </h1>
+            <p className="subtitle">
+              Every purchase brings you closer to royal couture privileges. Earn Gold Royalty Points on luxury ladies' gowns, bespoke Aso-Ebi, Senator tunic sets, heels, and virgin wigs.
+            </p>
 
-        <div className="cta-row">
-          <button className="btn-primary" onClick={() => setIsUserDashboardOpen(true)}>
-            <FaCrown /> Join Royalty Club Now
-          </button>
-          <button className="btn-secondary" onClick={() => setIsUserDashboardOpen(true)}>
-            <FiAward /> Check My Gold Points Balance
-          </button>
+            <div className="cta-row">
+              <button className="btn-primary" onClick={() => setIsUserDashboardOpen(true)}>
+                <FaCrown /> Join Royalty Club Now
+              </button>
+              <button className="btn-secondary" onClick={() => setIsUserDashboardOpen(true)}>
+                <FiAward /> Check My Gold Points Balance
+              </button>
+            </div>
+          </div>
+
+          <div className="hero-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1200&q=80"
+              alt="RICHEEKAY Royal Gold Gala Evening Gown"
+            />
+            <div className="hero-glass-badge">
+              <FaCrown className="badge-icon" />
+              <div className="badge-text">
+                <h4>Over 15,000 VIP Members</h4>
+                <p>Earning Gold Points on every haute couture order across Nigeria & worldwide.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </HeroSection>
 
-      {/* HOW IT WORKS */}
+      {/* HOW IT WORKS WITH LEFT IMAGE */}
       <SectionWrapper>
         <div className="section-header">
           <span>MEMBERSHIP ADVANTAGE</span>
@@ -515,40 +663,44 @@ export default function RicheekayLoyaltyPage() {
           <div className="divider" />
         </div>
 
-        <StepsGrid>
-          <div className="step-card">
-            <div className="step-num">1</div>
-            <div className="icon-box">
-              <FiShoppingBag />
+        <TwoColGrid>
+          <SideFrame>
+            <img
+              src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=1200&q=80"
+              alt="Royal Emerald Velvet Aso-Ebi Gown"
+            />
+            <div className="caption-bar">
+              <FiCheckCircle />
+              <span>Earn 10 Gold Points for every ₦1,000 spent</span>
             </div>
-            <h3>Shop & Earn Gold Points</h3>
-            <p>
-              Earn <strong>10 Gold Royalty Points</strong> for every ₦1,000 spent on any haute couture piece online or in our Lagos, Oyo State, and Osogbo ateliers.
-            </p>
-          </div>
+          </SideFrame>
 
-          <div className="step-card">
-            <div className="step-num">2</div>
-            <div className="icon-box">
-              <FaCrown />
+          <StepsGrid>
+            <div className="step-card">
+              <div className="step-num">1</div>
+              <h3>Shop & Earn Gold Points</h3>
+              <p>
+                Earn <strong>10 Gold Royalty Points</strong> for every ₦1,000 spent on any haute couture piece online or in our Lagos, Oyo State, and Osogbo ateliers.
+              </p>
             </div>
-            <h3>Elevate Your Royalty Rank</h3>
-            <p>
-              Unlock higher membership tiers from <em>Crown Member</em> to <em>Royal Sovereign</em> and <em>Empire VIP Dynasty</em> as your cumulative points grow.
-            </p>
-          </div>
 
-          <div className="step-card">
-            <div className="step-num">3</div>
-            <div className="icon-box">
-              <FiGift />
+            <div className="step-card">
+              <div className="step-num">2</div>
+              <h3>Elevate Your Royalty Rank</h3>
+              <p>
+                Unlock higher membership tiers from <em>Crown Member</em> to <em>Royal Sovereign</em> and <em>Empire VIP Dynasty</em> as your cumulative points grow.
+              </p>
             </div>
-            <h3>Redeem Couture Privileges</h3>
-            <p>
-              Use points for instant cash checkout discounts, free express nationwide shipping, complimentary custom fitting, and VIP gala invitations.
-            </p>
-          </div>
-        </StepsGrid>
+
+            <div className="step-card">
+              <div className="step-num">3</div>
+              <h3>Redeem Couture Privileges</h3>
+              <p>
+                Use points for instant cash checkout discounts, free express nationwide shipping, complimentary custom fitting, and VIP gala invitations.
+              </p>
+            </div>
+          </StepsGrid>
+        </TwoColGrid>
       </SectionWrapper>
 
       {/* MEMBERSHIP TIERS */}
@@ -640,7 +792,7 @@ export default function RicheekayLoyaltyPage() {
         </TiersGrid>
       </SectionWrapper>
 
-      {/* POINTS CALCULATOR */}
+      {/* POINTS CALCULATOR WITH RIGHT IMAGE */}
       <SectionWrapper>
         <div className="section-header">
           <span>POINTS CALCULATOR</span>
@@ -648,31 +800,44 @@ export default function RicheekayLoyaltyPage() {
           <div className="divider" />
         </div>
 
-        <CalculatorBox>
-          <div className="calc-inputs">
-            <h3>Estimate Your Earnings</h3>
-            <p>Enter your planned purchase amount to calculate how many Royalty Gold Points you will earn instantly.</p>
+        <TwoColGrid>
+          <CalculatorBox>
+            <div className="calc-inputs">
+              <h3>Estimate Your Earnings</h3>
+              <p>Enter your planned purchase amount to calculate how many Royalty Gold Points you will earn instantly.</p>
 
-            <label>Planned Purchase Amount (₦)</label>
-            <input
-              type="number"
-              value={spendAmount}
-              onChange={(e) => setSpendAmount(Math.max(0, Number(e.target.value)))}
-              step="10000"
-            />
-          </div>
-
-          <div className="calc-results">
-            <div className="points-val">{pointsEarned.toLocaleString()}</div>
-            <div className="points-lbl">Royalty Gold Points Earned</div>
-            <div className="reward-equivalent">
-              Cash Discount Value: {formatPrice(cashValueNGN)} OFF
+              <label>Planned Purchase Amount (₦)</label>
+              <input
+                type="number"
+                value={spendAmount}
+                onChange={(e) => setSpendAmount(Math.max(0, Number(e.target.value)))}
+                step="10000"
+              />
             </div>
-          </div>
-        </CalculatorBox>
+
+            <div className="calc-results">
+              <div className="points-val">{pointsEarned.toLocaleString()}</div>
+              <div className="points-lbl">Royalty Gold Points Earned</div>
+              <div className="reward-equivalent">
+                Cash Discount Value: {formatPrice(cashValueNGN)} OFF
+              </div>
+            </div>
+          </CalculatorBox>
+
+          <SideFrame>
+            <img
+              src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=1200&q=80"
+              alt="Monogram Leather Bag & Gold Heels"
+            />
+            <div className="caption-bar">
+              <FiGift />
+              <span>Redeem points at checkout for instant cash discounts</span>
+            </div>
+          </SideFrame>
+        </TwoColGrid>
       </SectionWrapper>
 
-      {/* WAYS TO EARN */}
+      {/* WAYS TO EARN WITH LEFT IMAGE */}
       <SectionWrapper style={{ background: '#0a0a0a', borderTop: '1px solid rgba(212, 175, 55, 0.2)' }}>
         <div className="section-header">
           <span>BONUS REWARDS</span>
@@ -680,39 +845,52 @@ export default function RicheekayLoyaltyPage() {
           <div className="divider" />
         </div>
 
-        <WaysToEarnGrid>
-          <div className="earn-card">
-            <div className="icon">
-              <FiUserCheck />
-            </div>
-            <h4>Create VIP Account</h4>
-            <div className="pts">+500 Points Instantly</div>
-          </div>
-
-          <div className="earn-card">
-            <div className="icon">
-              <FiShoppingBag />
-            </div>
-            <h4>First Couture Order</h4>
-            <div className="pts">+1,000 Bonus Points</div>
-          </div>
-
-          <div className="earn-card">
-            <div className="icon">
-              <FiGift />
-            </div>
-            <h4>Birthday Celebration</h4>
-            <div className="pts">+2,500 Gift Points</div>
-          </div>
-
-          <div className="earn-card">
-            <div className="icon">
+        <TwoColGrid>
+          <SideFrame>
+            <img
+              src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1200&q=80"
+              alt="Royal African Ankara Silk Dress"
+            />
+            <div className="caption-bar">
               <FiStar />
+              <span>Earn 500 bonus points on registration today</span>
             </div>
-            <h4>Upload Photo in VIP Gallery</h4>
-            <div className="pts">+300 Points Per Look</div>
-          </div>
-        </WaysToEarnGrid>
+          </SideFrame>
+
+          <WaysToEarnGrid>
+            <div className="earn-card">
+              <div className="icon">
+                <FiUserCheck />
+              </div>
+              <h4>Create VIP Account</h4>
+              <div className="pts">+500 Points Instantly</div>
+            </div>
+
+            <div className="earn-card">
+              <div className="icon">
+                <FiShoppingBag />
+              </div>
+              <h4>First Couture Order</h4>
+              <div className="pts">+1,000 Bonus Points</div>
+            </div>
+
+            <div className="earn-card">
+              <div className="icon">
+                <FiGift />
+              </div>
+              <h4>Birthday Celebration</h4>
+              <div className="pts">+2,500 Gift Points</div>
+            </div>
+
+            <div className="earn-card">
+              <div className="icon">
+                <FiStar />
+              </div>
+              <h4>Upload Photo in VIP Gallery</h4>
+              <div className="pts">+300 Points Per Look</div>
+            </div>
+          </WaysToEarnGrid>
+        </TwoColGrid>
       </SectionWrapper>
 
       {/* FAQ SECTION */}
