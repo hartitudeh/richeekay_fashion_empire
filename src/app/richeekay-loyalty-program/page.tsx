@@ -698,14 +698,15 @@ const FaqSection = styled.div`
       h4 {
         font-family: 'Playfair Display', Georgia, serif;
         font-size: 1.25rem;
-        color: #ffffff;
+        font-weight: 700;
+        color: #1a1a1a;
         margin: 0;
         transition: color 0.3s ease;
       }
 
       .chevron {
         font-size: 1.3rem;
-        color: #aaaaaa;
+        color: #b8860b;
         transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
         flex-shrink: 0;
       }
@@ -719,7 +720,7 @@ const FaqSection = styled.div`
 
       p {
         font-size: 0.94rem;
-        color: #cccccc;
+        color: #444444;
         line-height: 1.65;
         margin: 0;
       }
