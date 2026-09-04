@@ -73,8 +73,8 @@ const HeaderSpacer = styled.div<{ $scrolled: boolean }>`
 `;
 
 const TopBanner = styled.div<{ $scrolled: boolean }>`
-  background: linear-gradient(90deg, #0a0a0a 0%, #1f1f1f 50%, #0a0a0a 100%);
-  border-bottom: 1px solid rgba(201, 162, 39, 0.3);
+  background: linear-gradient(90deg, #141414 0%, #242424 50%, #141414 100%);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.35);
   padding: ${({ $scrolled }) => ($scrolled ? '4px 24px' : '8px 24px')};
   font-size: 0.8rem;
   display: flex;
@@ -99,11 +99,13 @@ const NavHeader = styled.header<{ $scrolled: boolean }>`
   position: relative;
   width: 100%;
   background: ${({ $scrolled }) =>
-    $scrolled ? 'rgba(10, 10, 10, 0.96)' : 'rgba(10, 10, 10, 0.90)'};
+    $scrolled ? 'rgba(255, 255, 255, 0.98)' : 'rgba(250, 248, 245, 0.95)'};
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid
-    ${({ $scrolled }) => ($scrolled ? 'rgba(212, 175, 55, 0.5)' : 'rgba(201, 162, 39, 0.25)')};
+    ${({ $scrolled }) => ($scrolled ? 'rgba(201, 162, 39, 0.35)' : 'rgba(201, 162, 39, 0.2)')};
+  box-shadow: ${({ $scrolled }) =>
+    $scrolled ? '0 10px 30px rgba(0, 0, 0, 0.08)' : '0 4px 15px rgba(0, 0, 0, 0.03)'};
   transition: all 0.3s ease;
 `;
 
@@ -198,16 +200,16 @@ const NavLinks = styled.nav<{ $mobileOpen: boolean }>`
   a.nav-item {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 1px;
-    color: #ffffff;
+    color: #1a1a1a;
     text-decoration: none;
     text-transform: uppercase;
     position: relative;
     transition: all 0.3s ease;
 
     &:hover, &.active {
-      color: #d4af37;
+      color: #b8860b;
       font-weight: 700;
     }
 
@@ -218,7 +220,7 @@ const NavLinks = styled.nav<{ $mobileOpen: boolean }>`
       left: 0;
       width: 0;
       height: 2px;
-      background: #d4af37;
+      background: #c9a227;
       transition: width 0.3s ease;
     }
 
@@ -233,14 +235,14 @@ const NavLinks = styled.nav<{ $mobileOpen: boolean }>`
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(10, 10, 10, 0.98);
+    background: rgba(250, 248, 245, 0.98);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
     flex-direction: column;
     padding: 24px 18px;
     gap: 14px;
-    border-bottom: 1px solid #d4af37;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.95);
+    border-bottom: 1px solid #c9a227;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     z-index: 999;
     animation: ${slideDown} 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 
@@ -248,6 +250,7 @@ const NavLinks = styled.nav<{ $mobileOpen: boolean }>`
       width: 100%;
       padding: 10px 14px;
       font-size: 0.95rem;
+      color: #1a1a1a;
       border-left: 2px solid transparent;
       opacity: 0;
       animation: ${fadeInRight} 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -262,10 +265,10 @@ const NavLinks = styled.nav<{ $mobileOpen: boolean }>`
       &:nth-of-type(8) { animation-delay: 0.32s; }
 
       &:hover {
-        border-left: 3px solid #d4af37;
-        background: rgba(212, 175, 55, 0.12);
+        border-left: 3px solid #c9a227;
+        background: rgba(201, 162, 39, 0.12);
         padding-left: 18px;
-        color: #d4af37;
+        color: #b8860b;
       }
     }
   }
@@ -295,9 +298,9 @@ const IconGroup = styled.div`
   }
 
   .nav-icon-btn {
-    background: rgba(31, 31, 31, 0.8);
-    border: 1px solid rgba(212, 175, 55, 0.3);
-    color: #ffffff;
+    background: #f4efe6;
+    border: 1px solid rgba(201, 162, 39, 0.35);
+    color: #1a1a1a;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -311,9 +314,10 @@ const IconGroup = styled.div`
     transition: all 0.3s ease;
 
     &:hover {
-      border-color: #d4af37;
-      color: #d4af37;
-      box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+      border-color: #c9a227;
+      color: #b8860b;
+      background: #ffffff;
+      box-shadow: 0 4px 15px rgba(201, 162, 39, 0.25);
       transform: translateY(-2px);
     }
   }

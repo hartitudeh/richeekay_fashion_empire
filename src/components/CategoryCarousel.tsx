@@ -20,7 +20,7 @@ const CategorySection = styled.section`
       font-family: 'Montserrat', sans-serif;
       font-size: 0.8rem;
       letter-spacing: 3px;
-      color: #d4af37;
+      color: #b8860b;
       text-transform: uppercase;
       font-weight: 600;
     }
@@ -28,13 +28,13 @@ const CategorySection = styled.section`
     h2 {
       font-size: 2.6rem;
       margin-top: 6px;
-      color: #ffffff;
+      color: #1a1a1a;
     }
 
     .divider {
       width: 60px;
       height: 3px;
-      background: linear-gradient(90deg, #c9a227 0%, #d4af37 100%);
+      background: linear-gradient(90deg, #c9a227 0%, #b8860b 100%);
       margin: 14px auto 0;
     }
   }
@@ -48,9 +48,9 @@ const CarouselWrapper = styled.div`
 
   .custom-swiper-prev,
   .custom-swiper-next {
-    background: rgba(20, 20, 20, 0.95);
-    border: 1px solid #d4af37;
-    color: #d4af37;
+    background: #ffffff;
+    border: 1px solid #c9a227;
+    color: #1a1a1a;
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -62,12 +62,12 @@ const CarouselWrapper = styled.div`
     z-index: 10;
     flex-shrink: 0;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 
     &:hover {
-      background: #d4af37;
-      color: #0a0a0a;
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.85);
+      background: #c9a227;
+      color: #ffffff;
+      box-shadow: 0 0 20px rgba(201, 162, 39, 0.4);
       transform: scale(1.12);
     }
   }

@@ -12,7 +12,7 @@ const HeroSection = styled.section`
   width: 100%;
   height: 85vh;
   min-height: 550px;
-  background: #0a0a0a;
+  background: #faf8f5;
 
   .swiper {
     width: 100%;
@@ -20,11 +20,11 @@ const HeroSection = styled.section`
   }
 
   .swiper-pagination-bullet {
-    background: rgba(212, 175, 55, 0.4);
+    background: rgba(201, 162, 39, 0.4);
     opacity: 1;
   }
   .swiper-pagination-bullet-active {
-    background: #d4af37;
+    background: #c9a227;
     width: 28px;
     border-radius: 4px;
   }
@@ -35,9 +35,9 @@ const SlideContainer = styled.div<{ $bgImage: string }>`
   height: 100%;
   background-image: linear-gradient(
       180deg,
-      rgba(10, 10, 10, 0.4) 0%,
-      rgba(10, 10, 10, 0.75) 60%,
-      rgba(10, 10, 10, 0.95) 100%
+      rgba(250, 248, 245, 0.45) 0%,
+      rgba(250, 248, 245, 0.72) 60%,
+      rgba(250, 248, 245, 0.95) 100%
     ),
     url('${({ $bgImage }) => $bgImage}');
   background-size: cover;
@@ -60,14 +60,15 @@ const HeroContent = styled.div`
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(201, 162, 39, 0.15);
-    border: 1px solid rgba(212, 175, 55, 0.5);
-    color: #d4af37;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(201, 162, 39, 0.6);
+    color: #b8860b;
     padding: 6px 18px;
     font-size: 0.8rem;
     letter-spacing: 3px;
     text-transform: uppercase;
     border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     backdrop-filter: blur(8px);
   }
 
@@ -76,11 +77,10 @@ const HeroContent = styled.div`
     font-size: 3.8rem;
     font-weight: 800;
     line-height: 1.15;
-    color: #ffffff;
-    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    color: #1a1a1a;
 
     span {
-      background: linear-gradient(135deg, #f4e798 0%, #d4af37 50%, #c9a227 100%);
+      background: linear-gradient(135deg, #b8860b 0%, #c9a227 50%, #9a7b1c 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -93,7 +93,8 @@ const HeroContent = styled.div`
   p {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.15rem;
-    color: #f8f5ef;
+    color: #333333;
+    font-weight: 500;
     max-width: 700px;
     line-height: 1.6;
 
@@ -116,8 +117,8 @@ const HeroContent = styled.div`
 `;
 
 const PrimaryBtn = styled.a`
-  background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-  color: #0a0a0a;
+  background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+  color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
@@ -129,20 +130,21 @@ const PrimaryBtn = styled.a`
   align-items: center;
   justify-content: center;
   gap: 10px;
-  box-shadow: 0 6px 25px rgba(201, 162, 39, 0.4);
+  border-radius: 30px;
+  box-shadow: 0 6px 25px rgba(201, 162, 39, 0.35);
   transition: all 0.3s ease;
 
   &:hover {
-    background: linear-gradient(135deg, #f4e798 0%, #d4af37 100%);
+    background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
+    box-shadow: 0 10px 30px rgba(201, 162, 39, 0.5);
   }
 `;
 
 const SecondaryBtn = styled.button`
-  background: rgba(10, 10, 10, 0.6);
-  color: #d4af37;
-  border: 1px solid #d4af37;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1a1a1a;
+  border: 1px solid #c9a227;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
@@ -154,10 +156,16 @@ const SecondaryBtn = styled.button`
   align-items: center;
   justify-content: center;
   gap: 10px;
+  border-radius: 30px;
   backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 
   &:hover {
+    background: #1a1a1a;
+    color: #ffffff;
+    border-color: #1a1a1a;
+  }
     background: rgba(212, 175, 55, 0.2);
     color: #ffffff;
     border-color: #f4e798;

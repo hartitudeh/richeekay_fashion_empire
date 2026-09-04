@@ -8,14 +8,14 @@
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'Montserrat', 'Poppins', sans-serif;
   
-  --color-luxury-black: #0A0A0A;
-  --color-charcoal: #1F1F1F;
-  --color-dark-grey: #2B2B2B;
-  --color-luxury-white: #FFFFFF;
-  --color-soft-cream: #F8F5EF;
+  --color-luxury-black: #1A1A1A;
+  --color-charcoal: #222222;
+  --color-dark-grey: #444444;
+  --color-luxury-white: #FAF8F5;
+  --color-soft-cream: #F5F0EB;
   --color-light-grey: #EFEFEF;
   --color-metallic-gold: #C9A227;
-  --color-royal-gold: #D4AF37;
+  --color-royal-gold: #B8860B;
   --color-gold-light: #F4E798;
   --color-gold-dark: #9A7B1C;
 }
@@ -28,8 +28,8 @@
 
 html, body {
   font-family: var(--font-body);
-  background-color: var(--color-luxury-black);
-  color: var(--color-luxury-white);
+  background-color: #FAF8F5;
+  color: #1A1A1A;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -62,6 +62,7 @@ img {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   letter-spacing: 0.5px;
+  color: #1A1A1A;
 }
 
 /* Custom Scrollbar */
@@ -69,34 +70,34 @@ h1, h2, h3, h4, h5, h6 {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: #FAF8F5;
 }
 ::-webkit-scrollbar-thumb {
   background: #C9A227;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4AF37;
+  background: #B8860B;
 }
 
 /* Gold Shimmer Text & Border Utility */
 .gold-gradient-text {
-  background: linear-gradient(135deg, #F4E798 0%, #C9A227 50%, #9A7B1C 100%);
+  background: linear-gradient(135deg, #B8860B 0%, #C9A227 50%, #9A7B1C 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gold-gradient-bg {
-  background: linear-gradient(135deg, #D4AF37 0%, #C9A227 50%, #9A7B1C 100%);
+  background: linear-gradient(135deg, #C9A227 0%, #B8860B 50%, #9A7B1C 100%);
 }
 
 .gold-border {
-  border: 1px solid rgba(201, 162, 39, 0.4);
+  border: 1px solid rgba(201, 162, 39, 0.35);
 }
 
 .gold-border-hover:hover {
-  border-color: #D4AF37;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+  border-color: #C9A227;
+  box-shadow: 0 0 15px rgba(201, 162, 39, 0.25);
 }
 
 /* Glassmorphism Cards */

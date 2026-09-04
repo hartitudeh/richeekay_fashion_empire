@@ -28,8 +28,8 @@ import styled from 'styled-components';
 
 const DashboardPageWrapper = styled.div`
   min-height: 100vh;
-  background: #0a0a0a;
-  color: #ffffff;
+  background: #faf8f5;
+  color: #1a1a1a;
   padding: 60px 24px;
 
   @media (max-width: 768px) {
@@ -42,12 +42,12 @@ const DashboardPageWrapper = styled.div`
   }
 
   .header-card {
-    background: linear-gradient(135deg, #1c180e 0%, #141414 100%);
-    border: 1px solid #d4af37;
+    background: linear-gradient(135deg, #ffffff 0%, #faf8f5 100%);
+    border: 1px solid #c9a227;
     border-radius: 12px;
     padding: 36px 40px;
     margin-bottom: 32px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 
     @media (max-width: 768px) {
       padding: 24px 20px;
@@ -76,8 +76,8 @@ const DashboardPageWrapper = styled.div`
           width: 110px;
           height: 110px;
           border-radius: 50%;
-          border: 3px solid #d4af37;
-          box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+          border: 3px solid #c9a227;
+          box-shadow: 0 4px 15px rgba(201, 162, 39, 0.25);
           cursor: pointer;
           flex-shrink: 0;
 
@@ -92,8 +92,8 @@ const DashboardPageWrapper = styled.div`
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-            color: #0a0a0a;
+            background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+            color: #ffffff;
             font-size: 2.8rem;
             font-weight: 800;
             display: flex;
@@ -105,8 +105,8 @@ const DashboardPageWrapper = styled.div`
             position: absolute;
             bottom: 2px;
             right: 2px;
-            background: #d4af37;
-            color: #0a0a0a;
+            background: #c9a227;
+            color: #ffffff;
             width: 32px;
             height: 32px;
             border-radius: 50%;
@@ -114,12 +114,12 @@ const DashboardPageWrapper = styled.div`
             align-items: center;
             justify-content: center;
             font-size: 1rem;
-            border: 2px solid #0a0a0a;
+            border: 2px solid #ffffff;
             transition: all 0.3s ease;
 
             &:hover {
               transform: scale(1.15);
-              background: #ffffff;
+              background: #1a1a1a;
             }
           }
         }
@@ -128,20 +128,20 @@ const DashboardPageWrapper = styled.div`
           h1 {
             font-family: 'Playfair Display', Georgia, serif;
             font-size: 2rem;
-            color: #ffffff;
+            color: #1a1a1a;
             margin: 0 0 6px;
           }
 
           .fashion-bio {
             font-size: 0.9rem;
-            color: #d4af37;
+            color: #b8860b;
             font-weight: 600;
             margin-bottom: 6px;
           }
 
           .email-tag {
             font-size: 0.82rem;
-            color: #aaaaaa;
+            color: #666666;
             display: flex;
             align-items: center;
             gap: 6px;
@@ -154,8 +154,8 @@ const DashboardPageWrapper = styled.div`
       }
 
       .crown-tier-badge {
-        background: rgba(212, 175, 55, 0.12);
-        border: 1px solid #d4af37;
+        background: rgba(201, 162, 39, 0.12);
+        border: 1px solid #c9a227;
         padding: 14px 24px;
         border-radius: 30px;
         text-align: center;
@@ -168,12 +168,13 @@ const DashboardPageWrapper = styled.div`
           font-family: 'Playfair Display', Georgia, serif;
           font-size: 1.6rem;
           font-weight: 800;
-          color: #d4af37;
+          color: #b8860b;
         }
 
         .lbl {
           font-size: 0.75rem;
-          color: #ffffff;
+          color: #1a1a1a;
+          font-weight: 700;
           letter-spacing: 1.5px;
           text-transform: uppercase;
         }
@@ -192,10 +193,11 @@ const DashboardPageWrapper = styled.div`
   }
 
   .sidebar {
-    background: #141414;
-    border: 1px solid rgba(212, 175, 55, 0.25);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.25);
     border-radius: 10px;
     padding: 20px 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     height: fit-content;
 
     .nav-btn {
@@ -203,7 +205,7 @@ const DashboardPageWrapper = styled.div`
       text-align: left;
       background: transparent;
       border: none;
-      color: #aaaaaa;
+      color: #555555;
       padding: 14px 16px;
       border-radius: 6px;
       font-size: 0.92rem;
@@ -216,23 +218,24 @@ const DashboardPageWrapper = styled.div`
       margin-bottom: 6px;
 
       &:hover {
-        background: rgba(212, 175, 55, 0.08);
-        color: #d4af37;
+        background: rgba(201, 162, 39, 0.08);
+        color: #b8860b;
       }
 
       &.active {
-        background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-        color: #0a0a0a;
+        background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+        color: #ffffff;
         font-weight: 700;
       }
     }
   }
 
   .main-content {
-    background: #141414;
-    border: 1px solid rgba(212, 175, 55, 0.25);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.25);
     border-radius: 10px;
     padding: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 
     @media (max-width: 600px) {
       padding: 20px 16px;
@@ -241,10 +244,10 @@ const DashboardPageWrapper = styled.div`
     .content-title {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.6rem;
-      color: #d4af37;
+      color: #b8860b;
       margin-bottom: 20px;
       padding-bottom: 12px;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+      border-bottom: 1px solid rgba(201, 162, 39, 0.2);
       display: flex;
       align-items: center;
       gap: 10px;

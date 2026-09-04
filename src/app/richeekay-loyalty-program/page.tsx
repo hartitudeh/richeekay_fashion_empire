@@ -22,8 +22,8 @@ import {
 import styled from 'styled-components';
 
 const HeroSection = styled.div`
-  background: radial-gradient(circle at center, rgba(40, 30, 15, 0.95) 0%, rgba(10, 10, 10, 1) 85%);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+  background: radial-gradient(circle at center, #ffffff 0%, #faf8f5 85%);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.25);
   padding: 80px 24px;
   position: relative;
   overflow: hidden;
@@ -35,7 +35,7 @@ const HeroSection = styled.div`
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(201, 162, 39, 0.08) 0%, transparent 60%);
     pointer-events: none;
   }
 
@@ -58,26 +58,27 @@ const HeroSection = styled.div`
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(212, 175, 55, 0.15);
-      border: 1px solid #d4af37;
-      color: #d4af37;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid #c9a227;
+      color: #b8860b;
       font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 3px;
       padding: 8px 20px;
       text-transform: uppercase;
       margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     }
 
     h1 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 3.4rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 16px;
       line-height: 1.2;
 
       span {
-        color: #d4af37;
+        color: #b8860b;
       }
 
       @media (max-width: 768px) {
@@ -87,7 +88,7 @@ const HeroSection = styled.div`
 
     p.subtitle {
       font-size: 1.1rem;
-      color: #cccccc;
+      color: #444444;
       max-width: 620px;
       margin: 0 0 36px;
       line-height: 1.6;
@@ -107,46 +108,51 @@ const HeroSection = styled.div`
       }
 
       .btn-primary {
-        background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-        color: #0a0a0a;
+        background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+        color: #ffffff;
         font-weight: 700;
         font-size: 0.88rem;
         letter-spacing: 2px;
         text-transform: uppercase;
         padding: 16px 36px;
         border: none;
+        border-radius: 30px;
         cursor: pointer;
         display: inline-flex;
         align-items: center;
         gap: 10px;
+        box-shadow: 0 6px 20px rgba(201, 162, 39, 0.35);
         transition: all 0.3s ease;
         text-decoration: none;
 
         &:hover {
-          background: linear-gradient(135deg, #f4e798 0%, #d4af37 100%);
+          background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
           transform: translateY(-2px);
-          box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+          box-shadow: 0 8px 25px rgba(201, 162, 39, 0.5);
         }
       }
 
       .btn-secondary {
-        background: transparent;
-        border: 1px solid #d4af37;
-        color: #d4af37;
+        background: #ffffff;
+        border: 1px solid #c9a227;
+        color: #1a1a1a;
         font-weight: 700;
         font-size: 0.88rem;
         letter-spacing: 2px;
         text-transform: uppercase;
         padding: 16px 32px;
+        border-radius: 30px;
         cursor: pointer;
         display: inline-flex;
         align-items: center;
         gap: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         transition: all 0.3s ease;
 
         &:hover {
-          background: rgba(212, 175, 55, 0.15);
+          background: #1a1a1a;
           color: #ffffff;
+          border-color: #1a1a1a;
         }
       }
     }
@@ -156,8 +162,8 @@ const HeroSection = styled.div`
     position: relative;
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid #d4af37;
-    box-shadow: 0 20px 45px rgba(212, 175, 55, 0.3);
+    border: 1px solid #c9a227;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
 
     img {
       width: 100%;
@@ -180,18 +186,18 @@ const HeroSection = styled.div`
       bottom: 24px;
       left: 24px;
       right: 24px;
-      background: rgba(10, 10, 10, 0.85);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(8px);
-      border: 1px solid #d4af37;
+      border: 1px solid #c9a227;
       padding: 14px 20px;
       border-radius: 6px;
-      color: #ffffff;
+      color: #1a1a1a;
       display: flex;
       align-items: center;
       gap: 14px;
 
       .badge-icon {
-        color: #d4af37;
+        color: #b8860b;
         font-size: 1.6rem;
         flex-shrink: 0;
       }
@@ -200,13 +206,13 @@ const HeroSection = styled.div`
         h4 {
           font-family: 'Playfair Display', Georgia, serif;
           font-size: 1.05rem;
-          color: #d4af37;
+          color: #b8860b;
           margin-bottom: 2px;
         }
 
         p {
           font-size: 0.82rem;
-          color: #cccccc;
+          color: #555555;
         }
       }
     }
@@ -225,7 +231,7 @@ const SectionWrapper = styled.section`
     span {
       font-size: 0.8rem;
       letter-spacing: 3px;
-      color: #d4af37;
+      color: #b8860b;
       text-transform: uppercase;
       font-weight: 700;
     }
@@ -233,7 +239,7 @@ const SectionWrapper = styled.section`
     h2 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 2.8rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-top: 8px;
 
       @media (max-width: 768px) {
@@ -244,7 +250,7 @@ const SectionWrapper = styled.section`
     .divider {
       width: 70px;
       height: 3px;
-      background: linear-gradient(90deg, #c9a227 0%, #d4af37 100%);
+      background: linear-gradient(90deg, #c9a227 0%, #b8860b 100%);
       margin: 16px auto 0;
     }
   }
@@ -320,25 +326,26 @@ const StepsGrid = styled.div`
   gap: 20px;
 
   .step-card {
-    background: #141414;
-    border: 1px solid rgba(212, 175, 55, 0.25);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.25);
     border-radius: 8px;
     padding: 24px 24px 24px 70px;
     position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     transition: all 0.3s ease;
 
     &:hover {
-      border-color: #d4af37;
+      border-color: #c9a227;
       transform: translateX(6px);
-      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+      box-shadow: 0 8px 25px rgba(201, 162, 39, 0.18);
     }
 
     .step-num {
       position: absolute;
       left: 20px;
       top: 24px;
-      background: #d4af37;
-      color: #0a0a0a;
+      background: #c9a227;
+      color: #ffffff;
       font-weight: 800;
       font-size: 0.9rem;
       width: 34px;
@@ -352,13 +359,13 @@ const StepsGrid = styled.div`
     h3 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.3rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 6px;
     }
 
     p {
       font-size: 0.88rem;
-      color: #cccccc;
+      color: #555555;
       line-height: 1.5;
     }
   }
@@ -374,18 +381,19 @@ const TiersGrid = styled.div`
   }
 
   .tier-card {
-    background: #141414;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.25);
     border-radius: 8px;
     padding: 40px 32px;
     display: flex;
     flex-direction: column;
     position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
 
     &.featured {
-      border: 2px solid #d4af37;
-      background: linear-gradient(180deg, #1f1b10 0%, #141414 100%);
+      border: 2px solid #c9a227;
+      background: linear-gradient(180deg, #fffdfa 0%, #f8f5ef 100%);
       transform: scale(1.03);
 
       @media (max-width: 968px) {
@@ -394,33 +402,34 @@ const TiersGrid = styled.div`
     }
 
     &:hover {
-      box-shadow: 0 16px 40px rgba(212, 175, 55, 0.3);
+      box-shadow: 0 16px 40px rgba(201, 162, 39, 0.2);
     }
 
     .tier-badge {
       display: inline-block;
       align-self: flex-start;
-      background: rgba(212, 175, 55, 0.2);
-      border: 1px solid #d4af37;
-      color: #d4af37;
+      background: rgba(201, 162, 39, 0.15);
+      border: 1px solid #c9a227;
+      color: #b8860b;
       font-size: 0.75rem;
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
       padding: 4px 14px;
+      border-radius: 20px;
       margin-bottom: 20px;
     }
 
     h3 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 8px;
     }
 
     .points-req {
       font-size: 0.9rem;
-      color: #d4af37;
+      color: #b8860b;
       font-weight: 600;
       margin-bottom: 24px;
     }
@@ -436,13 +445,13 @@ const TiersGrid = styled.div`
 
       li {
         font-size: 0.9rem;
-        color: #dddddd;
+        color: #444444;
         display: flex;
         align-items: center;
         gap: 10px;
 
         svg {
-          color: #d4af37;
+          color: #c9a227;
           flex-shrink: 0;
           font-size: 1.1rem;
         }
@@ -466,15 +475,15 @@ const TiersGrid = styled.div`
       outline: none;
 
       &.gold {
-        background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-        color: #0a0a0a;
+        background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+        color: #ffffff;
         border: none;
-        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        box-shadow: 0 6px 20px rgba(201, 162, 39, 0.35);
 
         &:hover {
-          background: linear-gradient(135deg, #f4e798 0%, #d4af37 100%);
+          background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
           transform: translateY(-3px);
-          box-shadow: 0 10px 28px rgba(212, 175, 55, 0.6);
+          box-shadow: 0 10px 28px rgba(201, 162, 39, 0.5);
         }
 
         &:active {
@@ -483,15 +492,16 @@ const TiersGrid = styled.div`
       }
 
       &.outline {
-        background: transparent;
-        border: 2px solid #d4af37;
-        color: #d4af37;
+        background: #ffffff;
+        border: 2px solid #c9a227;
+        color: #1a1a1a;
 
         &:hover {
-          background: #d4af37;
-          color: #0a0a0a;
+          background: #1a1a1a;
+          color: #ffffff;
+          border-color: #1a1a1a;
           transform: translateY(-3px);
-          box-shadow: 0 8px 22px rgba(212, 175, 55, 0.4);
+          box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
         }
 
         &:active {
@@ -503,32 +513,33 @@ const TiersGrid = styled.div`
 `;
 
 const CalculatorBox = styled.div`
-  background: #141414;
-  border: 1px solid #d4af37;
+  background: #ffffff;
+  border: 1px solid #c9a227;
   border-radius: 8px;
   padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 
   .calc-inputs {
     h3 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 12px;
     }
 
     p {
       font-size: 0.92rem;
-      color: #cccccc;
+      color: #555555;
       margin-bottom: 24px;
     }
 
     label {
       display: block;
       font-size: 0.8rem;
-      color: #d4af37;
+      color: #b8860b;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-weight: 700;
@@ -538,23 +549,23 @@ const CalculatorBox = styled.div`
     input[type='number'] {
       width: 100%;
       padding: 14px 18px;
-      background: #0a0a0a;
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      color: #ffffff;
+      background: #faf8f5;
+      border: 1px solid rgba(201, 162, 39, 0.4);
+      color: #1a1a1a;
       font-size: 1.1rem;
       border-radius: 4px;
       outline: none;
       margin-bottom: 20px;
 
       &:focus {
-        border-color: #d4af37;
+        border-color: #c9a227;
       }
     }
   }
 
   .calc-results {
-    background: #0a0a0a;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: #faf8f5;
+    border: 1px solid rgba(201, 162, 39, 0.3);
     border-radius: 6px;
     padding: 28px;
     text-align: center;
@@ -563,7 +574,7 @@ const CalculatorBox = styled.div`
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 3rem;
       font-weight: 800;
-      color: #d4af37;
+      color: #b8860b;
       margin-bottom: 4px;
     }
 
@@ -571,15 +582,16 @@ const CalculatorBox = styled.div`
       font-size: 0.8rem;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #ffffff;
+      color: #1a1a1a;
+      font-weight: 700;
       margin-bottom: 16px;
     }
 
     .reward-equivalent {
-      background: rgba(212, 175, 55, 0.12);
-      border: 1px dashed #d4af37;
+      background: rgba(201, 162, 39, 0.12);
+      border: 1px dashed #c9a227;
       padding: 12px 18px;
-      color: #f4e798;
+      color: #90293e;
       font-weight: 700;
       font-size: 1rem;
       border-radius: 4px;
@@ -597,34 +609,36 @@ const WaysToEarnGrid = styled.div`
   }
 
   .earn-card {
-    background: #141414;
-    border: 1px solid rgba(212, 175, 55, 0.25);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.25);
     border-radius: 6px;
     padding: 24px 20px;
     text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     transition: all 0.3s ease;
 
     &:hover {
-      border-color: #d4af37;
+      border-color: #c9a227;
       transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(201, 162, 39, 0.18);
     }
 
     .icon {
       font-size: 2rem;
-      color: #d4af37;
+      color: #c9a227;
       margin-bottom: 10px;
     }
 
     h4 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.1rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 6px;
     }
 
     .pts {
       font-size: 0.9rem;
-      color: #d4af37;
+      color: #b8860b;
       font-weight: 700;
     }
   }
@@ -638,31 +652,32 @@ const FaqSection = styled.div`
   margin: 0 auto;
 
   .faq-accordion-item {
-    background: #141414;
-    border: 1px solid rgba(212, 175, 55, 0.25);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.25);
     border-radius: 8px;
     padding: 22px 28px;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: hidden;
 
     &:hover {
-      border-color: #d4af37;
-      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.2);
+      border-color: #c9a227;
+      box-shadow: 0 6px 20px rgba(201, 162, 39, 0.15);
     }
 
     &.open {
-      background: linear-gradient(180deg, #1c180e 0%, #141414 100%);
-      border-color: #d4af37;
-      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+      background: linear-gradient(180deg, #fffdfa 0%, #faf8f5 100%);
+      border-color: #c9a227;
+      box-shadow: 0 10px 30px rgba(201, 162, 39, 0.2);
 
       .chevron {
         transform: rotate(180deg);
-        color: #d4af37;
+        color: #b8860b;
       }
 
       .faq-question h4 {
-        color: #d4af37;
+        color: #b8860b;
       }
 
       .faq-answer {

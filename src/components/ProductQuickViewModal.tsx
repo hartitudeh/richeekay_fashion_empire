@@ -8,15 +8,16 @@ import { FiX, FiShoppingBag, FiHeart, FiStar, FiScissors, FiTruck, FiShield, FiC
 import styled from 'styled-components';
 
 const QuickViewContainer = styled.div`
-  background: #141414;
-  color: #ffffff;
-  border: 1px solid #d4af37;
-  border-radius: 8px;
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #c9a227;
+  border-radius: 12px;
   position: relative;
   padding: 32px;
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   gap: 32px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -37,16 +38,17 @@ const QuickViewContainer = styled.div`
         width: 100%;
         height: 100%;
         object-fit: cover;
-        border: 1px solid rgba(212, 175, 55, 0.4);
+        border: 1px solid rgba(201, 162, 39, 0.3);
+        border-radius: 6px;
       }
 
       .nav-arrow {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(10, 10, 10, 0.75);
-        border: 1px solid #d4af37;
-        color: #d4af37;
+        background: #ffffff;
+        border: 1px solid #c9a227;
+        color: #1a1a1a;
         width: 38px;
         height: 38px;
         border-radius: 50%;
@@ -56,6 +58,7 @@ const QuickViewContainer = styled.div`
         font-size: 1.3rem;
         cursor: pointer;
         z-index: 5;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         transition: all 0.3s ease;
 
         &:hover {

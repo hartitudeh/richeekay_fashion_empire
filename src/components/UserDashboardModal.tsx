@@ -26,12 +26,13 @@ import {
 import styled from 'styled-components';
 
 const DashboardContainer = styled.div`
-  background: #141414;
-  color: #ffffff;
-  border: 1px solid #d4af37;
-  border-radius: 8px;
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #c9a227;
+  border-radius: 12px;
   position: relative;
   padding: 32px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
 
   @media (max-width: 600px) {
     padding: 20px 16px;
@@ -54,14 +55,14 @@ const DashboardContainer = styled.div`
         width: 60px;
         height: 60px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-        color: #0a0a0a;
+        background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+        color: #ffffff;
         font-weight: 800;
         font-size: 1.5rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 2px solid #f4e798;
+        border: 2px solid #c9a227;
         flex-shrink: 0;
       }
 
@@ -69,20 +70,20 @@ const DashboardContainer = styled.div`
         h3 {
           font-family: 'Playfair Display', Georgia, serif;
           font-size: 1.4rem;
-          color: #ffffff;
+          color: #1a1a1a;
           margin: 0 0 4px;
           word-break: break-all;
         }
 
         .user-email {
           font-size: 0.85rem;
-          color: #d4af37;
+          color: #b8860b;
           font-weight: 600;
         }
 
         .device-tag {
           font-size: 0.72rem;
-          color: #aaaaaa;
+          color: #666666;
           display: flex;
           align-items: center;
           gap: 4px;
@@ -97,7 +98,7 @@ const DashboardContainer = styled.div`
       gap: 10px;
 
       .logout-btn {
-        background: rgba(255, 255, 255, 0.08);
+        background: rgba(0, 0, 0, 0.05);
         border: 1px solid rgba(255, 255, 255, 0.2);
         color: #cccccc;
         padding: 8px 16px;

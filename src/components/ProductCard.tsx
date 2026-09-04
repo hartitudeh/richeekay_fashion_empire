@@ -8,15 +8,18 @@ import styled from 'styled-components';
 
 const CardWrapper = styled.div`
   position: relative;
-  background: #1f1f1f;
-  border: 1px solid rgba(201, 162, 39, 0.2);
+  background: #ffffff;
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    border-color: #d4af37;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+    border-color: #c9a227;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
     transform: translateY(-4px);
 
     .image-overlay {
@@ -34,7 +37,7 @@ const ImageContainer = styled.div`
   width: 100%;
   height: 320px;
   overflow: hidden;
-  background: #0a0a0a;
+  background: #f4efe6;
 
   .product-img {
     width: 100%;
@@ -47,13 +50,14 @@ const ImageContainer = styled.div`
     position: absolute;
     top: 12px;
     left: 12px;
-    background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-    color: #0a0a0a;
+    background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+    color: #ffffff;
     font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 1px;
     padding: 4px 10px;
     text-transform: uppercase;
+    border-radius: 20px;
     z-index: 3;
   }
 
@@ -61,9 +65,9 @@ const ImageContainer = styled.div`
     position: absolute;
     top: 12px;
     right: 12px;
-    background: rgba(10, 10, 10, 0.7);
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    color: #ffffff;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(201, 162, 39, 0.4);
+    color: #1a1a1a;
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -75,9 +79,9 @@ const ImageContainer = styled.div`
     transition: all 0.3s ease;
 
     &.active, &:hover {
-      background: #d4af37;
-      color: #0a0a0a;
-      border-color: #f4e798;
+      background: #c9a227;
+      color: #ffffff;
+      border-color: #c9a227;
     }
   }
 `;
@@ -85,7 +89,7 @@ const ImageContainer = styled.div`
 const QuickActionOverlay = styled.div`
   position: absolute;
   inset: 0;
-  background: rgba(10, 10, 10, 0.5);
+  background: rgba(250, 248, 245, 0.65);
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
@@ -96,9 +100,9 @@ const QuickActionOverlay = styled.div`
   z-index: 2;
 
   .action-btn {
-    background: #0a0a0a;
-    color: #d4af37;
-    border: 1px solid #d4af37;
+    background: #ffffff;
+    color: #1a1a1a;
+    border: 1px solid #c9a227;
     width: 44px;
     height: 44px;
     border-radius: 50%;
@@ -107,11 +111,12 @@ const QuickActionOverlay = styled.div`
     justify-content: center;
     font-size: 1.1rem;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 
     &:hover {
-      background: #d4af37;
-      color: #0a0a0a;
+      background: #c9a227;
+      color: #ffffff;
       transform: scale(1.1);
     }
   }
@@ -126,7 +131,7 @@ const ContentContainer = styled.div`
   .category-name {
     font-size: 0.7rem;
     letter-spacing: 2px;
-    color: #d4af37;
+    color: #b8860b;
     text-transform: uppercase;
     font-weight: 600;
   }
@@ -134,7 +139,7 @@ const ContentContainer = styled.div`
   .title {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.1rem;
-    color: #ffffff;
+    color: #1a1a1a;
     margin: 4px 0 8px;
     font-weight: 600;
     line-height: 1.3;
@@ -145,11 +150,11 @@ const ContentContainer = styled.div`
     align-items: center;
     gap: 6px;
     font-size: 0.75rem;
-    color: #f4e798;
+    color: #c9a227;
     margin-bottom: 10px;
 
     span {
-      color: #a0a0a0;
+      color: #666666;
     }
   }
 
@@ -163,11 +168,11 @@ const ContentContainer = styled.div`
       width: 14px;
       height: 14px;
       border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(0, 0, 0, 0.15);
       cursor: pointer;
 
       &.selected {
-        outline: 2px solid #d4af37;
+        outline: 2px solid #c9a227;
         outline-offset: 1px;
       }
     }
@@ -179,13 +184,13 @@ const ContentContainer = styled.div`
     justify-content: space-between;
     margin-top: auto;
     padding-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(201, 162, 39, 0.18);
 
     .price {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.25rem;
       font-weight: 700;
-      color: #d4af37;
+      color: #90293e;
     }
 
     .original-price {
@@ -199,8 +204,8 @@ const ContentContainer = styled.div`
   .add-cart-btn {
     width: 100%;
     margin-top: 14px;
-    background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-    color: #0a0a0a;
+    background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+    color: #ffffff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 0.75rem;
@@ -208,6 +213,7 @@ const ContentContainer = styled.div`
     text-transform: uppercase;
     padding: 10px 0;
     border: none;
+    border-radius: 30px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -216,8 +222,10 @@ const ContentContainer = styled.div`
     transition: all 0.3s ease;
 
     &:hover {
-      background: linear-gradient(135deg, #f4e798 0%, #d4af37 100%);
-      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+      background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+      box-shadow: 0 4px 15px rgba(201, 162, 39, 0.35);
+    }
+  }
     }
   }
 `;

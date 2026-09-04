@@ -29,7 +29,7 @@ import styled from 'styled-components';
 
 const WhyChooseSection = styled.section`
   padding: 80px 24px;
-  background: #0a0a0a;
+  background: #faf8f5;
 
   .inner {
     max-width: 1350px;
@@ -43,21 +43,21 @@ const WhyChooseSection = styled.section`
     span {
       font-size: 0.8rem;
       letter-spacing: 3px;
-      color: #d4af37;
+      color: #b8860b;
       text-transform: uppercase;
       font-weight: 600;
     }
 
     h2 {
       font-size: 2.6rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-top: 6px;
     }
 
     .divider {
       width: 60px;
       height: 3px;
-      background: linear-gradient(90deg, #c9a227 0%, #d4af37 100%);
+      background: linear-gradient(90deg, #c9a227 0%, #b8860b 100%);
       margin: 14px auto 0;
     }
   }
@@ -77,34 +77,36 @@ const WhyChooseSection = styled.section`
   }
 
   .feature-card {
-    background: #141414;
+    background: #ffffff;
     border: 1px solid rgba(201, 162, 39, 0.25);
+    border-radius: 8px;
     padding: 32px 24px;
     text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     transition: all 0.3s ease;
 
     &:hover {
-      border-color: #d4af37;
+      border-color: #c9a227;
       transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+      box-shadow: 0 10px 30px rgba(201, 162, 39, 0.18);
     }
 
     .icon {
       font-size: 2.2rem;
-      color: #d4af37;
+      color: #c9a227;
       margin-bottom: 16px;
     }
 
     h4 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.25rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 8px;
     }
 
     p {
       font-size: 0.85rem;
-      color: #aaaaaa;
+      color: #555555;
       line-height: 1.5;
     }
   }
@@ -112,8 +114,8 @@ const WhyChooseSection = styled.section`
 
 const AboutSection = styled.section`
   padding: 90px 24px;
-  background: #141414;
-  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  background: #f5f0eb;
+  border-top: 1px solid rgba(201, 162, 39, 0.25);
 
   .inner {
     max-width: 1250px;
@@ -130,8 +132,10 @@ const AboutSection = styled.section`
 
   .img-frame {
     position: relative;
-    border: 1px solid #d4af37;
+    border: 1px solid #c9a227;
     padding: 14px;
+    background: #ffffff;
+    border-radius: 4px;
 
     img {
       width: 100%;
@@ -143,8 +147,10 @@ const AboutSection = styled.section`
       position: absolute;
       bottom: -20px;
       right: -20px;
-      background: #0a0a0a;
-      border: 1px solid #d4af37;
+      background: #ffffff;
+      border: 1px solid #c9a227;
+      border-radius: 4px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
       padding: 16px 24px;
       text-align: center;
 
@@ -152,12 +158,13 @@ const AboutSection = styled.section`
         font-family: 'Playfair Display', Georgia, serif;
         font-size: 2rem;
         font-weight: 800;
-        color: #d4af37;
+        color: #b8860b;
       }
       .lbl {
         font-size: 0.7rem;
         letter-spacing: 2px;
-        color: #ffffff;
+        color: #1a1a1a;
+        font-weight: 700;
         text-transform: uppercase;
       }
     }
@@ -167,7 +174,7 @@ const AboutSection = styled.section`
     span {
       font-size: 0.8rem;
       letter-spacing: 3px;
-      color: #d4af37;
+      color: #b8860b;
       text-transform: uppercase;
       font-weight: 600;
     }
@@ -175,18 +182,18 @@ const AboutSection = styled.section`
     h2 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 2.8rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin: 8px 0 20px;
       line-height: 1.2;
 
       span {
-        color: #d4af37;
+        color: #b8860b;
       }
     }
 
     p {
       font-size: 0.95rem;
-      color: #cccccc;
+      color: #444444;
       line-height: 1.7;
       margin-bottom: 24px;
     }
@@ -195,24 +202,25 @@ const AboutSection = styled.section`
       display: flex;
       flex-direction: column;
       gap: 14px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(201, 162, 39, 0.2);
       padding-top: 20px;
 
       .val-item {
-        background: rgba(255, 255, 255, 0.02);
-        border-left: 3px solid #d4af37;
+        background: #ffffff;
+        border-left: 3px solid #c9a227;
         padding: 12px 16px;
         border-radius: 0 4px 4px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 
         h5 {
           font-family: 'Playfair Display', Georgia, serif;
           font-size: 1.1rem;
-          color: #d4af37;
+          color: #b8860b;
           margin-bottom: 4px;
         }
         span {
           font-size: 0.88rem;
-          color: #cccccc;
+          color: #555555;
           line-height: 1.5;
           display: block;
         }
@@ -223,7 +231,7 @@ const AboutSection = styled.section`
 
 const ReviewsSection = styled.section`
   padding: 80px 24px;
-  background: #0a0a0a;
+  background: #faf8f5;
 
   .inner {
     max-width: 1350px;
@@ -237,21 +245,21 @@ const ReviewsSection = styled.section`
     span {
       font-size: 0.8rem;
       letter-spacing: 3px;
-      color: #d4af37;
+      color: #b8860b;
       text-transform: uppercase;
       font-weight: 600;
     }
 
     h2 {
       font-size: 2.6rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-top: 6px;
     }
 
     .divider {
       width: 60px;
       height: 3px;
-      background: linear-gradient(90deg, #c9a227 0%, #d4af37 100%);
+      background: linear-gradient(90deg, #c9a227 0%, #b8860b 100%);
       margin: 14px auto 0;
     }
   }
@@ -265,9 +273,9 @@ const ReviewsCarouselWrapper = styled.div`
 
   .custom-swiper-prev,
   .custom-swiper-next {
-    background: rgba(20, 20, 20, 0.95);
-    border: 1px solid #d4af37;
-    color: #d4af37;
+    background: #ffffff;
+    border: 1px solid #c9a227;
+    color: #1a1a1a;
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -279,12 +287,12 @@ const ReviewsCarouselWrapper = styled.div`
     z-index: 10;
     flex-shrink: 0;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 
     &:hover {
-      background: #d4af37;
-      color: #0a0a0a;
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.85);
+      background: #c9a227;
+      color: #ffffff;
+      box-shadow: 0 0 20px rgba(201, 162, 39, 0.4);
       transform: scale(1.12);
     }
   }
@@ -303,11 +311,11 @@ const ReviewsCarouselWrapper = styled.div`
     padding-bottom: 52px;
 
     .swiper-pagination-bullet {
-      background: rgba(212, 175, 55, 0.4);
+      background: rgba(201, 162, 39, 0.4);
       opacity: 1;
     }
     .swiper-pagination-bullet-active {
-      background: #d4af37;
+      background: #c9a227;
       width: 28px;
       border-radius: 4px;
     }
@@ -325,30 +333,31 @@ const ReviewsCarouselWrapper = styled.div`
   }
 
   .review-card {
-    background: #141414;
-    border: 1px solid rgba(212, 175, 55, 0.35);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.25);
     padding: 32px 28px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
     height: 100%;
     min-height: 250px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     transition: all 0.3s ease;
 
     &:hover {
-      border-color: #d4af37;
-      box-shadow: 0 12px 35px rgba(212, 175, 55, 0.25);
+      border-color: #c9a227;
+      box-shadow: 0 12px 35px rgba(201, 162, 39, 0.18);
     }
 
     .stars {
-      color: #f4e798;
+      color: #c9a227;
       font-size: 1.1rem;
       margin-bottom: 14px;
     }
 
     p.comment {
       font-size: 0.92rem;
-      color: #dddddd;
+      color: #333333;
       line-height: 1.65;
       font-style: italic;
       margin-bottom: 24px;
@@ -359,7 +368,7 @@ const ReviewsCarouselWrapper = styled.div`
       display: flex;
       align-items: center;
       gap: 14px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(201, 162, 39, 0.18);
       padding-top: 16px;
 
       img {
@@ -367,19 +376,20 @@ const ReviewsCarouselWrapper = styled.div`
         height: 50px;
         border-radius: 50%;
         object-fit: cover;
-        border: 2px solid #d4af37;
+        border: 2px solid #c9a227;
       }
 
       .info {
         h5 {
           font-family: 'Playfair Display', Georgia, serif;
           font-size: 1.05rem;
-          color: #ffffff;
+          color: #1a1a1a;
           margin: 0 0 2px 0;
         }
         span {
           font-size: 0.75rem;
-          color: #d4af37;
+          color: #b8860b;
+          font-weight: 600;
         }
       }
     }
@@ -388,7 +398,7 @@ const ReviewsCarouselWrapper = styled.div`
 
 const BlogSection = styled.section`
   padding: 80px 24px;
-  background: #141414;
+  background: #f5f0eb;
 
   .inner {
     max-width: 1350px;
@@ -402,21 +412,21 @@ const BlogSection = styled.section`
     span {
       font-size: 0.8rem;
       letter-spacing: 3px;
-      color: #d4af37;
+      color: #b8860b;
       text-transform: uppercase;
       font-weight: 600;
     }
 
     h2 {
       font-size: 2.6rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-top: 6px;
     }
 
     .divider {
       width: 60px;
       height: 3px;
-      background: linear-gradient(90deg, #c9a227 0%, #d4af37 100%);
+      background: linear-gradient(90deg, #c9a227 0%, #b8860b 100%);
       margin: 14px auto 0;
     }
   }
@@ -436,10 +446,12 @@ const BlogSection = styled.section`
   }
 
   .blog-card {
-    background: #0a0a0a;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.25);
+    border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 
     img {
       width: 100%;

@@ -24,18 +24,19 @@ const DrawerContent = styled.div<{ $open: boolean }>`
   bottom: 0;
   width: 100%;
   max-width: 460px;
-  background: #141414;
-  border-left: 1px solid #d4af37;
+  background: #ffffff;
+  border-left: 1px solid #c9a227;
   z-index: 2001;
   transform: translateX(${({ $open }) => ($open ? '0' : '100%')});
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
 `;
 
 const DrawerHeader = styled.div`
   padding: 20px 24px;
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.25);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -43,7 +44,7 @@ const DrawerHeader = styled.div`
   h3 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.35rem;
-    color: #ffffff;
+    color: #1a1a1a;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -52,7 +53,7 @@ const DrawerHeader = styled.div`
   .close-btn {
     background: none;
     border: none;
-    color: #d4af37;
+    color: #c9a227;
     font-size: 1.4rem;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -64,15 +65,15 @@ const DrawerHeader = styled.div`
 `;
 
 const FreeShippingBar = styled.div<{ $percent: number }>`
-  background: #1f1f1f;
+  background: #faf8f5;
   padding: 12px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.2);
   font-size: 0.8rem;
-  color: #cccccc;
+  color: #555555;
 
   .bar-container {
     height: 6px;
-    background: #0a0a0a;
+    background: #efebe4;
     border-radius: 3px;
     margin-top: 6px;
     overflow: hidden;
@@ -81,7 +82,7 @@ const FreeShippingBar = styled.div<{ $percent: number }>`
   .progress-fill {
     height: 100%;
     width: ${({ $percent }) => Math.min($percent, 100)}%;
-    background: linear-gradient(90deg, #c9a227 0%, #f4e798 100%);
+    background: linear-gradient(90deg, #c9a227 0%, #b8860b 100%);
     transition: width 0.4s ease;
   }
 `;
@@ -99,13 +100,14 @@ const CartItemRow = styled.div`
   display: flex;
   gap: 16px;
   padding-bottom: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.15);
 
   img {
     width: 80px;
     height: 100px;
     object-fit: cover;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(201, 162, 39, 0.3);
+    border-radius: 4px;
   }
 
   .item-info {
@@ -116,13 +118,13 @@ const CartItemRow = styled.div`
     h4 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 4px;
     }
 
     .meta {
       font-size: 0.75rem;
-      color: #aaaaaa;
+      color: #666666;
       margin-bottom: 8px;
     }
 
@@ -130,7 +132,7 @@ const CartItemRow = styled.div`
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.05rem;
       font-weight: 700;
-      color: #d4af37;
+      color: #90293e;
     }
   }
 
@@ -140,24 +142,26 @@ const CartItemRow = styled.div`
     gap: 8px;
 
     button {
-      background: #0a0a0a;
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      color: #d4af37;
+      background: #faf8f5;
+      border: 1px solid rgba(201, 162, 39, 0.4);
+      color: #1a1a1a;
       width: 26px;
       height: 26px;
+      border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
 
       &:hover {
-        background: #d4af37;
-        color: #0a0a0a;
+        background: #c9a227;
+        color: #ffffff;
       }
     }
 
     span {
       font-size: 0.85rem;
+      color: #1a1a1a;
       font-weight: 600;
       min-width: 18px;
       text-align: center;
