@@ -68,7 +68,7 @@ const SectionWrapper = styled.section`
     span {
       font-size: 0.8rem;
       letter-spacing: 3px;
-      color: #d4af37;
+      color: #b8860b;
       text-transform: uppercase;
       font-weight: 600;
     }
@@ -76,14 +76,14 @@ const SectionWrapper = styled.section`
     h2 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 2.6rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-top: 6px;
     }
 
     .divider {
       width: 60px;
       height: 3px;
-      background: linear-gradient(90deg, #c9a227 0%, #d4af37 100%);
+      background: linear-gradient(90deg, #c9a227 0%, #b8860b 100%);
       margin: 14px auto 0;
     }
   }
@@ -102,25 +102,29 @@ const StoryGrid = styled.div`
 
   .img-frame {
     position: relative;
-    border: 1px solid #d4af37;
+    border: 1px solid #c9a227;
+    border-radius: 8px;
     padding: 14px;
-    background: #0a0a0a;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 
     img {
       width: 100%;
       height: 520px;
       object-fit: cover;
+      border-radius: 4px;
     }
 
     .gold-badge {
       position: absolute;
       bottom: -20px;
       right: -20px;
-      background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-      color: #0a0a0a;
+      background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+      color: #ffffff;
       padding: 20px 28px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      border-radius: 6px;
+      box-shadow: 0 10px 25px rgba(201, 162, 39, 0.3);
 
       .num {
         font-family: 'Playfair Display', Georgia, serif;
@@ -142,35 +146,38 @@ const StoryGrid = styled.div`
     h3 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 2.2rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 18px;
       line-height: 1.3;
 
       span {
-        color: #d4af37;
+        color: #b8860b;
       }
     }
 
     p {
       font-size: 1rem;
-      color: #cccccc;
+      color: #444444;
       line-height: 1.8;
       margin-bottom: 18px;
     }
 
     .quote-box {
-      border-left: 3px solid #d4af37;
-      background: #141414;
+      border-left: 4px solid #c9a227;
+      background: #ffffff;
+      border-radius: 0 8px 8px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
       padding: 18px 24px;
       margin: 24px 0;
       font-style: italic;
-      color: #f4e798;
+      color: #90293e;
       font-size: 1.05rem;
+      font-weight: 500;
 
       .author {
         font-style: normal;
         font-size: 0.85rem;
-        color: #ffffff;
+        color: #1a1a1a;
         font-weight: bold;
         margin-top: 8px;
         text-transform: uppercase;
@@ -191,7 +198,7 @@ const TimelineWrapper = styled.div`
     bottom: 0;
     left: 50%;
     width: 2px;
-    background: linear-gradient(180deg, #c9a227 0%, #d4af37 50%, #9a7b1c 100%);
+    background: linear-gradient(180deg, #c9a227 0%, #b8860b 100%);
     transform: translateX(-50%);
 
     @media (max-width: 768px) {
@@ -230,9 +237,9 @@ const TimelineWrapper = styled.div`
       width: 24px;
       height: 24px;
       border-radius: 50%;
-      background: #d4af37;
-      border: 4px solid #0a0a0a;
-      box-shadow: 0 0 12px #d4af37;
+      background: #c9a227;
+      border: 4px solid #ffffff;
+      box-shadow: 0 0 10px rgba(201, 162, 39, 0.4);
 
       @media (max-width: 768px) {
         left: 8px;
@@ -250,29 +257,31 @@ const TimelineWrapper = styled.div`
     }
 
     .card {
-      background: #141414;
-      border: 1px solid rgba(212, 175, 55, 0.4);
+      background: #ffffff;
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      border-radius: 8px;
       padding: 24px;
       max-width: 480px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 
       .year {
         font-family: 'Playfair Display', Georgia, serif;
         font-size: 1.8rem;
         font-weight: 800;
-        color: #d4af37;
+        color: #b8860b;
         margin-bottom: 6px;
       }
 
       h4 {
         font-family: 'Playfair Display', Georgia, serif;
         font-size: 1.3rem;
-        color: #ffffff;
+        color: #1a1a1a;
         margin-bottom: 8px;
       }
 
       p {
         font-size: 0.9rem;
-        color: #aaaaaa;
+        color: #555555;
         line-height: 1.6;
       }
     }
@@ -291,28 +300,28 @@ const PillarsGrid = styled.div`
   }
 
   .pillar-card {
-    background: linear-gradient(135deg, #141414 0%, #0d0d0d 100%);
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.3);
+    border-radius: 12px;
     padding: 38px 28px;
     text-align: center;
     position: relative;
     transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
 
     &:hover {
-      border-color: #d4af37;
+      border-color: #c9a227;
       transform: translateY(-6px);
-      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
+      box-shadow: 0 15px 35px rgba(201, 162, 39, 0.2);
     }
 
     .icon-box {
       width: 70px;
       height: 70px;
       border-radius: 50%;
-      background: rgba(212, 175, 55, 0.12);
-      border: 1px solid #d4af37;
-      color: #d4af37;
+      background: rgba(201, 162, 39, 0.12);
+      border: 1px solid #c9a227;
+      color: #b8860b;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -322,26 +331,26 @@ const PillarsGrid = styled.div`
     }
 
     &:hover .icon-box {
-      background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-      color: #0a0a0a;
+      background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+      color: #ffffff;
       transform: scale(1.08);
     }
 
     h3 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.6rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 14px;
       letter-spacing: 0.5px;
 
       span {
-        color: #d4af37;
+        color: #b8860b;
       }
     }
 
     p {
       font-size: 0.95rem;
-      color: #cccccc;
+      color: #444444;
       line-height: 1.75;
     }
 
@@ -353,14 +362,14 @@ const PillarsGrid = styled.div`
 
       li {
         font-size: 0.88rem;
-        color: #dddddd;
+        color: #444444;
         margin-bottom: 10px;
         display: flex;
         align-items: center;
         gap: 10px;
 
         svg {
-          color: #d4af37;
+          color: #b8860b;
           flex-shrink: 0;
         }
       }
@@ -381,34 +390,36 @@ const CraftsmanshipGrid = styled.div`
   }
 
   .craft-card {
-    background: #141414;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.3);
+    border-radius: 8px;
     padding: 32px 24px;
     text-align: center;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 
     &:hover {
-      border-color: #d4af37;
+      border-color: #c9a227;
       transform: translateY(-4px);
-      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
+      box-shadow: 0 10px 25px rgba(201, 162, 39, 0.2);
     }
 
     .icon {
       font-size: 2.4rem;
-      color: #d4af37;
+      color: #c9a227;
       margin-bottom: 16px;
     }
 
     h4 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.3rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 8px;
     }
 
     p {
       font-size: 0.85rem;
-      color: #aaaaaa;
+      color: #555555;
       line-height: 1.5;
     }
   }
@@ -604,26 +615,29 @@ export default function AboutPage() {
         <div
           style={{
             marginTop: '80px',
-            background: 'linear-gradient(135deg, #141414 0%, #1f1f1f 100%)',
-            border: '1px solid #D4AF37',
+            background: '#ffffff',
+            border: '1px solid #c9a227',
+            borderRadius: '12px',
+            boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
             padding: '40px',
             textAlign: 'center'
           }}
         >
-          <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.2rem', color: '#FFF', marginBottom: '12px' }}>
+          <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.2rem', color: '#1a1a1a', marginBottom: '12px' }}>
             Ready to Experience Bespoke Luxury?
           </h3>
-          <p style={{ color: '#CCC', fontSize: '1rem', maxWidth: '600px', margin: '0 auto 24px' }}>
+          <p style={{ color: '#555555', fontSize: '1rem', maxWidth: '600px', margin: '0 auto 24px' }}>
             Book a personal fitting session with our master tailors or explore our luxury shop catalog today.
           </p>
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}>
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link
               href="/tailoring"
               style={{
-                background: 'linear-gradient(135deg, #D4AF37 0%, #C9A227 100%)',
-                color: '#0A0A0A',
+                background: 'linear-gradient(135deg, #c9a227 0%, #b8860b 100%)',
+                color: '#ffffff',
                 fontWeight: 'bold',
                 padding: '14px 28px',
+                borderRadius: '30px',
                 textDecoration: 'none',
                 textTransform: 'uppercase',
                 letterSpacing: '1.5px',
@@ -635,11 +649,12 @@ export default function AboutPage() {
             <Link
               href="/gallery"
               style={{
-                background: '#0A0A0A',
-                color: '#D4AF37',
-                border: '1px solid #D4AF37',
+                background: '#ffffff',
+                color: '#b8860b',
+                border: '1px solid #c9a227',
                 fontWeight: 'bold',
                 padding: '14px 28px',
+                borderRadius: '30px',
                 textDecoration: 'none',
                 textTransform: 'uppercase',
                 letterSpacing: '1.5px',
