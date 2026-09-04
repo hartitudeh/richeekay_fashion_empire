@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useShop, Order } from '../context/ShopContext';
+import { useShop } from '../context/ShopContext';
 import { useSafeCloseModal } from '../hooks/useSafeCloseModal';
 import { Product } from '../data/productsData';
 import { Dialog, DialogContent, Box, Tabs, Tab } from '@mui/material';
@@ -16,16 +16,34 @@ const LoginContainer = styled.div`
   border-radius: 12px;
   padding: 44px 32px;
   max-width: 480px;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   color: #1a1a1a;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+  position: relative;
+
+  .close-top {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: #555555;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #b8860b;
+    }
+  }
 
   .lock-badge {
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    background: rgba(201, 162, 39, 0.15);
+    background: rgba(201, 162, 39, 0.12);
     border: 1px solid #c9a227;
     color: #b8860b;
     font-size: 1.8rem;
@@ -33,12 +51,12 @@ const LoginContainer = styled.div`
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
-    box-shadow: 0 0 20px rgba(201, 162, 39, 0.2);
+    box-shadow: 0 0 20px rgba(201, 162, 39, 0.15);
   }
 
   h2 {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: #1a1a1a;
     margin-bottom: 6px;
 
@@ -86,27 +104,29 @@ const LoginContainer = styled.div`
 
   .login-btn {
     width: 100%;
-    background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-    color: #0a0a0a;
-    font-weight: 800;
+    background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+    color: #ffffff;
+    font-weight: 700;
     font-size: 0.85rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 16px 0;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
     margin-top: 10px;
+    transition: all 0.3s ease;
 
     &:hover {
-      background: linear-gradient(135deg, #f4e798 0%, #d4af37 100%);
-      box-shadow: 0 4px 20px rgba(212, 175, 55, 0.5);
+      background: linear-gradient(135deg, #b8860b 0%, #966d09 100%);
+      box-shadow: 0 4px 20px rgba(201, 162, 39, 0.3);
     }
   }
 
   .security-note {
     margin-top: 24px;
     font-size: 0.75rem;
-    color: #888888;
+    color: #666666;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -115,34 +135,60 @@ const LoginContainer = styled.div`
 `;
 
 const AdminContainer = styled.div`
-  background: #141414;
-  color: #ffffff;
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #c9a227;
+  border-radius: 12px;
   padding: 32px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+  position: relative;
+
+  .close-top {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #555555;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #b8860b;
+    }
+  }
 
   .admin-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 24px;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    border-bottom: 1px solid rgba(201, 162, 39, 0.3);
     padding-bottom: 16px;
+    padding-right: 40px;
 
     h2 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
-      color: #d4af37;
+      color: #1a1a1a;
       display: flex;
       align-items: center;
       gap: 10px;
+
+      svg {
+        color: #b8860b;
+      }
     }
 
     .logout-btn {
-      background: rgba(255, 77, 77, 0.15);
+      background: rgba(255, 77, 77, 0.1);
       border: 1px solid #ff4d4d;
-      color: #ff4d4d;
+      color: #d32f2f;
       font-size: 0.8rem;
       font-weight: bold;
       padding: 8px 16px;
+      border-radius: 4px;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -150,7 +196,7 @@ const AdminContainer = styled.div`
       text-transform: uppercase;
 
       &:hover {
-        background: #ff4d4d;
+        background: #d32f2f;
         color: #ffffff;
       }
     }
@@ -167,12 +213,13 @@ const AdminContainer = styled.div`
     }
 
     .kpi-card {
-      background: #0a0a0a;
-      border: 1px solid rgba(212, 175, 55, 0.3);
+      background: #faf8f5;
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      border-radius: 8px;
       padding: 18px;
 
       .icon {
-        color: #d4af37;
+        color: #b8860b;
         font-size: 1.4rem;
         margin-bottom: 8px;
       }
@@ -180,12 +227,13 @@ const AdminContainer = styled.div`
         font-family: 'Playfair Display', Georgia, serif;
         font-size: 1.6rem;
         font-weight: 700;
-        color: #ffffff;
+        color: #1a1a1a;
       }
       .lbl {
         font-size: 0.75rem;
-        color: #888888;
+        color: #666666;
         text-transform: uppercase;
+        font-weight: 600;
       }
     }
   }
@@ -198,30 +246,35 @@ const AdminContainer = styled.div`
     th, td {
       padding: 12px 14px;
       text-align: left;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
       font-size: 0.85rem;
+      color: #1a1a1a;
     }
 
     th {
-      color: #d4af37;
+      color: #b8860b;
       text-transform: uppercase;
       font-size: 0.75rem;
-      background: #0a0a0a;
+      font-weight: 700;
+      background: #faf8f5;
     }
   }
 
   .action-btn {
     background: none;
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    color: #d4af37;
-    padding: 4px 10px;
+    border: 1px solid rgba(201, 162, 39, 0.4);
+    color: #b8860b;
+    padding: 6px 12px;
+    border-radius: 4px;
     font-size: 0.75rem;
+    font-weight: 600;
     cursor: pointer;
     margin-right: 6px;
+    transition: all 0.2s ease;
 
     &:hover {
-      background: #d4af37;
-      color: #0a0a0a;
+      background: #c9a227;
+      color: #ffffff;
     }
   }
 `;
@@ -241,7 +294,6 @@ export const AdminPortalModal: React.FC = () => {
     formatPrice
   } = useShop();
 
-  const router = useRouter();
   const [activeTab, setActiveTab] = useState(0);
   const [emailInput, setEmailInput] = useState('');
   const [passInput, setPassInput] = useState('');
@@ -309,7 +361,7 @@ export const AdminPortalModal: React.FC = () => {
     <Dialog
       open={isAdminPortalOpen}
       onClose={handleCloseAndHome}
-      maxWidth="lg"
+      maxWidth={isAdminLoggedIn ? "lg" : "sm"}
       fullWidth
       slotProps={{
         paper: {
@@ -322,67 +374,65 @@ export const AdminPortalModal: React.FC = () => {
         }
       }}
     >
-      <DialogContent style={{ background: '#141414', border: '1px solid #d4af37', borderRadius: '8px', padding: 0, position: 'relative', overflow: 'hidden' }}>
+      <DialogContent style={{ background: 'transparent', border: 'none', padding: 0, overflow: 'visible' }}>
         {!isAdminLoggedIn ? (
           /* Executive Security Auth Form */
-          <div style={{ padding: '60px 24px', background: '#0a0a0a', position: 'relative' }}>
-            <button
-              onClick={handleCloseAndHome}
-              style={{ position: 'absolute', top: '20px', right: '20px', background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.4rem', cursor: 'pointer' }}
-            >
+          <LoginContainer>
+            <button className="close-top" onClick={handleCloseAndHome} aria-label="Close modal">
               <FiX />
             </button>
 
-            <LoginContainer>
-              <img src="/rklogo.png" alt="RICHEEKAY Official Logo" style={{ height: '70px', width: 'auto', margin: '0 auto 16px', display: 'block', objectFit: 'contain' }} />
-              <div className="lock-badge">
-                <FiLock />
+            <img src="/rklogo.png" alt="RICHEEKAY Official Logo" style={{ height: '70px', width: 'auto', margin: '0 auto 16px', display: 'block', objectFit: 'contain' }} />
+            <div className="lock-badge">
+              <FiLock />
+            </div>
+            <h2>EXECUTIVE <span>ADMIN AUTH</span></h2>
+            <p className="subtitle">RICHEEKAY Fashion Empire CMS Control Center</p>
+
+            <form onSubmit={handleLoginSubmit}>
+              <div className="form-group">
+                <label>Executive Email Address</label>
+                <input
+                  type="email"
+                  required
+                  placeholder="admin@richeekay.com"
+                  value={emailInput}
+                  onChange={(e) => setEmailInput(e.target.value)}
+                />
               </div>
-              <h2>EXECUTIVE <span>ADMIN AUTH</span></h2>
-              <p className="subtitle">RICHEEKAY Fashion Empire CMS Control Center</p>
 
-              <form onSubmit={handleLoginSubmit}>
-                <div className="form-group">
-                  <label>Executive Email Address</label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="admin@richeekay.com"
-                    value={emailInput}
-                    onChange={(e) => setEmailInput(e.target.value)}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label>Password or Master Security PIN</label>
-                  <input
-                    type="password"
-                    required
-                    placeholder="Enter password or 4-digit PIN"
-                    value={passInput}
-                    onChange={(e) => setPassInput(e.target.value)}
-                  />
-                </div>
-
-                {loginError && (
-                  <div style={{ color: '#ff4d4d', fontSize: '0.8rem', marginBottom: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
-                    <FiAlertTriangle /> {loginError}
-                  </div>
-                )}
-
-                <button type="submit" className="login-btn">
-                  Unlock Admin Portal
-                </button>
-              </form>
-
-              <div className="security-note">
-                <FiShield style={{ color: '#D4AF37' }} /> Authorized personnel only. Encrypted Executive Gateway.
+              <div className="form-group">
+                <label>Password or Master Security PIN</label>
+                <input
+                  type="password"
+                  required
+                  placeholder="Enter password or 4-digit PIN"
+                  value={passInput}
+                  onChange={(e) => setPassInput(e.target.value)}
+                />
               </div>
-            </LoginContainer>
-          </div>
+
+              {loginError && (
+                <div style={{ color: '#d32f2f', fontSize: '0.8rem', marginBottom: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+                  <FiAlertTriangle /> {loginError}
+                </div>
+              )}
+
+              <button type="submit" className="login-btn">
+                Unlock Admin Portal
+              </button>
+            </form>
+
+            <div className="security-note">
+              <FiShield style={{ color: '#b8860b' }} /> Authorized personnel only. Encrypted Executive Gateway.
+            </div>
+          </LoginContainer>
         ) : (
           /* Full Admin Dashboard */
           <AdminContainer>
+            <button className="close-top" onClick={handleCloseAndHome} aria-label="Close modal">
+              <FiX />
+            </button>
             <div className="admin-header">
               <h2>
                 <MdAdminPanelSettings /> RICHEEKAY CMS & PORTAL CONTROL
@@ -390,12 +440,6 @@ export const AdminPortalModal: React.FC = () => {
               <div style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
                 <button className="logout-btn" onClick={handleLogoutAndHome}>
                   <FiLogOut /> Lock / Logout
-                </button>
-                <button
-                  onClick={handleCloseAndHome}
-                  style={{ background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.4rem', cursor: 'pointer' }}
-                >
-                  <FiX />
                 </button>
               </div>
             </div>
@@ -424,18 +468,18 @@ export const AdminPortalModal: React.FC = () => {
               </div>
             </div>
 
-            <Box sx={{ borderBottom: 1, borderColor: 'rgba(212, 175, 55, 0.3)', mb: 3 }}>
+            <Box sx={{ borderBottom: 1, borderColor: 'rgba(201, 162, 39, 0.3)', mb: 3 }}>
               <Tabs
                 value={activeTab}
                 onChange={(_, v) => setActiveTab(v)}
                 textColor="inherit"
                 sx={{
-                  '& .MuiTabs-indicator': { backgroundColor: '#D4AF37' }
+                  '& .MuiTabs-indicator': { backgroundColor: '#c9a227' }
                 }}
               >
-                <Tab label="Products Catalog Manager" style={{ color: activeTab === 0 ? '#D4AF37' : '#AAA' }} />
-                <Tab label="Add New Product" style={{ color: activeTab === 1 ? '#D4AF37' : '#AAA' }} />
-                <Tab label="Live Customer Orders" style={{ color: activeTab === 2 ? '#D4AF37' : '#AAA' }} />
+                <Tab label="Products Catalog Manager" style={{ color: activeTab === 0 ? '#b8860b' : '#555555', fontWeight: activeTab === 0 ? 700 : 500 }} />
+                <Tab label="Add New Product" style={{ color: activeTab === 1 ? '#b8860b' : '#555555', fontWeight: activeTab === 1 ? 700 : 500 }} />
+                <Tab label="Live Customer Orders" style={{ color: activeTab === 2 ? '#b8860b' : '#555555', fontWeight: activeTab === 2 ? 700 : 500 }} />
               </Tabs>
             </Box>
 
@@ -454,10 +498,10 @@ export const AdminPortalModal: React.FC = () => {
                 <tbody>
                   {products.map((p) => (
                     <tr key={p.id}>
-                      <td>{p.name}</td>
+                      <td style={{ fontWeight: 600 }}>{p.name}</td>
                       <td>{p.category}</td>
                       <td>{formatPrice(p.priceNGN)}</td>
-                      <td style={{ color: p.stockCount > 0 ? '#D4AF37' : '#ff4d4d' }}>
+                      <td style={{ color: p.stockCount > 0 ? '#2e7d32' : '#d32f2f', fontWeight: 600 }}>
                         {p.stockCount > 0 ? `In Stock (${p.stockCount})` : 'Sold Out'}
                       </td>
                       <td>
@@ -475,33 +519,33 @@ export const AdminPortalModal: React.FC = () => {
             {activeTab === 1 && (
               <form onSubmit={handleAddProduct} style={{ maxWidth: '600px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#D4AF37', marginBottom: '6px' }}>Product Title</label>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#b8860b', fontWeight: 700, marginBottom: '6px' }}>Product Title</label>
                   <input
                     type="text"
                     required
                     placeholder="e.g. Royal Emerald Satin Gala Dress"
                     value={newProdName}
                     onChange={(e) => setNewProdName(e.target.value)}
-                    style={{ width: '100%', background: '#0a0a0a', border: '1px solid #D4AF37', color: '#FFF', padding: '10px' }}
+                    style={{ width: '100%', background: '#faf8f5', border: '1px solid rgba(201, 162, 39, 0.35)', borderRadius: '4px', color: '#1a1a1a', padding: '12px' }}
                   />
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#D4AF37', marginBottom: '6px' }}>Price (NGN ₦)</label>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#b8860b', fontWeight: 700, marginBottom: '6px' }}>Price (NGN ₦)</label>
                   <input
                     type="number"
                     required
                     placeholder="185000"
                     value={newProdPrice}
                     onChange={(e) => setNewProdPrice(e.target.value)}
-                    style={{ width: '100%', background: '#0a0a0a', border: '1px solid #D4AF37', color: '#FFF', padding: '10px' }}
+                    style={{ width: '100%', background: '#faf8f5', border: '1px solid rgba(201, 162, 39, 0.35)', borderRadius: '4px', color: '#1a1a1a', padding: '12px' }}
                   />
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#D4AF37', marginBottom: '6px' }}>Category</label>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#b8860b', fontWeight: 700, marginBottom: '6px' }}>Category</label>
                   <select
                     value={newProdCat}
                     onChange={(e) => setNewProdCat(e.target.value)}
-                    style={{ width: '100%', background: '#0a0a0a', border: '1px solid #D4AF37', color: '#FFF', padding: '10px' }}
+                    style={{ width: '100%', background: '#faf8f5', border: '1px solid rgba(201, 162, 39, 0.35)', borderRadius: '4px', color: '#1a1a1a', padding: '12px' }}
                   >
                     <option value="ladies-wear">Ladies Wear</option>
                     <option value="native-wear">Native Wear</option>
@@ -514,33 +558,35 @@ export const AdminPortalModal: React.FC = () => {
                   </select>
                 </div>
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#D4AF37', marginBottom: '6px' }}>Image URL</label>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#b8860b', fontWeight: 700, marginBottom: '6px' }}>Image URL</label>
                   <input
                     type="text"
                     placeholder="https://images.unsplash.com/..."
                     value={newProdImg}
                     onChange={(e) => setNewProdImg(e.target.value)}
-                    style={{ width: '100%', background: '#0a0a0a', border: '1px solid #D4AF37', color: '#FFF', padding: '10px' }}
+                    style={{ width: '100%', background: '#faf8f5', border: '1px solid rgba(201, 162, 39, 0.35)', borderRadius: '4px', color: '#1a1a1a', padding: '12px' }}
                   />
                 </div>
 
                 <button
                   type="submit"
                   style={{
-                    background: 'linear-gradient(135deg, #D4AF37 0%, #C9A227 100%)',
-                    color: '#0A0A0A',
+                    background: 'linear-gradient(135deg, #c9a227 0%, #b8860b 100%)',
+                    color: '#ffffff',
                     fontWeight: 'bold',
-                    padding: '12px',
+                    padding: '14px',
                     border: 'none',
+                    borderRadius: '4px',
                     cursor: 'pointer',
-                    textTransform: 'uppercase'
+                    textTransform: 'uppercase',
+                    letterSpacing: '1px'
                   }}
                 >
-                  <MdOutlineAddBox style={{ marginRight: '6px' }} /> Publish Product to Store
+                  <MdOutlineAddBox style={{ marginRight: '6px', verticalAlign: 'middle' }} /> Publish Product to Store
                 </button>
 
                 {prodAddedSuccess && (
-                  <p style={{ color: '#D4AF37', fontSize: '0.85rem' }}>
+                  <p style={{ color: '#2e7d32', fontSize: '0.85rem', fontWeight: 600 }}>
                     <FiCheckCircle /> Product published successfully to active catalog!
                   </p>
                 )}
@@ -562,15 +608,17 @@ export const AdminPortalModal: React.FC = () => {
                 <tbody>
                   {orders.map((ord) => (
                     <tr key={ord.id}>
-                      <td style={{ color: '#D4AF37' }}>{ord.id}</td>
+                      <td style={{ color: '#b8860b', fontWeight: 700 }}>{ord.id}</td>
                       <td>{ord.customerName} ({ord.customerPhone})</td>
                       <td>{formatPrice(ord.totalNGN)}</td>
                       <td>
                         <span style={{
-                          background: ord.status === 'Delivered' ? 'rgba(37, 211, 102, 0.2)' : 'rgba(212, 175, 55, 0.2)',
-                          color: ord.status === 'Delivered' ? '#25D366' : '#D4AF37',
-                          padding: '2px 8px',
-                          fontSize: '0.75rem'
+                          background: ord.status === 'Delivered' ? 'rgba(46, 125, 50, 0.15)' : 'rgba(201, 162, 39, 0.15)',
+                          color: ord.status === 'Delivered' ? '#2e7d32' : '#b8860b',
+                          padding: '4px 10px',
+                          borderRadius: '4px',
+                          fontSize: '0.75rem',
+                          fontWeight: 700
                         }}>
                           {ord.status}
                         </span>
@@ -579,7 +627,7 @@ export const AdminPortalModal: React.FC = () => {
                         <select
                           value={ord.status}
                           onChange={(e) => updateOrderStatus(ord.id, e.target.value as any)}
-                          style={{ background: '#0a0a0a', color: '#FFF', border: '1px solid #D4AF37', padding: '4px' }}
+                          style={{ background: '#faf8f5', color: '#1a1a1a', border: '1px solid rgba(201, 162, 39, 0.35)', borderRadius: '4px', padding: '6px' }}
                         >
                           <option value="Order Placed">Order Placed</option>
                           <option value="Fabric Cut">Fabric Cut</option>

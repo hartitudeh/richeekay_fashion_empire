@@ -259,32 +259,36 @@ const AuthContainer = styled.div`
     h2 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 6px;
     }
 
     p {
       font-size: 0.85rem;
-      color: #aaaaaa;
+      color: #555555;
     }
   }
 
   .privacy-notice {
-    background: rgba(212, 175, 55, 0.1);
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: rgba(201, 162, 39, 0.08);
+    border: 1px solid rgba(201, 162, 39, 0.3);
     border-radius: 6px;
     padding: 12px 16px;
     margin-bottom: 24px;
     font-size: 0.78rem;
-    color: #f4e798;
+    color: #555555;
     line-height: 1.5;
     text-align: left;
     display: flex;
     align-items: flex-start;
     gap: 10px;
 
+    strong {
+      color: #1a1a1a;
+    }
+
     svg {
-      color: #d4af37;
+      color: #b8860b;
       font-size: 1.2rem;
       flex-shrink: 0;
       margin-top: 2px;
@@ -797,67 +801,67 @@ export const UserDashboardModal: React.FC = () => {
             )}
 
             {activeTab === 'measurements' && (
-              <form onSubmit={handleSaveMeasurements} style={{ background: '#0a0a0a', padding: '24px', borderRadius: '6px', border: '1px solid rgba(212,175,55,0.25)' }}>
-                <h4 style={{ fontFamily: "'Playfair Display', serif", color: '#d4af37', marginBottom: '8px', fontSize: '1.2rem' }}>
+              <form onSubmit={handleSaveMeasurements} style={{ background: '#faf8f5', padding: '24px', borderRadius: '8px', border: '1px solid rgba(201, 162, 39, 0.3)' }}>
+                <h4 style={{ fontFamily: "'Playfair Display', serif", color: '#b8860b', marginBottom: '8px', fontSize: '1.2rem' }}>
                   ✂️ Bespoke Custom Fitting Measurements
                 </h4>
-                <p style={{ fontSize: '0.8rem', color: '#aaaaaa', marginBottom: '18px' }}>
+                <p style={{ fontSize: '0.8rem', color: '#666666', marginBottom: '18px' }}>
                   All body measurements are saved securely on your phone for instant bespoke orders.
                 </p>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '14px', marginBottom: '18px' }}>
                   <div>
-                    <label style={{ fontSize: '0.75rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Bust (Inches)</label>
+                    <label style={{ fontSize: '0.75rem', color: '#b8860b', fontWeight: 600, display: 'block', marginBottom: '4px' }}>Bust (Inches)</label>
                     <input
                       type="text"
                       value={bust}
                       onChange={(e) => setBust(e.target.value)}
-                      style={{ width: '100%', padding: '10px', background: '#141414', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                      style={{ width: '100%', padding: '10px', background: '#ffffff', border: '1px solid rgba(201, 162, 39, 0.35)', borderRadius: '4px', color: '#1a1a1a' }}
                     />
                   </div>
                   <div>
-                    <label style={{ fontSize: '0.75rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Waist (Inches)</label>
+                    <label style={{ fontSize: '0.75rem', color: '#b8860b', fontWeight: 600, display: 'block', marginBottom: '4px' }}>Waist (Inches)</label>
                     <input
                       type="text"
                       value={waist}
                       onChange={(e) => setWaist(e.target.value)}
-                      style={{ width: '100%', padding: '10px', background: '#141414', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                      style={{ width: '100%', padding: '10px', background: '#ffffff', border: '1px solid rgba(201, 162, 39, 0.35)', borderRadius: '4px', color: '#1a1a1a' }}
                     />
                   </div>
                   <div>
-                    <label style={{ fontSize: '0.75rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Hips (Inches)</label>
+                    <label style={{ fontSize: '0.75rem', color: '#b8860b', fontWeight: 600, display: 'block', marginBottom: '4px' }}>Hips (Inches)</label>
                     <input
                       type="text"
                       value={hips}
                       onChange={(e) => setHips(e.target.value)}
-                      style={{ width: '100%', padding: '10px', background: '#141414', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                      style={{ width: '100%', padding: '10px', background: '#ffffff', border: '1px solid rgba(201, 162, 39, 0.35)', borderRadius: '4px', color: '#1a1a1a' }}
                     />
                   </div>
                   <div>
-                    <label style={{ fontSize: '0.75rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Shoulder (Inches)</label>
+                    <label style={{ fontSize: '0.75rem', color: '#b8860b', fontWeight: 600, display: 'block', marginBottom: '4px' }}>Shoulder (Inches)</label>
                     <input
                       type="text"
                       value={shoulder}
                       onChange={(e) => setShoulder(e.target.value)}
-                      style={{ width: '100%', padding: '10px', background: '#141414', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                      style={{ width: '100%', padding: '10px', background: '#ffffff', border: '1px solid rgba(201, 162, 39, 0.35)', borderRadius: '4px', color: '#1a1a1a' }}
                     />
                   </div>
                   <div>
-                    <label style={{ fontSize: '0.75rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Sleeve Length</label>
+                    <label style={{ fontSize: '0.75rem', color: '#b8860b', fontWeight: 600, display: 'block', marginBottom: '4px' }}>Sleeve Length</label>
                     <input
                       type="text"
                       value={sleeve}
                       onChange={(e) => setSleeve(e.target.value)}
-                      style={{ width: '100%', padding: '10px', background: '#141414', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                      style={{ width: '100%', padding: '10px', background: '#ffffff', border: '1px solid rgba(201, 162, 39, 0.35)', borderRadius: '4px', color: '#1a1a1a' }}
                     />
                   </div>
                   <div>
-                    <label style={{ fontSize: '0.75rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Full Dress Length</label>
+                    <label style={{ fontSize: '0.75rem', color: '#b8860b', fontWeight: 600, display: 'block', marginBottom: '4px' }}>Full Dress Length</label>
                     <input
                       type="text"
                       value={fullLength}
                       onChange={(e) => setFullLength(e.target.value)}
-                      style={{ width: '100%', padding: '10px', background: '#141414', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                      style={{ width: '100%', padding: '10px', background: '#ffffff', border: '1px solid rgba(201, 162, 39, 0.35)', borderRadius: '4px', color: '#1a1a1a' }}
                     />
                   </div>
                 </div>
@@ -865,8 +869,8 @@ export const UserDashboardModal: React.FC = () => {
                 <button
                   type="submit"
                   style={{
-                    background: 'linear-gradient(135deg, #d4af37 0%, #c9a227 100%)',
-                    color: '#0a0a0a',
+                    background: 'linear-gradient(135deg, #c9a227 0%, #b8860b 100%)',
+                    color: '#ffffff',
                     border: 'none',
                     padding: '12px 24px',
                     borderRadius: '30px',
