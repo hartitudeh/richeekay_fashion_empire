@@ -9,7 +9,10 @@ import styled from 'styled-components';
 const FooterWrapper = styled.footer`
   background: #faf8f5;
   color: #1a1a1a;
-  border-top: 1px solid rgba(201, 162, 39, 0.3);
+  border-top: 1px solid rgba(201, 162, 39, 0.35);
+  box-shadow: 0 -12px 35px rgba(0, 0, 0, 0.08), 0 -4px 15px rgba(201, 162, 39, 0.1);
+  position: relative;
+  z-index: 10;
   padding: 80px 24px 30px;
 
   .footer-container {
