@@ -191,19 +191,19 @@ const ChatWidgetContainer = styled.div<{ $open: boolean }>`
     white-space: pre-line;
 
     &.bot {
-      background: #1f1f1f;
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      color: #f8f5ef;
+      background: #ffffff;
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      color: #1a1a1a;
       border-top-left-radius: 2px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     }
 
     &.user {
-      background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-      color: #0a0a0a;
+      background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+      color: #ffffff;
       font-weight: 600;
       border-top-right-radius: 2px;
-      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      box-shadow: 0 4px 15px rgba(201, 162, 39, 0.25);
     }
   }
 
@@ -220,7 +220,7 @@ const ChatWidgetContainer = styled.div<{ $open: boolean }>`
 
     p {
       font-size: 0.78rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin: 0;
       line-height: 1.3;
 
@@ -257,8 +257,8 @@ const ChatWidgetContainer = styled.div<{ $open: boolean }>`
     align-items: center;
     gap: 6px;
     padding: 10px 14px;
-    background: #1f1f1f;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.3);
     border-radius: 8px;
     width: fit-content;
 
@@ -266,7 +266,7 @@ const ChatWidgetContainer = styled.div<{ $open: boolean }>`
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: #d4af37;
+      background: #c9a227;
       animation: ${bounceDots} 1.4s infinite ease-in-out both;
 
       &:nth-child(1) { animation-delay: -0.32s; }
@@ -279,8 +279,8 @@ const ChatWidgetContainer = styled.div<{ $open: boolean }>`
     display: flex;
     gap: 6px;
     overflow-x: auto;
-    background: #0a0a0a;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: #faf8f5;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
 
     &::-webkit-scrollbar {
       display: none;
@@ -307,17 +307,17 @@ const ChatWidgetContainer = styled.div<{ $open: boolean }>`
 
   .chat-input-row {
     padding: 12px 14px;
-    background: #0a0a0a;
-    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    background: #ffffff;
+    border-top: 1px solid rgba(201, 162, 39, 0.25);
     display: flex;
     gap: 8px;
     align-items: center;
 
     input {
       flex-grow: 1;
-      background: #171717;
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      color: #ffffff;
+      background: #faf8f5;
+      border: 1px solid rgba(201, 162, 39, 0.35);
+      color: #1a1a1a;
       padding: 10px 14px;
       font-family: 'Montserrat', sans-serif;
       font-size: 0.85rem;

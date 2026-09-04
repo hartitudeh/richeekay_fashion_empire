@@ -6,25 +6,25 @@ import { FaWhatsapp } from 'react-icons/fa6';
 import styled from 'styled-components';
 
 const Header = styled.div`
-  background: linear-gradient(180deg, #0a0a0a 0%, #1f1f1f 100%);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  background: linear-gradient(180deg, #ffffff 0%, #faf8f5 100%);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.25);
   padding: 70px 24px;
   text-align: center;
 
   h1 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 3.2rem;
-    color: #ffffff;
+    color: #1a1a1a;
     margin-bottom: 12px;
 
     span {
-      color: #d4af37;
+      color: #b8860b;
     }
   }
 
   p {
     font-size: 1.05rem;
-    color: #cccccc;
+    color: #555555;
     max-width: 650px;
     margin: 0 auto;
   }
@@ -46,34 +46,38 @@ const Container = styled.div`
   }
 
   .boutique-card {
-    background: #141414;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.3);
+    border-radius: 12px;
     padding: 24px;
     margin-bottom: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 
     h4 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.25rem;
-      color: #d4af37;
+      color: #b8860b;
       margin-bottom: 8px;
     }
 
     p {
       font-size: 0.9rem;
-      color: #cccccc;
+      color: #444444;
       line-height: 1.6;
     }
   }
 
   .form-card {
-    background: #141414;
-    border: 1px solid rgba(212, 175, 55, 0.4);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.35);
+    border-radius: 12px;
     padding: 36px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.04);
 
     h3 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 20px;
     }
 
@@ -85,36 +89,38 @@ const Container = styled.div`
 
       label {
         font-size: 0.75rem;
-        color: #d4af37;
+        color: #b8860b;
         text-transform: uppercase;
         font-weight: 600;
       }
 
       input, textarea, select {
-        background: #0a0a0a;
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        color: #ffffff;
+        background: #faf8f5;
+        border: 1px solid rgba(201, 162, 39, 0.3);
+        border-radius: 4px;
+        color: #1a1a1a;
         padding: 12px 14px;
         font-family: 'Montserrat', sans-serif;
         font-size: 0.9rem;
 
         &:focus {
           outline: none;
-          border-color: #d4af37;
+          border-color: #b8860b;
         }
       }
     }
 
     .send-btn {
       width: 100%;
-      background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-      color: #0a0a0a;
+      background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+      color: #ffffff;
       font-weight: 700;
       font-size: 0.85rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       padding: 14px 0;
       border: none;
+      border-radius: 30px;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -122,7 +128,7 @@ const Container = styled.div`
       gap: 8px;
 
       &:hover {
-        background: linear-gradient(135deg, #f4e798 0%, #d4af37 100%);
+        background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
       }
     }
   }
@@ -151,25 +157,25 @@ export default function ContactPage() {
             <div className="boutique-card">
               <h4>Lagos Flagship Atelier & Boutique</h4>
               <p>
-                <FiMapPin style={{ color: '#D4AF37' }} /> Plot 14 Victoria Island, Lagos, Nigeria<br />
-                <FiPhone style={{ color: '#D4AF37' }} /> Call: 07048113372 | WhatsApp: 08084278440<br />
-                <FiClock style={{ color: '#D4AF37' }} /> Mon - Sat: 9:00 AM - 8:00 PM
+                <FiMapPin style={{ color: '#c9a227' }} /> Plot 14 Victoria Island, Lagos, Nigeria<br />
+                <FiPhone style={{ color: '#c9a227' }} /> Call: 07048113372 | WhatsApp: 08084278440<br />
+                <FiClock style={{ color: '#c9a227' }} /> Mon - Sat: 9:00 AM - 8:00 PM
               </p>
             </div>
 
             <div className="boutique-card">
               <h4>Oyo State Showroom & Fitting Hub</h4>
               <p>
-                <FiMapPin style={{ color: '#D4AF37' }} /> Executive Bodija District, Ibadan, Oyo State<br />
-                <FiPhone style={{ color: '#D4AF37' }} /> Call / WhatsApp: 08139212462
+                <FiMapPin style={{ color: '#c9a227' }} /> Executive Bodija District, Ibadan, Oyo State<br />
+                <FiPhone style={{ color: '#c9a227' }} /> Call / WhatsApp: 08139212462
               </p>
             </div>
 
             <div className="boutique-card">
               <h4>Osun State Atelier (Osogbo)</h4>
               <p>
-                <FiMapPin style={{ color: '#D4AF37' }} /> Luxury Fashion Arcade, Osogbo, Osun State<br />
-                <FiPhone style={{ color: '#D4AF37' }} /> Call / WhatsApp: 07083777336
+                <FiMapPin style={{ color: '#c9a227' }} /> Luxury Fashion Arcade, Osogbo, Osun State<br />
+                <FiPhone style={{ color: '#c9a227' }} /> Call / WhatsApp: 07083777336
               </p>
             </div>
 
@@ -183,10 +189,11 @@ export default function ContactPage() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: '10px',
-                  background: '#25D366',
-                  color: '#FFF',
+                  background: 'linear-gradient(135deg, #25D366 0%, #128c7e 100%)',
+                  color: '#ffffff',
                   fontWeight: 'bold',
                   padding: '14px 20px',
+                  borderRadius: '30px',
                   textDecoration: 'none',
                   fontSize: '0.9rem'
                 }}
@@ -226,7 +233,7 @@ export default function ContactPage() {
               </button>
 
               {submitted && (
-                <div style={{ marginTop: '16px', color: '#D4AF37', textAlign: 'center', fontSize: '0.9rem' }}>
+                <div style={{ marginTop: '16px', color: '#b8860b', textAlign: 'center', fontSize: '0.9rem' }}>
                   <FiCheckCircle style={{ marginRight: '6px' }} /> Message sent! Our VIP concierge will respond within 2 hours.
                 </div>
               )}

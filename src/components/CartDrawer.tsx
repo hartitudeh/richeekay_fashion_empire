@@ -171,8 +171,9 @@ const CartItemRow = styled.div`
 
 const DrawerFooter = styled.div`
   padding: 20px 24px;
-  background: #0a0a0a;
-  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  background: #ffffff;
+  border-top: 1px solid rgba(201, 162, 39, 0.25);
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.04);
 
   .coupon-row {
     display: flex;
@@ -181,16 +182,17 @@ const DrawerFooter = styled.div`
 
     input {
       flex-grow: 1;
-      background: #1f1f1f;
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      color: #ffffff;
+      background: #faf8f5;
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      border-radius: 4px;
+      color: #1a1a1a;
       padding: 8px 12px;
       font-size: 0.8rem;
       text-transform: uppercase;
 
       &:focus {
         outline: none;
-        border-color: #d4af37;
+        border-color: #b8860b;
       }
     }
 

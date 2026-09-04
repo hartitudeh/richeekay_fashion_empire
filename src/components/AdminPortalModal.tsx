@@ -11,43 +11,45 @@ import { FiX, FiCheckCircle, FiDollarSign, FiShoppingBag, FiUsers, FiTrendingUp,
 import styled from 'styled-components';
 
 const LoginContainer = styled.div`
-  background: #0a0a0a;
-  border: 1px solid #d4af37;
+  background: #ffffff;
+  border: 1px solid #c9a227;
+  border-radius: 12px;
   padding: 44px 32px;
   max-width: 480px;
   margin: 0 auto;
   text-align: center;
-  color: #ffffff;
+  color: #1a1a1a;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
 
   .lock-badge {
     width: 64px;
     height: 64px;
     border-radius: 50%;
-    background: rgba(212, 175, 55, 0.15);
-    border: 1px solid #d4af37;
-    color: #d4af37;
+    background: rgba(201, 162, 39, 0.15);
+    border: 1px solid #c9a227;
+    color: #b8860b;
     font-size: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    box-shadow: 0 0 20px rgba(201, 162, 39, 0.2);
   }
 
   h2 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 2.2rem;
-    color: #ffffff;
+    color: #1a1a1a;
     margin-bottom: 6px;
 
     span {
-      color: #d4af37;
+      color: #b8860b;
     }
   }
 
   p.subtitle {
     font-size: 0.85rem;
-    color: #aaaaaa;
+    color: #666666;
     margin-bottom: 28px;
   }
 
@@ -60,23 +62,24 @@ const LoginContainer = styled.div`
 
     label {
       font-size: 0.75rem;
-      color: #d4af37;
+      color: #b8860b;
       text-transform: uppercase;
       font-weight: 700;
       letter-spacing: 1px;
     }
 
     input {
-      background: #141414;
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      color: #ffffff;
+      background: #faf8f5;
+      border: 1px solid rgba(201, 162, 39, 0.35);
+      border-radius: 4px;
+      color: #1a1a1a;
       padding: 14px 16px;
       font-size: 0.95rem;
 
       &:focus {
         outline: none;
-        border-color: #d4af37;
-        box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        border-color: #b8860b;
+        box-shadow: 0 0 10px rgba(201, 162, 39, 0.2);
       }
     }
   }

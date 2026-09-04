@@ -468,7 +468,7 @@ export default function DashboardPage() {
                   </div>
 
                   <div>
-                    <label style={{ fontSize: '0.82rem', color: '#cccccc', display: 'block', marginBottom: '6px' }}>
+                    <label style={{ fontSize: '0.82rem', color: '#555555', display: 'block', marginBottom: '6px', fontWeight: 600 }}>
                       Full Name
                     </label>
                     <input
@@ -478,16 +478,16 @@ export default function DashboardPage() {
                       style={{
                         width: '100%',
                         padding: '14px',
-                        background: '#0a0a0a',
-                        border: '1px solid rgba(212,175,55,0.3)',
+                        background: '#faf8f5',
+                        border: '1px solid rgba(201,162,39,0.3)',
                         borderRadius: '6px',
-                        color: '#ffffff'
+                        color: '#1a1a1a'
                       }}
                     />
                   </div>
 
                   <div>
-                    <label style={{ fontSize: '0.82rem', color: '#cccccc', display: 'block', marginBottom: '6px' }}>
+                    <label style={{ fontSize: '0.82rem', color: '#555555', display: 'block', marginBottom: '6px', fontWeight: 600 }}>
                       Fashion Bio / Tagline
                     </label>
                     <input
@@ -497,16 +497,16 @@ export default function DashboardPage() {
                       style={{
                         width: '100%',
                         padding: '14px',
-                        background: '#0a0a0a',
-                        border: '1px solid rgba(212,175,55,0.3)',
+                        background: '#faf8f5',
+                        border: '1px solid rgba(201,162,39,0.3)',
                         borderRadius: '6px',
-                        color: '#ffffff'
+                        color: '#1a1a1a'
                       }}
                     />
                   </div>
 
                   <div>
-                    <label style={{ fontSize: '0.82rem', color: '#cccccc', display: 'block', marginBottom: '6px' }}>
+                    <label style={{ fontSize: '0.82rem', color: '#555555', display: 'block', marginBottom: '6px', fontWeight: 600 }}>
                       Phone Number (Saved on Phone)
                     </label>
                     <input
@@ -516,16 +516,16 @@ export default function DashboardPage() {
                       style={{
                         width: '100%',
                         padding: '14px',
-                        background: '#0a0a0a',
-                        border: '1px solid rgba(212,175,55,0.3)',
+                        background: '#faf8f5',
+                        border: '1px solid rgba(201,162,39,0.3)',
                         borderRadius: '6px',
-                        color: '#ffffff'
+                        color: '#1a1a1a'
                       }}
                     />
                   </div>
 
                   <div>
-                    <label style={{ fontSize: '0.82rem', color: '#cccccc', display: 'block', marginBottom: '6px' }}>
+                    <label style={{ fontSize: '0.82rem', color: '#555555', display: 'block', marginBottom: '6px', fontWeight: 600 }}>
                       Primary Boutique Delivery Address (Saved on Phone)
                     </label>
                     <input
@@ -535,10 +535,10 @@ export default function DashboardPage() {
                       style={{
                         width: '100%',
                         padding: '14px',
-                        background: '#0a0a0a',
-                        border: '1px solid rgba(212,175,55,0.3)',
+                        background: '#faf8f5',
+                        border: '1px solid rgba(201,162,39,0.3)',
                         borderRadius: '6px',
-                        color: '#ffffff'
+                        color: '#1a1a1a'
                       }}
                     />
                   </div>
@@ -546,8 +546,8 @@ export default function DashboardPage() {
                   <button
                     type="submit"
                     style={{
-                      background: 'linear-gradient(135deg, #d4af37 0%, #c9a227 100%)',
-                      color: '#0a0a0a',
+                      background: 'linear-gradient(135deg, #c9a227 0%, #b8860b 100%)',
+                      color: '#ffffff',
                       border: 'none',
                       padding: '14px 28px',
                       borderRadius: '30px',
@@ -589,16 +589,16 @@ export default function DashboardPage() {
                   </div>
                 </div>
 
-                <div style={{ background: '#0a0a0a', padding: '16px 20px', borderRadius: '6px', marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
-                  <span style={{ fontSize: '0.88rem', color: '#cccccc' }}>Your VIP Referral Link (+1,500 Pts per friend):</span>
+                <div style={{ background: '#faf8f5', border: '1px solid rgba(201,162,39,0.3)', padding: '16px 20px', borderRadius: '6px', marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
+                  <span style={{ fontSize: '0.88rem', color: '#555555', fontWeight: 600 }}>Your VIP Referral Link (+1,500 Pts per friend):</span>
                   <button
                     onClick={handleCopyReferral}
                     style={{
-                      background: '#d4af37',
-                      color: '#0a0a0a',
+                      background: 'linear-gradient(135deg, #c9a227 0%, #b8860b 100%)',
+                      color: '#ffffff',
                       border: 'none',
                       padding: '8px 16px',
-                      borderRadius: '4px',
+                      borderRadius: '20px',
                       fontWeight: '700',
                       fontSize: '0.82rem',
                       cursor: 'pointer',
@@ -617,7 +617,7 @@ export default function DashboardPage() {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '8px',
-                    color: '#d4af37',
+                    color: '#b8860b',
                     fontWeight: '700',
                     fontSize: '0.9rem',
                     textDecoration: 'underline'
@@ -640,30 +640,32 @@ export default function DashboardPage() {
                     <div
                       key={o.id}
                       style={{
-                        background: '#0a0a0a',
-                        border: '1px solid rgba(212,175,55,0.3)',
+                        background: '#ffffff',
+                        border: '1px solid rgba(201,162,39,0.3)',
                         padding: '20px',
                         marginBottom: '16px',
-                        borderRadius: '8px'
+                        borderRadius: '8px',
+                        boxShadow: '0 4px 15px rgba(0,0,0,0.03)'
                       }}
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', flexWrap: 'wrap', gap: '8px' }}>
-                        <span style={{ fontWeight: '700', color: '#d4af37', fontSize: '1rem' }}>Order #{o.id}</span>
-                        <span style={{ fontSize: '0.85rem', color: '#aaaaaa' }}>{o.date}</span>
+                        <span style={{ fontWeight: '700', color: '#b8860b', fontSize: '1rem' }}>Order #{o.id}</span>
+                        <span style={{ fontSize: '0.85rem', color: '#666666' }}>{o.date}</span>
                       </div>
-                      <div style={{ fontSize: '0.92rem', color: '#cccccc', marginBottom: '14px' }}>
-                        Total Paid: <strong style={{ color: '#ffffff' }}>{formatPrice(o.totalNGN)}</strong> | Status:{' '}
+                      <div style={{ fontSize: '0.92rem', color: '#444444', marginBottom: '14px' }}>
+                        Total Paid: <strong style={{ color: '#1a1a1a' }}>{formatPrice(o.totalNGN)}</strong> | Status:{' '}
                         <span style={{ color: '#25d366', fontWeight: '700' }}>{o.status}</span>
                       </div>
                       <button
                         onClick={() => router.push(`/order-tracking?orderId=${o.id}`)}
                         style={{
-                          background: 'rgba(212,175,55,0.15)',
-                          border: '1px solid #d4af37',
-                          color: '#d4af37',
+                          background: 'rgba(201,162,39,0.12)',
+                          border: '1px solid #c9a227',
+                          color: '#b8860b',
                           padding: '8px 18px',
                           fontSize: '0.82rem',
                           borderRadius: '30px',
+                          fontWeight: '600',
                           cursor: 'pointer',
                           display: 'inline-flex',
                           alignItems: 'center',
@@ -675,8 +677,8 @@ export default function DashboardPage() {
                     </div>
                   ))
                 ) : (
-                  <div style={{ textAlign: 'center', color: '#888888', padding: '40px 0' }}>
-                    <FiShoppingBag style={{ fontSize: '2.5rem', color: '#d4af37', marginBottom: '10px' }} />
+                  <div style={{ textAlign: 'center', color: '#666666', padding: '40px 0' }}>
+                    <FiShoppingBag style={{ fontSize: '2.5rem', color: '#c9a227', marginBottom: '10px' }} />
                     <p style={{ fontSize: '1rem' }}>No purchase history found on this device.</p>
                   </div>
                 )}
@@ -696,26 +698,27 @@ export default function DashboardPage() {
                       <div
                         key={p.id}
                         style={{
-                          background: '#0a0a0a',
-                          border: '1px solid rgba(255,255,255,0.12)',
+                          background: '#ffffff',
+                          border: '1px solid rgba(201,162,39,0.3)',
                           padding: '16px',
                           display: 'flex',
                           gap: '16px',
                           borderRadius: '8px',
-                          alignItems: 'center'
+                          alignItems: 'center',
+                          boxShadow: '0 4px 15px rgba(0,0,0,0.03)'
                         }}
                       >
                         <img src={p.images[0]} alt={p.name} style={{ width: '80px', height: '100px', objectFit: 'cover', borderRadius: '4px' }} />
                         <div style={{ flex: 1 }}>
-                          <h5 style={{ fontSize: '0.95rem', color: '#ffffff', margin: '0 0 6px' }}>{p.name}</h5>
-                          <span style={{ color: '#d4af37', fontSize: '0.9rem', fontWeight: '700' }}>{formatPrice(p.priceNGN)}</span>
+                          <h5 style={{ fontSize: '0.95rem', color: '#1a1a1a', margin: '0 0 6px' }}>{p.name}</h5>
+                          <span style={{ color: '#b8860b', fontSize: '0.9rem', fontWeight: '700' }}>{formatPrice(p.priceNGN)}</span>
                           <button
                             onClick={() => addToCart(p, p.colors[0]?.name || 'Gold', p.sizes[0] || 'M', 1)}
                             style={{
                               display: 'block',
                               marginTop: '10px',
-                              background: 'linear-gradient(135deg, #d4af37 0%, #c9a227 100%)',
-                              color: '#0a0a0a',
+                              background: 'linear-gradient(135deg, #c9a227 0%, #b8860b 100%)',
+                              color: '#ffffff',
                               border: 'none',
                               padding: '8px 16px',
                               fontSize: '0.78rem',
@@ -731,8 +734,8 @@ export default function DashboardPage() {
                     ))}
                   </div>
                 ) : (
-                  <div style={{ textAlign: 'center', color: '#888888', padding: '40px 0' }}>
-                    <FiHeart style={{ fontSize: '2.5rem', color: '#d4af37', marginBottom: '10px' }} />
+                  <div style={{ textAlign: 'center', color: '#666666', padding: '40px 0' }}>
+                    <FiHeart style={{ fontSize: '2.5rem', color: '#c9a227', marginBottom: '10px' }} />
                     <p style={{ fontSize: '1rem' }}>Your wishlist is currently empty.</p>
                   </div>
                 )}
@@ -748,57 +751,57 @@ export default function DashboardPage() {
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '24px' }}>
                   <div>
-                    <label style={{ fontSize: '0.8rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Bust (Inches)</label>
+                    <label style={{ fontSize: '0.8rem', color: '#555555', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Bust (Inches)</label>
                     <input
                       type="text"
                       value={bust}
                       onChange={(e) => setBust(e.target.value)}
-                      style={{ width: '100%', padding: '12px', background: '#0a0a0a', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                      style={{ width: '100%', padding: '12px', background: '#faf8f5', border: '1px solid rgba(201,162,39,0.3)', borderRadius: '4px', color: '#1a1a1a' }}
                     />
                   </div>
                   <div>
-                    <label style={{ fontSize: '0.8rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Waist (Inches)</label>
+                    <label style={{ fontSize: '0.8rem', color: '#555555', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Waist (Inches)</label>
                     <input
                       type="text"
                       value={waist}
                       onChange={(e) => setWaist(e.target.value)}
-                      style={{ width: '100%', padding: '12px', background: '#0a0a0a', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                      style={{ width: '100%', padding: '12px', background: '#faf8f5', border: '1px solid rgba(201,162,39,0.3)', borderRadius: '4px', color: '#1a1a1a' }}
                     />
                   </div>
                   <div>
-                    <label style={{ fontSize: '0.8rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Hips (Inches)</label>
+                    <label style={{ fontSize: '0.8rem', color: '#555555', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Hips (Inches)</label>
                     <input
                       type="text"
                       value={hips}
                       onChange={(e) => setHips(e.target.value)}
-                      style={{ width: '100%', padding: '12px', background: '#0a0a0a', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                      style={{ width: '100%', padding: '12px', background: '#faf8f5', border: '1px solid rgba(201,162,39,0.3)', borderRadius: '4px', color: '#1a1a1a' }}
                     />
                   </div>
                   <div>
-                    <label style={{ fontSize: '0.8rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Shoulder (Inches)</label>
+                    <label style={{ fontSize: '0.8rem', color: '#555555', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Shoulder (Inches)</label>
                     <input
                       type="text"
                       value={shoulder}
                       onChange={(e) => setShoulder(e.target.value)}
-                      style={{ width: '100%', padding: '12px', background: '#0a0a0a', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                      style={{ width: '100%', padding: '12px', background: '#faf8f5', border: '1px solid rgba(201,162,39,0.3)', borderRadius: '4px', color: '#1a1a1a' }}
                     />
                   </div>
                   <div>
-                    <label style={{ fontSize: '0.8rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Sleeve Length</label>
+                    <label style={{ fontSize: '0.8rem', color: '#555555', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Sleeve Length</label>
                     <input
                       type="text"
                       value={sleeve}
                       onChange={(e) => setSleeve(e.target.value)}
-                      style={{ width: '100%', padding: '12px', background: '#0a0a0a', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                      style={{ width: '100%', padding: '12px', background: '#faf8f5', border: '1px solid rgba(201,162,39,0.3)', borderRadius: '4px', color: '#1a1a1a' }}
                     />
                   </div>
                   <div>
-                    <label style={{ fontSize: '0.8rem', color: '#cccccc', display: 'block', marginBottom: '4px' }}>Full Dress Length</label>
+                    <label style={{ fontSize: '0.8rem', color: '#555555', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Full Dress Length</label>
                     <input
                       type="text"
                       value={fullLength}
                       onChange={(e) => setFullLength(e.target.value)}
-                      style={{ width: '100%', padding: '12px', background: '#0a0a0a', border: '1px solid rgba(212,175,55,0.3)', borderRadius: '4px', color: '#ffffff' }}
+                      style={{ width: '100%', padding: '12px', background: '#faf8f5', border: '1px solid rgba(201,162,39,0.3)', borderRadius: '4px', color: '#1a1a1a' }}
                     />
                   </div>
                 </div>
@@ -806,8 +809,8 @@ export default function DashboardPage() {
                 <button
                   type="submit"
                   style={{
-                    background: 'linear-gradient(135deg, #d4af37 0%, #c9a227 100%)',
-                    color: '#0a0a0a',
+                    background: 'linear-gradient(135deg, #c9a227 0%, #b8860b 100%)',
+                    color: '#ffffff',
                     border: 'none',
                     padding: '12px 28px',
                     borderRadius: '30px',

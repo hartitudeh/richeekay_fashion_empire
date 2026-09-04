@@ -48,7 +48,7 @@ const textShimmer = keyframes`
 const PreloaderOverlay = styled.div<{ $fadeOut: boolean }>`
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(30, 25, 15, 0.98) 0%, rgba(10, 10, 10, 1) 80%);
+  background: #faf8f5;
   z-index: 99999;
   display: flex;
   flex-direction: column;
@@ -73,7 +73,7 @@ const LogoContainer = styled.div`
 const OuterOrbitRing = styled.div`
   position: absolute;
   inset: -14px;
-  border: 1px dashed rgba(212, 175, 55, 0.5);
+  border: 1px dashed rgba(201, 162, 39, 0.5);
   border-radius: 50%;
   animation: ${rotateRing} 12s linear infinite;
 `;
@@ -82,8 +82,8 @@ const InnerOrbitRing = styled.div`
   position: absolute;
   inset: -6px;
   border: 2px solid transparent;
-  border-top-color: #d4af37;
-  border-bottom-color: #f4e798;
+  border-top-color: #c9a227;
+  border-bottom-color: #b8860b;
   border-radius: 50%;
   animation: ${rotateRingReverse} 3s linear infinite;
 `;
@@ -92,20 +92,21 @@ const AnimatedLogoBadge = styled.div`
   position: relative;
   width: 110px;
   height: 110px;
-  background: #0a0a0a;
-  border: 2px solid #d4af37;
+  background: #ffffff;
+  border: 2px solid #c9a227;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 14px;
+  box-shadow: 0 10px 30px rgba(201, 162, 39, 0.25);
   animation: ${pulseGlow} 2.4s ease-in-out infinite;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.8));
+    filter: drop-shadow(0 0 10px rgba(201, 162, 39, 0.6));
   }
 `;
 
@@ -115,22 +116,18 @@ const TitleText = styled.h1`
   letter-spacing: 4px;
   text-transform: uppercase;
   margin: 0 0 8px;
-  background: linear-gradient(90deg, #d4af37 0%, #ffffff 50%, #d4af37 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: ${textShimmer} 3s linear infinite;
+  color: #1a1a1a;
   text-align: center;
   padding: 0 16px;
 `;
 
 const SubtitleText = styled.p`
   font-size: 0.78rem;
-  color: #aaaaaa;
+  color: #b8860b;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0 0 24px;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
 `;
 

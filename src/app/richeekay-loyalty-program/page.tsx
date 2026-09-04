@@ -853,7 +853,7 @@ export default function RicheekayLoyaltyPage() {
       </SectionWrapper>
 
       {/* MEMBERSHIP TIERS */}
-      <SectionWrapper style={{ background: '#0a0a0a', borderTop: '1px solid rgba(212, 175, 55, 0.2)' }}>
+      <SectionWrapper style={{ background: '#faf8f5', borderTop: '1px solid rgba(201, 162, 39, 0.25)' }}>
         <div className="section-header">
           <span>EXCLUSIVE PRIVILEGES</span>
           <h2>Royalty Membership Tiers</h2>
@@ -987,7 +987,7 @@ export default function RicheekayLoyaltyPage() {
       </SectionWrapper>
 
       {/* WAYS TO EARN WITH LEFT IMAGE */}
-      <SectionWrapper style={{ background: '#0a0a0a', borderTop: '1px solid rgba(212, 175, 55, 0.2)' }}>
+      <SectionWrapper style={{ background: '#faf8f5', borderTop: '1px solid rgba(201, 162, 39, 0.25)' }}>
         <div className="section-header">
           <span>BONUS REWARDS</span>
           <h2>More Ways To Earn Gold Points</h2>

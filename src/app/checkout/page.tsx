@@ -13,7 +13,7 @@ export default function CheckoutPage() {
   }, [setIsCheckoutOpen]);
 
   return (
-    <div style={{ minHeight: '70vh', background: '#0a0a0a', padding: '60px 24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div style={{ minHeight: '70vh', background: '#faf8f5', padding: '60px 24px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <CheckoutModal />
     </div>
   );

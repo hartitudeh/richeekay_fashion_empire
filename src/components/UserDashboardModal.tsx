@@ -149,22 +149,23 @@ const DashboardContainer = styled.div`
     }
 
     .kpi-card {
-      background: #0a0a0a;
-      border: 1px solid rgba(212, 175, 55, 0.3);
+      background: #ffffff;
+      border: 1px solid rgba(201, 162, 39, 0.3);
       padding: 18px;
       text-align: center;
-      border-radius: 6px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 
       .num {
         font-family: 'Playfair Display', Georgia, serif;
         font-size: 1.7rem;
         font-weight: 700;
-        color: #d4af37;
+        color: #b8860b;
       }
 
       .lbl {
         font-size: 0.75rem;
-        color: #aaaaaa;
+        color: #666666;
         text-transform: uppercase;
         letter-spacing: 1px;
         margin-top: 4px;
@@ -219,12 +220,13 @@ const DashboardContainer = styled.div`
 `;
 
 const AuthContainer = styled.div`
-  background: #141414;
-  color: #ffffff;
-  border: 1px solid #d4af37;
-  border-radius: 8px;
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #c9a227;
+  border-radius: 12px;
   padding: 36px 32px;
   position: relative;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
 
   @media (max-width: 600px) {
     padding: 24px 18px;
@@ -298,20 +300,20 @@ const AuthContainer = styled.div`
     button {
       flex: 1;
       padding: 12px;
-      background: #0a0a0a;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: #aaaaaa;
+      background: #faf8f5;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      color: #555555;
       font-weight: 600;
       font-size: 0.85rem;
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
       transition: all 0.3s ease;
 
       &.active {
-        background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-        color: #0a0a0a;
+        background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+        color: #ffffff;
         font-weight: 700;
-        border-color: #d4af37;
+        border-color: #c9a227;
       }
     }
   }
@@ -327,16 +329,16 @@ const AuthContainer = styled.div`
       input {
         width: 100%;
         padding: 14px 16px 14px 44px;
-        background: #0a0a0a;
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        border-radius: 4px;
-        color: #ffffff;
+        background: #faf8f5;
+        border: 1px solid rgba(201, 162, 39, 0.35);
+        border-radius: 6px;
+        color: #1a1a1a;
         font-size: 0.9rem;
         outline: none;
 
         &:focus {
-          border-color: #d4af37;
-          box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+          border-color: #b8860b;
+          box-shadow: 0 0 10px rgba(201, 162, 39, 0.2);
         }
       }
 

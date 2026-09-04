@@ -846,10 +846,10 @@ export default function GalleryPage() {
       >
         <DialogContent style={{ padding: 0, overflow: 'hidden' }}>
           {activeItem && (
-            <div style={{ background: '#0a0a0a', border: '1px solid #D4AF37', borderRadius: '8px', padding: '24px', color: '#FFF', position: 'relative', maxHeight: '85vh', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+            <div style={{ background: '#ffffff', border: '1px solid #c9a227', borderRadius: '12px', padding: '24px', color: '#1a1a1a', position: 'relative', maxHeight: '85vh', overflow: 'hidden', display: 'flex', flexDirection: 'column', boxShadow: '0 15px 50px rgba(0,0,0,0.15)' }}>
               <button
                 onClick={() => setActiveItem(null)}
-                style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.6rem', cursor: 'pointer', zIndex: 10 }}
+                style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: '#c9a227', fontSize: '1.6rem', cursor: 'pointer', zIndex: 10 }}
               >
                 <FiX />
               </button>
@@ -862,7 +862,7 @@ export default function GalleryPage() {
                       const prevIndex = (activeIndex - 1 + filteredItems.length) % filteredItems.length;
                       setActiveItem(filteredItems[prevIndex]);
                     }}
-                    style={{ position: 'absolute', left: '16px', top: '40%', transform: 'translateY(-50%)', background: 'rgba(10, 10, 10, 0.75)', border: '1px solid #D4AF37', color: '#D4AF37', width: '42px', height: '42px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem', cursor: 'pointer', zIndex: 10 }}
+                    style={{ position: 'absolute', left: '16px', top: '40%', transform: 'translateY(-50%)', background: 'rgba(255, 255, 255, 0.9)', border: '1px solid #c9a227', color: '#b8860b', width: '42px', height: '42px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem', cursor: 'pointer', zIndex: 10, boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}
                     title="Previous Image"
                   >
                     <FiChevronLeft />
@@ -873,7 +873,7 @@ export default function GalleryPage() {
                       const nextIndex = (activeIndex + 1) % filteredItems.length;
                       setActiveItem(filteredItems[nextIndex]);
                     }}
-                    style={{ position: 'absolute', right: '16px', top: '40%', transform: 'translateY(-50%)', background: 'rgba(10, 10, 10, 0.75)', border: '1px solid #D4AF37', color: '#D4AF37', width: '42px', height: '42px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem', cursor: 'pointer', zIndex: 10 }}
+                    style={{ position: 'absolute', right: '16px', top: '40%', transform: 'translateY(-50%)', background: 'rgba(255, 255, 255, 0.9)', border: '1px solid #c9a227', color: '#b8860b', width: '42px', height: '42px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem', cursor: 'pointer', zIndex: 10, boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}
                     title="Next Image"
                   >
                     <FiChevronRight />
@@ -886,14 +886,14 @@ export default function GalleryPage() {
                 alt={activeItem.title}
                 style={{ maxWidth: '100%', maxHeight: '55vh', objectFit: 'contain', border: 'none', borderRadius: '4px', margin: '14px auto', display: 'block' }}
               />
-              <span style={{ color: '#D4AF37', fontSize: '0.8rem', textTransform: 'uppercase', fontWeight: 'bold' }}>
+              <span style={{ color: '#b8860b', fontSize: '0.8rem', textTransform: 'uppercase', fontWeight: 'bold' }}>
                 {activeItem.category.replace('-', ' ')}
               </span>
-              <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.8rem', color: '#FFF', margin: '4px 0 8px' }}>
+              <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.8rem', color: '#1a1a1a', margin: '4px 0 8px' }}>
                 {activeItem.title}
               </h3>
-              <p style={{ color: '#aaa', fontSize: '0.85rem', marginBottom: '10px' }}>{activeItem.photographer}</p>
-              <p style={{ color: '#CCC', fontSize: '0.95rem', lineHeight: '1.6' }}>{activeItem.description}</p>
+              <p style={{ color: '#666666', fontSize: '0.85rem', marginBottom: '10px' }}>{activeItem.photographer}</p>
+              <p style={{ color: '#444444', fontSize: '0.95rem', lineHeight: '1.6' }}>{activeItem.description}</p>
             </div>
           )}
         </DialogContent>

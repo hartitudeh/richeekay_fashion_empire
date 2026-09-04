@@ -8,19 +8,19 @@ import { FiClock, FiSearch, FiTruck, FiPackage, FiScissors, FiCheckCircle, FiX }
 import styled from 'styled-components';
 
 const ModalContainer = styled.div`
-  background: #141414;
-  color: #ffffff;
+  background: #ffffff;
+  color: #1a1a1a;
   padding: 32px;
 
   h2 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.8rem;
-    color: #ffffff;
+    color: #1a1a1a;
     text-align: center;
     margin-bottom: 20px;
 
     span {
-      color: #d4af37;
+      color: #b8860b;
     }
   }
 
@@ -31,25 +31,27 @@ const ModalContainer = styled.div`
 
     input {
       flex-grow: 1;
-      background: #0a0a0a;
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      color: #ffffff;
+      background: #faf8f5;
+      border: 1px solid rgba(201, 162, 39, 0.35);
+      border-radius: 4px;
+      color: #1a1a1a;
       padding: 12px 16px;
       font-family: 'Montserrat', sans-serif;
       font-size: 0.95rem;
 
       &:focus {
         outline: none;
-        border-color: #d4af37;
+        border-color: #b8860b;
       }
     }
 
     button {
-      background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-      color: #0a0a0a;
+      background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+      color: #ffffff;
       font-weight: 700;
       padding: 0 24px;
       border: none;
+      border-radius: 30px;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -58,8 +60,9 @@ const ModalContainer = styled.div`
   }
 
   .order-card {
-    background: #0a0a0a;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: #faf8f5;
+    border: 1px solid rgba(201, 162, 39, 0.3);
+    border-radius: 8px;
     padding: 24px;
 
     .info-grid {
@@ -68,7 +71,7 @@ const ModalContainer = styled.div`
       gap: 16px;
       margin-bottom: 24px;
       font-size: 0.85rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
       padding-bottom: 16px;
 
       @media (max-width: 600px) {
@@ -76,13 +79,13 @@ const ModalContainer = styled.div`
       }
 
       .label {
-        color: #d4af37;
+        color: #b8860b;
         font-weight: 600;
         text-transform: uppercase;
         font-size: 0.7rem;
       }
       .val {
-        color: #ffffff;
+        color: #1a1a1a;
         font-weight: 500;
         margin-top: 2px;
       }
@@ -147,10 +150,10 @@ export const OrderTrackerModal: React.FC = () => {
         }
       }}
     >
-      <DialogContent style={{ background: '#141414', border: '1px solid #d4af37', borderRadius: '8px', padding: 0, position: 'relative', overflow: 'hidden' }}>
+      <DialogContent style={{ background: '#ffffff', border: '1px solid #c9a227', borderRadius: '12px', padding: 0, position: 'relative', overflow: 'hidden', boxShadow: '0 15px 50px rgba(0,0,0,0.12)' }}>
         <button
           onClick={() => safeClose(() => setIsOrderTrackerOpen(false))}
-          style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.4rem', cursor: 'pointer', zIndex: 10 }}
+          style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: '#c9a227', fontSize: '1.4rem', cursor: 'pointer', zIndex: 10 }}
         >
           <FiX />
         </button>
@@ -173,7 +176,7 @@ export const OrderTrackerModal: React.FC = () => {
 
           {!activeOrder && orders.length > 0 && (
             <div style={{ marginBottom: '20px' }}>
-              <p style={{ fontSize: '0.85rem', color: '#d4af37', marginBottom: '8px' }}>Your Recent Active Orders:</p>
+              <p style={{ fontSize: '0.85rem', color: '#b8860b', marginBottom: '8px', fontWeight: 600 }}>Your Recent Active Orders:</p>
               {orders.map((o) => (
                 <div
                   key={o.id}
@@ -182,18 +185,20 @@ export const OrderTrackerModal: React.FC = () => {
                     setActiveOrder(o);
                   }}
                   style={{
-                    background: '#1f1f1f',
-                    border: '1px solid rgba(212, 175, 55, 0.3)',
+                    background: '#ffffff',
+                    border: '1px solid rgba(201, 162, 39, 0.3)',
+                    borderRadius: '6px',
                     padding: '10px 14px',
                     marginBottom: '6px',
                     cursor: 'pointer',
                     display: 'flex',
                     justifyContent: 'space-between',
-                    fontSize: '0.85rem'
+                    fontSize: '0.85rem',
+                    color: '#1a1a1a'
                   }}
                 >
                   <span>Order #{o.id} ({o.date})</span>
-                  <span style={{ color: '#D4AF37', fontWeight: 600 }}>{o.status}</span>
+                  <span style={{ color: '#b8860b', fontWeight: 600 }}>{o.status}</span>
                 </div>
               ))}
             </div>
@@ -212,7 +217,7 @@ export const OrderTrackerModal: React.FC = () => {
                 </div>
                 <div>
                   <div className="label">Estimated Delivery</div>
-                  <div className="val" style={{ color: '#D4AF37' }}>24-48 Hours</div>
+                  <div className="val" style={{ color: '#b8860b' }}>24-48 Hours</div>
                 </div>
               </div>
 
@@ -222,9 +227,9 @@ export const OrderTrackerModal: React.FC = () => {
                     <Step key={step}>
                       <StepLabel
                         sx={{
-                          '& .MuiStepLabel-label': { color: '#AAAAAA', fontSize: '0.75rem', fontFamily: 'Montserrat, sans-serif' },
-                          '& .Mui-active': { color: '#D4AF37 !important' },
-                          '& .Mui-completed': { color: '#D4AF37 !important' }
+                          '& .MuiStepLabel-label': { color: '#666666', fontSize: '0.75rem', fontFamily: 'Montserrat, sans-serif' },
+                          '& .Mui-active': { color: '#c9a227 !important' },
+                          '& .Mui-completed': { color: '#b8860b !important' }
                         }}
                       >
                         {step}
@@ -234,9 +239,9 @@ export const OrderTrackerModal: React.FC = () => {
                 </Stepper>
               </Box>
 
-              <div style={{ background: '#1f1f1f', padding: '14px', borderRadius: '4px', fontSize: '0.85rem', color: '#ccc' }}>
-                <FiClock style={{ color: '#D4AF37', marginRight: '6px' }} />
-                Current Phase: <strong style={{ color: '#FFF' }}>{activeOrder.status}</strong> - Our master tailors and quality assurance team are working on your bespoke gold packaging.
+              <div style={{ background: '#ffffff', border: '1px solid rgba(201,162,39,0.2)', padding: '14px', borderRadius: '6px', fontSize: '0.85rem', color: '#555555' }}>
+                <FiClock style={{ color: '#c9a227', marginRight: '6px' }} />
+                Current Phase: <strong style={{ color: '#1a1a1a' }}>{activeOrder.status}</strong> - Our master tailors and quality assurance team are working on your bespoke gold packaging.
               </div>
             </div>
           )}

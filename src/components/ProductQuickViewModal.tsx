@@ -157,16 +157,18 @@ const QuickViewContainer = styled.div`
 
       .swatch-btn {
         padding: 6px 14px;
-        background: #0a0a0a;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: #fff;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        color: #1a1a1a;
         font-size: 0.8rem;
+        border-radius: 4px;
         cursor: pointer;
 
         &.active {
-          border-color: #d4af37;
-          background: rgba(212, 175, 55, 0.15);
-          color: #d4af37;
+          border-color: #c9a227;
+          background: rgba(201, 162, 39, 0.12);
+          color: #b8860b;
+          font-weight: 600;
         }
       }
     }

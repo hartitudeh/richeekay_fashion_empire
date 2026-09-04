@@ -44,11 +44,11 @@ const ModalCard = styled.div`
   transform: translate(-50%, -50%);
   width: 90%;
   max-width: 560px;
-  background: #141414;
-  border: 1px solid #d4af37;
-  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #c9a227;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15), 0 0 35px rgba(201, 162, 39, 0.2);
   z-index: 2601;
   animation: ${slideUpScale} 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   display: flex;
@@ -60,27 +60,27 @@ const ModalCard = styled.div`
     right: 16px;
     background: transparent;
     border: none;
-    color: #d4af37;
+    color: #c9a227;
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 10;
     transition: all 0.3s ease;
 
     &:hover {
-      color: #ffffff;
+      color: #1a1a1a;
       transform: scale(1.1);
     }
   }
 
   .modal-header {
-    background: radial-gradient(circle at center, rgba(40, 30, 15, 0.95) 0%, rgba(20, 20, 20, 1) 100%);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    background: linear-gradient(180deg, #ffffff 0%, #faf8f5 100%);
+    border-bottom: 1px solid rgba(201, 162, 39, 0.25);
     padding: 32px 24px 24px;
     text-align: center;
 
     .crown-icon {
       font-size: 2.8rem;
-      color: #d4af37;
+      color: #b8860b;
       margin-bottom: 10px;
       animation: ${pulseCrown} 3s ease-in-out infinite;
     }
@@ -88,17 +88,17 @@ const ModalCard = styled.div`
     h3 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.9rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 6px;
 
       span {
-        color: #d4af37;
+        color: #b8860b;
       }
     }
 
     p.subtitle {
       font-size: 0.88rem;
-      color: #cccccc;
+      color: #555555;
       max-width: 420px;
       margin: 0 auto;
       line-height: 1.5;
@@ -119,20 +119,20 @@ const ModalCard = styled.div`
         align-items: center;
         gap: 10px;
         font-size: 0.88rem;
-        color: #dddddd;
-        background: rgba(255, 255, 255, 0.02);
-        border: 1px solid rgba(212, 175, 55, 0.15);
+        color: #444444;
+        background: #faf8f5;
+        border: 1px solid rgba(201, 162, 39, 0.2);
         padding: 10px 14px;
-        border-radius: 4px;
+        border-radius: 6px;
 
         svg {
-          color: #d4af37;
+          color: #c9a227;
           font-size: 1.1rem;
           flex-shrink: 0;
         }
 
         strong {
-          color: #d4af37;
+          color: #b8860b;
         }
       }
     }
@@ -140,15 +140,15 @@ const ModalCard = styled.div`
     .join-btn {
       width: 100%;
       padding: 14px 0;
-      background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-      color: #0a0a0a;
+      background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+      color: #ffffff;
       font-weight: 700;
       font-size: 0.85rem;
       letter-spacing: 2px;
       text-transform: uppercase;
       border: none;
       cursor: pointer;
-      border-radius: 4px;
+      border-radius: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -156,20 +156,20 @@ const ModalCard = styled.div`
       transition: all 0.3s ease;
 
       &:hover {
-        background: linear-gradient(135deg, #f4e798 0%, #d4af37 100%);
-        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+        box-shadow: 0 6px 20px rgba(201, 162, 39, 0.35);
       }
     }
   }
 
   .modal-footer {
-    background: #0a0a0a;
-    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    background: #faf8f5;
+    border-top: 1px solid rgba(201, 162, 39, 0.2);
     padding: 18px 24px;
     text-align: center;
 
     .explore-link {
-      color: #d4af37;
+      color: #b8860b;
       font-size: 0.82rem;
       font-weight: 700;
       letter-spacing: 1.5px;

@@ -8,20 +8,22 @@ import { FiSearch, FiX, FiShoppingBag, FiArrowRight } from 'react-icons/fi';
 import styled from 'styled-components';
 
 const SearchContainer = styled.div`
-  background: #141414;
-  color: #ffffff;
-  border: 1px solid #d4af37;
-  border-radius: 8px;
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #c9a227;
+  border-radius: 12px;
   position: relative;
   padding: 32px;
   min-height: 480px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
 
   .search-header {
     display: flex;
     align-items: center;
     gap: 12px;
-    background: #0a0a0a;
-    border: 1px solid #d4af37;
+    background: #faf8f5;
+    border: 1px solid rgba(201, 162, 39, 0.35);
+    border-radius: 8px;
     padding: 14px 20px;
     margin-bottom: 24px;
 
@@ -29,19 +31,23 @@ const SearchContainer = styled.div`
       flex-grow: 1;
       background: none;
       border: none;
-      color: #ffffff;
+      color: #1a1a1a;
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.4rem;
 
       &:focus {
         outline: none;
       }
+
+      &::placeholder {
+        color: #888888;
+      }
     }
 
     .clear-btn {
       background: none;
       border: none;
-      color: #d4af37;
+      color: #c9a227;
       font-size: 1.5rem;
       cursor: pointer;
     }
@@ -54,18 +60,21 @@ const SearchContainer = styled.div`
     margin-bottom: 24px;
 
     .pill {
-      background: #1f1f1f;
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      color: #d4af37;
+      background: #faf8f5;
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      border-radius: 20px;
+      color: #b8860b;
       font-size: 0.75rem;
       padding: 6px 14px;
       cursor: pointer;
       text-transform: uppercase;
+      font-weight: 600;
 
       &.active, &:hover {
-        background: #d4af37;
-        color: #0a0a0a;
+        background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+        color: #ffffff;
         font-weight: bold;
+        border-color: #c9a227;
       }
     }
   }
@@ -81,34 +90,38 @@ const SearchContainer = styled.div`
   }
 
   .result-card {
-    background: #0a0a0a;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.25);
+    border-radius: 8px;
     padding: 12px;
     display: flex;
     gap: 12px;
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 
     &:hover {
-      border-color: #d4af37;
+      border-color: #c9a227;
       transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(201, 162, 39, 0.15);
     }
 
     img {
       width: 60px;
       height: 75px;
       object-fit: cover;
+      border-radius: 4px;
     }
 
     .info {
       h5 {
         font-family: 'Playfair Display', Georgia, serif;
         font-size: 0.95rem;
-        color: #ffffff;
+        color: #1a1a1a;
       }
       span {
-        color: #d4af37;
+        color: #b8860b;
         font-weight: bold;
         font-size: 0.9rem;
       }

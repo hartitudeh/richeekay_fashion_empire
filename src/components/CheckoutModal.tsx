@@ -22,22 +22,23 @@ import confetti from 'canvas-confetti';
 import styled from 'styled-components';
 
 const CheckoutContainer = styled.div`
-  background: #141414;
-  color: #ffffff;
-  border: 1px solid #d4af37;
-  border-radius: 8px;
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #c9a227;
+  border-radius: 12px;
   position: relative;
   padding: 28px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
 
   h2 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.8rem;
-    color: #ffffff;
+    color: #1a1a1a;
     text-align: center;
     margin-bottom: 20px;
 
     span {
-      color: #d4af37;
+      color: #b8860b;
     }
   }
 
@@ -60,31 +61,33 @@ const CheckoutContainer = styled.div`
     label {
       font-size: 0.75rem;
       font-weight: 600;
-      color: #d4af37;
+      color: #b8860b;
       text-transform: uppercase;
     }
 
     input, select {
-      background: #0a0a0a;
-      border: 1px solid rgba(212, 175, 55, 0.4);
-      color: #ffffff;
+      background: #faf8f5;
+      border: 1px solid rgba(201, 162, 39, 0.35);
+      border-radius: 4px;
+      color: #1a1a1a;
       padding: 12px 14px;
       font-family: 'Montserrat', sans-serif;
       font-size: 0.9rem;
 
       &:focus {
         outline: none;
-        border-color: #d4af37;
-        box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        border-color: #b8860b;
+        box-shadow: 0 0 10px rgba(201, 162, 39, 0.2);
       }
     }
   }
 
   .payment-card {
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(201, 162, 39, 0.3);
+    border-radius: 6px;
     padding: 16px;
     margin-bottom: 12px;
-    background: #0a0a0a;
+    background: #faf8f5;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -92,12 +95,12 @@ const CheckoutContainer = styled.div`
     transition: all 0.3s ease;
 
     &.selected {
-      border-color: #d4af37;
-      background: rgba(212, 175, 55, 0.12);
+      border-color: #c9a227;
+      background: rgba(201, 162, 39, 0.12);
     }
 
     &:hover {
-      border-color: #d4af37;
+      border-color: #c9a227;
     }
   }
 
