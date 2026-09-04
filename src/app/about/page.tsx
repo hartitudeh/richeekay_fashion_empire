@@ -7,8 +7,8 @@ import { FaCrown, FaGem, FaRibbon } from 'react-icons/fa6';
 import styled from 'styled-components';
 
 const HeroHeader = styled.div`
-  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+  background: linear-gradient(180deg, #ffffff 0%, #faf8f5 100%);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.25);
   padding: 90px 24px;
   text-align: center;
   position: relative;
@@ -18,28 +18,28 @@ const HeroHeader = styled.div`
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(212, 175, 55, 0.15);
-    border: 1px solid #d4af37;
-    color: #d4af37;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #c9a227;
+    color: #b8860b;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 3px;
     padding: 6px 18px;
     text-transform: uppercase;
+    border-radius: 20px;
     margin-bottom: 18px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
   }
 
   h1 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 3.6rem;
-    color: #ffffff;
+    color: #1a1a1a;
     margin-bottom: 16px;
     line-height: 1.15;
 
     span {
-      background: linear-gradient(135deg, #f4e798 0%, #d4af37 50%, #c9a227 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: #b8860b;
     }
 
     @media (max-width: 768px) {
@@ -49,7 +49,7 @@ const HeroHeader = styled.div`
 
   p {
     font-size: 1.15rem;
-    color: #cccccc;
+    color: #555555;
     max-width: 750px;
     margin: 0 auto;
     line-height: 1.7;

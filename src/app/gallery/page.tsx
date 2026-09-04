@@ -8,8 +8,8 @@ import { GalleryCardSkeleton } from '../../components/Skeletons';
 import styled from 'styled-components';
 
 const Header = styled.div`
-  background: linear-gradient(180deg, #0a0a0a 0%, #1f1f1f 100%);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  background: linear-gradient(180deg, #ffffff 0%, #faf8f5 100%);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.25);
   padding: 80px 24px;
   text-align: center;
 
@@ -17,25 +17,27 @@ const Header = styled.div`
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(212, 175, 55, 0.15);
-    border: 1px solid #d4af37;
-    color: #d4af37;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #c9a227;
+    color: #b8860b;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 2.5px;
     padding: 6px 16px;
     text-transform: uppercase;
+    border-radius: 20px;
     margin-bottom: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
   }
 
   h1 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 3.4rem;
-    color: #ffffff;
+    color: #1a1a1a;
     margin-bottom: 12px;
 
     span {
-      color: #d4af37;
+      color: #b8860b;
     }
 
     @media (max-width: 600px) {
@@ -45,7 +47,7 @@ const Header = styled.div`
 
   p {
     font-size: 1.05rem;
-    color: #cccccc;
+    color: #555555;
     max-width: 650px;
     margin: 0 auto;
   }
@@ -64,21 +66,22 @@ const Container = styled.div`
     margin-bottom: 44px;
 
     .tab {
-      background: #141414;
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      color: #ffffff;
+      background: #ffffff;
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      color: #1a1a1a;
       font-size: 0.8rem;
       font-weight: 600;
       letter-spacing: 1px;
       padding: 10px 20px;
+      border-radius: 20px;
       cursor: pointer;
       text-transform: uppercase;
       transition: all 0.3s ease;
 
       &.active, &:hover {
-        background: #d4af37;
-        color: #0a0a0a;
-        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        background: #c9a227;
+        color: #ffffff;
+        box-shadow: 0 4px 15px rgba(201, 162, 39, 0.35);
       }
     }
   }
@@ -101,10 +104,12 @@ const MasonryCard = styled.div`
   break-inside: avoid;
   margin-bottom: 24px;
   position: relative;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
-  background: #141414;
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 
   img {
     width: 100%;

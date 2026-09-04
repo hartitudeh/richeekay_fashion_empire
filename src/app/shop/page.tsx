@@ -9,25 +9,25 @@ import { FiFilter, FiSliders, FiGrid, FiList } from 'react-icons/fi';
 import styled from 'styled-components';
 
 const PageHeader = styled.div`
-  background: linear-gradient(180deg, #0a0a0a 0%, #1f1f1f 100%);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  background: linear-gradient(180deg, #ffffff 0%, #faf8f5 100%);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.25);
   padding: 60px 24px;
   text-align: center;
 
   h1 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 3rem;
-    color: #ffffff;
+    color: #1a1a1a;
     margin-bottom: 10px;
 
     span {
-      color: #d4af37;
+      color: #b8860b;
     }
   }
 
   p {
     font-size: 1rem;
-    color: #cccccc;
+    color: #555555;
     max-width: 600px;
     margin: 0 auto;
   }
@@ -47,16 +47,18 @@ const ShopLayout = styled.div`
 `;
 
 const Sidebar = styled.aside`
-  background: #141414;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: #ffffff;
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  border-radius: 8px;
   padding: 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 
   .widget-title {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.2rem;
-    color: #d4af37;
+    color: #b8860b;
     margin-bottom: 16px;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid rgba(201, 162, 39, 0.2);
     padding-bottom: 8px;
   }
 
@@ -69,14 +71,14 @@ const Sidebar = styled.aside`
 
     li {
       font-size: 0.9rem;
-      color: #bbbbbb;
+      color: #555555;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
       transition: color 0.2s ease;
 
       &.active, &:hover {
-        color: #d4af37;
+        color: #b8860b;
         font-weight: 600;
       }
     }
@@ -88,16 +90,17 @@ const Sidebar = styled.aside`
     gap: 8px;
 
     .chip {
-      background: #0a0a0a;
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      color: #ffffff;
+      background: #faf8f5;
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      color: #1a1a1a;
       font-size: 0.75rem;
       padding: 6px 12px;
+      border-radius: 4px;
       cursor: pointer;
 
       &.active {
-        background: #d4af37;
-        color: #0a0a0a;
+        background: #c9a227;
+        color: #ffffff;
         font-weight: bold;
       }
     }
@@ -106,25 +109,28 @@ const Sidebar = styled.aside`
 
 const MainContent = styled.main`
   .sort-bar {
-    background: #141414;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.25);
+    border-radius: 8px;
     padding: 14px 20px;
     margin-bottom: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 
     .results-count {
       font-size: 0.85rem;
-      color: #aaaaaa;
+      color: #555555;
     }
 
     select {
-      background: #0a0a0a;
-      color: #d4af37;
-      border: 1px solid rgba(212, 175, 55, 0.4);
+      background: #faf8f5;
+      color: #1a1a1a;
+      border: 1px solid rgba(201, 162, 39, 0.4);
       padding: 6px 14px;
       font-size: 0.85rem;
+      border-radius: 4px;
       cursor: pointer;
     }
   }

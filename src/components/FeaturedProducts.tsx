@@ -19,21 +19,21 @@ const SectionWrapper = styled.section`
       font-family: 'Montserrat', sans-serif;
       font-size: 0.8rem;
       letter-spacing: 3px;
-      color: #d4af37;
+      color: #b8860b;
       text-transform: uppercase;
       font-weight: 600;
     }
 
     h2 {
       font-size: 2.6rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-top: 6px;
     }
 
     .divider {
       width: 60px;
       height: 3px;
-      background: linear-gradient(90deg, #c9a227 0%, #d4af37 100%);
+      background: linear-gradient(90deg, #c9a227 0%, #b8860b 100%);
       margin: 14px auto 0;
     }
   }
@@ -86,6 +86,21 @@ export const FeaturedProducts: React.FC = () => {
 
   const filteredProducts = getFilteredProducts();
 
+  const tabStyle = {
+    color: '#555555',
+    fontWeight: 600,
+    fontFamily: 'Montserrat, sans-serif',
+    fontSize: '0.85rem',
+    textTransform: 'none' as const,
+    '&.Mui-selected': {
+      color: '#b8860b',
+      fontWeight: 700
+    },
+    '&:hover': {
+      color: '#b8860b'
+    }
+  };
+
   return (
     <SectionWrapper id="featured">
       <div className="header">
@@ -94,20 +109,26 @@ export const FeaturedProducts: React.FC = () => {
         <div className="divider" />
       </div>
 
-      <Box sx={{ borderBottom: 1, borderColor: 'rgba(212, 175, 55, 0.2)', display: 'flex', justifyContent: 'center' }}>
+      <Box sx={{ borderBottom: 1, borderColor: 'rgba(201, 162, 39, 0.25)', display: 'flex', justifyContent: 'center' }}>
         <Tabs
           value={activeTab}
           onChange={handleTabChange}
           variant="scrollable"
           scrollButtons="auto"
           aria-label="Product Showcase Tabs"
+          sx={{
+            '& .MuiTabs-indicator': {
+              backgroundColor: '#c9a227',
+              height: '3px'
+            }
+          }}
         >
-          <Tab label="All Products" />
-          <Tab label="Latest Releases" />
-          <Tab label="Best Sellers" />
-          <Tab label="New Arrivals" />
-          <Tab label="Trending Now" />
-          <Tab label="Flash Sale Items" />
+          <Tab label="All Products" sx={tabStyle} />
+          <Tab label="Latest Releases" sx={tabStyle} />
+          <Tab label="Best Sellers" sx={tabStyle} />
+          <Tab label="New Arrivals" sx={tabStyle} />
+          <Tab label="Trending Now" sx={tabStyle} />
+          <Tab label="Flash Sale Items" sx={tabStyle} />
         </Tabs>
       </Box>
 
