@@ -7,9 +7,9 @@ import { FiMail, FiMapPin, FiPhone, FiCheckCircle } from 'react-icons/fi';
 import styled from 'styled-components';
 
 const FooterWrapper = styled.footer`
-  background: #0a0a0a;
-  color: #ffffff;
-  border-top: 1px solid rgba(212, 175, 55, 0.4);
+  background: #faf8f5;
+  color: #1a1a1a;
+  border-top: 1px solid rgba(201, 162, 39, 0.3);
   padding: 80px 24px 30px;
 
   .footer-container {
@@ -34,7 +34,7 @@ const FooterWrapper = styled.footer`
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.8rem;
       font-weight: 800;
-      color: #d4af37;
+      color: #b8860b;
       letter-spacing: 2px;
       margin-bottom: 4px;
     }
@@ -42,14 +42,14 @@ const FooterWrapper = styled.footer`
     .sub {
       font-size: 0.65rem;
       letter-spacing: 3px;
-      color: #f8f5ef;
+      color: #555555;
       text-transform: uppercase;
       margin-bottom: 18px;
     }
 
     p {
       font-size: 0.9rem;
-      color: #bbbbbb;
+      color: #555555;
       line-height: 1.6;
       max-width: 380px;
       margin-bottom: 24px;
@@ -63,19 +63,21 @@ const FooterWrapper = styled.footer`
         width: 38px;
         height: 38px;
         border-radius: 50%;
-        background: #1f1f1f;
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        color: #d4af37;
+        background: #ffffff;
+        border: 1px solid rgba(201, 162, 39, 0.35);
+        color: #b8860b;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 1.1rem;
         transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 
         &:hover {
-          background: #d4af37;
-          color: #0a0a0a;
+          background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+          color: #ffffff;
           transform: translateY(-3px);
+          border-color: #c9a227;
         }
       }
     }
@@ -85,7 +87,7 @@ const FooterWrapper = styled.footer`
     h4 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.2rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 20px;
       position: relative;
       padding-bottom: 8px;
@@ -97,7 +99,7 @@ const FooterWrapper = styled.footer`
         left: 0;
         width: 30px;
         height: 2px;
-        background: #d4af37;
+        background: #c9a227;
       }
     }
 
@@ -108,13 +110,13 @@ const FooterWrapper = styled.footer`
       gap: 12px;
 
       a {
-        color: #aaaaaa;
+        color: #555555;
         text-decoration: none;
         font-size: 0.85rem;
         transition: color 0.3s ease;
 
         &:hover {
-          color: #d4af37;
+          color: #b8860b;
           padding-left: 4px;
         }
       }
@@ -125,13 +127,13 @@ const FooterWrapper = styled.footer`
     h4 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.2rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 12px;
     }
 
     p {
       font-size: 0.85rem;
-      color: #aaaaaa;
+      color: #555555;
       margin-bottom: 16px;
       line-height: 1.5;
     }
@@ -142,31 +144,38 @@ const FooterWrapper = styled.footer`
       gap: 10px;
 
       input {
-        background: #1f1f1f;
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        color: #ffffff;
+        background: #ffffff;
+        border: 1px solid rgba(201, 162, 39, 0.4);
+        border-radius: 4px;
+        color: #1a1a1a;
         padding: 12px 14px;
         font-size: 0.85rem;
 
         &:focus {
           outline: none;
-          border-color: #d4af37;
+          border-color: #b8860b;
+          box-shadow: 0 0 10px rgba(201, 162, 39, 0.15);
+        }
+
+        &::placeholder {
+          color: #888888;
         }
       }
 
       button {
-        background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-        color: #0a0a0a;
+        background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+        color: #ffffff;
         font-weight: 700;
         font-size: 0.8rem;
         letter-spacing: 1.5px;
         text-transform: uppercase;
         padding: 12px 0;
         border: none;
+        border-radius: 4px;
         cursor: pointer;
 
         &:hover {
-          background: linear-gradient(135deg, #f4e798 0%, #d4af37 100%);
+          background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
         }
       }
     }
@@ -176,12 +185,12 @@ const FooterWrapper = styled.footer`
     max-width: 1350px;
     margin: 0 auto;
     padding-top: 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 0.8rem;
-    color: #888888;
+    color: #666666;
 
     @media (max-width: 768px) {
       flex-direction: column;
@@ -194,12 +203,13 @@ const FooterWrapper = styled.footer`
       gap: 10px;
 
       span {
-        background: #1f1f1f;
-        border: 1px solid rgba(212, 175, 55, 0.3);
-        color: #d4af37;
+        background: #ffffff;
+        border: 1px solid rgba(201, 162, 39, 0.3);
+        color: #b8860b;
         padding: 4px 10px;
         font-size: 0.7rem;
         font-weight: 600;
+        border-radius: 3px;
       }
     }
   }
@@ -277,7 +287,7 @@ export const Footer: React.FC = () => {
         <div className="link-col">
           <h4>Customer Care</h4>
           <ul>
-            <li><Link href="/richeekay-loyalty-program" style={{ color: '#d4af37', fontWeight: 600 }}>👑 RICHEEKAY Royalty Program</Link></li>
+            <li><Link href="/richeekay-loyalty-program" style={{ color: '#b8860b', fontWeight: 600 }}>👑 RICHEEKAY Royalty Program</Link></li>
             <li><Link href="/#faq">Frequently Asked Questions (FAQ)</Link></li>
             <li><Link href="/order-tracking">Track Order Status</Link></li>
             <li><Link href="/dashboard">VIP Account Hub</Link></li>
@@ -302,7 +312,7 @@ export const Footer: React.FC = () => {
             <button type="submit">JOIN VIP CLUB</button>
 
             {subscribed && (
-              <p style={{ color: '#D4AF37', fontSize: '0.8rem', marginTop: '6px' }}>
+              <p style={{ color: '#b8860b', fontSize: '0.8rem', marginTop: '6px' }}>
                 <FiCheckCircle style={{ marginRight: '4px' }} /> Welcome! Use coupon code <strong>WELCOME15</strong> for 15% off your first order.
               </p>
             )}

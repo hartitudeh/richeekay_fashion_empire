@@ -73,8 +73,8 @@ const FAQ_DATA: FaqItem[] = [
 
 const Section = styled.section`
   padding: 90px 24px;
-  background: #0a0a0a;
-  border-top: 1px solid rgba(212, 175, 55, 0.2);
+  background: #faf8f5;
+  border-top: 1px solid rgba(201, 162, 39, 0.2);
 
   .inner {
     max-width: 1100px;
@@ -88,7 +88,7 @@ const Section = styled.section`
     span {
       font-size: 0.8rem;
       letter-spacing: 3px;
-      color: #d4af37;
+      color: #b8860b;
       text-transform: uppercase;
       font-weight: 600;
     }
@@ -96,14 +96,14 @@ const Section = styled.section`
     h2 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 2.8rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-top: 8px;
     }
 
     .divider {
       width: 70px;
       height: 3px;
-      background: linear-gradient(90deg, #c9a227 0%, #d4af37 100%);
+      background: linear-gradient(90deg, #c9a227 0%, #b8860b 100%);
       margin: 14px auto 0;
     }
   }
@@ -117,22 +117,22 @@ const SearchContainer = styled.div`
   input {
     width: 100%;
     padding: 16px 20px 16px 52px;
-    background: #141414;
-    border: 1px solid rgba(212, 175, 55, 0.35);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.35);
     border-radius: 30px;
-    color: #ffffff;
+    color: #1a1a1a;
     font-size: 0.95rem;
     outline: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
 
     &:focus {
-      border-color: #d4af37;
-      box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+      border-color: #c9a227;
+      box-shadow: 0 0 20px rgba(201, 162, 39, 0.2);
     }
 
     &::placeholder {
-      color: #888888;
+      color: #777777;
     }
   }
 
@@ -141,7 +141,7 @@ const SearchContainer = styled.div`
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    color: #d4af37;
+    color: #c9a227;
     font-size: 1.2rem;
   }
 `;
@@ -155,9 +155,9 @@ const FilterTabs = styled.div`
 
   button {
     padding: 10px 20px;
-    background: #141414;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #cccccc;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: #555555;
     font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -167,16 +167,16 @@ const FilterTabs = styled.div`
     transition: all 0.3s ease;
 
     &:hover {
-      border-color: #d4af37;
-      color: #ffffff;
+      border-color: #c9a227;
+      color: #1a1a1a;
     }
 
     &.active {
-      background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-      color: #0a0a0a;
-      border-color: #d4af37;
+      background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+      color: #ffffff;
+      border-color: #c9a227;
       font-weight: 700;
-      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+      box-shadow: 0 4px 15px rgba(201, 162, 39, 0.25);
     }
   }
 `;
@@ -188,12 +188,12 @@ const AccordionList = styled.div`
 `;
 
 const AccordionCard = styled.div<{ $isOpen: boolean }>`
-  background: #141414;
-  border: 1px solid ${({ $isOpen }) => ($isOpen ? '#d4af37' : 'rgba(255, 255, 255, 0.1)')};
-  border-radius: 6px;
+  background: #ffffff;
+  border: 1px solid ${({ $isOpen }) => ($isOpen ? '#c9a227' : 'rgba(0, 0, 0, 0.08)')};
+  border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s ease;
-  box-shadow: ${({ $isOpen }) => ($isOpen ? '0 6px 25px rgba(212, 175, 55, 0.2)' : 'none')};
+  box-shadow: ${({ $isOpen }) => ($isOpen ? '0 8px 30px rgba(201, 162, 39, 0.15)' : '0 2px 10px rgba(0, 0, 0, 0.03)')};
 
   .card-header {
     padding: 22px 24px;
@@ -202,12 +202,12 @@ const AccordionCard = styled.div<{ $isOpen: boolean }>`
     justify-content: space-between;
     gap: 16px;
     cursor: pointer;
-    background: ${({ $isOpen }) => ($isOpen ? 'rgba(212, 175, 55, 0.05)' : 'transparent')};
+    background: ${({ $isOpen }) => ($isOpen ? 'rgba(201, 162, 39, 0.06)' : '#ffffff')};
 
     .question-title {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.15rem;
-      color: ${({ $isOpen }) => ($isOpen ? '#f4e798' : '#ffffff')};
+      color: ${({ $isOpen }) => ($isOpen ? '#b8860b' : '#1a1a1a')};
       font-weight: 600;
       display: flex;
       align-items: center;
@@ -216,9 +216,9 @@ const AccordionCard = styled.div<{ $isOpen: boolean }>`
       .badge {
         font-family: 'Montserrat', sans-serif;
         font-size: 0.68rem;
-        background: rgba(212, 175, 55, 0.15);
-        border: 1px solid rgba(212, 175, 55, 0.4);
-        color: #d4af37;
+        background: rgba(201, 162, 39, 0.12);
+        border: 1px solid rgba(201, 162, 39, 0.4);
+        color: #b8860b;
         padding: 3px 8px;
         border-radius: 4px;
         text-transform: uppercase;
@@ -228,7 +228,7 @@ const AccordionCard = styled.div<{ $isOpen: boolean }>`
     }
 
     .toggle-icon {
-      color: #d4af37;
+      color: #c9a227;
       font-size: 1.4rem;
       transition: transform 0.3s ease;
       transform: ${({ $isOpen }) => ($isOpen ? 'rotate(180deg)' : 'rotate(0deg)')};
@@ -245,9 +245,9 @@ const AccordionCard = styled.div<{ $isOpen: boolean }>`
 
     p {
       font-size: 0.93rem;
-      color: #dddddd;
+      color: #444444;
       line-height: 1.7;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
       padding-top: 16px;
     }
   }
@@ -255,15 +255,15 @@ const AccordionCard = styled.div<{ $isOpen: boolean }>`
 
 const ConciergeBanner = styled.div`
   margin-top: 50px;
-  background: linear-gradient(135deg, #181818 0%, #101010 100%);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  border-radius: 12px;
   padding: 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -274,12 +274,12 @@ const ConciergeBanner = styled.div`
     h4 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.4rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 6px;
     }
     p {
       font-size: 0.88rem;
-      color: #aaaaaa;
+      color: #555555;
     }
   }
 
