@@ -126,20 +126,20 @@ const LogoLink = styled(Link)`
   align-items: center;
 
   img.brand-logo-img {
-    height: 58px;
+    height: 54px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.75)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.9));
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15)) drop-shadow(0 0 4px rgba(201, 162, 39, 0.2));
     transition: all 0.3s ease;
 
     @media (max-width: 600px) {
-      height: 44px;
+      height: 42px;
     }
   }
 
   &:hover img.brand-logo-img {
-    transform: scale(1.08);
-    filter: drop-shadow(0 0 18px rgba(244, 231, 152, 0.95)) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.95));
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.4));
   }
 `;
 

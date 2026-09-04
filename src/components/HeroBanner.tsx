@@ -35,9 +35,9 @@ const SlideContainer = styled.div<{ $bgImage: string }>`
   height: 100%;
   background-image: linear-gradient(
       180deg,
-      rgba(250, 248, 245, 0.45) 0%,
-      rgba(250, 248, 245, 0.72) 60%,
-      rgba(250, 248, 245, 0.95) 100%
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.45) 55%,
+      rgba(0, 0, 0, 0.85) 100%
     ),
     url('${({ $bgImage }) => $bgImage}');
   background-size: cover;
@@ -60,15 +60,15 @@ const HeroContent = styled.div`
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.92);
-    border: 1px solid rgba(201, 162, 39, 0.6);
-    color: #b8860b;
-    padding: 6px 18px;
+    background: rgba(10, 10, 10, 0.7);
+    border: 1px solid #d4af37;
+    color: #f4e798;
+    padding: 6px 20px;
     font-size: 0.8rem;
     letter-spacing: 3px;
     text-transform: uppercase;
     border-radius: 30px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(8px);
   }
 
@@ -77,10 +77,11 @@ const HeroContent = styled.div`
     font-size: 3.8rem;
     font-weight: 800;
     line-height: 1.15;
-    color: #1a1a1a;
+    color: #ffffff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 
     span {
-      background: linear-gradient(135deg, #b8860b 0%, #c9a227 50%, #9a7b1c 100%);
+      background: linear-gradient(135deg, #f4e798 0%, #d4af37 50%, #c9a227 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -93,10 +94,11 @@ const HeroContent = styled.div`
   p {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.15rem;
-    color: #333333;
+    color: #f8f5ef;
     font-weight: 500;
     max-width: 700px;
     line-height: 1.6;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 
     @media (max-width: 768px) {
       font-size: 0.95rem;
@@ -117,8 +119,8 @@ const HeroContent = styled.div`
 `;
 
 const PrimaryBtn = styled.a`
-  background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+  color: #0a0a0a;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
@@ -131,20 +133,20 @@ const PrimaryBtn = styled.a`
   justify-content: center;
   gap: 10px;
   border-radius: 30px;
-  box-shadow: 0 6px 25px rgba(201, 162, 39, 0.35);
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
   transition: all 0.3s ease;
 
   &:hover {
-    background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+    background: linear-gradient(135deg, #f4e798 0%, #d4af37 100%);
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(201, 162, 39, 0.5);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.6);
   }
 `;
 
 const SecondaryBtn = styled.button`
-  background: rgba(255, 255, 255, 0.9);
-  color: #1a1a1a;
-  border: 1px solid #c9a227;
+  background: rgba(10, 10, 10, 0.65);
+  color: #d4af37;
+  border: 1px solid #d4af37;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 0.85rem;
@@ -158,13 +160,13 @@ const SecondaryBtn = styled.button`
   gap: 10px;
   border-radius: 30px;
   backdrop-filter: blur(8px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 
   &:hover {
-    background: #1a1a1a;
-    color: #ffffff;
-    border-color: #1a1a1a;
+    background: #d4af37;
+    color: #0a0a0a;
+    border-color: #d4af37;
   }
     background: rgba(212, 175, 55, 0.2);
     color: #ffffff;
