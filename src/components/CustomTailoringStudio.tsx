@@ -7,8 +7,8 @@ import styled from 'styled-components';
 
 const StudioWrapper = styled.section`
   padding: 80px 24px;
-  background: linear-gradient(180deg, #0a0a0a 0%, #171717 100%);
-  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  background: linear-gradient(180deg, #ffffff 0%, #faf8f5 100%);
+  border-top: 1px solid rgba(201, 162, 39, 0.25);
 
   .inner-container {
     max-width: 1200px;
@@ -29,32 +29,34 @@ const StudioInfo = styled.div`
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: rgba(212, 175, 55, 0.15);
-    border: 1px solid #d4af37;
-    color: #d4af37;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #c9a227;
+    color: #b8860b;
     font-size: 0.75rem;
     font-weight: 700;
     letter-spacing: 2.5px;
     padding: 6px 16px;
     text-transform: uppercase;
+    border-radius: 20px;
     margin-bottom: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
   }
 
   h2 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 2.8rem;
-    color: #ffffff;
+    color: #1a1a1a;
     line-height: 1.2;
     margin-bottom: 18px;
 
     span {
-      color: #d4af37;
+      color: #b8860b;
     }
   }
 
   p {
     font-size: 1rem;
-    color: #cccccc;
+    color: #555555;
     line-height: 1.7;
     margin-bottom: 28px;
   }
@@ -70,37 +72,38 @@ const StudioInfo = styled.div`
       gap: 14px;
 
       .icon {
-        color: #d4af37;
+        color: #c9a227;
         font-size: 1.3rem;
         margin-top: 2px;
       }
 
       h4 {
         font-size: 1.05rem;
-        color: #ffffff;
+        color: #1a1a1a;
         margin-bottom: 2px;
       }
 
       span {
         font-size: 0.85rem;
-        color: #a0a0a0;
+        color: #666666;
       }
     }
   }
 `;
 
 const StudioFormCard = styled.div`
-  background: #1f1f1f;
-  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: #ffffff;
+  border: 1px solid #c9a227;
+  border-radius: 12px;
   padding: 36px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 
   h3 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.6rem;
-    color: #ffffff;
+    color: #1a1a1a;
     margin-bottom: 20px;
-    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    border-bottom: 1px solid rgba(201, 162, 39, 0.2);
     padding-bottom: 12px;
   }
 
@@ -124,18 +127,18 @@ const StudioFormCard = styled.div`
       font-size: 0.75rem;
       font-weight: 600;
       letter-spacing: 1px;
-      color: #d4af37;
+      color: #b8860b;
       text-transform: uppercase;
     }
 
     input, select, textarea {
-      background: #0a0a0a;
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      color: #ffffff;
+      background: #faf8f5;
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      color: #1a1a1a;
       padding: 10px 14px;
       font-family: 'Montserrat', sans-serif;
       font-size: 0.9rem;
-      border-radius: 0;
+      border-radius: 4px;
 
       &:focus {
         outline: none;

@@ -471,7 +471,8 @@ const BlogSection = styled.section`
         display: flex;
         gap: 14px;
         font-size: 0.75rem;
-        color: #d4af37;
+        color: #b8860b;
+        font-weight: 600;
         text-transform: uppercase;
         margin-bottom: 8px;
       }
@@ -479,14 +480,14 @@ const BlogSection = styled.section`
       h3 {
         font-family: 'Playfair Display', Georgia, serif;
         font-size: 1.4rem;
-        color: #ffffff;
+        color: #1a1a1a;
         margin-bottom: 10px;
         line-height: 1.3;
       }
 
       p {
         font-size: 0.88rem;
-        color: #aaaaaa;
+        color: #444444;
         line-height: 1.5;
         margin-bottom: 16px;
       }
@@ -494,7 +495,7 @@ const BlogSection = styled.section`
       .read-more {
         font-size: 0.8rem;
         font-weight: bold;
-        color: #d4af37;
+        color: #b8860b;
         text-transform: uppercase;
         display: inline-flex;
         align-items: center;
@@ -709,51 +710,51 @@ export const HomeSections: React.FC = () => {
           }
         }}
       >
-        <DialogContent style={{ background: '#141414', border: '1px solid #D4AF37', borderRadius: '8px', padding: '36px', color: '#FFF', position: 'relative' }}>
+        <DialogContent style={{ background: '#ffffff', border: '1px solid #c9a227', borderRadius: '12px', padding: '36px', color: '#1a1a1a', position: 'relative', boxShadow: '0 15px 50px rgba(0,0,0,0.15)' }}>
           {activeArticle && (
             <div>
               <button
                 onClick={() => setActiveArticle(null)}
-                style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: '#D4AF37', fontSize: '1.6rem', cursor: 'pointer', zIndex: 10 }}
+                style={{ position: 'absolute', top: '16px', right: '16px', background: 'none', border: 'none', color: '#c9a227', fontSize: '1.6rem', cursor: 'pointer', zIndex: 10 }}
               >
                 <FiX />
               </button>
-              <div style={{ color: '#D4AF37', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '8px' }}>
+              <div style={{ color: '#b8860b', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 600, marginBottom: '8px' }}>
                 {activeArticle.category} &bull; {activeArticle.date} &bull; {activeArticle.readTime}
               </div>
-              <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.2rem', margin: '8px 0 20px', color: '#FFF', lineHeight: '1.3' }}>
+              <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.2rem', margin: '8px 0 20px', color: '#1a1a1a', lineHeight: '1.3' }}>
                 {activeArticle.title}
               </h2>
               <img
                 src={activeArticle.image}
                 alt="blog"
-                style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', border: '1px solid rgba(212, 175, 55, 0.4)', marginBottom: '24px' }}
+                style={{ width: '100%', maxHeight: '400px', objectFit: 'cover', border: '1px solid rgba(201, 162, 39, 0.3)', borderRadius: '6px', marginBottom: '24px' }}
               />
 
-              <div style={{ background: 'rgba(212, 175, 55, 0.08)', borderLeft: '4px solid #D4AF37', padding: '16px 20px', marginBottom: '24px', fontStyle: 'italic', color: '#F4E798' }}>
+              <div style={{ background: 'rgba(201, 162, 39, 0.12)', borderLeft: '4px solid #c9a227', padding: '16px 20px', marginBottom: '24px', fontStyle: 'italic', color: '#90293e', fontWeight: 600 }}>
                 "{activeArticle.excerpt}"
               </div>
 
               {activeArticle.content.map((p, idx) => {
                 if (p.startsWith('## ')) {
                   return (
-                    <h3 key={idx} style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.4rem', marginTop: '28px', marginBottom: '12px', color: '#D4AF37' }}>
+                    <h3 key={idx} style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.4rem', marginTop: '28px', marginBottom: '12px', color: '#b8860b' }}>
                       {p.replace('## ', '')}
                     </h3>
                   );
                 }
                 return (
-                  <p key={idx} style={{ fontSize: '0.98rem', color: '#DDD', lineHeight: '1.8', marginBottom: '18px' }}>
+                  <p key={idx} style={{ fontSize: '0.98rem', color: '#444444', lineHeight: '1.8', marginBottom: '18px' }}>
                     {p}
                   </p>
                 );
               })}
 
-              <div style={{ marginTop: '30px', paddingTop: '20px', borderTop: '1px solid rgba(212, 175, 55, 0.3)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div style={{ marginTop: '30px', paddingTop: '20px', borderTop: '1px solid rgba(201, 162, 39, 0.2)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Link
                   href={`/blog/${activeArticle.id}`}
                   onClick={() => setActiveArticle(null)}
-                  style={{ background: '#D4AF37', color: '#0A0A0A', fontWeight: 'bold', padding: '12px 24px', textDecoration: 'none', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px' }}
+                  style={{ background: 'linear-gradient(135deg, #c9a227 0%, #b8860b 100%)', color: '#ffffff', fontWeight: 'bold', padding: '12px 24px', borderRadius: '30px', textDecoration: 'none', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '1px' }}
                 >
                   Open Full Page Reading View &rarr;
                 </Link>

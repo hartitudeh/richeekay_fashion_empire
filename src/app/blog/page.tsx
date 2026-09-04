@@ -8,25 +8,25 @@ import { FiArrowRight, FiClock, FiCalendar } from 'react-icons/fi';
 import styled from 'styled-components';
 
 const Header = styled.div`
-  background: linear-gradient(180deg, #0a0a0a 0%, #1f1f1f 100%);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  background: linear-gradient(180deg, #ffffff 0%, #faf8f5 100%);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.25);
   padding: 70px 24px;
   text-align: center;
 
   h1 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 3.2rem;
-    color: #ffffff;
+    color: #1a1a1a;
     margin-bottom: 12px;
 
     span {
-      color: #d4af37;
+      color: #b8860b;
     }
   }
 
   p {
     font-size: 1.05rem;
-    color: #cccccc;
+    color: #555555;
     max-width: 650px;
     margin: 0 auto;
   }
@@ -53,10 +53,13 @@ const Container = styled.div`
 `;
 
 const BlogCard = styled(Link)`
-  background: #141414;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: #ffffff;
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  border-radius: 8px;
   overflow: hidden;
   text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
 
   img {
     width: 100%;
@@ -76,7 +79,8 @@ const BlogCard = styled(Link)`
       display: flex;
       gap: 16px;
       font-size: 0.75rem;
-      color: #d4af37;
+      color: #b8860b;
+      font-weight: 600;
       text-transform: uppercase;
       margin-bottom: 10px;
     }
@@ -84,14 +88,14 @@ const BlogCard = styled(Link)`
     h2 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.6rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 12px;
       line-height: 1.3;
     }
 
     p {
       font-size: 0.9rem;
-      color: #aaaaaa;
+      color: #444444;
       line-height: 1.6;
       margin-bottom: 20px;
     }
@@ -99,7 +103,7 @@ const BlogCard = styled(Link)`
     .read-btn {
       font-size: 0.8rem;
       font-weight: bold;
-      color: #d4af37;
+      color: #b8860b;
       text-transform: uppercase;
       display: inline-flex;
       align-items: center;

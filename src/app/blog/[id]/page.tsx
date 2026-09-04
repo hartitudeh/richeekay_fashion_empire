@@ -12,13 +12,13 @@ const ArticleContainer = styled.article`
   max-width: 920px;
   margin: 0 auto;
   padding: 60px 24px 100px;
-  color: #ffffff;
+  color: #1a1a1a;
 
   .back-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #d4af37;
+    color: #b8860b;
     text-decoration: none;
     font-size: 0.85rem;
     font-weight: 600;
@@ -28,7 +28,7 @@ const ArticleContainer = styled.article`
     transition: color 0.3s ease;
 
     &:hover {
-      color: #f4e798;
+      color: #c9a227;
     }
   }
 
@@ -37,7 +37,8 @@ const ArticleContainer = styled.article`
     align-items: center;
     gap: 16px;
     font-size: 0.8rem;
-    color: #d4af37;
+    color: #b8860b;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 12px;
@@ -53,7 +54,7 @@ const ArticleContainer = styled.article`
   h1 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 2.8rem;
-    color: #ffffff;
+    color: #1a1a1a;
     line-height: 1.25;
     margin-bottom: 24px;
 
@@ -66,8 +67,9 @@ const ArticleContainer = styled.article`
     width: 100%;
     height: 480px;
     object-fit: cover;
-    border: 1px solid rgba(212, 175, 55, 0.4);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(201, 162, 39, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     margin-bottom: 40px;
 
     @media (max-width: 600px) {
@@ -76,29 +78,31 @@ const ArticleContainer = styled.article`
   }
 
   .excerpt-box {
-    background: rgba(212, 175, 55, 0.08);
-    border-left: 4px solid #d4af37;
+    background: rgba(201, 162, 39, 0.12);
+    border-left: 4px solid #c9a227;
     padding: 24px 28px;
+    border-radius: 0 6px 6px 0;
     margin-bottom: 40px;
     font-size: 1.15rem;
     font-style: italic;
-    color: #f4e798;
+    color: #90293e;
+    font-weight: 600;
     line-height: 1.7;
     font-family: 'Playfair Display', Georgia, serif;
   }
 
   .content-body {
     font-size: 1.08rem;
-    color: #dddddd;
+    color: #444444;
     line-height: 1.85;
 
     h2 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.75rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin: 44px 0 16px;
       padding-bottom: 8px;
-      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+      border-bottom: 1px solid rgba(201, 162, 39, 0.25);
     }
 
     p {
@@ -109,8 +113,10 @@ const ArticleContainer = styled.article`
   .author-box {
     margin-top: 60px;
     padding: 28px;
-    background: #141414;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.25);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     display: flex;
     align-items: center;
     gap: 20px;

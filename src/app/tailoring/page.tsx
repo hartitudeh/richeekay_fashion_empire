@@ -5,25 +5,25 @@ import { CustomTailoringStudio } from '../../components/CustomTailoringStudio';
 import styled from 'styled-components';
 
 const PageHeader = styled.div`
-  background: linear-gradient(180deg, #0a0a0a 0%, #1f1f1f 100%);
-  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  background: linear-gradient(180deg, #ffffff 0%, #faf8f5 100%);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.25);
   padding: 70px 24px;
   text-align: center;
 
   h1 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 3.2rem;
-    color: #ffffff;
+    color: #1a1a1a;
     margin-bottom: 12px;
 
     span {
-      color: #d4af37;
+      color: #b8860b;
     }
   }
 
   p {
     font-size: 1.05rem;
-    color: #cccccc;
+    color: #555555;
     max-width: 650px;
     margin: 0 auto;
   }
