@@ -242,7 +242,6 @@ export const Footer: React.FC = () => {
                 width: 'auto',
                 marginBottom: '16px',
                 objectFit: 'contain',
-                filter: 'drop-shadow(0 0 10px rgba(212, 175, 55, 0.6))',
                 display: 'block'
               }}
             />

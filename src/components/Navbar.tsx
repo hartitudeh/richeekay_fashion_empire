@@ -129,8 +129,7 @@ const LogoLink = styled(Link)`
     height: 54px;
     width: auto;
     object-fit: contain;
-    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15)) drop-shadow(0 0 4px rgba(201, 162, 39, 0.2));
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 
     @media (max-width: 600px) {
       height: 42px;
@@ -138,8 +137,7 @@ const LogoLink = styled(Link)`
   }
 
   &:hover img.brand-logo-img {
-    transform: scale(1.05);
-    filter: drop-shadow(0 4px 12px rgba(201, 162, 39, 0.4));
+    transform: scale(1.03);
   }
 `;
 
