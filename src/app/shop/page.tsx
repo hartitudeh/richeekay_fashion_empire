@@ -5,7 +5,7 @@ import { useShop } from '../../context/ShopContext';
 import { ProductCard } from '../../components/ProductCard';
 import { SkeletonProductGrid } from '../../components/Skeletons';
 import { CATEGORIES_DATA } from '../../data/productsData';
-import { FiFilter, FiSliders, FiGrid, FiList } from 'react-icons/fi';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import styled from 'styled-components';
 
 const PageHeader = styled.div`
@@ -154,17 +154,66 @@ const MainContent = styled.main`
   }
 `;
 
+const PaginationWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+
+  .page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(201, 162, 39, 0.35);
+    background: #ffffff;
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background: #c9a227;
+      color: #ffffff;
+      border-color: #c9a227;
+    }
+
+    &.active {
+      background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+      color: #ffffff;
+      font-weight: 700;
+      border-color: #b8860b;
+      box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+`;
+
 export default function ShopPage() {
   const { products } = useShop();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedSize, setSelectedSize] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('featured');
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  const ITEMS_PER_PAGE = 20;
 
   useEffect(() => {
+    setCurrentPage(1);
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 500);
+    }, 400);
     return () => clearTimeout(timer);
   }, [selectedCategory, selectedSize, sortBy]);
 
@@ -181,6 +230,17 @@ export default function ShopPage() {
   } else if (sortBy === 'newest') {
     filtered = [...filtered].filter((a) => a.isNewArrival);
   }
+
+  const totalItems = filtered.length;
+  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE) || 1;
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const paginatedProducts = filtered.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const handlePageChange = (page: number) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+    window.scrollTo({ top: 380, behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -227,7 +287,9 @@ export default function ShopPage() {
 
         <MainContent>
           <div className="sort-bar">
-            <span className="results-count">Showing {filtered.length} luxury items</span>
+            <span className="results-count">
+              Showing {totalItems === 0 ? 0 : startIndex + 1}–{Math.min(startIndex + ITEMS_PER_PAGE, totalItems)} of {totalItems} luxury items {totalPages > 1 && `(Page ${currentPage} of ${totalPages})`}
+            </span>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
               <span style={{ fontSize: '0.8rem', color: '#1a1a1a', fontWeight: 600 }}>Sort By:</span>
               <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -242,12 +304,51 @@ export default function ShopPage() {
           <div className="product-grid">
             {isLoading ? (
               <SkeletonProductGrid count={8} cols={3} />
+            ) : paginatedProducts.length === 0 ? (
+              <div style={{ gridColumn: '1 / -1', textAlign: 'center', padding: '60px 20px', color: '#1a1a1a' }}>
+                <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.6rem', color: '#1a1a1a', marginBottom: '10px' }}>
+                  No items match the selected filter.
+                </h3>
+                <p style={{ fontSize: '0.95rem' }}>Try clearing filters or selecting another category.</p>
+              </div>
             ) : (
-              filtered.map((prod) => (
+              paginatedProducts.map((prod) => (
                 <ProductCard key={prod.id} product={prod} />
               ))
             )}
           </div>
+
+          {totalPages > 1 && (
+            <PaginationWrapper>
+              <button
+                className="page-btn"
+                disabled={currentPage === 1}
+                onClick={() => handlePageChange(currentPage - 1)}
+                aria-label="Previous Page"
+              >
+                <FiChevronLeft /> Prev
+              </button>
+
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                <button
+                  key={pageNum}
+                  className={`page-btn ${pageNum === currentPage ? 'active' : ''}`}
+                  onClick={() => handlePageChange(pageNum)}
+                >
+                  {pageNum}
+                </button>
+              ))}
+
+              <button
+                className="page-btn"
+                disabled={currentPage === totalPages}
+                onClick={() => handlePageChange(currentPage + 1)}
+                aria-label="Next Page"
+              >
+                Next <FiChevronRight />
+              </button>
+            </PaginationWrapper>
+          )}
         </MainContent>
       </ShopLayout>
     </>

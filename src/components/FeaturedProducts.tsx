@@ -3,8 +3,9 @@
 import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
 import { ProductCard } from './ProductCard';
-import { ScrollReveal } from './ScrollReveal';
 import { Box, Tabs, Tab } from '@mui/material';
+import Link from 'next/link';
+import { FiArrowRight } from 'react-icons/fi';
 import styled from 'styled-components';
 
 const SectionWrapper = styled.section`
@@ -60,6 +61,37 @@ const ProductGrid = styled.div`
   }
 `;
 
+const MoreButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+
+  .more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(184, 134, 11, 0.35);
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.45);
+      color: #ffffff;
+    }
+  }
+`;
+
 export const FeaturedProducts: React.FC = () => {
   const { products } = useShop();
   const [activeTab, setActiveTab] = useState(0);
@@ -86,6 +118,7 @@ export const FeaturedProducts: React.FC = () => {
   };
 
   const filteredProducts = getFilteredProducts();
+  const displayedProducts = filteredProducts.slice(0, 12);
 
   const tabStyle = {
     color: '#1a1a1a',
@@ -103,43 +136,47 @@ export const FeaturedProducts: React.FC = () => {
   };
 
   return (
-    <ScrollReveal animation="fade-up" duration={700}>
-      <SectionWrapper id="featured">
-        <div className="header">
-          <span>Exclusive Showcase</span>
-          <h2>Featured Luxury Collection</h2>
-          <div className="divider" />
-        </div>
+    <SectionWrapper id="featured">
+      <div className="header">
+        <span>Exclusive Showcase</span>
+        <h2>Featured Luxury Collection</h2>
+        <div className="divider" />
+      </div>
 
-        <Box sx={{ borderBottom: 1, borderColor: 'rgba(201, 162, 39, 0.25)', display: 'flex', justifyContent: 'center' }}>
-          <Tabs
-            value={activeTab}
-            onChange={handleTabChange}
-            variant="scrollable"
-            scrollButtons="auto"
-            aria-label="Product Showcase Tabs"
-            sx={{
-              '& .MuiTabs-indicator': {
-                backgroundColor: '#c9a227',
-                height: '3px'
-              }
-            }}
-          >
-            <Tab label="All Products" sx={tabStyle} />
-            <Tab label="Gentlemen Wear" sx={tabStyle} />
-            <Tab label="Ankara & Ofi Fabrics" sx={tabStyle} />
-            <Tab label="Timepieces & Footwear" sx={tabStyle} />
-            <Tab label="Ladies Couture" sx={tabStyle} />
-            <Tab label="New Arrivals" sx={tabStyle} />
-          </Tabs>
-        </Box>
+      <Box sx={{ borderBottom: 1, borderColor: 'rgba(201, 162, 39, 0.25)', display: 'flex', justifyContent: 'center' }}>
+        <Tabs
+          value={activeTab}
+          onChange={handleTabChange}
+          variant="scrollable"
+          scrollButtons="auto"
+          aria-label="Product Showcase Tabs"
+          sx={{
+            '& .MuiTabs-indicator': {
+              backgroundColor: '#c9a227',
+              height: '3px'
+            }
+          }}
+        >
+          <Tab label="All Products" sx={tabStyle} />
+          <Tab label="Gentlemen Wear" sx={tabStyle} />
+          <Tab label="Ankara & Ofi Fabrics" sx={tabStyle} />
+          <Tab label="Timepieces & Footwear" sx={tabStyle} />
+          <Tab label="Ladies Couture" sx={tabStyle} />
+          <Tab label="New Arrivals" sx={tabStyle} />
+        </Tabs>
+      </Box>
 
-        <ProductGrid>
-          {filteredProducts.map((prod) => (
-            <ProductCard key={prod.id} product={prod} />
-          ))}
-        </ProductGrid>
-      </SectionWrapper>
-    </ScrollReveal>
+      <ProductGrid>
+        {displayedProducts.map((prod) => (
+          <ProductCard key={prod.id} product={prod} />
+        ))}
+      </ProductGrid>
+
+      <MoreButtonWrapper>
+        <Link href="/shop" className="more-btn">
+          View More Products ({filteredProducts.length > 12 ? `${filteredProducts.length - 12}+ More` : 'Explore Full Shop'}) <FiArrowRight />
+        </Link>
+      </MoreButtonWrapper>
+    </SectionWrapper>
   );
 };

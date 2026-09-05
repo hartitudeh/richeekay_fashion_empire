@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
 import { COLLECTIONS_DATA } from '../data/productsData';
-import { ScrollReveal } from './ScrollReveal';
 import { FiArrowRight, FiChevronsLeft, FiChevronsRight } from 'react-icons/fi';
 import styled from 'styled-components';
 
@@ -186,56 +185,54 @@ const CollectionCard = styled.div<{ $bgImage: string }>`
 
 export const CollectionsShowcase: React.FC = () => {
   return (
-    <ScrollReveal animation="fade-up" duration={750}>
-      <SectionWrapper id="collections">
-        <div className="inner-container">
-          <div className="header">
-            <span>Seasonal & Couture Lookbooks</span>
-            <h2>The Empire Collections</h2>
-            <div className="divider" />
-          </div>
-
-          <CarouselWrapper>
-            <button className="custom-swiper-prev" id="col-prev-btn" aria-label="Previous Collection">
-              <FiChevronsLeft />
-            </button>
-
-            <Swiper
-              modules={[Navigation, Autoplay]}
-              navigation={{
-                prevEl: '#col-prev-btn',
-                nextEl: '#col-next-btn'
-              }}
-              autoplay={{ delay: 5000, disableOnInteraction: false }}
-              spaceBetween={24}
-              slidesPerView={1}
-              breakpoints={{
-                768: { slidesPerView: 2 }
-              }}
-              className="col-swiper"
-            >
-              {COLLECTIONS_DATA.map((col) => (
-                <SwiperSlide key={col.id}>
-                  <CollectionCard $bgImage={col.image} className="shine-wrapper">
-                    <div className="content">
-                      <span className="tag floating-badge">{col.tag}</span>
-                      <h3>{col.title}</h3>
-                      <p>{col.subtitle}</p>
-                      <Link href={col.link} className="cta-link gold-pulse-btn">
-                        View Lookbook <FiArrowRight />
-                      </Link>
-                    </div>
-                  </CollectionCard>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-
-            <button className="custom-swiper-next" id="col-next-btn" aria-label="Next Collection">
-              <FiChevronsRight />
-            </button>
-          </CarouselWrapper>
+    <SectionWrapper id="collections">
+      <div className="inner-container">
+        <div className="header">
+          <span>Seasonal & Couture Lookbooks</span>
+          <h2>The Empire Collections</h2>
+          <div className="divider" />
         </div>
-      </SectionWrapper>
-    </ScrollReveal>
+
+        <CarouselWrapper>
+          <button className="custom-swiper-prev" id="col-prev-btn" aria-label="Previous Collection">
+            <FiChevronsLeft />
+          </button>
+
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            navigation={{
+              prevEl: '#col-prev-btn',
+              nextEl: '#col-next-btn'
+            }}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
+            spaceBetween={24}
+            slidesPerView={1}
+            breakpoints={{
+              768: { slidesPerView: 2 }
+            }}
+            className="col-swiper"
+          >
+            {COLLECTIONS_DATA.map((col) => (
+              <SwiperSlide key={col.id}>
+                <CollectionCard $bgImage={col.image}>
+                  <div className="content">
+                    <span className="tag">{col.tag}</span>
+                    <h3>{col.title}</h3>
+                    <p>{col.subtitle}</p>
+                    <Link href={col.link} className="cta-link">
+                      View Lookbook <FiArrowRight />
+                    </Link>
+                  </div>
+                </CollectionCard>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <button className="custom-swiper-next" id="col-next-btn" aria-label="Next Collection">
+            <FiChevronsRight />
+          </button>
+        </CarouselWrapper>
+      </div>
+    </SectionWrapper>
   );
 };
