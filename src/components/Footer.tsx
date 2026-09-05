@@ -187,39 +187,36 @@ const FooterWrapper = styled.footer`
       }
     }
   }
+`;
 
-  .bottom-bar {
-    max-width: 1350px;
-    margin: 0 auto;
-    padding-top: 24px;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.8rem;
-    color: #1a1a1a;
-    font-weight: 500;
+const FooterBottom = styled.div`
+  max-width: 1350px;
+  margin: 0 auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #1a1a1a;
+  font-weight: 500;
 
-    @media (max-width: 768px) {
-      flex-direction: column;
-      gap: 12px;
-      text-align: center;
-    }
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+`;
 
-    .payment-badges {
-      display: flex;
-      gap: 10px;
+const GoldTextLink = styled.a`
+  color: #b8860b;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease;
 
-      span {
-        background: #ffffff;
-        border: 1px solid rgba(201, 162, 39, 0.3);
-        color: #b8860b;
-        padding: 4px 10px;
-        font-size: 0.7rem;
-        font-weight: 600;
-        border-radius: 3px;
-      }
-    }
+  &:hover {
+    color: #c9a227;
+    text-decoration: underline;
   }
 `;
 
@@ -327,17 +324,15 @@ export const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="bottom-bar">
-        <div>&copy; 2026 RICHEEKAY FASHION EMPIRE. All Rights Reserved.</div>
-
-        <div className="payment-badges">
-          <span>PAYSTACK</span>
-          <span>FLUTTERWAVE</span>
-          <span>VISA</span>
-          <span>MASTERCARD</span>
-          <span>BANK TRANSFER</span>
-        </div>
-      </div>
+      <FooterBottom>
+        <p>© {new Date().getFullYear()} RICHEEYKAY FASHION EMPIRE. All rights reserved.</p>
+        <span>
+          With ❤️ By{" "}
+          <GoldTextLink href="https://hartitudehempire.vercel.app" target="_blank">
+            Hartitudeh Tech Solutions
+          </GoldTextLink>
+        </span>
+      </FooterBottom>
     </FooterWrapper>
   );
 };
