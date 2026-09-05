@@ -98,7 +98,8 @@ const ModalCard = styled.div`
 
     p.subtitle {
       font-size: 0.88rem;
-      color: #555555;
+      color: #1a1a1a;
+      font-weight: 500;
       max-width: 420px;
       margin: 0 auto;
       line-height: 1.5;

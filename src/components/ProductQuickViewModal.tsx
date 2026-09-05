@@ -129,14 +129,16 @@ const QuickViewContainer = styled.div`
       }
       .original-price {
         font-size: 1rem;
-        color: #888888;
+        color: #555555;
         text-decoration: line-through;
+        font-weight: 500;
       }
     }
 
     p.desc {
       font-size: 0.9rem;
-      color: #cccccc;
+      color: #1a1a1a;
+      font-weight: 500;
       line-height: 1.6;
       margin-bottom: 20px;
     }

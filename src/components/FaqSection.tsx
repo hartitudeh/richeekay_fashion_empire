@@ -132,7 +132,7 @@ const SearchContainer = styled.div`
     }
 
     &::placeholder {
-      color: #777777;
+      color: #444444;
     }
   }
 
@@ -157,7 +157,7 @@ const FilterTabs = styled.div`
     padding: 10px 20px;
     background: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.12);
-    color: #555555;
+    color: #1a1a1a;
     font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -168,7 +168,7 @@ const FilterTabs = styled.div`
 
     &:hover {
       border-color: #c9a227;
-      color: #1a1a1a;
+      color: #b8860b;
     }
 
     &.active {
@@ -245,7 +245,8 @@ const AccordionCard = styled.div<{ $isOpen: boolean }>`
 
     p {
       font-size: 0.93rem;
-      color: #444444;
+      color: #1a1a1a;
+      font-weight: 500;
       line-height: 1.7;
       border-top: 1px solid rgba(0, 0, 0, 0.06);
       padding-top: 16px;
@@ -279,7 +280,8 @@ const ConciergeBanner = styled.div`
     }
     p {
       font-size: 0.88rem;
-      color: #555555;
+      color: #1a1a1a;
+      font-weight: 500;
     }
   }
 
@@ -399,9 +401,9 @@ export const FaqSection: React.FC = () => {
               );
             })
           ) : (
-            <div style={{ textAlign: 'center', padding: '40px 0', color: '#888888' }}>
+            <div style={{ textAlign: 'center', padding: '40px 0', color: '#1a1a1a' }}>
               <FiHelpCircle style={{ fontSize: '2.5rem', color: '#d4af37', marginBottom: '12px' }} />
-              <p style={{ fontSize: '1rem', color: '#cccccc' }}>
+              <p style={{ fontSize: '1rem', color: '#1a1a1a', fontWeight: 500 }}>
                 No questions found matching "{searchQuery}".
               </p>
             </div>

@@ -27,7 +27,8 @@ const PageHeader = styled.div`
 
   p {
     font-size: 1rem;
-    color: #555555;
+    color: #1a1a1a;
+    font-weight: 500;
     max-width: 600px;
     margin: 0 auto;
   }
@@ -71,7 +72,8 @@ const Sidebar = styled.aside`
 
     li {
       font-size: 0.9rem;
-      color: #555555;
+      color: #1a1a1a;
+      font-weight: 500;
       cursor: pointer;
       display: flex;
       justify-content: space-between;
@@ -121,7 +123,8 @@ const MainContent = styled.main`
 
     .results-count {
       font-size: 0.85rem;
-      color: #555555;
+      color: #1a1a1a;
+      font-weight: 600;
     }
 
     select {
@@ -226,7 +229,7 @@ export default function ShopPage() {
           <div className="sort-bar">
             <span className="results-count">Showing {filtered.length} luxury items</span>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-              <span style={{ fontSize: '0.8rem', color: '#FFF' }}>Sort By:</span>
+              <span style={{ fontSize: '0.8rem', color: '#1a1a1a', fontWeight: 600 }}>Sort By:</span>
               <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
                 <option value="featured">Featured Collection</option>
                 <option value="low-high">Price: Low to High</option>

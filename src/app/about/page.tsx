@@ -49,7 +49,8 @@ const HeroHeader = styled.div`
 
   p {
     font-size: 1.15rem;
-    color: #555555;
+    color: #1a1a1a;
+    font-weight: 500;
     max-width: 750px;
     margin: 0 auto;
     line-height: 1.7;
@@ -281,7 +282,8 @@ const TimelineWrapper = styled.div`
 
       p {
         font-size: 0.9rem;
-        color: #555555;
+        color: #1a1a1a;
+        font-weight: 500;
         line-height: 1.6;
       }
     }
@@ -419,8 +421,93 @@ const CraftsmanshipGrid = styled.div`
 
     p {
       font-size: 0.85rem;
-      color: #555555;
+      color: #1a1a1a;
+      font-weight: 500;
       line-height: 1.5;
+    }
+  }
+`;
+
+const MilestoneTimeline = styled.div`
+  margin-top: 90px;
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+    .timeline-item {
+      background: #ffffff;
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      padding: 24px;
+      border-radius: 8px;
+      .year {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #b8860b;
+        margin-bottom: 6px;
+        display: block;
+      }
+      h4 {
+        font-size: 1.05rem;
+        color: #1a1a1a;
+        margin-bottom: 6px;
+      }
+      p {
+        font-size: 0.85rem;
+        color: #1a1a1a;
+        font-weight: 500;
+        line-height: 1.5;
+      }
+    }
+  }
+`;
+
+const TeamGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+  .team-card {
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.3);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+    .info {
+      padding: 20px;
+      h4 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.2rem;
+        color: #1a1a1a;
+        margin-bottom: 4px;
+      }
+      .role {
+        font-size: 0.8rem;
+        color: #b8860b;
+        font-weight: 700;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 8px;
+      }
+      p {
+        font-size: 0.85rem;
+        color: #1a1a1a;
+        font-weight: 500;
+        line-height: 1.5;
+      }
     }
   }
 `;
@@ -610,11 +697,71 @@ export default function AboutPage() {
             <p>Delivered in our signature gold embossed presentation box with 24-48h express delivery.</p>
           </div>
         </CraftsmanshipGrid>
+        <MilestoneTimeline style={{ marginTop: '90px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+            <span style={{ fontSize: '0.8rem', color: '#b8860b', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase' }}>
+              OUR JOURNEY
+            </span>
+            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.4rem', color: '#1a1a1a', marginTop: '6px' }}>
+              Milestones of Distinction
+            </h2>
+          </div>
 
-        {/* CTA Banner */}
+          <div className="timeline-grid">
+            {timelineMilestones.map((m, idx) => (
+              <div key={idx} className="timeline-item">
+                <span className="year">{m.year}</span>
+                <h4>{m.title}</h4>
+                <p>{m.desc}</p>
+              </div>
+            ))}
+          </div>
+        </MilestoneTimeline>
+
+        {/* LEADERSHIP TEAM */}
+        <div style={{ marginTop: '90px', marginBottom: '60px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+            <span style={{ fontSize: '0.8rem', color: '#b8860b', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase' }}>
+              EXECUTIVE LEADERSHIP
+            </span>
+            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.4rem', color: '#1a1a1a', marginTop: '6px' }}>
+              Meet the Visionaries
+            </h2>
+          </div>
+
+          <TeamGrid>
+            <div className="team-card">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800&auto=format&fit=crop" alt="Richy E. Kay - Creative Director & Founder" />
+              <div className="info">
+                <h4>Richy E. Kay</h4>
+                <span className="role">Creative Director & Founder</span>
+                <p>Master couturier with over 15 years of bespoke tailoring and high-fashion direction across West Africa and Europe.</p>
+              </div>
+            </div>
+
+            <div className="team-card">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" alt="Chief O. Adeleke - Head of Gentlemen Bespoke" />
+              <div className="info">
+                <h4>Chief O. Adeleke</h4>
+                <span className="role">Head of Gentlemen Bespoke</span>
+                <p>Master craftsman specializing in Royal Agbada embroidery, Senator tunics, and Italian leather footwear fittings.</p>
+              </div>
+            </div>
+
+            <div className="team-card">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" alt="Lady S. Williams - Head of Textiles & Ankara" />
+              <div className="info">
+                <h4>Lady S. Williams</h4>
+                <span className="role">Head of Textiles & Ankara Fabrics</span>
+                <p>Expert buyer sourcing authentic handwoven Ofi, premium Ankara prints, and Swiss lace fabrics across West Africa.</p>
+              </div>
+            </div>
+          </TeamGrid>
+        </div>
+
+        {/* CTA BANNER */}
         <div
           style={{
-            marginTop: '80px',
             background: '#ffffff',
             border: '1px solid #c9a227',
             borderRadius: '12px',
@@ -626,7 +773,7 @@ export default function AboutPage() {
           <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '2.2rem', color: '#1a1a1a', marginBottom: '12px' }}>
             Ready to Experience Bespoke Luxury?
           </h3>
-          <p style={{ color: '#555555', fontSize: '1rem', maxWidth: '600px', margin: '0 auto 24px' }}>
+          <p style={{ color: '#1a1a1a', fontWeight: 500, fontSize: '1rem', maxWidth: '600px', margin: '0 auto 24px' }}>
             Book a personal fitting session with our master tailors or explore our luxury shop catalog today.
           </p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>

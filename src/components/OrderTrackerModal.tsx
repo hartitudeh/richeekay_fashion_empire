@@ -227,7 +227,7 @@ export const OrderTrackerModal: React.FC = () => {
                     <Step key={step}>
                       <StepLabel
                         sx={{
-                          '& .MuiStepLabel-label': { color: '#666666', fontSize: '0.75rem', fontFamily: 'Montserrat, sans-serif' },
+                          '& .MuiStepLabel-label': { color: '#1a1a1a', fontSize: '0.75rem', fontFamily: 'Montserrat, sans-serif', fontWeight: 600 },
                           '& .Mui-active': { color: '#c9a227 !important' },
                           '& .Mui-completed': { color: '#b8860b !important' }
                         }}
@@ -239,7 +239,7 @@ export const OrderTrackerModal: React.FC = () => {
                 </Stepper>
               </Box>
 
-              <div style={{ background: '#ffffff', border: '1px solid rgba(201,162,39,0.2)', padding: '14px', borderRadius: '6px', fontSize: '0.85rem', color: '#555555' }}>
+              <div style={{ background: '#ffffff', border: '1px solid rgba(201,162,39,0.2)', padding: '14px', borderRadius: '6px', fontSize: '0.85rem', color: '#1a1a1a', fontWeight: 500 }}>
                 <FiClock style={{ color: '#c9a227', marginRight: '6px' }} />
                 Current Phase: <strong style={{ color: '#1a1a1a' }}>{activeOrder.status}</strong> - Our master tailors and quality assurance team are working on your bespoke gold packaging.
               </div>

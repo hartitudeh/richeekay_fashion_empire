@@ -29,7 +29,7 @@ const LoginContainer = styled.div`
     right: 16px;
     background: none;
     border: none;
-    color: #555555;
+    color: #1a1a1a;
     font-size: 1.5rem;
     cursor: pointer;
     transition: color 0.2s ease;
@@ -67,7 +67,8 @@ const LoginContainer = styled.div`
 
   p.subtitle {
     font-size: 0.85rem;
-    color: #666666;
+    color: #1a1a1a;
+    font-weight: 500;
     margin-bottom: 28px;
   }
 
@@ -477,9 +478,9 @@ export const AdminPortalModal: React.FC = () => {
                   '& .MuiTabs-indicator': { backgroundColor: '#c9a227' }
                 }}
               >
-                <Tab label="Products Catalog Manager" style={{ color: activeTab === 0 ? '#b8860b' : '#555555', fontWeight: activeTab === 0 ? 700 : 500 }} />
-                <Tab label="Add New Product" style={{ color: activeTab === 1 ? '#b8860b' : '#555555', fontWeight: activeTab === 1 ? 700 : 500 }} />
-                <Tab label="Live Customer Orders" style={{ color: activeTab === 2 ? '#b8860b' : '#555555', fontWeight: activeTab === 2 ? 700 : 500 }} />
+                <Tab label="Products Catalog Manager" style={{ color: activeTab === 0 ? '#b8860b' : '#1a1a1a', fontWeight: activeTab === 0 ? 700 : 500 }} />
+                <Tab label="Add New Product" style={{ color: activeTab === 1 ? '#b8860b' : '#1a1a1a', fontWeight: activeTab === 1 ? 700 : 500 }} />
+                <Tab label="Live Customer Orders" style={{ color: activeTab === 2 ? '#b8860b' : '#1a1a1a', fontWeight: activeTab === 2 ? 700 : 500 }} />
               </Tabs>
             </Box>
 

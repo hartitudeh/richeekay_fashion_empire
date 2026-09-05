@@ -26,7 +26,8 @@ const PageHeader = styled.div`
 
   p {
     font-size: 1.05rem;
-    color: #555555;
+    color: #1a1a1a;
+    font-weight: 500;
     max-width: 650px;
     margin: 0 auto;
   }

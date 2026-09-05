@@ -69,7 +69,8 @@ const FreeShippingBar = styled.div<{ $percent: number }>`
   padding: 12px 24px;
   border-bottom: 1px solid rgba(201, 162, 39, 0.2);
   font-size: 0.8rem;
-  color: #555555;
+  color: #1a1a1a;
+  font-weight: 500;
 
   .bar-container {
     height: 6px;
@@ -124,7 +125,8 @@ const CartItemRow = styled.div`
 
     .meta {
       font-size: 0.75rem;
-      color: #666666;
+      color: #1a1a1a;
+      font-weight: 500;
       margin-bottom: 8px;
     }
 
@@ -215,19 +217,20 @@ const DrawerFooter = styled.div`
     display: flex;
     justify-content: space-between;
     font-size: 0.85rem;
-    color: #cccccc;
+    color: #1a1a1a;
+    font-weight: 500;
     margin-bottom: 8px;
 
     &.total {
       font-size: 1.15rem;
       font-weight: 700;
-      color: #ffffff;
-      border-top: 1px dashed rgba(212, 175, 55, 0.3);
+      color: #1a1a1a;
+      border-top: 1px dashed rgba(201, 162, 39, 0.4);
       padding-top: 10px;
       margin-top: 8px;
 
       span.total-price {
-        color: #d4af37;
+        color: #b8860b;
         font-family: 'Playfair Display', Georgia, serif;
       }
     }
@@ -325,10 +328,10 @@ export const CartDrawer: React.FC = () => {
 
         <ItemList>
           {cart.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '60px 20px', color: '#888' }}>
+            <div style={{ textAlign: 'center', padding: '60px 20px', color: '#1a1a1a' }}>
               <FiShoppingBag style={{ fontSize: '3rem', color: '#D4AF37', marginBottom: '14px' }} />
-              <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', color: '#fff' }}>Your bag is empty.</p>
-              <p style={{ fontSize: '0.85rem', marginTop: '6px' }}>Explore our luxury collection and add your favorite outfits.</p>
+              <p style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.2rem', color: '#1a1a1a', fontWeight: 600 }}>Your bag is empty.</p>
+              <p style={{ fontSize: '0.85rem', marginTop: '6px', color: '#1a1a1a', fontWeight: 500 }}>Explore our luxury collection and add your favorite outfits.</p>
             </div>
           ) : (
             cart.map((item, idx) => (

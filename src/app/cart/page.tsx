@@ -69,7 +69,8 @@ const Container = styled.div`
         }
         span {
           font-size: 0.8rem;
-          color: #666666;
+          color: #1a1a1a;
+          font-weight: 500;
         }
       }
 
@@ -123,7 +124,8 @@ const Container = styled.div`
       justify-content: space-between;
       margin-bottom: 10px;
       font-size: 0.9rem;
-      color: #555555;
+      color: #1a1a1a;
+      font-weight: 500;
 
       &.total {
         font-size: 1.2rem;
@@ -199,7 +201,7 @@ export default function FullCartPage() {
       <Container>
         <div className="cart-table">
           {cart.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '60px', color: '#666666' }}>
+            <div style={{ textAlign: 'center', padding: '60px', color: '#1a1a1a', fontWeight: 500 }}>
               <FiShoppingBag style={{ fontSize: '3rem', color: '#c9a227', marginBottom: '14px' }} />
               <h3 style={{ fontFamily: 'Playfair Display, serif', color: '#1a1a1a' }}>Your bag is empty</h3>
               <p style={{ marginTop: '8px' }}>Explore our luxury collection and add your favorite outfits.</p>

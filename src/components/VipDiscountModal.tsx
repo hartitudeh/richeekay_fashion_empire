@@ -151,7 +151,8 @@ const ModalCard = styled.div`
 
     p.sub-desc {
       font-size: 0.82rem;
-      color: #666666;
+      color: #1a1a1a;
+      font-weight: 500;
       line-height: 1.5;
       margin-bottom: 24px;
       max-width: 340px;
@@ -181,7 +182,7 @@ const ModalCard = styled.div`
         }
 
         &::placeholder {
-          color: #999999;
+          color: #444444;
         }
       }
 
@@ -266,7 +267,8 @@ const ModalCard = styled.div`
 
     .micro-copy {
       font-size: 0.73rem;
-      color: #888888;
+      color: #1a1a1a;
+      font-weight: 500;
       margin-top: 16px;
     }
   }
@@ -360,7 +362,7 @@ export const VipDiscountModal: React.FC = () => {
             <div className="success-box">
               <FiCheckCircle className="icon" />
               <h4>Welcome to the Empire!</h4>
-              <p style={{ fontSize: '0.85rem', color: '#555555' }}>
+              <p style={{ fontSize: '0.85rem', color: '#1a1a1a', fontWeight: 500 }}>
                 Your 10% VIP discount code has been generated:
               </p>
               <div className="code-badge">RICHEEKAY10</div>

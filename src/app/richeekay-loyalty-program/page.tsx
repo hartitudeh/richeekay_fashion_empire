@@ -212,7 +212,8 @@ const HeroSection = styled.div`
 
         p {
           font-size: 0.82rem;
-          color: #555555;
+          color: #1a1a1a;
+          font-weight: 500;
         }
       }
     }
@@ -365,7 +366,8 @@ const StepsGrid = styled.div`
 
     p {
       font-size: 0.88rem;
-      color: #555555;
+      color: #1a1a1a;
+      font-weight: 500;
       line-height: 1.5;
     }
   }
@@ -445,7 +447,8 @@ const TiersGrid = styled.div`
 
       li {
         font-size: 0.9rem;
-        color: #444444;
+        color: #1a1a1a;
+        font-weight: 500;
         display: flex;
         align-items: center;
         gap: 10px;
@@ -532,7 +535,8 @@ const CalculatorBox = styled.div`
 
     p {
       font-size: 0.92rem;
-      color: #555555;
+      color: #1a1a1a;
+      font-weight: 500;
       margin-bottom: 24px;
     }
 

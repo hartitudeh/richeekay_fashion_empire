@@ -353,7 +353,7 @@ export default function ProductDetailPage() {
             )}
           </div>
 
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '20px', fontSize: '0.85rem', color: '#aaa' }}>
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.15)', paddingTop: '20px', fontSize: '0.85rem', color: '#e5e5e5', fontWeight: 500 }}>
             <p style={{ marginBottom: '6px' }}><FiCheckCircle style={{ color: '#D4AF37' }} /> 100% Authentic Product Guarantee</p>
             <p style={{ marginBottom: '6px' }}><FiTruck style={{ color: '#D4AF37' }} /> Express 24-48 Hours Nationwide & International Shipping</p>
             <p><FiShield style={{ color: '#D4AF37' }} /> Encrypted Secure Checkout via Paystack & Flutterwave</p>
@@ -364,7 +364,7 @@ export default function ProductDetailPage() {
       {completeLookItems.length > 0 && (
         <div className="complete-look">
           <h3>Complete the Empire Look</h3>
-          <p style={{ color: '#aaa', fontSize: '0.9rem', marginBottom: '20px' }}>Pair this item with matching luxury heels, designer bags, and 100% virgin wigs.</p>
+          <p style={{ color: '#e5e5e5', fontSize: '0.9rem', marginBottom: '20px', fontWeight: 500 }}>Pair this item with matching luxury Oxfords, sneakers, wristwatches, heels, designer bags, or handcrafted Ankara & Ofi accessories.</p>
           <div className="look-grid">
             {completeLookItems.map((item) => (
               <ProductCard key={item.id} product={item} />

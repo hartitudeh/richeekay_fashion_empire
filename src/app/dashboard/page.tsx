@@ -141,7 +141,8 @@ const DashboardPageWrapper = styled.div`
 
           .email-tag {
             font-size: 0.82rem;
-            color: #666666;
+            color: #1a1a1a;
+            font-weight: 500;
             display: flex;
             align-items: center;
             gap: 6px;
@@ -205,11 +206,11 @@ const DashboardPageWrapper = styled.div`
       text-align: left;
       background: transparent;
       border: none;
-      color: #555555;
+      color: #1a1a1a;
       padding: 14px 16px;
       border-radius: 6px;
       font-size: 0.92rem;
-      font-weight: 600;
+      font-weight: 500;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -443,7 +444,7 @@ export default function DashboardPage() {
 
                 <form onSubmit={handleSaveProfile} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                   <div>
-                    <label style={{ fontSize: '0.82rem', color: '#cccccc', display: 'block', marginBottom: '6px' }}>
+                    <label style={{ fontSize: '0.82rem', color: '#1a1a1a', display: 'block', marginBottom: '6px', fontWeight: 600 }}>
                       Profile Photo
                     </label>
                     <button
@@ -452,7 +453,7 @@ export default function DashboardPage() {
                       style={{
                         background: 'rgba(212,175,55,0.15)',
                         border: '1px solid #d4af37',
-                        color: '#d4af37',
+                        color: '#b8860b',
                         padding: '10px 18px',
                         borderRadius: '30px',
                         fontWeight: '700',
@@ -468,7 +469,7 @@ export default function DashboardPage() {
                   </div>
 
                   <div>
-                    <label style={{ fontSize: '0.82rem', color: '#555555', display: 'block', marginBottom: '6px', fontWeight: 600 }}>
+                    <label style={{ fontSize: '0.82rem', color: '#1a1a1a', display: 'block', marginBottom: '6px', fontWeight: 600 }}>
                       Full Name
                     </label>
                     <input
@@ -487,7 +488,7 @@ export default function DashboardPage() {
                   </div>
 
                   <div>
-                    <label style={{ fontSize: '0.82rem', color: '#555555', display: 'block', marginBottom: '6px', fontWeight: 600 }}>
+                    <label style={{ fontSize: '0.82rem', color: '#1a1a1a', display: 'block', marginBottom: '6px', fontWeight: 600 }}>
                       Fashion Bio / Tagline
                     </label>
                     <input
@@ -506,7 +507,7 @@ export default function DashboardPage() {
                   </div>
 
                   <div>
-                    <label style={{ fontSize: '0.82rem', color: '#555555', display: 'block', marginBottom: '6px', fontWeight: 600 }}>
+                    <label style={{ fontSize: '0.82rem', color: '#1a1a1a', display: 'block', marginBottom: '6px', fontWeight: 600 }}>
                       Phone Number (Saved on Phone)
                     </label>
                     <input
@@ -525,7 +526,7 @@ export default function DashboardPage() {
                   </div>
 
                   <div>
-                    <label style={{ fontSize: '0.82rem', color: '#555555', display: 'block', marginBottom: '6px', fontWeight: 600 }}>
+                    <label style={{ fontSize: '0.82rem', color: '#1a1a1a', display: 'block', marginBottom: '6px', fontWeight: 600 }}>
                       Primary Boutique Delivery Address (Saved on Phone)
                     </label>
                     <input
@@ -580,7 +581,7 @@ export default function DashboardPage() {
                 </div>
 
                 <div style={{ marginBottom: '24px' }}>
-                  <div style={{ fontSize: '0.85rem', color: '#aaaaaa', marginBottom: '8px', display: 'flex', justifyContent: 'space-between' }}>
+                  <div style={{ fontSize: '0.85rem', color: '#1a1a1a', fontWeight: 600, marginBottom: '8px', display: 'flex', justifyContent: 'space-between' }}>
                     <span>Progress to Empire VIP Dynasty Tier</span>
                     <span style={{ color: '#d4af37' }}>{userPoints.toLocaleString()} / 50,000 Pts</span>
                   </div>
@@ -590,7 +591,7 @@ export default function DashboardPage() {
                 </div>
 
                 <div style={{ background: '#faf8f5', border: '1px solid rgba(201,162,39,0.3)', padding: '16px 20px', borderRadius: '6px', marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '12px' }}>
-                  <span style={{ fontSize: '0.88rem', color: '#555555', fontWeight: 600 }}>Your VIP Referral Link (+1,500 Pts per friend):</span>
+                  <span style={{ fontSize: '0.88rem', color: '#1a1a1a', fontWeight: 600 }}>Your VIP Referral Link (+1,500 Pts per friend):</span>
                   <button
                     onClick={handleCopyReferral}
                     style={{
@@ -650,9 +651,9 @@ export default function DashboardPage() {
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '10px', flexWrap: 'wrap', gap: '8px' }}>
                         <span style={{ fontWeight: '700', color: '#b8860b', fontSize: '1rem' }}>Order #{o.id}</span>
-                        <span style={{ fontSize: '0.85rem', color: '#666666' }}>{o.date}</span>
+                        <span style={{ fontSize: '0.85rem', color: '#1a1a1a', fontWeight: 500 }}>{o.date}</span>
                       </div>
-                      <div style={{ fontSize: '0.92rem', color: '#444444', marginBottom: '14px' }}>
+                      <div style={{ fontSize: '0.92rem', color: '#1a1a1a', fontWeight: 500, marginBottom: '14px' }}>
                         Total Paid: <strong style={{ color: '#1a1a1a' }}>{formatPrice(o.totalNGN)}</strong> | Status:{' '}
                         <span style={{ color: '#25d366', fontWeight: '700' }}>{o.status}</span>
                       </div>
@@ -677,9 +678,9 @@ export default function DashboardPage() {
                     </div>
                   ))
                 ) : (
-                  <div style={{ textAlign: 'center', color: '#666666', padding: '40px 0' }}>
+                  <div style={{ textAlign: 'center', color: '#1a1a1a', padding: '40px 0' }}>
                     <FiShoppingBag style={{ fontSize: '2.5rem', color: '#c9a227', marginBottom: '10px' }} />
-                    <p style={{ fontSize: '1rem' }}>No purchase history found on this device.</p>
+                    <p style={{ fontSize: '1rem', fontWeight: 500 }}>No purchase history found on this device.</p>
                   </div>
                 )}
               </div>
@@ -734,9 +735,9 @@ export default function DashboardPage() {
                     ))}
                   </div>
                 ) : (
-                  <div style={{ textAlign: 'center', color: '#666666', padding: '40px 0' }}>
+                  <div style={{ textAlign: 'center', color: '#1a1a1a', padding: '40px 0' }}>
                     <FiHeart style={{ fontSize: '2.5rem', color: '#c9a227', marginBottom: '10px' }} />
-                    <p style={{ fontSize: '1rem' }}>Your wishlist is currently empty.</p>
+                    <p style={{ fontSize: '1rem', fontWeight: 500 }}>Your wishlist is currently empty.</p>
                   </div>
                 )}
               </div>
@@ -751,7 +752,7 @@ export default function DashboardPage() {
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px', marginBottom: '24px' }}>
                   <div>
-                    <label style={{ fontSize: '0.8rem', color: '#555555', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Bust (Inches)</label>
+                    <label style={{ fontSize: '0.8rem', color: '#1a1a1a', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Bust (Inches)</label>
                     <input
                       type="text"
                       value={bust}
@@ -760,7 +761,7 @@ export default function DashboardPage() {
                     />
                   </div>
                   <div>
-                    <label style={{ fontSize: '0.8rem', color: '#555555', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Waist (Inches)</label>
+                    <label style={{ fontSize: '0.8rem', color: '#1a1a1a', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Waist (Inches)</label>
                     <input
                       type="text"
                       value={waist}
@@ -769,7 +770,7 @@ export default function DashboardPage() {
                     />
                   </div>
                   <div>
-                    <label style={{ fontSize: '0.8rem', color: '#555555', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Hips (Inches)</label>
+                    <label style={{ fontSize: '0.8rem', color: '#1a1a1a', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Hips (Inches)</label>
                     <input
                       type="text"
                       value={hips}
@@ -778,7 +779,7 @@ export default function DashboardPage() {
                     />
                   </div>
                   <div>
-                    <label style={{ fontSize: '0.8rem', color: '#555555', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Shoulder (Inches)</label>
+                    <label style={{ fontSize: '0.8rem', color: '#1a1a1a', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Shoulder (Inches)</label>
                     <input
                       type="text"
                       value={shoulder}
@@ -787,7 +788,7 @@ export default function DashboardPage() {
                     />
                   </div>
                   <div>
-                    <label style={{ fontSize: '0.8rem', color: '#555555', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Sleeve Length</label>
+                    <label style={{ fontSize: '0.8rem', color: '#1a1a1a', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Sleeve Length</label>
                     <input
                       type="text"
                       value={sleeve}
@@ -796,7 +797,7 @@ export default function DashboardPage() {
                     />
                   </div>
                   <div>
-                    <label style={{ fontSize: '0.8rem', color: '#555555', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Full Dress Length</label>
+                    <label style={{ fontSize: '0.8rem', color: '#1a1a1a', display: 'block', marginBottom: '4px', fontWeight: 600 }}>Full Dress Length</label>
                     <input
                       type="text"
                       value={fullLength}

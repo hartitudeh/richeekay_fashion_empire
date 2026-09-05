@@ -168,16 +168,17 @@ const BankDetailsBox = styled.div`
     }
 
     .label {
-      color: #aaaaaa;
+      color: #b8860b;
+      font-weight: 700;
     }
 
     .val {
-      color: #ffffff;
+      color: #1a1a1a;
       font-weight: 600;
     }
 
     .highlight {
-      color: #d4af37;
+      color: #b8860b;
       font-weight: 700;
     }
 
@@ -185,14 +186,14 @@ const BankDetailsBox = styled.div`
       font-family: monospace;
       font-size: 1.15rem;
       letter-spacing: 2px;
-      color: #f4e798;
+      color: #b8860b;
       font-weight: 800;
     }
 
     .copy-btn {
-      background: rgba(212, 175, 55, 0.2);
-      border: 1px solid #d4af37;
-      color: #d4af37;
+      background: rgba(201, 162, 39, 0.15);
+      border: 1px solid #c9a227;
+      color: #b8860b;
       font-size: 0.75rem;
       padding: 4px 10px;
       border-radius: 4px;
@@ -204,16 +205,16 @@ const BankDetailsBox = styled.div`
       transition: all 0.2s ease;
 
       &:hover {
-        background: #d4af37;
-        color: #0a0a0a;
+        background: #c9a227;
+        color: #ffffff;
       }
     }
   }
 `;
 
 const UploadSection = styled.div`
-  background: #0a0a0a;
-  border: 1px dashed rgba(212, 175, 55, 0.5);
+  background: #faf8f5;
+  border: 1px dashed rgba(201, 162, 39, 0.5);
   border-radius: 6px;
   padding: 16px;
   text-align: center;
@@ -225,53 +226,40 @@ const UploadSection = styled.div`
     align-items: center;
     gap: 8px;
     cursor: pointer;
-    color: #cccccc;
+    color: #1a1a1a;
+    font-weight: 600;
     font-size: 0.85rem;
 
     .icon {
       font-size: 1.8rem;
-      color: #d4af37;
+      color: #b8860b;
     }
 
     &:hover .icon {
       transform: translateY(-2px);
     }
   }
-
-  .file-preview {
-    margin-top: 10px;
-    background: rgba(212, 175, 55, 0.15);
-    border: 1px solid #d4af37;
-    padding: 8px 14px;
-    border-radius: 4px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: #ffffff;
-    font-size: 0.85rem;
-    font-weight: 600;
-  }
 `;
 
-const OtpNoticeBox = styled.div`
-  background: rgba(20, 20, 20, 0.95);
-  border: 1px solid #d4af37;
-  padding: 16px;
+const SecurityInfoBox = styled.div`
+  background: rgba(201, 162, 39, 0.08);
+  border: 1px solid rgba(201, 162, 39, 0.3);
   border-radius: 6px;
+  padding: 12px 16px;
   margin-bottom: 16px;
   display: flex;
   align-items: flex-start;
   gap: 12px;
 
-  .mail-icon {
-    font-size: 1.6rem;
-    color: #d4af37;
+  svg {
+    color: #b8860b;
+    font-size: 1.2rem;
     flex-shrink: 0;
     margin-top: 2px;
   }
 
   h5 {
-    color: #d4af37;
+    color: #b8860b;
     font-size: 0.9rem;
     margin: 0 0 4px;
     font-weight: 700;
@@ -280,7 +268,8 @@ const OtpNoticeBox = styled.div`
   }
 
   p {
-    color: #cccccc;
+    color: #1a1a1a;
+    font-weight: 500;
     font-size: 0.82rem;
     margin: 0;
     line-height: 1.5;
@@ -288,8 +277,8 @@ const OtpNoticeBox = styled.div`
 
   .code-badge {
     display: inline-block;
-    background: #d4af37;
-    color: #0a0a0a;
+    background: #c9a227;
+    color: #ffffff;
     font-weight: 800;
     padding: 2px 8px;
     border-radius: 4px;
@@ -301,7 +290,8 @@ const OtpNoticeBox = styled.div`
 const ErrorBanner = styled.div`
   background: rgba(211, 47, 47, 0.15);
   border: 1px solid #f44336;
-  color: #ff8a80;
+  color: #d32f2f;
+  font-weight: 600;
   padding: 10px 14px;
   border-radius: 4px;
   font-size: 0.85rem;
@@ -312,8 +302,8 @@ const ErrorBanner = styled.div`
 `;
 
 const InvoiceCard = styled.div`
-  background: #0a0a0a;
-  border: 1px solid #d4af37;
+  background: #faf8f5;
+  border: 1px solid #c9a227;
   padding: 24px;
   text-align: center;
   margin-top: 10px;
@@ -321,17 +311,20 @@ const InvoiceCard = styled.div`
   .order-id {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.8rem;
-    color: #d4af37;
+    color: #b8860b;
     margin: 10px 0;
   }
 
   .details-box {
-    background: #1f1f1f;
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.3);
+    border-radius: 6px;
     padding: 16px;
     margin: 16px 0;
     text-align: left;
     font-size: 0.85rem;
-    color: #dddddd;
+    color: #1a1a1a;
+    font-weight: 500;
   }
 `;
 
@@ -492,7 +485,7 @@ export const CheckoutModal: React.FC = () => {
                 <Step key={label}>
                   <StepLabel
                     sx={{
-                      '& .MuiStepLabel-label': { color: '#AAAAAA', fontFamily: 'Montserrat, sans-serif' },
+                      '& .MuiStepLabel-label': { color: '#1a1a1a', fontFamily: 'Montserrat, sans-serif', fontWeight: 600 },
                       '& .Mui-active': { color: '#D4AF37 !important' },
                       '& .Mui-completed': { color: '#D4AF37 !important' }
                     }}
@@ -539,7 +532,7 @@ export const CheckoutModal: React.FC = () => {
               <div className="payment-card selected">
                 <div>
                   <strong>Express Courier Delivery</strong>
-                  <p style={{ fontSize: '0.8rem', color: '#aaa' }}>Lagos, Oyo & Osogbo (Osun State) Doorstep Delivery in Premium Gold Gift Box</p>
+                  <p style={{ fontSize: '0.8rem', color: '#1a1a1a', fontWeight: 500 }}>Lagos, Oyo & Osogbo (Osun State) Doorstep Delivery in Premium Gold Gift Box</p>
                 </div>
                 <span style={{ color: '#D4AF37', fontWeight: 'bold' }}>Included</span>
               </div>
@@ -547,7 +540,7 @@ export const CheckoutModal: React.FC = () => {
               <div className="payment-card">
                 <div>
                   <strong>VIP In-Store Fitting & Pickup</strong>
-                  <p style={{ fontSize: '0.8rem', color: '#aaa' }}>Flagship Boutique: Plot 14 Victoria Island, Lagos</p>
+                  <p style={{ fontSize: '0.8rem', color: '#1a1a1a', fontWeight: 500 }}>Flagship Boutique: Plot 14 Victoria Island, Lagos</p>
                 </div>
                 <span>Free</span>
               </div>
@@ -571,7 +564,7 @@ export const CheckoutModal: React.FC = () => {
                   <strong style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <FiShield style={{ color: '#D4AF37' }} /> Direct Payment / Bank Transfer (Recommended)
                   </strong>
-                  <p style={{ fontSize: '0.8rem', color: '#aaa' }}>Instant transfer to RICHEEKAY Opay Corporate Account with instant verification</p>
+                  <p style={{ fontSize: '0.8rem', color: '#1a1a1a', fontWeight: 500 }}>Instant transfer to RICHEEKAY Opay Corporate Account with instant verification</p>
                 </div>
               </div>
 
@@ -584,7 +577,7 @@ export const CheckoutModal: React.FC = () => {
                   <strong style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <FiCreditCard style={{ color: '#D4AF37' }} /> Paystack Online Gateway
                   </strong>
-                  <p style={{ fontSize: '0.8rem', color: '#aaa' }}>Pay with Visa, Mastercard, Verve, USSD or Apple Pay</p>
+                  <p style={{ fontSize: '0.8rem', color: '#1a1a1a', fontWeight: 500 }}>Pay with Visa, Mastercard, Verve, USSD or Apple Pay</p>
                 </div>
               </div>
 
@@ -597,7 +590,7 @@ export const CheckoutModal: React.FC = () => {
                   <strong style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <FiCreditCard style={{ color: '#D4AF37' }} /> Flutterwave Global Payment
                   </strong>
-                  <p style={{ fontSize: '0.8rem', color: '#aaa' }}>Supports International Cards (USD, GBP, EUR, NGN)</p>
+                  <p style={{ fontSize: '0.8rem', color: '#1a1a1a', fontWeight: 500 }}>Supports International Cards (USD, GBP, EUR, NGN)</p>
                 </div>
               </div>
 
@@ -654,7 +647,7 @@ export const CheckoutModal: React.FC = () => {
                   </UploadSection>
 
                   {/* Step 2: Guest & Email Verification Notice */}
-                  <OtpNoticeBox>
+                  <SecurityInfoBox>
                     <FiMail className="mail-icon" />
                     <div>
                       <h5>Instant Verification Code</h5>
@@ -684,7 +677,7 @@ export const CheckoutModal: React.FC = () => {
                         </button>
                       </div>
                     </div>
-                  </OtpNoticeBox>
+                  </SecurityInfoBox>
 
                   <div className="input-group">
                     <label>Enter 6-Digit Verification Code</label>
@@ -755,7 +748,7 @@ export const CheckoutModal: React.FC = () => {
             <InvoiceCard>
               <FiCheckCircle style={{ fontSize: '3.5rem', color: '#D4AF37', marginBottom: '10px' }} />
               <h3 style={{ fontFamily: 'Playfair Display, serif', color: '#FFFFFF' }}>Payment Successful & Order Completed!</h3>
-              <p style={{ color: '#AAAAAA', fontSize: '0.9rem' }}>Thank you for shopping with RICHEEKAY FASHION EMPIRE.</p>
+              <p style={{ color: '#1a1a1a', fontSize: '0.9rem', fontWeight: 500 }}>Thank you for shopping with RICHEEKAY FASHION EMPIRE.</p>
 
               <div className="order-id">Order ID: #{createdOrder.id}</div>
 

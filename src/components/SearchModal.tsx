@@ -40,7 +40,7 @@ const SearchContainer = styled.div`
       }
 
       &::placeholder {
-        color: #888888;
+        color: #444444;
       }
     }
 
@@ -164,7 +164,7 @@ export const SearchModal: React.FC = () => {
             <FiSearch style={{ color: '#D4AF37', fontSize: '1.6rem' }} />
             <input
               type="text"
-              placeholder="Search Evening Gowns, Senator Materials, Wigs, Heels..."
+              placeholder="Search Gentlemen Suits, Ankara & Ofi Materials, Shoes, Wristwatches, Gowns..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               autoFocus
@@ -178,26 +178,26 @@ export const SearchModal: React.FC = () => {
             <div className={`pill ${selectedCat === 'all' ? 'active' : ''}`} onClick={() => setSelectedCat('all')}>
               All Categories
             </div>
+            <div className={`pill ${selectedCat === 'men-wear' ? 'active' : ''}`} onClick={() => setSelectedCat('men-wear')}>
+              Gentlemen Wear
+            </div>
             <div className={`pill ${selectedCat === 'ladies-wear' ? 'active' : ''}`} onClick={() => setSelectedCat('ladies-wear')}>
               Ladies Wear
             </div>
-            <div className={`pill ${selectedCat === 'native-wear' ? 'active' : ''}`} onClick={() => setSelectedCat('native-wear')}>
-              Native Wear
+            <div className={`pill ${selectedCat === 'ankara-ofi-materials' ? 'active' : ''}`} onClick={() => setSelectedCat('ankara-ofi-materials')}>
+              Ankara & Ofi Materials
             </div>
-            <div className={`pill ${selectedCat === 'senator-materials' ? 'active' : ''}`} onClick={() => setSelectedCat('senator-materials')}>
-              Senator Materials
+            <div className={`pill ${selectedCat === 'shoes-sneakers' ? 'active' : ''}`} onClick={() => setSelectedCat('shoes-sneakers')}>
+              Shoes & Sneakers
             </div>
-            <div className={`pill ${selectedCat === 'shoes' ? 'active' : ''}`} onClick={() => setSelectedCat('shoes')}>
-              Shoes & Heels
-            </div>
-            <div className={`pill ${selectedCat === 'wigs' ? 'active' : ''}`} onClick={() => setSelectedCat('wigs')}>
-              Wigs
+            <div className={`pill ${selectedCat === 'wristwatches' ? 'active' : ''}`} onClick={() => setSelectedCat('wristwatches')}>
+              Wristwatches
             </div>
           </div>
 
           <div className="results-grid">
             {filtered.length === 0 ? (
-              <p style={{ color: '#888', gridColumn: 'span 3', textAlign: 'center', padding: '40px' }}>
+              <p style={{ color: '#1a1a1a', fontWeight: 500, gridColumn: 'span 3', textAlign: 'center', padding: '40px' }}>
                 No matching luxury products found for "{query}".
               </p>
             ) : (

@@ -106,7 +106,8 @@ const WhyChooseSection = styled.section`
 
     p {
       font-size: 0.85rem;
-      color: #555555;
+      color: #1a1a1a;
+      font-weight: 500;
       line-height: 1.5;
     }
   }
@@ -220,7 +221,8 @@ const AboutSection = styled.section`
         }
         span {
           font-size: 0.88rem;
-          color: #555555;
+          color: #1a1a1a;
+          font-weight: 500;
           line-height: 1.5;
           display: block;
         }

@@ -154,7 +154,8 @@ const ContentContainer = styled.div`
     margin-bottom: 10px;
 
     span {
-      color: #666666;
+      color: #1a1a1a;
+      font-weight: 600;
     }
   }
 
@@ -195,9 +196,10 @@ const ContentContainer = styled.div`
 
     .original-price {
       font-size: 0.85rem;
-      color: #888888;
+      color: #555555;
       text-decoration: line-through;
       margin-left: 6px;
+      font-weight: 500;
     }
   }
 

@@ -45,14 +45,16 @@ const FooterWrapper = styled.footer`
     .sub {
       font-size: 0.65rem;
       letter-spacing: 3px;
-      color: #555555;
+      color: #1a1a1a;
+      font-weight: 700;
       text-transform: uppercase;
       margin-bottom: 18px;
     }
 
     p {
       font-size: 0.9rem;
-      color: #555555;
+      color: #1a1a1a;
+      font-weight: 500;
       line-height: 1.6;
       max-width: 380px;
       margin-bottom: 24px;
@@ -113,7 +115,8 @@ const FooterWrapper = styled.footer`
       gap: 12px;
 
       a {
-        color: #555555;
+        color: #1a1a1a;
+        font-weight: 500;
         text-decoration: none;
         font-size: 0.85rem;
         transition: color 0.3s ease;
@@ -136,7 +139,8 @@ const FooterWrapper = styled.footer`
 
     p {
       font-size: 0.85rem;
-      color: #555555;
+      color: #1a1a1a;
+      font-weight: 500;
       margin-bottom: 16px;
       line-height: 1.5;
     }
@@ -161,7 +165,7 @@ const FooterWrapper = styled.footer`
         }
 
         &::placeholder {
-          color: #888888;
+          color: #444444;
         }
       }
 
@@ -193,7 +197,8 @@ const FooterWrapper = styled.footer`
     justify-content: space-between;
     align-items: center;
     font-size: 0.8rem;
-    color: #666666;
+    color: #1a1a1a;
+    font-weight: 500;
 
     @media (max-width: 768px) {
       flex-direction: column;

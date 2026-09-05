@@ -24,7 +24,8 @@ const Header = styled.div`
 
   p {
     font-size: 1.05rem;
-    color: #555555;
+    color: #1a1a1a;
+    font-weight: 500;
     max-width: 650px;
     margin: 0 auto;
   }
@@ -62,7 +63,8 @@ const Container = styled.div`
 
     p {
       font-size: 0.9rem;
-      color: #444444;
+      color: #1a1a1a;
+      font-weight: 500;
       line-height: 1.6;
     }
   }

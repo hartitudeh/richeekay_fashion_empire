@@ -329,7 +329,7 @@ const ChatWidgetContainer = styled.div<{ $open: boolean }>`
       }
 
       &::placeholder {
-        color: #777777;
+        color: #444444;
       }
     }
 

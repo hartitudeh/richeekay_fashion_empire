@@ -56,7 +56,8 @@ const StudioInfo = styled.div`
 
   p {
     font-size: 1rem;
-    color: #555555;
+    color: #1a1a1a;
+    font-weight: 500;
     line-height: 1.7;
     margin-bottom: 28px;
   }
@@ -85,7 +86,8 @@ const StudioInfo = styled.div`
 
       span {
         font-size: 0.85rem;
-        color: #666666;
+        color: #1a1a1a;
+        font-weight: 500;
       }
     }
   }

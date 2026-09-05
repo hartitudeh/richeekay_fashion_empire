@@ -47,7 +47,8 @@ const Header = styled.div`
 
   p {
     font-size: 1.05rem;
-    color: #555555;
+    color: #1a1a1a;
+    font-weight: 500;
     max-width: 650px;
     margin: 0 auto;
   }
@@ -892,8 +893,8 @@ export default function GalleryPage() {
               <h3 style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.8rem', color: '#1a1a1a', margin: '4px 0 8px' }}>
                 {activeItem.title}
               </h3>
-              <p style={{ color: '#666666', fontSize: '0.85rem', marginBottom: '10px' }}>{activeItem.photographer}</p>
-              <p style={{ color: '#444444', fontSize: '0.95rem', lineHeight: '1.6' }}>{activeItem.description}</p>
+              <p style={{ color: '#1a1a1a', fontSize: '0.85rem', marginBottom: '10px', fontWeight: 500 }}>{activeItem.photographer}</p>
+              <p style={{ color: '#1a1a1a', fontSize: '0.95rem', lineHeight: '1.6', fontWeight: 500 }}>{activeItem.description}</p>
             </div>
           )}
         </DialogContent>

@@ -87,7 +87,7 @@ export const FeaturedProducts: React.FC = () => {
   const filteredProducts = getFilteredProducts();
 
   const tabStyle = {
-    color: '#555555',
+    color: '#1a1a1a',
     fontWeight: 600,
     fontFamily: 'Montserrat, sans-serif',
     fontSize: '0.85rem',

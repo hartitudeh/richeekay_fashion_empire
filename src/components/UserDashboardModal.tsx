@@ -83,7 +83,8 @@ const DashboardContainer = styled.div`
 
         .device-tag {
           font-size: 0.72rem;
-          color: #666666;
+          color: #1a1a1a;
+          font-weight: 500;
           display: flex;
           align-items: center;
           gap: 4px;
@@ -99,8 +100,9 @@ const DashboardContainer = styled.div`
 
       .logout-btn {
         background: rgba(0, 0, 0, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: #cccccc;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        color: #1a1a1a;
+        font-weight: 500;
         padding: 8px 16px;
         border-radius: 20px;
         font-size: 0.8rem;
@@ -120,13 +122,14 @@ const DashboardContainer = styled.div`
   }
 
   .privacy-banner {
-    background: rgba(212, 175, 55, 0.08);
-    border: 1px dashed rgba(212, 175, 55, 0.35);
+    background: rgba(201, 162, 39, 0.08);
+    border: 1px dashed rgba(201, 162, 39, 0.35);
     border-radius: 6px;
     padding: 10px 14px;
     margin-bottom: 24px;
     font-size: 0.78rem;
-    color: #e6c875;
+    color: #b8860b;
+    font-weight: 600;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -165,7 +168,8 @@ const DashboardContainer = styled.div`
 
       .lbl {
         font-size: 0.75rem;
-        color: #666666;
+        color: #1a1a1a;
+        font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 1px;
         margin-top: 4px;
@@ -181,7 +185,7 @@ const DashboardContainer = styled.div`
 
   .tabs-container {
     display: flex;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 24px;
     gap: 16px;
     overflow-x: auto;
@@ -190,7 +194,7 @@ const DashboardContainer = styled.div`
     button {
       background: none;
       border: none;
-      color: #888888;
+      color: #1a1a1a;
       font-size: 0.85rem;
       font-weight: 600;
       padding-bottom: 12px;
@@ -203,7 +207,7 @@ const DashboardContainer = styled.div`
       gap: 6px;
 
       &.active {
-        color: #d4af37;
+        color: #b8860b;
 
         &:after {
           content: '';
@@ -212,7 +216,7 @@ const DashboardContainer = styled.div`
           left: 0;
           right: 0;
           height: 2px;
-          background: #d4af37;
+          background: #b8860b;
         }
       }
     }
@@ -238,7 +242,7 @@ const AuthContainer = styled.div`
     right: 20px;
     background: none;
     border: none;
-    color: #888888;
+    color: #1a1a1a;
     font-size: 1.4rem;
     cursor: pointer;
     &:hover { color: #d4af37; }
@@ -265,7 +269,8 @@ const AuthContainer = styled.div`
 
     p {
       font-size: 0.85rem;
-      color: #555555;
+      color: #1a1a1a;
+      font-weight: 500;
     }
   }
 
@@ -276,7 +281,8 @@ const AuthContainer = styled.div`
     padding: 12px 16px;
     margin-bottom: 24px;
     font-size: 0.78rem;
-    color: #555555;
+    color: #1a1a1a;
+    font-weight: 500;
     line-height: 1.5;
     text-align: left;
     display: flex;
