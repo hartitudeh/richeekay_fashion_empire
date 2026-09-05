@@ -106,7 +106,7 @@ const Container = styled.div`
   .section-title {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 2rem;
-    color: #ffffff;
+    color: #1a1a1a;
     margin-bottom: 28px;
     position: relative;
     padding-bottom: 12px;
@@ -118,26 +118,27 @@ const Container = styled.div`
       left: 0;
       width: 60px;
       height: 2px;
-      background: #d4af37;
+      background: #b8860b;
     }
 
     span {
-      color: #d4af37;
+      color: #b8860b;
     }
   }
 `;
 
 const DesignerNoteBox = styled.div`
-  background: rgba(212, 175, 55, 0.06);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  border-left: 4px solid #d4af37;
+  background: #faf8f5;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  border-left: 4px solid #b8860b;
   padding: 28px 32px;
   margin-bottom: 50px;
-  border-radius: 4px;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 
   h3 {
     font-family: 'Playfair Display', Georgia, serif;
-    color: #d4af37;
+    color: #b8860b;
     font-size: 1.3rem;
     margin-bottom: 10px;
     display: flex;
@@ -147,9 +148,9 @@ const DesignerNoteBox = styled.div`
 
   p {
     font-size: 1rem;
-    color: #e0e0e0;
+    color: #1a1a1a;
+    font-weight: 500;
     line-height: 1.7;
-    font-style: italic;
     margin: 0;
   }
 `;
@@ -165,14 +166,16 @@ const StoryGrid = styled.div`
   }
 
   .story-card {
-    background: #141414;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.3);
     padding: 30px;
-    border-radius: 6px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
 
     p {
       font-size: 0.95rem;
-      color: #cccccc;
+      color: #1a1a1a;
+      font-weight: 500;
       line-height: 1.8;
       margin: 0;
     }
@@ -197,7 +200,7 @@ const GalleryGrid = styled.div`
 const GalleryCard = styled.div`
   position: relative;
   height: 380px;
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(201, 162, 39, 0.3);
   overflow: hidden;
   border-radius: 4px;
   cursor: pointer;
@@ -248,18 +251,19 @@ const ProductGrid = styled.div`
 `;
 
 const ProductCard = styled.div`
-  background: #141414;
-  border: 1px solid rgba(212, 175, 55, 0.25);
-  border-radius: 6px;
+  background: #ffffff;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 
   &:hover {
-    border-color: #d4af37;
+    border-color: #b8860b;
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 12px 30px rgba(201, 162, 39, 0.2);
   }
 
   .img-wrapper {
@@ -288,12 +292,12 @@ const ProductCard = styled.div`
     h4 {
       font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.15rem;
-      color: #ffffff;
+      color: #1a1a1a;
       margin-bottom: 6px;
     }
 
     .price {
-      color: #d4af37;
+      color: #b8860b;
       font-weight: 700;
       font-size: 1.1rem;
       margin-bottom: 16px;
@@ -320,23 +324,24 @@ const ProductCard = styled.div`
         transition: all 0.3s ease;
 
         &.bag-btn {
-          background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-          color: #0a0a0a;
+          background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+          color: #ffffff;
           border: none;
 
           &:hover {
-            box-shadow: 0 0 14px rgba(212, 175, 55, 0.6);
+            box-shadow: 0 0 14px rgba(201, 162, 39, 0.4);
           }
         }
 
         &.view-btn {
           background: transparent;
-          color: #cccccc;
-          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: #1a1a1a;
+          font-weight: 600;
+          border: 1px solid rgba(201, 162, 39, 0.4);
 
           &:hover {
-            border-color: #d4af37;
-            color: #ffffff;
+            border-color: #b8860b;
+            color: #b8860b;
           }
         }
       }

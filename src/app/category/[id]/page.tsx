@@ -105,11 +105,11 @@ export default function CategoryDetailPage() {
 
       <Container>
         {filteredProducts.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: '60px', color: '#aaa' }}>
-            <h3 style={{ fontFamily: 'Playfair Display, serif', color: '#FFF' }}>No items in this category currently.</h3>
+          <div style={{ textAlign: 'center', padding: '60px', color: '#1a1a1a', fontWeight: 500 }}>
+            <h3 style={{ fontFamily: 'Playfair Display, serif', color: '#1a1a1a' }}>No items in this category currently.</h3>
             <p style={{ marginTop: '10px' }}>Check back soon or explore our full shop catalog.</p>
-            <Link href="/shop" style={{ color: '#D4AF37', textDecoration: 'none', fontWeight: 'bold', display: 'inline-block', marginTop: '16px' }}>
-              View Full Shop
+            <Link href="/shop" style={{ color: '#b8860b', textDecoration: 'none', fontWeight: 'bold', display: 'inline-block', marginTop: '16px' }}>
+              View Full Shop Catalog &rarr;
             </Link>
           </div>
         ) : (

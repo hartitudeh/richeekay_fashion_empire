@@ -195,41 +195,45 @@ const MasonryCard = styled.div`
 
 const SubmitBox = styled.div`
   margin-top: 80px;
-  background: #141414;
-  border: 1px solid #d4af37;
+  background: #ffffff;
+  border: 1px solid #c9a227;
+  border-radius: 12px;
   padding: 40px;
   text-align: center;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.04);
 
   h3 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 2rem;
-    color: #ffffff;
+    color: #1a1a1a;
     margin-bottom: 10px;
   }
 
   p {
     font-size: 0.95rem;
-    color: #cccccc;
+    color: #1a1a1a;
+    font-weight: 500;
     max-width: 600px;
     margin: 0 auto 24px;
   }
 
   .upload-btn {
-    background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
-    color: #0a0a0a;
+    background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+    color: #ffffff;
     font-weight: 700;
     font-size: 0.85rem;
     letter-spacing: 2px;
     text-transform: uppercase;
     padding: 14px 32px;
     border: none;
+    border-radius: 30px;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 8px;
 
     &:hover {
-      background: linear-gradient(135deg, #f4e798 0%, #d4af37 100%);
+      background: linear-gradient(135deg, #d4af37 0%, #c9a227 100%);
     }
   }
 `;
@@ -244,7 +248,7 @@ const PaginationContainer = styled.div`
 
   .page-info {
     font-size: 0.85rem;
-    color: #aaaaaa;
+    color: #1a1a1a;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     font-weight: 600;
@@ -257,9 +261,9 @@ const PaginationContainer = styled.div`
     flex-wrap: wrap;
 
     .page-btn {
-      background: #141414;
-      border: 1px solid rgba(212, 175, 55, 0.35);
-      color: #ffffff;
+      background: #ffffff;
+      border: 1px solid rgba(201, 162, 39, 0.35);
+      color: #1a1a1a;
       min-width: 42px;
       height: 42px;
       padding: 0 14px;

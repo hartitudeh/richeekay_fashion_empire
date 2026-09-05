@@ -139,12 +139,13 @@ const ArticleContainer = styled.article`
       h4 {
         font-family: 'Playfair Display', Georgia, serif;
         font-size: 1.2rem;
-        color: #ffffff;
+        color: #1a1a1a;
         margin-bottom: 4px;
       }
       p {
         font-size: 0.85rem;
-        color: #aaaaaa;
+        color: #1a1a1a;
+        font-weight: 500;
       }
     }
   }
@@ -215,12 +216,12 @@ const RelatedSection = styled.div`
   h3 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 2rem;
-    color: #ffffff;
+    color: #1a1a1a;
     margin-bottom: 24px;
     text-align: center;
 
     span {
-      color: #d4af37;
+      color: #b8860b;
     }
   }
 
