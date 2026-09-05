@@ -1,11 +1,12 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { useShop } from '../../../context/ShopContext';
 import { ProductCard } from '../../../components/ProductCard';
 import { CATEGORIES_DATA } from '../../../data/productsData';
 import Link from 'next/link';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import styled from 'styled-components';
 
 const HeaderBanner = styled.div<{ $bgImage: string }>`
@@ -60,7 +61,25 @@ const HeaderBanner = styled.div<{ $bgImage: string }>`
 const Container = styled.div`
   max-width: 1350px;
   margin: 0 auto;
-  padding: 60px 24px;
+  padding: 50px 24px 80px;
+
+  .meta-bar {
+    background: #ffffff;
+    border: 1px solid rgba(201, 162, 39, 0.25);
+    border-radius: 8px;
+    padding: 14px 20px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+
+    .results-count {
+      font-size: 0.85rem;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+  }
 
   .grid {
     display: grid;
@@ -79,10 +98,62 @@ const Container = styled.div`
   }
 `;
 
+const PaginationWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+
+  .page-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(201, 162, 39, 0.35);
+    background: #ffffff;
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background: #c9a227;
+      color: #ffffff;
+      border-color: #c9a227;
+    }
+
+    &.active {
+      background: linear-gradient(135deg, #c9a227 0%, #b8860b 100%);
+      color: #ffffff;
+      font-weight: 700;
+      border-color: #b8860b;
+      box-shadow: 0 4px 12px rgba(184, 134, 11, 0.3);
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+`;
+
 export default function CategoryDetailPage() {
   const params = useParams();
   const categoryId = params?.id as string;
   const { products } = useShop();
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  const ITEMS_PER_PAGE = 20;
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [categoryId]);
 
   const categoryObj = CATEGORIES_DATA.find((c) => c.id === categoryId) || {
     id: categoryId,
@@ -92,6 +163,17 @@ export default function CategoryDetailPage() {
   };
 
   const filteredProducts = products.filter((p) => p.category === categoryId);
+
+  const totalItems = filteredProducts.length;
+  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE) || 1;
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const paginatedProducts = filteredProducts.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const handlePageChange = (page: number) => {
+    if (page < 1 || page > totalPages) return;
+    setCurrentPage(page);
+    window.scrollTo({ top: 300, behavior: 'smooth' });
+  };
 
   return (
     <>
@@ -104,6 +186,17 @@ export default function CategoryDetailPage() {
       </HeaderBanner>
 
       <Container>
+        {totalItems > 0 && (
+          <div className="meta-bar">
+            <span className="results-count">
+              Showing {startIndex + 1}–{Math.min(startIndex + ITEMS_PER_PAGE, totalItems)} of {totalItems} items in {categoryObj.name} {totalPages > 1 && `(Page ${currentPage} of ${totalPages})`}
+            </span>
+            <Link href="/shop" style={{ color: '#b8860b', fontSize: '0.85rem', fontWeight: 700, textDecoration: 'none' }}>
+              View All Categories &rarr;
+            </Link>
+          </div>
+        )}
+
         {filteredProducts.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '60px', color: '#1a1a1a', fontWeight: 500 }}>
             <h3 style={{ fontFamily: 'Playfair Display, serif', color: '#1a1a1a' }}>No items in this category currently.</h3>
@@ -113,11 +206,45 @@ export default function CategoryDetailPage() {
             </Link>
           </div>
         ) : (
-          <div className="grid">
-            {filteredProducts.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
-          </div>
+          <>
+            <div className="grid">
+              {paginatedProducts.map((p) => (
+                <ProductCard key={p.id} product={p} />
+              ))}
+            </div>
+
+            {totalPages > 1 && (
+              <PaginationWrapper>
+                <button
+                  className="page-btn"
+                  disabled={currentPage === 1}
+                  onClick={() => handlePageChange(currentPage - 1)}
+                  aria-label="Previous Page"
+                >
+                  <FiChevronLeft /> Prev
+                </button>
+
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
+                  <button
+                    key={pageNum}
+                    className={`page-btn ${pageNum === currentPage ? 'active' : ''}`}
+                    onClick={() => handlePageChange(pageNum)}
+                  >
+                    {pageNum}
+                  </button>
+                ))}
+
+                <button
+                  className="page-btn"
+                  disabled={currentPage === totalPages}
+                  onClick={() => handlePageChange(currentPage + 1)}
+                  aria-label="Next Page"
+                >
+                  Next <FiChevronRight />
+                </button>
+              </PaginationWrapper>
+            )}
+          </>
         )}
       </Container>
     </>
