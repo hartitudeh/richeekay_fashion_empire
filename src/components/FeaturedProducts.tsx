@@ -70,15 +70,15 @@ export const FeaturedProducts: React.FC = () => {
   const getFilteredProducts = () => {
     switch (activeTab) {
       case 1:
-        return products.slice(0, 6);
+        return products.filter((p) => p.category === 'men-wear' || p.category === 'senator-materials');
       case 2:
-        return products.filter((p) => p.isBestSeller);
+        return products.filter((p) => p.category === 'ankara-ofi-materials' || p.category === 'native-wear');
       case 3:
-        return products.filter((p) => p.isNewArrival);
+        return products.filter((p) => p.category === 'wristwatches' || p.category === 'shoes-sneakers');
       case 4:
-        return products.filter((p) => p.isTrending);
+        return products.filter((p) => p.category === 'ladies-wear' || p.category === 'bags' || p.category === 'wigs');
       case 5:
-        return products.filter((p) => p.isFlashSale);
+        return products.filter((p) => p.isNewArrival);
       default:
         return products;
     }
@@ -124,11 +124,11 @@ export const FeaturedProducts: React.FC = () => {
           }}
         >
           <Tab label="All Products" sx={tabStyle} />
-          <Tab label="Latest Releases" sx={tabStyle} />
-          <Tab label="Best Sellers" sx={tabStyle} />
+          <Tab label="Gentlemen Wear" sx={tabStyle} />
+          <Tab label="Ankara & Ofi Fabrics" sx={tabStyle} />
+          <Tab label="Timepieces & Footwear" sx={tabStyle} />
+          <Tab label="Ladies Couture" sx={tabStyle} />
           <Tab label="New Arrivals" sx={tabStyle} />
-          <Tab label="Trending Now" sx={tabStyle} />
-          <Tab label="Flash Sale Items" sx={tabStyle} />
         </Tabs>
       </Box>
 

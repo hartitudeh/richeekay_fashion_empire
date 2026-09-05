@@ -469,7 +469,7 @@ export default function AboutPage() {
           THE HERITAGE OF <span>RICHEEKAY</span>
         </h1>
         <p>
-          Crafting timeless luxury ladies' fashion, bespoke Aso-Ebi gowns, Cashmere Senator wears, 100% virgin hair wigs & heels for women of prestige.
+          Crafting timeless luxury fashion for Gentlemen & Ladies: bespoke double-breasted suits, royal Agbada sets, handwoven Ofi & Ankara fabrics, haute couture gowns, luxury timepieces & Italian footwear.
         </p>
       </HeroHeader>
 
@@ -492,14 +492,14 @@ export default function AboutPage() {
               Meet <span>Adegoke Rachael</span>, CEO & Founder
             </h3>
             <p>
-              RICHEEKAY FASHION EMPIRE was founded by <strong>Adegoke Rachael</strong> with a bold vision: to redefine luxury ladies' fashion by fusing royal West African heritage with haute couture tailoring standards inspired by Paris, Milan, and London.
+              RICHEEKAY FASHION EMPIRE was founded by <strong>Adegoke Rachael</strong> with a bold vision: to redefine luxury fashion for both Gentlemen & Ladies by fusing royal West African heritage with haute couture tailoring standards inspired by Paris, Milan, and London.
             </p>
             <p>
-              Under her visionary leadership, every garment created in our master atelier tells a story of prestige, confidence, and meticulous attention to detail. From floor-sweeping gala gowns with internal boning corsetry to Cashmere Senator sets for executive women, we believe luxury should be an unforgettable experience.
+              Under her visionary leadership, every garment created in our master atelier tells a story of prestige, confidence, and meticulous attention to detail. From bespoke Gentlemen double-breasted suits, handwoven Ofi Agbada sets, and Swiss chronographs to floor-sweeping gala gowns and 100% virgin hair wigs, we believe true luxury should be an unforgettable experience.
             </p>
 
             <div className="quote-box">
-              "True style speaks without saying a word. Quality lasts long after the event is over. At RICHEEKAY, we craft garments for women who rule their world with grace."
+              "True style speaks without saying a word. Quality lasts long after the event is over. At RICHEEKAY, we craft garments for gentlemen and ladies who rule their world with distinction and grace."
               <div className="author">— Adegoke Rachael, CEO & Founder of RICHEEKAY FASHION EMPIRE</div>
             </div>
           </div>
@@ -520,7 +520,7 @@ export default function AboutPage() {
             </div>
             <h3>Our <span>Vision</span></h3>
             <p>
-              To be the world’s most distinguished African luxury fashion house, globally celebrated for setting the gold standard in bespoke haute couture, African heritage elegance, and uncompromised artisanship across Paris, London, New York, and Lagos.
+              To be the world’s most distinguished African luxury fashion house for Gentlemen & Ladies, globally celebrated for setting the gold standard in bespoke suits, royal Agbadas, woven Ankara & Ofi materials, haute couture, and uncompromised artisanship across Paris, London, New York, and Lagos.
             </p>
           </div>
 
@@ -531,7 +531,7 @@ export default function AboutPage() {
             </div>
             <h3>Our <span>Mission</span></h3>
             <p>
-              To empower royalty, executive women, and brides with custom-tailored gala dresses, Cashmere Senator suits, 100% Virgin HD Lace Wigs, and designer leather goods—delivering royal precision fitting with express worldwide logistics.
+              To empower royalty, gentlemen, executive leaders, and brides with bespoke double-breasted suits, royal Agbada sets, handwoven Ofi & Ankara materials, luxury timepieces, footwear, and haute couture gowns—delivering royal precision fitting with express worldwide logistics.
             </p>
           </div>
 

@@ -460,10 +460,11 @@ export const Navbar: React.FC = () => {
 
               <Link href="/" className={`nav-item ${pathname === '/' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Home</Link>
               <Link href="/shop" className={`nav-item ${pathname.startsWith('/shop') ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Shop</Link>
+              <Link href="/category/men-wear" className={`nav-item ${pathname.includes('men-wear') ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Gentlemen</Link>
+              <Link href="/category/ankara-ofi-materials" className={`nav-item ${pathname.includes('ankara-ofi-materials') ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Ankara & Ofi</Link>
+              <Link href="/tailoring" className={`nav-item ${pathname.startsWith('/tailoring') ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Bespoke Atelier</Link>
               <Link href="/collections" className={`nav-item ${pathname.startsWith('/collections') ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Collections</Link>
-              <Link href="/gallery" className={`nav-item ${pathname.startsWith('/gallery') ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Gallery</Link>
               <Link href="/about" className={`nav-item ${pathname.startsWith('/about') ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>About Us</Link>
-              <Link href="/blog" className={`nav-item ${pathname.startsWith('/blog') ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Editorial</Link>
               <Link href="/contact" className={`nav-item ${pathname.startsWith('/contact') ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>Contact</Link>
             </NavLinks>
 

@@ -71,6 +71,34 @@ export interface BlogPost {
 
 export const CATEGORIES_DATA: CategoryItem[] = [
   {
+    id: 'men-wear',
+    name: "Gentlemen Wear & Suits",
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
+    itemCount: 42,
+    description: 'Bespoke tuxedos, double-breasted suits & executive blazers.'
+  },
+  {
+    id: 'ankara-ofi-materials',
+    name: 'Ankara & Ofi Fabrics',
+    image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=800&q=80',
+    itemCount: 64,
+    description: 'Woven Ofi (Aso-Oke style), Royal Wax Ankara & Swiss lace.'
+  },
+  {
+    id: 'shoes-sneakers',
+    name: 'Shoes & Sneakers',
+    image: 'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80',
+    itemCount: 58,
+    description: 'Handcrafted leather Oxfords, loafers, sneakers & heels.'
+  },
+  {
+    id: 'wristwatches',
+    name: 'Luxury Timepieces',
+    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80',
+    itemCount: 35,
+    description: 'Gold chronographs, diamond bezels & leather strap watches.'
+  },
+  {
     id: 'ladies-wear',
     name: "Ladies Wear",
     image: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80',
@@ -79,24 +107,10 @@ export const CATEGORIES_DATA: CategoryItem[] = [
   },
   {
     id: 'native-wear',
-    name: 'Native Wear',
+    name: 'Royal Native & Agbada',
     image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=800&q=80',
-    itemCount: 36,
-    description: 'Vibrant Ankara, Aso-Ebi & African royal styles.'
-  },
-  {
-    id: 'english-wear',
-    name: 'English Wear',
-    image: 'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=800&q=80',
-    itemCount: 29,
-    description: 'Executive suits, trousers & power blazers.'
-  },
-  {
-    id: 'clothing-materials',
-    name: 'Clothing Materials',
-    image: 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=800&q=80',
-    itemCount: 52,
-    description: 'French lace, Italian silks & velvet brocade.'
+    itemCount: 40,
+    description: 'Handcrafted Royal Agbada 3-piece sets, Kaftans & Danshiki.'
   },
   {
     id: 'senator-materials',
@@ -106,15 +120,8 @@ export const CATEGORIES_DATA: CategoryItem[] = [
     description: 'Cashmere wool & polish cotton for tunics.'
   },
   {
-    id: 'shoes',
-    name: 'Luxury Shoes',
-    image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80',
-    itemCount: 31,
-    description: 'Designer stiletto heels, pumps & sandals.'
-  },
-  {
     id: 'bags',
-    name: 'Handbags',
+    name: 'Handbags & Leather',
     image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80',
     itemCount: 25,
     description: 'Luxury leather totes, clutches & crossbody bags.'
@@ -127,22 +134,273 @@ export const CATEGORIES_DATA: CategoryItem[] = [
     description: '100% Virgin HD Lace human hair wigs.'
   },
   {
-    id: 'underwear',
-    name: "Ladies Underwear",
-    image: 'https://images.unsplash.com/photo-1583846783214-7229a91b20ed?auto=format&fit=crop&w=800&q=80',
-    itemCount: 22,
-    description: 'Satin lingerie & contour shapewear.'
-  },
-  {
     id: 'accessories',
     name: 'Accessories',
     image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80',
     itemCount: 45,
-    description: 'Crystal jewelry, waist chains & scarves.'
+    description: 'Gold cufflinks, crystal jewelry & waist chains.'
   }
 ];
 
 export const PRODUCTS_DATA: Product[] = [
+  {
+    id: 'rck-m01',
+    name: 'Imperial Gold Handwoven Ofi Agbada 3-Piece Set',
+    category: 'native-wear',
+    collection: 'Gentlemen Atelier',
+    priceNGN: 285000,
+    priceUSD: 235,
+    priceGBP: 185,
+    originalPriceNGN: 320000,
+    rating: 5.0,
+    reviewCount: 38,
+    images: [
+      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=800&q=80'
+    ],
+    colors: [
+      { name: 'Imperial Gold & Cream', hex: '#D4AF37' },
+      { name: 'Royal Obsidian Black', hex: '#0A0A0A' },
+      { name: 'Emerald Velvet', hex: '#046307' }
+    ],
+    sizes: ['M', 'L', 'XL', 'XXL', 'Custom Bespoke'],
+    description: 'Masterpiece 3-piece Royal Agbada set crafted from authentic handwoven Ofi (Aso-Oke style) fabric with heavy gold bullion wire embroidery. Includes outer Agbada robe, inner Senator tunic, and tailored trousers.',
+    details: [
+      'Authentic handwoven Ofi / Aso-Oke fabric',
+      'Hand-stitched metallic bullion embroidery',
+      'Includes Agbada robe, inner tunic & trousers',
+      'Custom bespoke tailor fitting included'
+    ],
+    isNewArrival: true,
+    isBestSeller: true,
+    isTrending: true,
+    stockCount: 6,
+    customTailoringAvailable: true
+  },
+  {
+    id: 'rck-m02',
+    name: 'Executive Navy Blue Super-150s Wool Tuxedo Suit',
+    category: 'men-wear',
+    collection: 'Gentlemen Atelier',
+    priceNGN: 245000,
+    priceUSD: 200,
+    priceGBP: 160,
+    originalPriceNGN: 280000,
+    rating: 4.9,
+    reviewCount: 29,
+    images: [
+      'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80'
+    ],
+    colors: [
+      { name: 'Midnight Navy', hex: '#002366' },
+      { name: 'Charcoal Grey', hex: '#333333' },
+      { name: 'Classic Black', hex: '#0A0A0A' }
+    ],
+    sizes: ['38R', '40R', '42R', '44R', '46R', 'Custom Tailored'],
+    description: 'Precision-tailored double-breasted suit tailored from Italian Super-150s virgin cashmere wool. Designed with peak satin lapels and hand-finished pick stitching.',
+    details: [
+      '100% Italian Super-150s Virgin Wool',
+      'Full canvas internal construction',
+      'Satin peak lapels & silk lining',
+      'Includes jacket & flat-front trousers'
+    ],
+    isNewArrival: true,
+    isBestSeller: true,
+    stockCount: 8,
+    customTailoringAvailable: true
+  },
+  {
+    id: 'rck-m03',
+    name: 'Grand Imperial Gold Chronograph Diamond Wristwatch',
+    category: 'wristwatches',
+    collection: 'Luxury Collection',
+    priceNGN: 395000,
+    priceUSD: 320,
+    priceGBP: 250,
+    originalPriceNGN: 450000,
+    rating: 5.0,
+    reviewCount: 45,
+    images: [
+      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1547996160-01c1722683ba?auto=format&fit=crop&w=800&q=80'
+    ],
+    colors: [
+      { name: '18K Imperial Gold', hex: '#D4AF37' },
+      { name: 'Platinum Silver', hex: '#E0E0E0' },
+      { name: 'Rose Gold & Obsidian', hex: '#B87333' }
+    ],
+    sizes: ['42mm Standard', '44mm Executive'],
+    description: 'Distinguished luxury automatic chronograph featuring an 18K gold-plated stainless steel case, sapphire crystal glass, anti-reflective coating, and genuine alligator leather strap.',
+    details: [
+      'Swiss Automatic Self-Winding Movement',
+      'Scratch-resistant Sapphire Crystal',
+      '50m Water Resistance Rating',
+      'Includes luxury mahogany wood display box & 2-Year Warranty'
+    ],
+    isNewArrival: true,
+    isBestSeller: true,
+    isTrending: true,
+    stockCount: 5
+  },
+  {
+    id: 'rck-m04',
+    name: 'Handcrafted Italian Calfskin Wholecut Oxford Shoes',
+    category: 'shoes-sneakers',
+    collection: 'Gentlemen Atelier',
+    priceNGN: 175000,
+    priceUSD: 145,
+    priceGBP: 115,
+    originalPriceNGN: 200000,
+    rating: 4.8,
+    reviewCount: 22,
+    images: [
+      'https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80'
+    ],
+    colors: [
+      { name: 'Burnished Tan Brown', hex: '#8B4513' },
+      { name: 'Polished Onyx Black', hex: '#0A0A0A' },
+      { name: 'Burgundy Wine', hex: '#4A1525' }
+    ],
+    sizes: ['40 EU', '41 EU', '42 EU', '43 EU', '44 EU', '45 EU'],
+    description: 'Flawlessly sculpted wholecut Oxford dress shoes handcrafted in Florence from single-piece full-grain Italian calfskin with Goodyear welted leather soles.',
+    details: [
+      '100% Full-grain Italian Calfskin',
+      'Goodyear welted re-soleable construction',
+      'Hand-patina burnished finish',
+      'Includes cedar shoe trees & dust bags'
+    ],
+    isBestSeller: true,
+    stockCount: 12
+  },
+  {
+    id: 'rck-m05',
+    name: 'Monogrammed Leather Streetwear Luxury Sneakers',
+    category: 'shoes-sneakers',
+    collection: 'Gentlemen Atelier',
+    priceNGN: 135000,
+    priceUSD: 110,
+    priceGBP: 88,
+    originalPriceNGN: 160000,
+    rating: 4.9,
+    reviewCount: 31,
+    images: [
+      'https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=800&q=80'
+    ],
+    colors: [
+      { name: 'Porcelain White & Gold', hex: '#FFFFFF' },
+      { name: 'Obsidian Black & Gold', hex: '#0A0A0A' }
+    ],
+    sizes: ['39 EU', '40 EU', '41 EU', '42 EU', '43 EU', '44 EU', '45 EU'],
+    description: 'High-top luxury streetwear sneakers featuring smooth nappa leather panels, gold foil RICHEEKAY empire crest, cushioned memory foam insoles, and durable rubber outsoles.',
+    details: [
+      'Nappa leather & suede trim upper',
+      'Ergonomic memory foam inner sole',
+      'Gold-embossed heel emblem',
+      'Includes extra gold-tipped laces'
+    ],
+    isNewArrival: true,
+    isTrending: true,
+    stockCount: 10
+  },
+  {
+    id: 'rck-f01',
+    name: 'Royal Sovereign Woven Ofi / Aso-Oke Fabric Bundle (6 Yards)',
+    category: 'ankara-ofi-materials',
+    collection: 'Textile Atelier',
+    priceNGN: 165000,
+    priceUSD: 135,
+    priceGBP: 105,
+    originalPriceNGN: 195000,
+    rating: 5.0,
+    reviewCount: 54,
+    images: [
+      'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=800&q=80'
+    ],
+    colors: [
+      { name: 'Metallic Gold & Cream', hex: '#D4AF37' },
+      { name: 'Royal Emerald & Gold', hex: '#046307' },
+      { name: 'Burgundy & Gold Wire', hex: '#4A1525' }
+    ],
+    sizes: ['6 Yards Complete Bundle'],
+    description: 'Authentic handwoven Ofi (Aso-Oke style) luxury fabric woven by master weavers in Iseyin & Abeokuta. Woven with metallic gold lurex threads for royal Agbadas, Gele, Fila, and bespoke traditional attire.',
+    details: [
+      '100% Traditional Handwoven Cotton & Lurex',
+      'Heavyweight 6 Yards length',
+      'Breathable, durable & non-fading weave',
+      'Suitable for both Gentlemen & Ladies ceremonial attire'
+    ],
+    isNewArrival: true,
+    isBestSeller: true,
+    isTrending: true,
+    stockCount: 15
+  },
+  {
+    id: 'rck-f02',
+    name: 'Imperial Sovereign Gold Wax Ankara Fabric (6 Yards)',
+    category: 'ankara-ofi-materials',
+    collection: 'Textile Atelier',
+    priceNGN: 68000,
+    priceUSD: 55,
+    priceGBP: 45,
+    originalPriceNGN: 85000,
+    rating: 4.9,
+    reviewCount: 62,
+    images: [
+      'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=800&q=80'
+    ],
+    colors: [
+      { name: 'Vibrant Gold & Sapphire', hex: '#D4AF37' },
+      { name: 'Ruby Red & Gold Motif', hex: '#8B0000' }
+    ],
+    sizes: ['6 Yards Full Length'],
+    description: 'High-density 100% combed cotton Dutch-grade wax Ankara fabric featuring rich gold-leaf print overlays. Perfect for vibrant native outfits, bespoke gowns, and Senator shirts.',
+    details: [
+      '100% Combed Cotton Super Wax',
+      'Gold foil stamp embellishments',
+      '6 Yards uncut bolt',
+      'Colorfast & machine washable'
+    ],
+    isBestSeller: true,
+    stockCount: 20
+  },
+  {
+    id: 'rck-m06',
+    name: 'Italian Cashmere Senator Tunic Set with Gold Trim',
+    category: 'senator-materials',
+    collection: 'Gentlemen Atelier',
+    priceNGN: 195000,
+    priceUSD: 160,
+    priceGBP: 125,
+    originalPriceNGN: 225000,
+    rating: 4.9,
+    reviewCount: 33,
+    images: [
+      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80'
+    ],
+    colors: [
+      { name: 'Pure White & Gold Piping', hex: '#FFFFFF' },
+      { name: 'Midnight Black & Gold', hex: '#0A0A0A' },
+      { name: 'Royal Blue & Gold', hex: '#002366' }
+    ],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL', 'Custom Fitted'],
+    description: 'Refined Senator tunic suit tailored from soft Italian cashmere wool. Features a clean mandarin collar, hidden button placket, and subtle gold chain cuff details.',
+    details: [
+      'Soft Italian Cashmere Wool blend',
+      'Mandarin collar & hidden front placket',
+      'Includes tunic shirt & tailored trousers',
+      'Custom sizing available'
+    ],
+    isNewArrival: true,
+    isBestSeller: true,
+    stockCount: 9,
+    customTailoringAvailable: true
+  },
   {
     id: 'rck-001',
     name: 'Royal Gold Silk Gala Evening Gown',

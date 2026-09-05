@@ -185,7 +185,7 @@ export default function ShopPage() {
         <h1>
           THE LUXURY <span>SHOP CATALOG</span>
         </h1>
-        <p>Explore haute couture gowns, bespoke Aso-Ebi native sets, Cashmere Senator fabrics, 100% virgin wigs & heels.</p>
+        <p>Explore bespoke Gentlemen suits, Royal Agbada sets, Senator tunics, handcrafted Italian shoes & sneakers, luxury timepieces, authentic Ankara & Ofi woven fabrics, and haute couture gowns.</p>
       </PageHeader>
 
       <ShopLayout>

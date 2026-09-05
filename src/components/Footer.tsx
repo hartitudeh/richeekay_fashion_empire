@@ -247,7 +247,7 @@ export const Footer: React.FC = () => {
             />
           </Link>
           <p>
-            Premium luxury ladies' fashion boutique specializing in bespoke haute couture gowns, native Aso-Ebi wear, Senator materials, 100% virgin wigs, heels & designer handbags.
+            Premier luxury fashion house for Gentlemen & Ladies. Specializing in bespoke suits, royal Agbada sets, haute couture gowns, authentic Ankara & Ofi woven fabrics, luxury timepieces, footwear & designer leather accessories.
           </p>
 
           <div className="social-icons">

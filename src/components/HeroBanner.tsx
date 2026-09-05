@@ -180,22 +180,22 @@ export const HeroBanner: React.FC = () => {
 
   const slides = [
     {
-      image: 'https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=1920&q=80',
-      badge: 'INTERNATIONAL LUXURY FASHION',
+      image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1920&q=80',
+      badge: 'INTERNATIONAL LUXURY FASHION HOUSE',
       title: 'RICHEEKAY <span>FASHION EMPIRE</span>',
-      subtitle: 'Style that Speaks. Quality that Lasts. Luxury Fashion For Every Woman.'
+      subtitle: 'Style that Speaks. Quality that Lasts. Premier Bespoke Luxury for Gentlemen & Ladies.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=1920&q=80',
-      badge: 'BESPOKE NATIVE COUTURE',
-      title: 'ROYAL ASO-EBI & <span>SENATOR WEAR</span>',
-      subtitle: 'Custom Tailored African Luxury for Weddings, Galas & High-Society Events.'
+      image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1920&q=80',
+      badge: 'GENTLEMEN ATELIER & ROYAL AGBADA',
+      title: 'BESPOKE SUITS & <span>HANDWOVEN OFI</span>',
+      subtitle: 'Handcrafted Double-Breasted Suits, Royal Agbada Sets, Senator Tunics & Italian Oxfords.'
     },
     {
-      image: 'https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?auto=format&fit=crop&w=1920&q=80',
-      badge: 'EXECUTIVE & EVENING WEAR',
-      title: 'POWER SUITS & <span>100% VIRGIN WIGS</span>',
-      subtitle: 'Elevate Your Wardrobe with Designer Handbags, Heels & Haute Couture.'
+      image: 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=1920&q=80',
+      badge: 'HERITAGE FABRICS & TIMEPIECES',
+      title: 'ANKARA, OFI & <span>LUXURY WATCHES</span>',
+      subtitle: 'Authentic Woven Fabrics, Gold Chronographs, Designer Sneakers & Couture Gowns.'
     }
   ];
 

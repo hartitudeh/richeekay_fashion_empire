@@ -36,7 +36,7 @@ export default function TailoringPage() {
         <h1>
           BESPOKE HAUTE COUTURE <span>TAILORING</span>
         </h1>
-        <p>Experience custom-made African and Western clothing crafted by master artisans to fit your exact body dimensions.</p>
+        <p>Experience custom-made Gentlemen suits, Royal Agbada sets, Senator tunics, and Ladies gala gowns crafted from authentic Ankara & handwoven Ofi fabrics to fit your exact body dimensions.</p>
       </PageHeader>
 
       <CustomTailoringStudio />

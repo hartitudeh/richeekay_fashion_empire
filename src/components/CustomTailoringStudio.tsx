@@ -210,7 +210,7 @@ export const CustomTailoringStudio: React.FC = () => {
             Custom Tailoring & <span>Fabric Studio</span>
           </h2>
           <p>
-            Experience perfect fitting tailored specifically to your body measurements. From custom Senator tunic sets to handcrafted Aso-Ebi gowns, our master tailors craft garments to fit you flawlessly.
+            Experience perfect fitting tailored specifically to your body measurements. From Gentlemen's Bespoke Suits & Royal Agbadas to Ladies Gala Gowns & Custom Ankara/Ofi creations, our master tailors craft garments to fit you flawlessly.
           </p>
 
           <div className="feature-list">
@@ -218,21 +218,21 @@ export const CustomTailoringStudio: React.FC = () => {
               <FiScissors className="icon" />
               <div>
                 <h4>Precision Measurement Profiler</h4>
-                <span>Save your personal body dimensions for seamless future orders.</span>
+                <span>Save your personal body dimensions for seamless bespoke suit or dress orders.</span>
               </div>
             </div>
             <div className="feature-item">
               <FiAward className="icon" />
               <div>
                 <h4>Premium Fabric Selection</h4>
-                <span>Request pre-order bolts of French lace, Italian silk, or Cashmere Senator fabrics.</span>
+                <span>Choose from handwoven Ofi, Dutch Ankara wax, Italian Super-150s wool, Cashmere, or French Lace.</span>
               </div>
             </div>
             <div className="feature-item">
               <FiCalendar className="icon" />
               <div>
                 <h4>Personal VIP Fitting Appointments</h4>
-                <span>Schedule a 1-on-1 personal fitting session at our flagship Lagos store or virtually.</span>
+                <span>Schedule a 1-on-1 personal fitting session at our flagship Lagos atelier or virtually.</span>
               </div>
             </div>
           </div>
@@ -277,11 +277,12 @@ export const CustomTailoringStudio: React.FC = () => {
             <div className="input-group">
               <label>Preferred Fabric Type</label>
               <select name="fabricType" value={formData.fabricType} onChange={handleChange}>
-                <option value="Senator Cashmere Wool">Senator Cashmere Wool (Heavy Weight)</option>
+                <option value="Handwoven Ofi / Aso-Oke">Handwoven Ofi / Aso-Oke (Royal Agbada & Gele)</option>
+                <option value="Imperial Gold Wax Ankara">Imperial Gold Wax Ankara (6 Yards Bolt)</option>
+                <option value="Italian Super-150s Wool">Italian Super-150s Wool (Gentlemen Suit / Tuxedo)</option>
+                <option value="Senator Cashmere Wool">Senator Cashmere Wool (Gentlemen Tunic)</option>
                 <option value="Italian Silk Satin">Italian Silk Satin (Flowing Gala Gown)</option>
                 <option value="French Hand-Beaded Lace">French Hand-Beaded Lace (Aso-Ebi)</option>
-                <option value="Emerald Heavy Velvet">Emerald Heavy Velvet (African Royal)</option>
-                <option value="Polish Cotton Senator">Polish Cotton Senator (Breathable)</option>
               </select>
             </div>
 

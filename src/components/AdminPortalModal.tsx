@@ -547,14 +547,16 @@ export const AdminPortalModal: React.FC = () => {
                     onChange={(e) => setNewProdCat(e.target.value)}
                     style={{ width: '100%', background: '#faf8f5', border: '1px solid rgba(201, 162, 39, 0.35)', borderRadius: '4px', color: '#1a1a1a', padding: '12px' }}
                   >
-                    <option value="ladies-wear">Ladies Wear</option>
-                    <option value="native-wear">Native Wear</option>
+                    <option value="men-wear">Gentlemen Wear & Suits</option>
+                    <option value="ladies-wear">Ladies Wear & Gowns</option>
+                    <option value="native-wear">Royal Native & Agbada</option>
+                    <option value="ankara-ofi-materials">Ankara & Ofi Fabrics</option>
                     <option value="senator-materials">Senator Materials</option>
-                    <option value="clothing-materials">Clothing Materials</option>
-                    <option value="shoes">Shoes & Heels</option>
-                    <option value="handbags">Handbags</option>
+                    <option value="shoes-sneakers">Shoes & Sneakers</option>
+                    <option value="wristwatches">Luxury Wristwatches</option>
+                    <option value="handbags">Handbags & Leather</option>
                     <option value="wigs">Wigs & Hair</option>
-                    <option value="underwear">Ladies Underwear</option>
+                    <option value="accessories">Accessories</option>
                   </select>
                 </div>
                 <div>
