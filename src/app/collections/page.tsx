@@ -145,7 +145,7 @@ export default function CollectionsPage() {
         <h1>
           THE EMPIRE <span>COLLECTIONS</span>
         </h1>
-        <p>Explore our seasonal lookbooks and couture collections designed for high-society galas, royal weddings, executive boardrooms & red carpet events.</p>
+        <p>Explore our comprehensive lookbooks showcasing Gentlemen Wear & Agbadas, Woven Ofi & Ankara Textiles, Italian Leather Footwear, Luxury Timepieces, Executive Power Suits & Haute Couture Gowns.</p>
       </PageHeader>
 
       <Container>
