@@ -308,6 +308,7 @@ export interface GalleryItem {
   photographer: string;
   description: string;
   aspectRatio?: string;
+  likes?: number;
 }
 
 export const MASONRY_GALLERY_ITEMS: GalleryItem[] = [
@@ -631,6 +632,459 @@ export const MASONRY_GALLERY_ITEMS: GalleryItem[] = [
     photographer: 'RICHEEKAY Accessories Vault',
     description: 'Hard-case metallic gold box clutch with gold filigree handle.'
   }
+,
+
+  {
+    "id": "g-ao-01",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #01",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-1.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 38
+  },
+  {
+    "id": "g-ao-02",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #02",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-2.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 41
+  },
+  {
+    "id": "g-ao-03",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #03",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-3.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 44
+  },
+  {
+    "id": "g-ao-04",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #04",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-4.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 47
+  },
+  {
+    "id": "g-ao-05",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #05",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-5.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 50
+  },
+  {
+    "id": "g-ao-06",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #06",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-6.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 53
+  },
+  {
+    "id": "g-ao-07",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #07",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-7.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 56
+  },
+  {
+    "id": "g-ao-08",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #08",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-8.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 59
+  },
+  {
+    "id": "g-ao-09",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #09",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-9.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 62
+  },
+  {
+    "id": "g-ao-10",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #10",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-10.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 65
+  },
+  {
+    "id": "g-ao-11",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #11",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-11.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 68
+  },
+  {
+    "id": "g-ao-12",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #12",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-12.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 71
+  },
+  {
+    "id": "g-ao-13",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #13",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-13.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 74
+  },
+  {
+    "id": "g-ao-14",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #14",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-14.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 37
+  },
+  {
+    "id": "g-ao-15",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #15",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-15.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 40
+  },
+  {
+    "id": "g-ao-16",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #16",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-16.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 43
+  },
+  {
+    "id": "g-ao-17",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #17",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-17.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 46
+  },
+  {
+    "id": "g-ao-18",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #18",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-18.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 49
+  },
+  {
+    "id": "g-ao-19",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #19",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-19.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 52
+  },
+  {
+    "id": "g-ao-20",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #20",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-20.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 55
+  },
+  {
+    "id": "g-ao-21",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #21",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-21.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 58
+  },
+  {
+    "id": "g-ao-22",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #22",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-22.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 61
+  },
+  {
+    "id": "g-ao-23",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #23",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-23.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 64
+  },
+  {
+    "id": "g-ao-24",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #24",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-24.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 67
+  },
+  {
+    "id": "g-ao-25",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #25",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-25.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 70
+  },
+  {
+    "id": "g-ao-26",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #26",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-26.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 73
+  },
+  {
+    "id": "g-ao-27",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #27",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-27.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 36
+  },
+  {
+    "id": "g-ao-28",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #28",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-28.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 39
+  },
+  {
+    "id": "g-ao-29",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #29",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-29.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 42
+  },
+  {
+    "id": "g-ao-30",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #30",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-30.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 45
+  },
+  {
+    "id": "g-ao-31",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #31",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-31.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 48
+  },
+  {
+    "id": "g-ao-32",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #32",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-32.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 51
+  },
+  {
+    "id": "g-ao-33",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #33",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-33.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 54
+  },
+  {
+    "id": "g-ao-34",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #34",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-34.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 57
+  },
+  {
+    "id": "g-ao-35",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #35",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-35.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 60
+  },
+  {
+    "id": "g-ao-36",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #36",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-36.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 63
+  },
+  {
+    "id": "g-ao-37",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #37",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-37.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 66
+  },
+  {
+    "id": "g-ao-38",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #38",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-38.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 69
+  },
+  {
+    "id": "g-ao-39",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #39",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-39.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 72
+  },
+  {
+    "id": "g-ao-40",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #40",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-40.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 35
+  },
+  {
+    "id": "g-ao-41",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #41",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-41.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 38
+  },
+  {
+    "id": "g-ao-42",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #42",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-42.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 41
+  },
+  {
+    "id": "g-ao-43",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #43",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-43.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 44
+  },
+  {
+    "id": "g-ao-44",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #44",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-44.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 47
+  },
+  {
+    "id": "g-ao-45",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #45",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-45.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 50
+  },
+  {
+    "id": "g-ao-46",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #46",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-46.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 53
+  },
+  {
+    "id": "g-ao-47",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #47",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-47.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 56
+  },
+  {
+    "id": "g-ao-48",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #48",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-48.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 59
+  },
+  {
+    "id": "g-ao-49",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #49",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-49.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 62
+  },
+  {
+    "id": "g-ao-50",
+    "title": "Royal Woven Ofi & Wax Ankara Pattern #50",
+    "category": "aso-ebi-native",
+    "image": "/Image%20gallery/ankara_ofi-50.jpeg",
+    "photographer": "RICHEEKAY Textile Atelier",
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) fabric. 5 Yards per roll at ₦20,000.",
+    "likes": 65
+  }
+
 ];
 
 export default function GalleryPage() {

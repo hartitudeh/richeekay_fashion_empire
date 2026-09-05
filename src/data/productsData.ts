@@ -80,9 +80,9 @@ export const CATEGORIES_DATA: CategoryItem[] = [
   {
     id: 'ankara-ofi-materials',
     name: 'Ankara & Ofi Fabrics',
-    image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=800&q=80',
-    itemCount: 64,
-    description: 'Woven Ofi (Aso-Oke style), Royal Wax Ankara & Swiss lace.'
+    image: '/Image%20gallery/ankara_ofi-1.jpeg',
+    itemCount: 52,
+    description: 'Authentic Woven Ofi (Aso-Oke style) & Royal Wax Ankara rolls (5 Yards per roll at ₦20,000).'
   },
   {
     id: 'shoes-sneakers',
@@ -307,10 +307,10 @@ export const PRODUCTS_DATA: Product[] = [
   },
   {
     id: 'rck-f01',
-    name: 'Royal Sovereign Woven Ofi / Aso-Oke Fabric Bundle (6 Yards)',
+    name: 'Royal Sovereign Woven Ofi / Aso-Oke Fabric Bundle (5 Yards)',
     category: 'ankara-ofi-materials',
     collection: 'Textile Atelier',
-    priceNGN: 165000,
+    priceNGN: 20000,
     priceUSD: 135,
     priceGBP: 105,
     originalPriceNGN: 195000,
@@ -340,10 +340,10 @@ export const PRODUCTS_DATA: Product[] = [
   },
   {
     id: 'rck-f02',
-    name: 'Imperial Sovereign Gold Wax Ankara Fabric (6 Yards)',
+    name: 'Imperial Sovereign Gold Wax Ankara Fabric (5 Yards)',
     category: 'ankara-ofi-materials',
     collection: 'Textile Atelier',
-    priceNGN: 68000,
+    priceNGN: 20000,
     priceUSD: 55,
     priceGBP: 45,
     originalPriceNGN: 85000,
@@ -711,6 +711,2109 @@ export const PRODUCTS_DATA: Product[] = [
     isBestSeller: true,
     stockCount: 10
   }
+,
+
+  {
+    "id": "rck-ao-001",
+    "name": "Royal Sovereign Handwoven Ofi & Ankara Fabric - Pattern #01",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.8,
+    "reviewCount": 48,
+    "images": [
+      "/Image%20gallery/ankara_ofi-1.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Imperial Gold & Sapphire Blue",
+        "hex": "#D4AF37"
+      },
+      {
+        "name": "Royal Obsidian",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 11,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-002",
+    "name": "Imperial Crest Woven Ofi & Wax Ankara Roll - Pattern #02",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 5,
+    "reviewCount": 42,
+    "images": [
+      "/Image%20gallery/ankara_ofi-2.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Emerald Green & Gold Lurex",
+        "hex": "#046307"
+      },
+      {
+        "name": "Champagne Cream",
+        "hex": "#F8F5EF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 12,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-003",
+    "name": "Monarch Gold Accent Ankara & Ofi Material - Pattern #03",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.8,
+    "reviewCount": 34,
+    "images": [
+      "/Image%20gallery/ankara_ofi-3.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Ruby Crimson & Metallic Gold",
+        "hex": "#8B0000"
+      },
+      {
+        "name": "Midnight Navy",
+        "hex": "#002366"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 13,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-004",
+    "name": "Crown Heritage African Ofi & Ankara Weave - Pattern #04",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.7,
+    "reviewCount": 31,
+    "images": [
+      "/Image%20gallery/ankara_ofi-4.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Rich Magenta & Amber Gold",
+        "hex": "#FF007F"
+      },
+      {
+        "name": "Deep Onyx",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "isTrending": true,
+    "isFlashSale": false,
+    "stockCount": 14,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-005",
+    "name": "Majestic Empire Premium Ankara & Ofi Fabric - Pattern #05",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.8,
+    "reviewCount": 32,
+    "images": [
+      "/Image%20gallery/ankara_ofi-5.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Royal Violet & Gold Thread",
+        "hex": "#8A2BE2"
+      },
+      {
+        "name": "Ivory White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": true,
+    "stockCount": 15,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-006",
+    "name": "Aristocratic Silk-Lurex Ofi & Ankara Roll - Pattern #06",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.7,
+    "reviewCount": 24,
+    "images": [
+      "/Image%20gallery/ankara_ofi-6.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Imperial Gold & Sapphire Blue",
+        "hex": "#D4AF37"
+      },
+      {
+        "name": "Royal Obsidian",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 16,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-007",
+    "name": "Dynasty Metallic Gold Thread Ankara & Ofi Material - Pattern #07",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 18,
+    "images": [
+      "/Image%20gallery/ankara_ofi-7.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Emerald Green & Gold Lurex",
+        "hex": "#046307"
+      },
+      {
+        "name": "Champagne Cream",
+        "hex": "#F8F5EF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 17,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-008",
+    "name": "Prestige Royal African Ofi & Wax Ankara - Pattern #08",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.8,
+    "reviewCount": 37,
+    "images": [
+      "/Image%20gallery/ankara_ofi-8.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Ruby Crimson & Metallic Gold",
+        "hex": "#8B0000"
+      },
+      {
+        "name": "Midnight Navy",
+        "hex": "#002366"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "isTrending": true,
+    "isFlashSale": false,
+    "stockCount": 18,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-009",
+    "name": "Sovereign Deluxe Woven Ofi & Ankara Material - Pattern #09",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 25,
+    "images": [
+      "/Image%20gallery/ankara_ofi-9.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Rich Magenta & Amber Gold",
+        "hex": "#FF007F"
+      },
+      {
+        "name": "Deep Onyx",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 19,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-010",
+    "name": "Grandeur Heritage Ankara & Handwoven Ofi - Pattern #10",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.8,
+    "reviewCount": 44,
+    "images": [
+      "/Image%20gallery/ankara_ofi-10.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Royal Violet & Gold Thread",
+        "hex": "#8A2BE2"
+      },
+      {
+        "name": "Ivory White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": true,
+    "stockCount": 20,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-011",
+    "name": "Royal Sovereign Handwoven Ofi & Ankara Fabric - Pattern #11",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 38,
+    "images": [
+      "/Image%20gallery/ankara_ofi-11.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Imperial Gold & Sapphire Blue",
+        "hex": "#D4AF37"
+      },
+      {
+        "name": "Royal Obsidian",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 21,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-012",
+    "name": "Imperial Crest Woven Ofi & Wax Ankara Roll - Pattern #12",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 47,
+    "images": [
+      "/Image%20gallery/ankara_ofi-12.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Emerald Green & Gold Lurex",
+        "hex": "#046307"
+      },
+      {
+        "name": "Champagne Cream",
+        "hex": "#F8F5EF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "isTrending": true,
+    "isFlashSale": false,
+    "stockCount": 22,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-013",
+    "name": "Monarch Gold Accent Ankara & Ofi Material - Pattern #13",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 29,
+    "images": [
+      "/Image%20gallery/ankara_ofi-13.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Ruby Crimson & Metallic Gold",
+        "hex": "#8B0000"
+      },
+      {
+        "name": "Midnight Navy",
+        "hex": "#002366"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 23,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-014",
+    "name": "Crown Heritage African Ofi & Ankara Weave - Pattern #14",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.7,
+    "reviewCount": 17,
+    "images": [
+      "/Image%20gallery/ankara_ofi-14.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Rich Magenta & Amber Gold",
+        "hex": "#FF007F"
+      },
+      {
+        "name": "Deep Onyx",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": true,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 24,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-015",
+    "name": "Majestic Empire Premium Ankara & Ofi Fabric - Pattern #15",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.7,
+    "reviewCount": 44,
+    "images": [
+      "/Image%20gallery/ankara_ofi-15.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Royal Violet & Gold Thread",
+        "hex": "#8A2BE2"
+      },
+      {
+        "name": "Ivory White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": true,
+    "isBestSeller": true,
+    "isTrending": false,
+    "isFlashSale": true,
+    "stockCount": 10,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-016",
+    "name": "Aristocratic Silk-Lurex Ofi & Ankara Roll - Pattern #16",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 5,
+    "reviewCount": 42,
+    "images": [
+      "/Image%20gallery/ankara_ofi-16.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Imperial Gold & Sapphire Blue",
+        "hex": "#D4AF37"
+      },
+      {
+        "name": "Royal Obsidian",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": true,
+    "isFlashSale": false,
+    "stockCount": 11,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-017",
+    "name": "Dynasty Metallic Gold Thread Ankara & Ofi Material - Pattern #17",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.7,
+    "reviewCount": 49,
+    "images": [
+      "/Image%20gallery/ankara_ofi-17.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Emerald Green & Gold Lurex",
+        "hex": "#046307"
+      },
+      {
+        "name": "Champagne Cream",
+        "hex": "#F8F5EF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 12,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-018",
+    "name": "Prestige Royal African Ofi & Wax Ankara - Pattern #18",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 43,
+    "images": [
+      "/Image%20gallery/ankara_ofi-18.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Ruby Crimson & Metallic Gold",
+        "hex": "#8B0000"
+      },
+      {
+        "name": "Midnight Navy",
+        "hex": "#002366"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 13,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-019",
+    "name": "Sovereign Deluxe Woven Ofi & Ankara Material - Pattern #19",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 5,
+    "reviewCount": 41,
+    "images": [
+      "/Image%20gallery/ankara_ofi-19.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Rich Magenta & Amber Gold",
+        "hex": "#FF007F"
+      },
+      {
+        "name": "Deep Onyx",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 14,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-020",
+    "name": "Grandeur Heritage Ankara & Handwoven Ofi - Pattern #20",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 41,
+    "images": [
+      "/Image%20gallery/ankara_ofi-20.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Royal Violet & Gold Thread",
+        "hex": "#8A2BE2"
+      },
+      {
+        "name": "Ivory White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": true,
+    "isFlashSale": true,
+    "stockCount": 15,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-021",
+    "name": "Royal Sovereign Handwoven Ofi & Ankara Fabric - Pattern #21",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 5,
+    "reviewCount": 43,
+    "images": [
+      "/Image%20gallery/ankara_ofi-21.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Imperial Gold & Sapphire Blue",
+        "hex": "#D4AF37"
+      },
+      {
+        "name": "Royal Obsidian",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 16,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-022",
+    "name": "Imperial Crest Woven Ofi & Wax Ankara Roll - Pattern #22",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 5,
+    "reviewCount": 43,
+    "images": [
+      "/Image%20gallery/ankara_ofi-22.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Emerald Green & Gold Lurex",
+        "hex": "#046307"
+      },
+      {
+        "name": "Champagne Cream",
+        "hex": "#F8F5EF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 17,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-023",
+    "name": "Monarch Gold Accent Ankara & Ofi Material - Pattern #23",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 41,
+    "images": [
+      "/Image%20gallery/ankara_ofi-23.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Ruby Crimson & Metallic Gold",
+        "hex": "#8B0000"
+      },
+      {
+        "name": "Midnight Navy",
+        "hex": "#002366"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 18,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-024",
+    "name": "Crown Heritage African Ofi & Ankara Weave - Pattern #24",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.8,
+    "reviewCount": 43,
+    "images": [
+      "/Image%20gallery/ankara_ofi-24.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Rich Magenta & Amber Gold",
+        "hex": "#FF007F"
+      },
+      {
+        "name": "Deep Onyx",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "isTrending": true,
+    "isFlashSale": false,
+    "stockCount": 19,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-025",
+    "name": "Majestic Empire Premium Ankara & Ofi Fabric - Pattern #25",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 17,
+    "images": [
+      "/Image%20gallery/ankara_ofi-25.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Royal Violet & Gold Thread",
+        "hex": "#8A2BE2"
+      },
+      {
+        "name": "Ivory White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": true,
+    "stockCount": 20,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-026",
+    "name": "Aristocratic Silk-Lurex Ofi & Ankara Roll - Pattern #26",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.8,
+    "reviewCount": 24,
+    "images": [
+      "/Image%20gallery/ankara_ofi-26.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Imperial Gold & Sapphire Blue",
+        "hex": "#D4AF37"
+      },
+      {
+        "name": "Royal Obsidian",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 21,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-027",
+    "name": "Dynasty Metallic Gold Thread Ankara & Ofi Material - Pattern #27",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 22,
+    "images": [
+      "/Image%20gallery/ankara_ofi-27.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Emerald Green & Gold Lurex",
+        "hex": "#046307"
+      },
+      {
+        "name": "Champagne Cream",
+        "hex": "#F8F5EF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 22,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-028",
+    "name": "Prestige Royal African Ofi & Wax Ankara - Pattern #28",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 40,
+    "images": [
+      "/Image%20gallery/ankara_ofi-28.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Ruby Crimson & Metallic Gold",
+        "hex": "#8B0000"
+      },
+      {
+        "name": "Midnight Navy",
+        "hex": "#002366"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": true,
+    "isFlashSale": false,
+    "stockCount": 23,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-029",
+    "name": "Sovereign Deluxe Woven Ofi & Ankara Material - Pattern #29",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 23,
+    "images": [
+      "/Image%20gallery/ankara_ofi-29.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Rich Magenta & Amber Gold",
+        "hex": "#FF007F"
+      },
+      {
+        "name": "Deep Onyx",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 24,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-030",
+    "name": "Grandeur Heritage Ankara & Handwoven Ofi - Pattern #30",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.7,
+    "reviewCount": 24,
+    "images": [
+      "/Image%20gallery/ankara_ofi-30.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Royal Violet & Gold Thread",
+        "hex": "#8A2BE2"
+      },
+      {
+        "name": "Ivory White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "isTrending": false,
+    "isFlashSale": true,
+    "stockCount": 10,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-031",
+    "name": "Royal Sovereign Handwoven Ofi & Ankara Fabric - Pattern #31",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 40,
+    "images": [
+      "/Image%20gallery/ankara_ofi-31.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Imperial Gold & Sapphire Blue",
+        "hex": "#D4AF37"
+      },
+      {
+        "name": "Royal Obsidian",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 11,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-032",
+    "name": "Imperial Crest Woven Ofi & Wax Ankara Roll - Pattern #32",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.8,
+    "reviewCount": 41,
+    "images": [
+      "/Image%20gallery/ankara_ofi-32.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Emerald Green & Gold Lurex",
+        "hex": "#046307"
+      },
+      {
+        "name": "Champagne Cream",
+        "hex": "#F8F5EF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": true,
+    "isFlashSale": false,
+    "stockCount": 12,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-033",
+    "name": "Monarch Gold Accent Ankara & Ofi Material - Pattern #33",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 5,
+    "reviewCount": 20,
+    "images": [
+      "/Image%20gallery/ankara_ofi-33.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Ruby Crimson & Metallic Gold",
+        "hex": "#8B0000"
+      },
+      {
+        "name": "Midnight Navy",
+        "hex": "#002366"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 13,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-034",
+    "name": "Crown Heritage African Ofi & Ankara Weave - Pattern #34",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.8,
+    "reviewCount": 38,
+    "images": [
+      "/Image%20gallery/ankara_ofi-34.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Rich Magenta & Amber Gold",
+        "hex": "#FF007F"
+      },
+      {
+        "name": "Deep Onyx",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 14,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-035",
+    "name": "Majestic Empire Premium Ankara & Ofi Fabric - Pattern #35",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 46,
+    "images": [
+      "/Image%20gallery/ankara_ofi-35.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Royal Violet & Gold Thread",
+        "hex": "#8A2BE2"
+      },
+      {
+        "name": "Ivory White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": true,
+    "stockCount": 15,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-036",
+    "name": "Aristocratic Silk-Lurex Ofi & Ankara Roll - Pattern #36",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.8,
+    "reviewCount": 19,
+    "images": [
+      "/Image%20gallery/ankara_ofi-36.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Imperial Gold & Sapphire Blue",
+        "hex": "#D4AF37"
+      },
+      {
+        "name": "Royal Obsidian",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "isTrending": true,
+    "isFlashSale": false,
+    "stockCount": 16,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-037",
+    "name": "Dynasty Metallic Gold Thread Ankara & Ofi Material - Pattern #37",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 16,
+    "images": [
+      "/Image%20gallery/ankara_ofi-37.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Emerald Green & Gold Lurex",
+        "hex": "#046307"
+      },
+      {
+        "name": "Champagne Cream",
+        "hex": "#F8F5EF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 17,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-038",
+    "name": "Prestige Royal African Ofi & Wax Ankara - Pattern #38",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.8,
+    "reviewCount": 24,
+    "images": [
+      "/Image%20gallery/ankara_ofi-38.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Ruby Crimson & Metallic Gold",
+        "hex": "#8B0000"
+      },
+      {
+        "name": "Midnight Navy",
+        "hex": "#002366"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 18,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-039",
+    "name": "Sovereign Deluxe Woven Ofi & Ankara Material - Pattern #39",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.8,
+    "reviewCount": 47,
+    "images": [
+      "/Image%20gallery/ankara_ofi-39.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Rich Magenta & Amber Gold",
+        "hex": "#FF007F"
+      },
+      {
+        "name": "Deep Onyx",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 19,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-040",
+    "name": "Grandeur Heritage Ankara & Handwoven Ofi - Pattern #40",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 33,
+    "images": [
+      "/Image%20gallery/ankara_ofi-40.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Royal Violet & Gold Thread",
+        "hex": "#8A2BE2"
+      },
+      {
+        "name": "Ivory White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": true,
+    "isFlashSale": true,
+    "stockCount": 20,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-041",
+    "name": "Royal Sovereign Handwoven Ofi & Ankara Fabric - Pattern #41",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.8,
+    "reviewCount": 20,
+    "images": [
+      "/Image%20gallery/ankara_ofi-41.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Imperial Gold & Sapphire Blue",
+        "hex": "#D4AF37"
+      },
+      {
+        "name": "Royal Obsidian",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 21,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-042",
+    "name": "Imperial Crest Woven Ofi & Wax Ankara Roll - Pattern #42",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 38,
+    "images": [
+      "/Image%20gallery/ankara_ofi-42.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Emerald Green & Gold Lurex",
+        "hex": "#046307"
+      },
+      {
+        "name": "Champagne Cream",
+        "hex": "#F8F5EF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 22,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-043",
+    "name": "Monarch Gold Accent Ankara & Ofi Material - Pattern #43",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 28,
+    "images": [
+      "/Image%20gallery/ankara_ofi-43.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Ruby Crimson & Metallic Gold",
+        "hex": "#8B0000"
+      },
+      {
+        "name": "Midnight Navy",
+        "hex": "#002366"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 23,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-044",
+    "name": "Crown Heritage African Ofi & Ankara Weave - Pattern #44",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 33,
+    "images": [
+      "/Image%20gallery/ankara_ofi-44.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Rich Magenta & Amber Gold",
+        "hex": "#FF007F"
+      },
+      {
+        "name": "Deep Onyx",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": true,
+    "isFlashSale": false,
+    "stockCount": 24,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-045",
+    "name": "Majestic Empire Premium Ankara & Ofi Fabric - Pattern #45",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 5,
+    "reviewCount": 44,
+    "images": [
+      "/Image%20gallery/ankara_ofi-45.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Royal Violet & Gold Thread",
+        "hex": "#8A2BE2"
+      },
+      {
+        "name": "Ivory White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "isTrending": false,
+    "isFlashSale": true,
+    "stockCount": 10,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-046",
+    "name": "Aristocratic Silk-Lurex Ofi & Ankara Roll - Pattern #46",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 5,
+    "reviewCount": 27,
+    "images": [
+      "/Image%20gallery/ankara_ofi-46.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Imperial Gold & Sapphire Blue",
+        "hex": "#D4AF37"
+      },
+      {
+        "name": "Royal Obsidian",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 11,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-047",
+    "name": "Dynasty Metallic Gold Thread Ankara & Ofi Material - Pattern #47",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 19,
+    "images": [
+      "/Image%20gallery/ankara_ofi-47.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Emerald Green & Gold Lurex",
+        "hex": "#046307"
+      },
+      {
+        "name": "Champagne Cream",
+        "hex": "#F8F5EF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 12,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-048",
+    "name": "Prestige Royal African Ofi & Wax Ankara - Pattern #48",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 49,
+    "images": [
+      "/Image%20gallery/ankara_ofi-48.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Ruby Crimson & Metallic Gold",
+        "hex": "#8B0000"
+      },
+      {
+        "name": "Midnight Navy",
+        "hex": "#002366"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": true,
+    "isTrending": true,
+    "isFlashSale": false,
+    "stockCount": 13,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-049",
+    "name": "Sovereign Deluxe Woven Ofi & Ankara Material - Pattern #49",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 4.9,
+    "reviewCount": 45,
+    "images": [
+      "/Image%20gallery/ankara_ofi-49.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Rich Magenta & Amber Gold",
+        "hex": "#FF007F"
+      },
+      {
+        "name": "Deep Onyx",
+        "hex": "#0A0A0A"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": false,
+    "stockCount": 14,
+    "customTailoringAvailable": true
+  },
+  {
+    "id": "rck-ao-050",
+    "name": "Grandeur Heritage Ankara & Handwoven Ofi - Pattern #50",
+    "category": "ankara-ofi-materials",
+    "collection": "Textile Atelier",
+    "priceNGN": 20000,
+    "priceUSD": 16,
+    "priceGBP": 13,
+    "originalPriceNGN": 30000,
+    "rating": 5,
+    "reviewCount": 38,
+    "images": [
+      "/Image%20gallery/ankara_ofi-50.jpeg"
+    ],
+    "colors": [
+      {
+        "name": "Royal Violet & Gold Thread",
+        "hex": "#8A2BE2"
+      },
+      {
+        "name": "Ivory White",
+        "hex": "#FFFFFF"
+      }
+    ],
+    "sizes": [
+      "5 Yards (1 Roll)"
+    ],
+    "description": "Authentic high-density Ankara & woven Ofi (Aso-Oke style) luxury fabric. Features vibrant traditional African heritage patterns, gold lurex accents, and colorfast weave. Sold per roll of 5 yards.",
+    "details": [
+      "5 Yards (1 Roll) complete bolt",
+      "100% Premium Combed Cotton & Handwoven Lurex blend",
+      "Breathable, durable & non-fading print/weave",
+      "Ideal for Royal Agbadas, Senator tunics, Aso-Ebi & native gowns",
+      "Custom bespoke tailoring available upon request"
+    ],
+    "isNewArrival": false,
+    "isBestSeller": false,
+    "isTrending": false,
+    "isFlashSale": true,
+    "stockCount": 15,
+    "customTailoringAvailable": true
+  }
+
 ];
 
 export const COLLECTIONS_DATA: CollectionItem[] = [
