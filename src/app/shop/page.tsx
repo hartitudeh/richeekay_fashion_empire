@@ -207,7 +207,7 @@ export default function ShopPage() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
-  const ITEMS_PER_PAGE = 20;
+  const ITEMS_PER_PAGE = 18;
 
   useEffect(() => {
     setCurrentPage(1);

@@ -149,7 +149,7 @@ export default function CategoryDetailPage() {
   const { products } = useShop();
   const [currentPage, setCurrentPage] = useState<number>(1);
 
-  const ITEMS_PER_PAGE = 20;
+  const ITEMS_PER_PAGE = 18;
 
   useEffect(() => {
     setCurrentPage(1);
