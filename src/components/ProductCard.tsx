@@ -240,7 +240,7 @@ export const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   const isWished = isInWishlist(product.id);
 
   return (
-    <CardWrapper>
+    <CardWrapper className="shine-wrapper hover-elevate">
       <ImageContainer>
         {product.isFlashSale && <span className="badge-tag">FLASH SALE</span>}
         {product.isNewArrival && !product.isFlashSale && <span className="badge-tag">NEW</span>}

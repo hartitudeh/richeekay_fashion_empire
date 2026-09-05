@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { BLOG_POSTS_DATA, REVIEWS_DATA, BlogPost } from '../data/productsData';
+import { ScrollReveal } from './ScrollReveal';
 import { Dialog, DialogContent } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
@@ -513,187 +514,197 @@ export const HomeSections: React.FC = () => {
   return (
     <>
       {/* Why Choose Us */}
-      <WhyChooseSection>
-        <div className="inner">
-          <div className="header">
-            <span>The RICHEEKAY Difference</span>
-            <h2>Why Luxury Women Choose Us</h2>
-            <div className="divider" />
-          </div>
+      <ScrollReveal animation="fade-up" duration={700}>
+        <WhyChooseSection>
+          <div className="inner">
+            <div className="header">
+              <span>The RICHEEKAY Difference</span>
+              <h2>Why Luxury Women Choose Us</h2>
+              <div className="divider" />
+            </div>
 
-          <div className="features-grid">
-            <div className="feature-card">
-              <FiAward className="icon" />
-              <h4>Bespoke Luxury Quality</h4>
-              <p>Hand-crafted finishing with internal boning, French laces, and Italian silks.</p>
-            </div>
-            <div className="feature-card">
-              <FiShield className="icon" />
-              <h4>100% Guaranteed Original</h4>
-              <p>Authentic 100% Virgin Cambodian human hair wigs & certified designer leather.</p>
-            </div>
-            <div className="feature-card">
-              <FiTruck className="icon" />
-              <h4>24-48h Express Shipping</h4>
-              <p>Lightning fast doorstep delivery across Nigeria, UK, US, and worldwide.</p>
-            </div>
-            <div className="feature-card">
-              <FiPackage className="icon" />
-              <h4>Gold Box VIP Packaging</h4>
-              <p>Every outfit arrives encased in our signature metallic gold luxury presentation box.</p>
+            <div className="features-grid">
+              <div className="feature-card hover-elevate">
+                <FiAward className="icon" />
+                <h4>Bespoke Luxury Quality</h4>
+                <p>Hand-crafted finishing with internal boning, French laces, and Italian silks.</p>
+              </div>
+              <div className="feature-card hover-elevate">
+                <FiShield className="icon" />
+                <h4>100% Guaranteed Original</h4>
+                <p>Authentic 100% Virgin Cambodian human hair wigs & certified designer leather.</p>
+              </div>
+              <div className="feature-card hover-elevate">
+                <FiTruck className="icon" />
+                <h4>24-48h Express Shipping</h4>
+                <p>Lightning fast doorstep delivery across Nigeria, UK, US, and worldwide.</p>
+              </div>
+              <div className="feature-card hover-elevate">
+                <FiPackage className="icon" />
+                <h4>Gold Box VIP Packaging</h4>
+                <p>Every outfit arrives encased in our signature metallic gold luxury presentation box.</p>
+              </div>
             </div>
           </div>
-        </div>
-      </WhyChooseSection>
+        </WhyChooseSection>
+      </ScrollReveal>
 
       {/* About Us & Brand Story */}
-      <AboutSection id="about">
-        <div className="inner">
-          <div className="img-frame">
-            <img
-              src="/ceo-adegoke-rachael.jpg"
-              alt="Adegoke Rachael - CEO, RicheeKay Fashion Empire"
-            />
-            <div className="badge-overlay">
-              <div className="num">CEO</div>
-              <div className="lbl">Adegoke Rachael</div>
-            </div>
-          </div>
-
-          <div className="content">
-            <span>Brand Heritage</span>
-            <h2>
-              The Story Behind <span>RICHEEKAY</span>
-            </h2>
-            <p>
-              Founded with a passion for royal African heritage and international haute couture, RICHEEKAY FASHION EMPIRE was created to empower women to feel elegant, confident, and unforgettable.
-            </p>
-            <p>
-              From custom Senator tunic sets for executive women to hand-beaded Aso-Ebi wedding gowns, every piece is designed to tell a story of sophistication and lasting quality.
-            </p>
-
-            <div className="values-row">
-              <div className="val-item">
-                <h5>Our Mission</h5>
-                <span>Deliver luxury fashion that speaks elegance & class.</span>
-              </div>
-              <div className="val-item">
-                <h5>Our Vision</h5>
-                <span>The world’s premier African-inspired luxury fashion house.</span>
-              </div>
-              <div className="val-item">
-                <h5>Our Values</h5>
-                <span>Trust, Bespoke Craftsmanship & Uncompromising Quality.</span>
+      <ScrollReveal animation="fade-up" duration={750} delay={100}>
+        <AboutSection id="about">
+          <div className="inner">
+            <div className="img-frame shine-wrapper">
+              <img
+                src="/ceo-adegoke-rachael.jpg"
+                alt="Adegoke Rachael - CEO, RicheeKay Fashion Empire"
+              />
+              <div className="badge-overlay floating-badge">
+                <div className="num">CEO</div>
+                <div className="lbl">Adegoke Rachael</div>
               </div>
             </div>
-          </div>
-        </div>
-      </AboutSection>
 
-      {/* Customer Reviews */}
-      <ReviewsSection>
-        <div className="inner">
-          <div className="header">
-            <span>Real Customer Experiences</span>
-            <h2>Loved by Fashion Royalty</h2>
-            <div className="divider" />
-          </div>
+            <div className="content">
+              <span>Brand Heritage</span>
+              <h2>
+                The Story Behind <span>RICHEEKAY</span>
+              </h2>
+              <p>
+                Founded with a passion for royal African heritage and international haute couture, RICHEEKAY FASHION EMPIRE was created to empower women to feel elegant, confident, and unforgettable.
+              </p>
+              <p>
+                From custom Senator tunic sets for executive women to hand-beaded Aso-Ebi wedding gowns, every piece is designed to tell a story of sophistication and lasting quality.
+              </p>
 
-          <ReviewsCarouselWrapper>
-            <button className="custom-swiper-prev" id="reviews-prev-btn" aria-label="Previous Testimonial">
-              <FiChevronsLeft />
-            </button>
-
-            <Swiper
-              modules={[Autoplay, Pagination, Navigation]}
-              spaceBetween={24}
-              slidesPerView={1}
-              autoplay={{ delay: 4500, disableOnInteraction: false }}
-              pagination={{ clickable: true }}
-              navigation={{
-                prevEl: '#reviews-prev-btn',
-                nextEl: '#reviews-next-btn'
-              }}
-              breakpoints={{
-                640: { slidesPerView: 1 },
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 }
-              }}
-              className="reviews-swiper"
-            >
-              {REVIEWS_DATA.map((rev) => (
-                <SwiperSlide key={rev.id}>
-                  <div className="review-card">
-                    <div className="stars">★★★★★</div>
-                    <p className="comment">"{rev.comment}"</p>
-                    <div className="author-row">
-                      <img src={rev.avatar} alt={rev.author} />
-                      <div className="info">
-                        <h5>{rev.author}</h5>
-                        <span>{rev.location}</span>
-                      </div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-
-            <button className="custom-swiper-next" id="reviews-next-btn" aria-label="Next Testimonial">
-              <FiChevronsRight />
-            </button>
-          </ReviewsCarouselWrapper>
-        </div>
-      </ReviewsSection>
-
-      {/* Editorial Blog */}
-      <BlogSection id="blog">
-        <div className="inner">
-          <div className="header">
-            <span>Fashion Journal</span>
-            <h2>Styling Guides & Trends</h2>
-            <div className="divider" />
-          </div>
-
-          <div className="blog-grid">
-            {BLOG_POSTS_DATA.slice(0, 6).map((post) => (
-              <div key={post.id} className="blog-card" onClick={() => setActiveArticle(post)}>
-                <img src={post.image} alt={post.title} />
-                <div className="content">
-                  <div className="meta">
-                    <span>{post.category}</span> | <span>{post.readTime}</span>
-                  </div>
-                  <h3>{post.title}</h3>
-                  <p>{post.excerpt}</p>
-                  <div className="read-more">
-                    Read Article <FiArrowRight />
-                  </div>
+              <div className="values-row">
+                <div className="val-item">
+                  <h5>Our Mission</h5>
+                  <span>Deliver luxury fashion that speaks elegance & class.</span>
+                </div>
+                <div className="val-item">
+                  <h5>Our Vision</h5>
+                  <span>The world’s premier African-inspired luxury fashion house.</span>
+                </div>
+                <div className="val-item">
+                  <h5>Our Values</h5>
+                  <span>Trust, Bespoke Craftsmanship & Uncompromising Quality.</span>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
+        </AboutSection>
+      </ScrollReveal>
 
-          <div style={{ textAlign: 'center', marginTop: '40px' }}>
-            <Link
-              href="/blog"
-              style={{
-                background: 'linear-gradient(135deg, #D4AF37 0%, #C9A227 100%)',
-                color: '#0A0A0A',
-                fontWeight: 'bold',
-                padding: '14px 28px',
-                textDecoration: 'none',
-                textTransform: 'uppercase',
-                letterSpacing: '1.5px',
-                fontSize: '0.85rem',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}
-            >
-              Explore All Journal Articles <FiArrowRight />
-            </Link>
+      {/* Customer Reviews */}
+      <ScrollReveal animation="scale-up" duration={700}>
+        <ReviewsSection>
+          <div className="inner">
+            <div className="header">
+              <span>Real Customer Experiences</span>
+              <h2>Loved by Fashion Royalty</h2>
+              <div className="divider" />
+            </div>
+
+            <ReviewsCarouselWrapper>
+              <button className="custom-swiper-prev" id="reviews-prev-btn" aria-label="Previous Testimonial">
+                <FiChevronsLeft />
+              </button>
+
+              <Swiper
+                modules={[Autoplay, Pagination, Navigation]}
+                spaceBetween={24}
+                slidesPerView={1}
+                autoplay={{ delay: 4500, disableOnInteraction: false }}
+                pagination={{ clickable: true }}
+                navigation={{
+                  prevEl: '#reviews-prev-btn',
+                  nextEl: '#reviews-next-btn'
+                }}
+                breakpoints={{
+                  640: { slidesPerView: 1 },
+                  768: { slidesPerView: 2 },
+                  1024: { slidesPerView: 3 }
+                }}
+                className="reviews-swiper"
+              >
+                {REVIEWS_DATA.map((rev) => (
+                  <SwiperSlide key={rev.id}>
+                    <div className="review-card hover-elevate">
+                      <div className="stars">★★★★★</div>
+                      <p className="comment">"{rev.comment}"</p>
+                      <div className="author-row">
+                        <img src={rev.avatar} alt={rev.author} />
+                        <div className="info">
+                          <h5>{rev.author}</h5>
+                          <span>{rev.location}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+
+              <button className="custom-swiper-next" id="reviews-next-btn" aria-label="Next Testimonial">
+                <FiChevronsRight />
+              </button>
+            </ReviewsCarouselWrapper>
           </div>
-        </div>
-      </BlogSection>
+        </ReviewsSection>
+      </ScrollReveal>
+
+      {/* Editorial Blog */}
+      <ScrollReveal animation="fade-up" duration={700}>
+        <BlogSection id="blog">
+          <div className="inner">
+            <div className="header">
+              <span>Fashion Journal</span>
+              <h2>Styling Guides & Trends</h2>
+              <div className="divider" />
+            </div>
+
+            <div className="blog-grid">
+              {BLOG_POSTS_DATA.slice(0, 6).map((post) => (
+                <div key={post.id} className="blog-card hover-elevate shine-wrapper" onClick={() => setActiveArticle(post)}>
+                  <img src={post.image} alt={post.title} />
+                  <div className="content">
+                    <div className="meta">
+                      <span>{post.category}</span> | <span>{post.readTime}</span>
+                    </div>
+                    <h3>{post.title}</h3>
+                    <p>{post.excerpt}</p>
+                    <div className="read-more">
+                      Read Article <FiArrowRight />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ textAlign: 'center', marginTop: '40px' }}>
+              <Link
+                href="/blog"
+                className="gold-pulse-btn"
+                style={{
+                  background: 'linear-gradient(135deg, #D4AF37 0%, #C9A227 100%)',
+                  color: '#0A0A0A',
+                  fontWeight: 'bold',
+                  padding: '14px 28px',
+                  borderRadius: '30px',
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1.5px',
+                  fontSize: '0.85rem',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px'
+                }}
+              >
+                Explore All Journal Articles <FiArrowRight />
+              </Link>
+            </div>
+          </div>
+        </BlogSection>
+      </ScrollReveal>
 
       {/* Blog Article Reader Modal */}
       <Dialog

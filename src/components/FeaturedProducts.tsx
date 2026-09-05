@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
 import { ProductCard } from './ProductCard';
+import { ScrollReveal } from './ScrollReveal';
 import { Box, Tabs, Tab } from '@mui/material';
 import styled from 'styled-components';
 
@@ -102,41 +103,43 @@ export const FeaturedProducts: React.FC = () => {
   };
 
   return (
-    <SectionWrapper id="featured">
-      <div className="header">
-        <span>Exclusive Showcase</span>
-        <h2>Featured Luxury Collection</h2>
-        <div className="divider" />
-      </div>
+    <ScrollReveal animation="fade-up" duration={700}>
+      <SectionWrapper id="featured">
+        <div className="header">
+          <span>Exclusive Showcase</span>
+          <h2>Featured Luxury Collection</h2>
+          <div className="divider" />
+        </div>
 
-      <Box sx={{ borderBottom: 1, borderColor: 'rgba(201, 162, 39, 0.25)', display: 'flex', justifyContent: 'center' }}>
-        <Tabs
-          value={activeTab}
-          onChange={handleTabChange}
-          variant="scrollable"
-          scrollButtons="auto"
-          aria-label="Product Showcase Tabs"
-          sx={{
-            '& .MuiTabs-indicator': {
-              backgroundColor: '#c9a227',
-              height: '3px'
-            }
-          }}
-        >
-          <Tab label="All Products" sx={tabStyle} />
-          <Tab label="Gentlemen Wear" sx={tabStyle} />
-          <Tab label="Ankara & Ofi Fabrics" sx={tabStyle} />
-          <Tab label="Timepieces & Footwear" sx={tabStyle} />
-          <Tab label="Ladies Couture" sx={tabStyle} />
-          <Tab label="New Arrivals" sx={tabStyle} />
-        </Tabs>
-      </Box>
+        <Box sx={{ borderBottom: 1, borderColor: 'rgba(201, 162, 39, 0.25)', display: 'flex', justifyContent: 'center' }}>
+          <Tabs
+            value={activeTab}
+            onChange={handleTabChange}
+            variant="scrollable"
+            scrollButtons="auto"
+            aria-label="Product Showcase Tabs"
+            sx={{
+              '& .MuiTabs-indicator': {
+                backgroundColor: '#c9a227',
+                height: '3px'
+              }
+            }}
+          >
+            <Tab label="All Products" sx={tabStyle} />
+            <Tab label="Gentlemen Wear" sx={tabStyle} />
+            <Tab label="Ankara & Ofi Fabrics" sx={tabStyle} />
+            <Tab label="Timepieces & Footwear" sx={tabStyle} />
+            <Tab label="Ladies Couture" sx={tabStyle} />
+            <Tab label="New Arrivals" sx={tabStyle} />
+          </Tabs>
+        </Box>
 
-      <ProductGrid>
-        {filteredProducts.map((prod) => (
-          <ProductCard key={prod.id} product={prod} />
-        ))}
-      </ProductGrid>
-    </SectionWrapper>
+        <ProductGrid>
+          {filteredProducts.map((prod) => (
+            <ProductCard key={prod.id} product={prod} />
+          ))}
+        </ProductGrid>
+      </SectionWrapper>
+    </ScrollReveal>
   );
 };
